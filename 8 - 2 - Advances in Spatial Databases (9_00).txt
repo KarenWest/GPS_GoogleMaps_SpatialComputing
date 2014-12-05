@@ -1,0 +1,300 @@
+Welcome back to the discussion
+of spatial computing.
+In this video I want to give a glimpse
+of a current research project in
+my own group.
+And as you know my group is now called
+the Spatial Computing Research Group.
+And you know, we have done quite a bit
+of work over the last several years,
+including some authoring of books and
+other material.
+So you know, the Spatial Database
+book we used in spatial equating.
+You saw a chapter from there.
+We also saw several articles
+from Encyclopedia of GIS as
+supplementary reading,
+over modules two, three and four.
+The group has been involved in
+managing a journal, you know,
+which publishes computer science
+research for GIS, that's GeoInformatica.
+Managing some of the meetings,
+symposium on spacial and
+temporal databases,
+as well as geographic information signs.
+And most recently we helped organize
+a community visioning workshop for
+computing community consortium.
+And this was something that's part
+of your reading in, in this week.
+And you can kind of see the community
+research vision where this field is
+headed, and there're a lot of
+exciting ideas in this report.
+Now my own personal work has focused
+on two sub areas of spatial computing.
+Back in 90's when I started my career it
+was mostly focused on spatial databases.
+Something reminiscent of spatial
+equating world that you saw.
+But you know, we went well beyond
+equating to look at also algorithms,
+equating processing techniques,
+indexing, and so on.
+So here are a couple of
+projects from that era.
+And many of them in some sense
+are still very interesting,
+even though platforms have changed, okay?
+So one project we did,
+which was with Army had to do with
+paralysing geographic information systems.
+And they wanted to speed up
+retrieval of real geographic data,
+to make tank simulators, you know,
+flight simulators more realistic.
+So instead of video game-like
+synthetic terrains,
+they wanted to use real terrains from the,
+the theater.
+So problem in this case,
+essentially is to divide a map.
+You know, for example here you're
+showing a set of polygons.
+And the idea is to divide up the work
+among multiple processors in a multi
+processing system or a cloud computing
+environment, so that the workload for
+a range query is equally
+divided across processor.
+So in this map,
+actually the colors of the polygon
+there represent process and assignment.
+So that if you see this little box,
+that's arrange query, and hopefully
+the colors are balanced within that.
+And if that happens, then you have
+actually got in a good speed up
+on cloud computing or
+parallel computing platform.
+So back in mid-90s, we were working with
+connection machines on these problems.
+Another major theme in the group
+has been on routing problems.
+And you know, all of us did talked about
+location-based services we all enjoyed.
+These shortest path queries on our
+cellphone, our Google Maps nowadays.
+But it is, you know,
+you may find it hard to believe, but
+these things were research
+projects back in early 90's.
+So at the beginning of my career,
+we got research projects to think about
+how road maps should be stored on disks.
+And how routing algorithms should be done,
+when computing power was much less.
+Okay?
+And it's really pleasured in your own
+career to see your research come to
+fruition, and
+then come to commercial products.
+Okay?
+And we still have a new project in
+this area called equal routing,
+that I will go over in more detail, okay?
+But after 9/11 we also got
+involved with another very
+interesting routing project that had to do
+with the evacuation route planning, okay?
+As you may have remembered from
+the interview of Betsy George from Oracle,
+let's say lots of people have
+to leave New York City or
+Boston because of a hurricane, or
+you know this really happened in
+Houston Galwestern area with
+hurricane Rita in 2005.
+If they all went to Google Maps and
+followed the routes from Google Maps,
+things will not look pretty.
+You will have massive traffic jams and
+poor utilization of road networks.
+So in evacuation route planning, the goal
+is to actually find a set of routes.
+And even those routes
+have to be used again and
+again in a pipeline manner by
+different groups of people, okay?
+The problem gets you know, much harder.
+It's a flow networks problem
+rather than a graph problem.
+Traditional solutions from operations
+research based on linear programming and
+time expanded graph didn't scale
+up to large metropolitan area.
+And our group contributed some
+very scalable algorithm in
+this space about ten years ago.
+Many of them actually
+got used in the field.
+Minnesota Department of Transportation,
+chose our algorithms over the competition.
+And you know, Fox TV did a nice,
+you know, a review of that.
+There was a congressional presentation and
+so on.
+Very, very exciting.
+We are still doing some work
+on commercializing this, but
+let's talk about a new research project.
+Something that looks even further ahead.
+So we just recently received a grant
+from National Science Foundation,
+to explore this new exciting
+field called big data.
+And so we are looking at
+obviously spatial big data, and
+we are trying to imagine the next big
+generation routing and navigation systems.
+So you probably already have
+heard about the big data.
+So I'll just quickly give
+you the opportunity here.
+So first opportunity is that, you know,
+when you use your Google Maps today or
+your cell phone and so on for routing,
+they usually give you a route that
+minimizes distance or travel time, okay?
+But with all this concern about climate
+change and environment, won't it be
+wonderful that we could minimize
+greenhouse gas emissions, or fuel uses?
+Okay?
+So
+try to imagine your next generation of
+routing system, which allows you to
+choose the minimization criteria which
+may be more ecologically friendly, okay?
+Well why can't we do that
+using today's technology?
+You know, Google and all, okay?
+so, so we'll talk about that briefly.
+And also I wanted to tell
+you it's not pipe dream.
+Actually some people have tried this.
+Some of you may have read this story
+about UPS, a large delivery system,
+changing their routes.
+And they like to avoid left turns.
+So let me pause here for a second or
+two and ask you, you know, yourself what's
+going on in left turn in United States?
+You know, if you are in Britain or India,
+you know, it will be right turn, but
+in United States something goes on
+in left turn that UPS doesn't like,
+which is waiting.
+Okay?
+Left turn means you have to wait for
+the opposing traffic to clear, and
+you're idling your engine, and
+you're losing fuel.
+Right?
+And in case of UPS,
+when they've change these routes,
+their savings were very, very significant.
+Millions of gallons per year.
+And nowadays in fact the newer cars
+that turn off the engines when you
+are waiting on, on left turns.
+So, now you can imagine, if UPS can
+save millions of gallons what happens if
+all of us start trying to do that?
+Right?
+And society as a whole will gain a lot of
+you know, it'll reduce field consumption
+and greenhouse gas emission.
+Okay?
+So, so this is an opportunity,
+and question is,
+now what can we do towards that?
+So there are new data sets
+which are coming online.
+One we call temporally detailed road maps,
+and GPS traces, which can
+actually give you a very good hint on
+where the idling is, where the delays are.
+And once you this data you can
+reduce that waste of fuel, okay?
+But why should computer
+scientists play in this space?
+Isn't this a mechanical engineering or
+operations research problem?
+Well, you know,
+there is computer science challenge.
+And one thing if you
+remember in module three,
+we learned about shortest path algorithms
+like Dijkstra's and A star, and
+they all assume dynamic programming
+principal or sub path optimality.
+It turns out that if you change
+your cost metric from distance or
+time towards fuel or greenhouse gas
+emission, then the dynamic pro-,
+.
+programming property does not hold.
+In other words our algorithms are not
+going to help us in this problem.
+We need to start afresh and
+design new algorithms, okay?
+So this is one opportunity in this space.
+And there're other opportunities.
+For example,
+today we usually say well, you know,
+if I start right now,
+what's the shortest path?
+But if you had these new big datasets
+like temporarily detailed roadmaps,
+which knows your typical week's
+behavior minute-by-minute for
+the typical week,
+you could ask a different question.
+You could say,
+well I have a meeting at 9 a.m.
+What time should I leave home,
+to spend least amount of time
+on the road network, okay?
+And it is something that
+today's roadmaps cannot do, but
+the new roadmaps which
+are temporarily detailed can do.
+And there was again a small experiment
+in basing, where they showed that if you
+leverage UPS tracks, you could beat Google
+Map based routes by 30 to 40%, okay?
+By, by, by adjusting your start time, and
+taking advantage of time variation, okay?
+So again, very, very exciting area.
+And you know, there're many
+opportunities in leveraging big data.
+We'd like to acknowledge the support
+from National Science Foundation.
+This grant which is in red arrow is
+supporting some of this research.
+And there are other grants listed,
+you know,
+which is supporting
+other work in our group.
+So hopefully this gives you a glimpse
+of one current project that's going on
+in our group.
+shortly, you know, we'll look forward
+to seeing you in another video,
+we'll give you glimpse of another project
+in the area of spatial data mining.
+Thank you for your attention.
+

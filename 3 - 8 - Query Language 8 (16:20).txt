@@ -1,0 +1,512 @@
+Welcome back to to the discussion
+of spatial Equity Languages.
+In last few videos, you know,
+we talked about the notions of queries,
+query languages,
+we've been through basic old SQL, and
+we also saw how tidious it was to model
+spatial data, and queries in old SQL, and
+then we saw the OJS which simplified
+some of the basic queries.
+So, in this video segment, the goal
+is to get into more depth of OJS, and
+in particular, use OJS topological
+operators for spacial joins.
+Okay?
+So, we will look at eh, spacial join
+queries to un, understand their output.
+And hopefully,
+it will also help you compose OJS queries,
+which you'll spacial join.
+Okay.
+So in the last video we saw simple OJS
+queries which did not use Spacial-Join,
+but we saw operators like area,
+we saw operators like distance, and so on.
+And in this particular video, we
+are going to do Spacial-Join using set of
+topological operators such as touch and
+cross.
+And will also show the use of this
+topological operation with aggregation,
+such as the group by class,
+as well as some nesting.
+Okay?
+All right.
+So, let's start with the first query,
+which needs spatial join, okay?
+So, this query is looking for
+rivers, and countries.
+So it's looking at pairs of rivers and
+countries.
+And the relationship is
+a spatial relationship, so
+we want these rivers to be
+crossing through the country.
+So for example if you look at the river
+Nile, we do want Egypt with Nile,
+but we don't want Congo or
+Nigeria to be listed with Nile, okay?
+All right.
+So,
+first question again in such queries
+is which tables are needed, and can,
+you know, from the English text you
+can say river tables are interesting.
+As well as the country table,
+is interesting.
+So, those two tables have to be listed.
+The second question, if you remember
+in our query formulation video,
+said how do you combine these tables?
+So, the rows in country table and rows in
+river tables, how should they be paired?
+We don't want all combinations, clearly.
+Right?
+So which combinations are valid?
+And in this case, those combinations
+are specified by spacial relationship.
+So, you have to thin through
+the topological relationship and ask,
+which topological operation allows me to
+intersect in a river and a country, okay?
+And, that was the cross operator, okay?
+So, if you remember cross
+was a unusual operator.
+It took a line straight,
+maybe the center line of the river.
+And a polygon which may be
+the footprint of a city or a country.
+In our schema the country
+footprints are a polygon and
+cities are approximated as points, okay?
+So cross operator is used, and
+that is the conditions, if we
+did that it will essentially start with
+all possible pairs of rivers and cities.
+And it will throw away all pairs
+where this predicate is false, okay?
+So you will be left with pairs such
+that the rivers cross the country.
+Okay, so
+again to you know recall the essence.
+You know, this cross operator is used for
+join here.
+Notice that, it is in the where clause,
+and it involves two different tables.
+So, it is joining the tables,
+so it is a join operator.
+But, since the condition is a spatial
+condition, it's called spatial join.
+In contrast to various joins you saw
+earlier in the old SQL, we only showed you
+equijoins, where you said let's say city
+dot country is equal to country dot name.
+It was a very simple equality predicate
+matching exact string values, okay?
+In contrast,
+this join predicate is more sophisticated.
+It's doing a geometric,
+you know, intersection or
+you know between a line string and
+a polygraph, okay?
+All right, so
+let's continue our journey and
+see some other examples of spacial join.
+So next one we are going
+to look at the query.
+Where we are essentially
+talking about countries, and
+we want to see the neighbor relationships
+among, between, or among countries, okay?
+Again if you are a geography buff, you may
+be intrigued by you know geography quiz
+questions such as, which country in
+the world has highest number of neighbors?
+Okay, so what we are doing right
+now is not as sophisticated, but
+you can build on this to answer that,
+okay.
+yeah, just if you were curious,
+this country is in Asia.
+One of the large Asian countries, okay.
+All right, but coming back to this query.
+First question first question,
+which tables are needed.
+And this case, we see the country table.
+And that's about the only one we see now.
+Okay?
+So, certainly you want to work with
+country table, and then you know,
+we are you know picking up this country,
+but in order to model this neighbors,
+we may need this country table twice.
+Okay?
+Because a single country table does not
+have information about neighbors, so
+the only way to compute neighbors.
+Is to take two different countries,
+look at their polygons, and somehow
+look at their spacial relationships.
+So again you may want to ask which
+OJS operator, takes two polygons and
+tell us wether they are neighbors.
+That means the boundaries overlap.
+But interiors don't.
+Okay?
+Even if those countries think they do,
+but they don't.
+In OJS the interiors don't overlap for
+neighbors.
+Okay?
+So, if you again think through that,
+that operator is touch.
+So we are, in this case,
+the condition for join is touch.
+And you are looking at
+the shape of two countries.
+Okay?
+So,
+if you want to read this particular query.
+Then it start with the front plus and
+it takes country table twice, and
+by doing so it would essentially
+make pairs out of country.
+So all those pairs would be formed, and
+then will throw away any pair where
+the boundaries don't intersect okay?
+And what will be left with are the pairs
+were boundaries intersect, okay?
+And in then finally in order to restrict
+the answer to USA we'll add one
+more condition on the country name
+on one of these countries, okay?
+So, this will give you a list of pairs
+of countries, where boundaries intersect
+now if you are really really
+now looking for details here.
+Then you may find one small
+issue with this answer.
+So if you think about the,
+you know, let's say country, USA will
+that be in the list of this answer?
+And it may be because there will
+be a pair which takes USA from
+first copy of country.
+USA from second copy of
+country forms appear.
+And the boundaries will intersect.
+So it's a good question to ask.
+When that happens will OJS declare
+it to be neighbors or not?
+Because in this case interiors
+also intersect, okay.
+So this will be a good
+learning exercise for
+you to try it out, and figure out in
+OJS inter, interiors intersect and
+boundary intersect Is that true or
+false, okay?
+And it that excise left to you.
+Now in terms of join, there is another
+thing to think about here, which is
+that in this case this join is happening,
+you know, with a table and itself.
+So such join are often called self-join,
+okay?
+So in this case you have
+looked at a special case,
+it's a self-join using
+a spatial predicate.
+Great so lets continue our journey and
+look at another spatial join with
+different topological predicate, and in
+this case we are going to bring in bring
+in also a metric kind of operator, okay.
+So, the English query is here.
+So suppose we are given a river.
+In this case, Saint Lawrence.
+And let's say we're given,
+also, a threshold.
+So, we want to find things which
+are within 300 kilometers of this river.
+So this river's center line,
+may be a line string.
+Now, in geography,
+there is a notion called buffer.
+Okay?
+And you are coming from computer science.
+You may see a different meaning of buffer.
+So, you're not meaning this hardware or
+graphics buffer, here,
+we are meaning geographic buffer.
+And that geographic buffer,
+represents an area around this river or
+a city,
+which satisfies the distance predicate.
+Okay?
+So you can create a buffer around Saint
+Lawrence River, to answer this query.
+And once you have that buffer,
+which represents.
+Some sort of geographic areas covering
+all points within 300 kilometer of St.
+Lawrence River.
+Then you can ask, which topological
+operator allows me to pick up all of
+those cities whose city center,
+the center point is within the buffer.
+Okay?
+All right.
+So the model, this in SQL again,
+we'll go through the three
+basic composition question.
+So first is which tables are needed?
+So clearly we see the river table,
+that's relevant.
+We also see the city table, okay, so
+we'll start with these two tables,
+city and river.
+Okay.
+Second question,
+how do we join the tables?
+In this case this has something
+to do with the spatial predicate,
+which is within 300 kilometers.
+So you may have two
+different ways to model it.
+You could go and
+look at actually distance operation.
+And that will be one way.
+The other one is to work with buffer, and
+use a topological
+operation called Overlap.
+So which takes two areas, and
+finds if their interiors intersect or not.
+So we are going to use that,
+so here we take this river.
+And we said draw a bugger in,
+in our 300 kilometer around it, okay?
+And that gives us a one geographic area.
+And then we look at the city location, and
+we ask if the city's location overlaps
+with buffer around river, okay?
+And that's one way to model it.
+So and then finally to restrict it to St.
+Lawrence River, so
+you can put another restriction.
+So, so in this query we have shown you
+another spatial joint and in this case we
+are using additional operators like buffer
+in order to model the distance, okay.
+So we showed you three
+different spatial joints and
+now what we are going to do is to
+increase the complexity just a tiny bit,
+and add things like a queries
+with spatial joint.
+And again, for
+the next few slides you know,
+you may be better off
+reading the English query,
+then putting the video on pause,
+try to write those queries yourself.
+And then come back and
+check with the answers given in the slide,
+and that will enhance your learning, okay?
+All right, so the next query is here.
+List all countries, ordered by
+number of neighboring countries.
+Okay, so this is taking,
+taking you closer to the question I asked.
+Which country has highest number
+of neighbors in the world?
+All right so we'll at least
+create this statistic, okay.
+So, again if you want
+to formulate it in SQL,
+we start by the question
+which tables are relevant.
+So in this case we notice
+the table is country, only one.
+But since we are talking about neighbors.
+And that information is
+not in the country table.
+We'll need two copies of country table,
+okay?
+And those two copies
+will have to be joined.
+So again, try to recall which
+topological operator you need to pair up
+countries which are neighbors.
+And again you recall from the previous
+query it is the touch operator,
+which means the boundaries intersect,
+but interior doesn't, okay?
+Now once we have done that,
+then we are going to do counting,
+because here we have numbers, okay?
+So you need, now need to think about,
+what are the groups?
+So this is aggregate query.
+So we need to know what are the groups,
+and
+what statistics to compute on each group,
+okay?
+So one way to define these groups will be
+the country from the first table, okay?
+So group these pairs by country, you know
+element that's the country nane, and
+by doing that we would have group
+all neighbors of USA in one place,
+all neighbors of China in other place,
+all neighbors of Russia in other place.
+All neighbors of Iceland, if it has any or
+another place and so on, okay.
+And once you have done that then you have,
+to remember your statistical operators,
+okay.
+The SQL had six basic statistical
+operators such as sum,
+average, count, and so on.
+And you can probably guess you
+are looking for count, okay.
+All right, so we are basically
+starting with country tables.
+Two copies of that.
+You are going to join it
+using Touch Operator.
+We saw that before.
+The new part here is the GROUP BY.
+So you take the first country,
+and form group by that.
+So the first copy of the country table.
+And by doing that you are collecting
+neighboors of a county together.
+Okay?
+And once you have done that, then you
+compute the statistical function count.
+And then you can sort it by count, okay?
+And this hopefully will give you
+the answer to which country has
+maximum number of neighbors great.
+Now the last variation we wanted
+to show you is with nesting.
+So let's go and take a look at that.
+And then we'll wrap up the discussion
+of spacial part, okay?
+Now, by the way,
+the query that I just gave you,
+is also an interesting historic query.
+Because when spatial databases
+came back up in mid 90s,
+many GIS users would ask the question.
+So what's the difference between a GIS and
+a database equipped with SQL and OJS?
+And you know the answer was to
+provide them a simple query,
+which was very difficult to do in
+GIS which was mostly point and
+click the geographical user
+interface based system.
+And turns out this is one of such queries.
+Okay, so if you want to answer
+this in GIS, it is tricky.
+You can go mouse over each country, and
+it may give you the number of neighbors of
+that country by
+highlighting the neighbors.
+But this strategy will take you a while,
+because you will have to guess.
+You will have to go and try China,
+and you know, then Russia.
+And Congo and then and after that,
+collect that information and do that.
+In contrast to that, SQL works with sets.
+Okay, so the join, a spatial join cross
+product, these are able to pair up in,
+in two different sets and
+then do statistics.
+So this query is much easier and
+quicker in SQL, than it is in a point and
+click system, okay.
+Great, so coming back to our own
+exploration of SQL3 and OJS.
+We'll go to the next one, and
+show you a query with nesting.
+Okay, so here we are asking for
+each river identify the closest city.
+Okay.
+So in order to answer this again, you have
+to ask which tables are involved, and
+that's the river and city tables?
+And then you ask how do I join them.
+And then it gets little tricky,
+because we are asking for
+closest city to each river, right?
+Now notice this closest
+is an aggregate operator.
+That was our third question.
+That if I pair up cities and
+rivers, will my answer couples of
+rows correspond to the rows of, you know,
+arbitrary rows of river and city?
+And in this case the answer is no.
+Because really, we don't want, you know,
+any arbitrary city with the river.
+But we only want the closest.
+So, what we have to do is
+after we pair up rivers, and
+cities is we have to group them by river?
+And each group find the closest city,
+okay?
+So you can actually write a single block
+SQL query using group by inhabiting.
+But, what we are going to do is,
+to use a nesting with this.
+Okay?
+So in case of nesting we can
+break it up in two queries.
+In an outer and an inner.
+In the outer query we can
+find in all the rivers.
+So here is so here is rivers and cities,
+and in outer one and then we are saying.
+We only want one city to
+be paired with each river.
+And the property is the distance of
+that city to the river is less than.
+Distance of any other city to that river,
+okay?
+And that predicate is tested
+through a inner query,
+which is essentially asking for
+this second part.
+And you say you know,
+you take another copy of the city table.
+You take the distance of this
+city table to the river,
+we should have had a R1.shape here.
+And then you ask that this distance
+never is lower than the distance of
+the first city, okay?
+So this quickly shows you
+a little bit of nesting, 'kay?
+So hopefully this gives you
+a glimpse of spacial joined queries,
+inside SQL3 and OJS?
+And you know, that gives you a little
+bit more depth with OJS operators.
+We also saw number of different
+topological operators, and
+their use with aggregation
+as well as nesting, okay?
+So we'll wrap up this session of OJS
+operators and data type at this point.
+In the next video, we'll come back and
+try to wrap up this long
+discussion on query languages.
+Which included you know maybe basics.
+The old SQL as well as the OJS predicate.
+Thank you.
+

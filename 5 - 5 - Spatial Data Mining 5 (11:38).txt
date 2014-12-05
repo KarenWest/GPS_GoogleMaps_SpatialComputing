@@ -1,0 +1,385 @@
+Okay, welcome back to the discussion of
+spatial data mining In earlier videos you
+know, we looked at the broad notion
+of spatial data mining, different pattern
+families.
+We looked at statistical foundation with
+notions like auto correlation.
+And we also get, got into detail of one
+pattern family on location prediction.
+In this video we are going to look
+at another pattern family related to hot
+spots.
+So overall goal is first to compare the
+traditional
+clustering methods and the spatial hot
+spot detection methods, okay?
+And in particular we are going to look
+at a very popular traditional method
+called K-Means.
+You know, explain what it is and its
+limitations in context of hot spots.
+And then introduce a popular method in
+public health
+called SatScan, which is often used for
+hot spots, okay.
+So let's first, you know, look at this
+overall problem.
+You know, in classical data mining or
+machine learning this is called the
+clustering problem.
+So given a set of records or a set of
+entities, the overall
+idea is to find natural groups, okay,
+that's the goal of classical clustering.
+So suppose I'm given a table with these
+six different entities.
+And these six entities have some
+attributes.
+So here we have just given an abstract
+name x and y, but this attribute could be
+things like age, or you know, x could be
+age and y could be the years of service.
+And then A through F could be employees.
+And people may ask you to define natural
+groups of these employees in classical
+clustering, okay?
+So so first of all data
+classical clustering problem itself, is
+very spatial.
+If you have very few attributes like in
+this case just two, then
+often times it's nicer to look at the data
+in a geometrical, spatial framework.
+So if you essentially treat x as
+one coordinate, y as another coordinate,
+and plot
+out these records in, in a coordinate
+system, this is what it may look like.
+So here is x axis, here is y axis.
+So if you look at record A, x is 30,
+it's down here, y is five, you know, which
+is here.
+So A may be sitting at this place.
+In this two-dimensional space, okay?
+So all the six point A through F can be
+plotted in the two-dimensional space.
+And when you look at the data this way,
+you may already see natural groups, right?
+So again pause the video for here for a
+minute and look at these points A,
+D, E, C, B, F, and ask yourself how many
+natural groups do you see, right.
+So many of us will probably see two groups
+here, right?
+The A, D and E are in lower left.
+C, B, and F are upper right.
+So if you now invoke a algorithm called
+K-Means, and give it
+K equal to two, it will try to find that
+groups for you.
+And as the data set size increases, the
+algorithm
+will show value over manual visualization
+and analysis, okay?
+So let's see how K-Means work.
+So in case of K-Mean we first have to
+specify K.
+And in this case, you know, let's say we
+somehow know
+that there are two groups so we tell that
+to K-Means, okay.
+And in addition to that K-Means also says
+that give
+me two, you know, one seed for each of the
+group.
+You don't, the two seeds don't have to be
+accurate but you have to give them the
+seeds.
+So let's suppose we pick two random record
+in this case, C and F.
+And declared them to be the seed, okay?
+Once you have done that, then K-Mean will
+proceed as follows.
+It will first assign the remaining data
+points to the closest seeds, okay?
+So, so if you can imagine, you know, if
+I'm looking at B, it will look at both C
+and F, and probably F is closer, so B is
+assigned to F and it is shown in red
+color.
+If you look at points like A, then C is
+closer than F, so A is assigned to C.
+So all these points get assigned to C.
+So this is your first iteration, okay.
+And once we have done that, then K-Mean
+readjust the seeds.
+So now it will say, well there are two
+groups, a green group and red group.
+So for each group find a new point which
+is the best representative of that group.
+So all the four green points you
+essentially find it,
+you know, another point which is closest
+to all four together.
+It's sort of like a center of these four,
+and that's how seeds are revised, okay?
+So essentially if you do that, then seeds
+will move.
+So again, try to imagine, try to imagine
+that, you know, the center
+of C, E, A, and D, is going to move in
+this direction, okay?
+And same with the center of B and F
+it will move here, so we revised the
+seeds, okay?
+At this point, you know, if these seed
+locations
+moved, then we have to repeat the two
+steps.
+So you try to reassign the points to
+closest seeds, okay?
+And in this point, you know, if you think
+about the new seeds, this green square and
+red square.
+Then at least for one point, the
+assignment changes and that point is C.
+And as you can, you can see, C is closer
+to the red square than the green square.
+So C's assignment changes.
+And C becomes, you know, red.
+And now these are the new groups.
+And once you have done that, then you
+reevaluate the seed and push it to the
+center.
+And very soon this process will converge
+and you will end
+up with two groups which is what we had
+started with, okay.
+So K-Means is a very popular algorithm.
+If you took again statistics machine
+learning
+course you, they probably taught you that.
+Now can we apply this to hot spot
+detection?
+So you remember the cancer in, in sorry,
+[UNKNOWN] death example 1854 in London.
+[UNKNOWN] Can we try K-Means to find those
+hot spots?
+And if you do that, then essentially you
+have to face one problem, okay?
+K-Means, even though it found natural
+groups, it never checked, you know,
+for the statistical variation, or natural
+variation and chance, okay?
+So here is the problem.
+So let's suppose.
+You know I es, you know try this K-Means
+on this, this data site.
+Which is a really complete spatial random
+right?
+So these points have been generated using
+a random process.
+Throwing darts on this white board, okay.
+In other words there is no significant hot
+spots here.
+But if you run K-Means with some K, it
+will still give you groups, okay.
+In other words I'm saying, you know, even
+if data is completely spatial random and
+there is no statistically significant,
+area which,
+where the density is much higher than
+outside.
+K-Means will still give you groups, okay?
+And that is not of interest in hot spot
+detection, okay.
+In hot spot detection, we want to say,
+well you may get one or two such groups.
+But they are essentially chance groups.
+They are not significant, okay?
+So it's, this data is complete spacial
+randomness, okay?
+Same thing, you know, if I did apply
+K-Means to
+data which has significant cluster, it
+will still give you something.
+And if you apply it to data which is
+actually declustered, it will still give
+you something, okay.
+So again, cut the story short, it's not
+checking, for chance events and and that's
+where
+some of the new methods come in, in public
+health a popular method is called SatScan.
+So let's briefly talk about what that is
+and how its behavior is, okay.
+Since, Sar, SatScan we essentially want to
+omit chance cluster, okay,
+so if you have some natural variation of
+disease in the area.
+Then there is no point declaring one
+county or one city to have very
+high density and start evacuating the city
+or having everybody immunized, and so on,
+okay.
+The costs are very high of error.
+So we don't want to just declare groups,
+but
+we want to check them against the
+statistical variation, okay.
+So here there are two ideas that are used
+to omit natural variation.
+One idea is called likelihood ratio, and
+other is significance, okay.
+So in terms of steps, you basically first,
+we start with a notion of zones.
+So for example we could say each county is
+an interesting zone.
+Or given points we can draw circles around
+those points and say those are interesting
+zones.
+Then step one is to find the cho, the zone
+which has highest likelihood ratio.
+Where likelihood ratio is defined as the
+ratio of two probabilities.
+You know, we basically look at two
+different hypothesis, let's actually bring
+that out.
+The first hypothesis says that points
+inside the zone have
+you know, complete spatial randomness
+okay, so that's the chance even.
+And then the second hypothesis says, no
+they are really clustered, okay.
+So we basically look at the probability of
+them being clustered, relative
+to probability of them being complete
+spacial randomness, and this is likelihood
+ratio.
+So essentially we go through all the zones
+and find the zone
+with highest likelihood of having very
+high density of disease or crime.
+And then, then we check that likelihood
+ratio.
+If this likelihood ratio is close to one,
+then we don't need to proceed further.
+Because then we are saying that even
+though there
+is some clustering, but it looks like
+chance clustering.
+All right?
+But if it is much higher, let's say it's
+ten or 20 or 30, then
+we go through another test, which is the,
+the probability or the confidence in this.
+So in order to do that, we basically
+generate many
+instances of complete spatial randomness
+in a Monte Carlo simulation.
+For each one, we try to see how high the
+likelihood ratio can
+be for any arbitrary zone of the kind that
+we are looking at.
+So if many different CSR can also provide
+you same
+likelihood ratio, then again we are going
+to reject this.
+We don't have to proceed, because you can
+say well, maybe it is still a chance even.
+But if they can't reach the likelihood
+ratio of our zone, then we
+say, well, it has passed two different
+tests and it is statistically significant.
+And you're really trying to reduce, you
+know, the
+chances of error because the error costs a
+lot, okay.
+So here are two quick example.
+If I gave complete spatial randomness to,
+to SatScan.
+You know, occasionally it may still find a
+small area.
+Like in this area, you see a lot of points
+together.
+So here, the likelihood ratio was, you
+know, much higher than one.
+But when we test the P value through the
+second step, that turned out to be very
+low.
+So in this case, only 0.128.
+See how that works?
+There is a 12.8% chance that this could
+have happened to you too.
+Just random activity and that's why we
+don't need to accept that.
+Whereas if you take another data set,
+where you
+have this very, very significant thing,
+where the second step
+also said it's only one chance of thousand
+that
+it could be random, and we will accept it,
+okay?
+So, so again, this area is growing, you
+know, the new directions
+here is to go beyond the basic ideas like
+circles and simple zones.
+So, people are looking at these patterns
+like
+a ring which is often in, interested
+environmental
+criminology here is the theory that the
+criminal
+you know, let's say they are a serial
+criminal.
+They usually don't commit crimes right
+next to their house.
+They go a little bit further, but usually
+because
+of the costs, transportation costs, they
+don't go too far.
+So they often give this doughnut hole ring
+pattern.
+And people are looking at ways to find
+those.
+Also in we are looking at other geography
+concepts like rivers, roads and so on.
+For example in urban areas often times the
+road
+accidents or pedestrian death, they are
+concentrated along the road.
+So it's more interesting to find these
+linear hot
+spots rather than the ellipse or the
+circular one.
+So these are some of the new trends in the
+area.
+So again, to sum up.
+You know, we basically looked at the hot
+spot pattern.
+We first reviewed CAMEN's clustering.
+And we showed that even though it's very
+popular in traditional data mining machine
+learning, it may reveal some natural
+groups,
+but it doesn't test for statistical
+significance.
+So even with complete spatial randomness,
+it can give you clusters, which are
+not that interesting to public health or,
+in, in, some of the domains.
+So because of that SatScan kinds of
+methods
+have brought in, which test for
+statistical significance
+and tries to reduce the chances of
+erroneously
+declaring a place to be hot spot, okay?
+So, we'll wrap up the topic here.
+Next video we'll come back, look at
+another pattern family.
+Thank you.
+[NOISE]
+

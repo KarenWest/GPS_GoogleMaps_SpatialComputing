@@ -1,0 +1,228 @@
+Hi folks.
+We're back with our last video
+in the cartography module.
+As we discussed earlier in the module,
+there's been a ton of innovation in
+cartography in the past ten to 15 years,
+much of it computing oriented.
+In this video, we're going to go
+over an area of innovation that I
+think you'll find particularly compelling,
+and that area is called spatialization.
+The basic motivation for spatialization
+is relatively straightforward, and
+I'll walk you through it here.
+So in this module we've looked at
+all sorts of different thematic and
+reference maps developed
+using all sorts of
+different interesting
+cartographic techniques.
+However these techniques are limited
+in one critical way, and
+that is that they only work with
+geographically referenced data.
+If data doesn't have
+geographic references,
+it's generally outside the reach
+of traditional cartography.
+As you can imagine, this began to get
+a little frustrating for cartographers and
+people in related fields like geography,
+and this is where spatialization comes in.
+There are two types of spatialization,
+implicit spatialization and
+explicit spatialization.
+And we'll begin with the implicit version,
+as that was the first type
+investigated by cartographers.
+Implicit spacialization began
+with people figuring out ways to
+represent very high dimensional
+data sets in two dimensional space.
+Now the classic application involves
+taking some corpus of documents.
+Say, for
+instance all Wikipedia articles or, for
+instance, all the documents
+on your hard drive.
+And representing these documents
+as high dimensional bags of words.
+Now if that doesn't make sense to you,
+don't worry.
+You really don't need to
+understand this step to
+understand implicit
+spacialization overall.
+Once we have these high dimensional
+representations of our documents,
+we can feed them into one of several
+spacialization algorithms, for
+instance, multi-dimensional scaling,
+or a Kohonen self-organizing maps.
+These algorithms then spit out
+a visualization of your document corpus in
+two dimensional space.
+Documents that are more similar, and
+this is critical, are closer together, and
+documents that are less
+similar are further apart.
+Now that last sentence should
+sound familiar, right?
+Tobler's first law of geography, which Dr.
+Shekar covered, states in part that
+at least on the surface of the Earth,
+near things are more related
+than distant things.
+Tobler's first law applies to real
+geographic space, but what we,
+what we've done using these spatialization
+algorithms, is create an implicit
+information space, whose properties
+are similar to real geographic space.
+Now since these implicit spaces
+have geography-like properties,
+cartographers figured out that
+many of the same techniques we
+have used in cartography,
+work well in these spaces.
+So for instance in a simple application
+of cartographic spacialization,
+we can actually carve up
+the space into regions and
+make a choropleth map to show
+the number of documents in each region.
+Cartographers have of course done
+much more complex things with
+implicit spatialization.
+One of my favorite cartographic
+implicit spatialization applications is
+this one here.
+In this spatialization,
+doctors Andrea Skupin and
+Sarah Fabrikant, visualized all
+the abstracts from the annual meeting of
+the Association of American Geographers,
+using a self-organizing map.
+Now you can see a large variety of
+cartographic approaches being used,
+including an isorhythmic layer,
+which is similar to choropleth,
+except it uses regions of similar
+attribute values as its spatial units,
+instead of things like counties,
+states, and so on.
+This visualization really gives
+us a great understanding of
+the landscape of geography.
+At least at the time it was generated.
+And you can see here that there
+are a number of key words associated with
+physical geography over here.
+Surface temperature, precipitation,
+these type of things.
+Some geography of gender and
+related topics over here, and
+some urban geography over here.
+So very recently, and
+this is some late breaking news here.
+An implicit spatialization of Reddit
+communities was featured on Slate and
+made some viral rounds
+throughout social media.
+Hopefully you saw this visualization.
+Now in this spatialization, the 200
+most popular topics on Reddit are shown
+with the size of each region corresponding
+to the popularity of the topic.
+A choropleth approach likely
+an unclassed choropleth approach,
+is used to visualize the community
+cohesiveness for each topic.
+Okay, so that's implicit spatialization.
+Let's talk briefly about
+explicit spatialization now.
+And to get that started let's
+provide a little bit more context.
+With implicit specialization,
+we were dealing with data-driven
+implicit reference systems.
+Effectively, these reference systems were
+made up by the spetialization algorithm,
+to make more similar
+things closer together.
+That's how these spaces were arranged.
+So as such, these reference systems
+really have zero value in the real world,
+outside of the specific visualization
+in which they are used.
+For instance this geography
+visualization here isn't used for
+anything, really can't be used for
+anything but visualizing geography.
+Explicit spatialization,
+on the other hand is concerned with
+using cartographic approaches and
+other methods in spacial computing on real
+life non-geographic reference systems.
+For example as you can see here,
+the periodic table.
+Now my lab has done a lot
+of work in this space, and
+we actually define this term, but we'll
+talk about that a bit in the next module.
+The examples I want to go over in this
+module were made by Dr. Kirk Goldsberry.
+Avuh, geography professor
+at Michigan State,
+who's currently a visiting
+professor at Harvard.
+Kirk also has a rather
+unique third position,
+which he acquired solely through his
+work in explicit spatialization, and
+that is that he is a contributor,
+interestingly,
+to ESPN, which is the largest sports
+cable channel in the United States.
+So for instance here is an explicit
+spatialization map Kirk did,
+that shows the completion
+percentage of NFL quarterbacks,
+through various parts
+of the football field.
+With the football field here being
+the explicit reference system
+under consideration.
+Now more red in this map indicates
+higher completion rates, and
+you can see that as you might expect,
+the closer one gets to the quarterback,
+the higher the completion rate.
+And in general passes that
+are closer to the center of
+the field are completed more often
+than passes towards the sideline.
+And here's another one of Kirk's
+explicit spatializations,
+this time looking at basketball
+which he generally focuses on.
+Now in this map we're looking at
+Dirk Nowitzki's shooting percentage, but
+not on a, a football field obviously.
+This time we're looking at a basketball
+court explicit reference system.
+Okay, so hopefully this video gave you an
+idea of how cartography is being applied
+to non-geographic data through the use of
+explicit and implicit spatialization, and
+more generally, hopefully this video
+gave you a quick idea of some of
+the computing-oriented innovation
+going on now in cartography.
+And with that, we've actually
+wrapped up the cartography module.
+I hope you've enjoyed
+it as much as I have.
+And I'll see you in the next module.
+

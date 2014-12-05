@@ -1,0 +1,712 @@
+Howdy, folks.
+Welcome back to the Positioning Module.
+Today we're going to be talking
+about location fields and
+user profiles and
+their role in content-based positioning.
+Location fields positioning is
+a commonly used approach for
+finding the location
+of a user of a system.
+And like other content based
+positioning approaches,
+location field positioning is typically
+employed when no GPS, Wi-Fi, or
+cellular positioning
+information is available.
+This can happen if you're not
+the owner of the system, for in,
+that system that you're seeking to study,
+or for instance, to build off.
+For instance, when you're a, researcher or
+say, any analyst trying
+to locate a Twitter user.
+And this can also occur if the user has
+denied access to her location services for
+your app on her mobile device as we
+saw in Module five as well as for
+a number of other reasons.
+Location field positioning begins of
+course with location fields most of
+you are probably quite
+familiar with location fields.
+These fields exist in the vast
+majority of online communities.
+So, for example,
+here we have the text I put in to
+our MOOC's Twitter account location field,
+here in the account's profile.
+Here is me entering text in to
+my location field on Facebook.
+And then here's how that text shows
+up on my, user profile on Facebook.
+Here's a, a Pinterest user profile
+location field and so on and so forth.
+Basically all online communities
+have one of these location fields.
+Sometimes it's a drop-down menu,
+sometimes there are more than one
+location fields, and so on and
+so forth, but some semblance of
+a location field is nearly always there.
+As a result, location fields can be
+a valuable way to get a position for
+the billions of members of online
+communities that use some semblance of
+a location field.
+Now, in this video we're going to,
+first learn how to use location
+field to position users.
+Then we're going to go
+over the advantages and
+disadvantages of location
+field positioning.
+And I assure you,
+this, this, section in particular is
+going to be a very entertaining topic.
+And finally, we're going to close our
+video and actually our discussion of
+positioning in general, by connecting what
+we have learned about location fields.
+To frame a brief overview of what are
+called location inference attacks as well
+as a brief discussion of privacy and
+location of our system.
+Okay.
+So let's talk about the how.
+Now, just like was
+the case with geoparsing,
+location field positioning
+requires taking a toponym which is
+again the fancy way to say place name and
+turning this
+toponym into a machine readable
+representation of the reference location.
+So for example this would involve taking
+the toponym Minneapolis, Minnesota.
+And turning it into, for
+instance, a latitude and
+longitude coordinate representation
+of Minneapolis, as you can see here.
+Now this process is known as geocoding and
+can be accomplished through
+something called a geo-coder, like for
+instance Google Geocoding API right here.
+There are lots of other
+web-based geocoding APIs, for
+instance Microsoft has one through
+its Bing API So does MapQuest.
+There's the MapQuest geocoding API,
+as well as Yahoo Yahoo BOSS Geo Services
+that includes a geocoding API as well.
+Now, in general, the way these
+geocoding APIs work is you, you pass in
+a string that contains a topineme, say,
+for instance, Minneapolis, Minnesota.
+And then you get back a result with lots
+of information, including a latitude and
+longitude coordinate for the toponym.
+The string you type in doesn't have
+to be just the name of the city.
+It can also be a state a country,
+or even a street address.
+Now the latitude/longitude coordinate
+returned by the Geocoder can, in some
+cases, be used as an effective position
+for a user for a number of applications
+ranging from the simple mapping of users
+to the geographic sentiment analysis of
+users content, that we saw in
+module five and so on and so forth.
+Well this geocoating based location
+field positioning pipeline is pretty
+straight forward at a high level,
+I'm hopeful that our discussion of
+the pipeline has raised
+a few questions for you.
+So for instance, I just mentioned that
+the lat long coordinates returned by
+geocoding can be used in some cases but
+not all.
+What did I mean by that?
+Also, if you watch the geoparsing
+video which was the last video, you
+should also probably, probably be thinking
+about the issues of geo/geo ambiguity.
+What happens when a user inputs into
+her location field a toponym that
+refers to more than one place?
+We're going to address these and
+a few other questions in
+the second part of the video.
+And for the second part of the video,
+we're going to use the pros and
+cons framework for module five.
+I'm going to switch things up a bit and
+start out with a con and so
+let's talk about the first con
+of location field positioning.
+Which is really pretty simple,
+it's that many people just don't
+fill out the location fields
+in their user profiles.
+So for instance my colleague, Doctor who's
+the leader of Wiki brain development.
+Those of you in the technical track
+know all about Wiki brain at this point.
+Doctor Sen hasn't filled out
+his Twitter location field and
+neither has Colin Kaepernick, the
+quarterback for the San Fransisco 49er's.
+And I just noticed that even my fiance
+hasn't filled out her location field,
+even though she's the fiance of
+a spatial computing professor.
+I also noticed that many of the students
+in this MOOC who were following
+the MOOC's Twitter account haven't filled
+out their location felds, fields as well.
+Now overall, in a study in 2011,
+my colleagues and I found that 18%
+of Twitter users had nothing at all
+entered in to their location fields.
+Now there are lots of reasons for
+not filling out the location field,
+ranging from privacy concerns to
+simply forgetting to fill it out.
+But the practical, the practical effect
+for those of us who build spacial
+computing systems and do spacial
+computing research is the same, right?
+When there's no location field entry,
+there's nothing to put in the geocoder,
+which means there's no way to
+do location field positioning.
+Okay, time for the second con
+of location field positioning.
+Even when people do input information,
+they often don't input this information at
+a local enough scale for
+many applications.
+So for instance Dr. Vitak,
+who we discussed earlier in the module,
+has only input the state of Maryland
+in her Twitter location field.
+Now you folks do this as well,
+for instance, a Kiri,
+a follower of the MOOC Twitter account has
+in put the exact same thing as Dr. Vitak.
+Kiri and Dr.
+Vitak are definitely not alone in
+disclosing locations at a coarse scale.
+In the same 2011 study, my colleagues and
+I found that while the majority of
+Twitter location field entries were at
+the city scale, a non trivial minority of
+these entries were at a coarser scale.
+And this includes the many Twitter
+users who, like Dr. Vitak and Dr.
+and Kiri,
+have input a state level location.
+For many applications, a state level
+position is simply insufficient and
+this can render location,
+field based positioning much less useful.
+Another thing to look out for
+in this context is something
+called the geoweb scale problem.
+And to understand
+the geoweb scale problem,
+let's return to the slide where we
+were talking about how geocoders work.
+Now the information most developers
+pay attention to when they use
+these geocoders is just the latitude and
+longitude coordinate for the toponym they
+generally ignore the other information.
+Now, if you're entering
+a street address like for
+instance 200 Union St. SE, Minneapolis,
+MN, this happens to be the address of
+the Computer Science Department,
+here at the University of Minnesota.
+This is in general not a problem right?
+A latitude and longitude coordinate
+is a decent representation for
+most applications of a street address.
+The same is generally true of city
+names like Minneapolis, Minnesota for
+many applications.
+However, once you get to the state
+level on courser toponym a latitude and
+longitude coordinate becomes less and
+less useful.
+So for instance this latitude and
+longitude coordinate which is for
+the toponym Alaska is the center
+of the bounding box of Alaska.
+Now, the real danger occurs here,
+when developers carelessly use
+these course latitude and longitude
+coordinate representations, thinking that
+they're much more local representations.
+And they use these as inputs
+into a geographic analysis or
+application pipeline, and let me tell you,
+this happens all the time.
+So for instance to give you a very simple
+example let's say I'm building a spatial
+computing system, or doing some sort of
+spatial computing in a Linux project and
+I want to know how far away
+all uses of another system,
+say we're building our system,
+we're doing our analysis on this system.
+How far way the users of this
+system are from Anchorage, Alaska.
+And to do this I carelessly use a geocoder
+base location field positioning process.
+If I did this, anyone who enters Alaska
+into their, into their location field, and
+many users do, for these users
+I would mistakenly believe that
+these users are 400 kilometers away from
+Anchorage which is of course incorrect,
+because Anchorage is inside Alaska.
+And actually the distance
+in this case is undefined.
+More generally, the geoweb scale problem
+can be defined to occur when latitude and
+longitude coordinates,
+which are really the foundation of spatial
+representations on the geoweb,
+and when latitude and
+longitude coordinates are not
+appropriate for the desired scale of
+a given spatial computing research project
+or a spacial computing application.
+Now this term geoweb is kind of a catch
+all in the geography and geographing
+information science communities for topics
+like VGI, geo-tagging and web mapping.
+But these days I'm generally tending
+away from this term because we
+have these specific terms like VGI.
+Although we do still have
+the geoweb scale problem here.
+Fortunately, most geocoders will
+provide you with easy ways to
+determine if the lat long return is going
+to present geoweb scale problems for
+applications that
+are more local in nature.
+Now so for instance the Google geocoding
+API here provides two hints of
+this in the object it returns
+to the toponym Alaska.
+You can see it's telling us that the type
+is an administrative area, rather than for
+instance an address.
+And the location type part
+here is approximate, right?
+That's a big flag.
+So from a technical perspective, handling
+the geoweb scale problem really isn't
+that hard at all thanks in, thanks to
+these hints that geocoders give you.
+And in fact I would say from
+a technical perspective,
+handling a geoweb scale problem
+is actually really easy.
+The key is recognizing that many of the
+locations you encounter in location field
+positioning and quite frankly in other
+content based positioning approaches as
+well are going to be loc,
+excuse me, multi-scalar, right?
+They're going to be at the city level,
+they're going,
+going to be at the state level.
+And so you really can't blindly use
+the lat long return by geocoders,
+that's going to be highly problematic for
+many applications.
+Let's move on to the third disadvantage
+of location field positioning.
+And that is that many people enter
+non-geographic information in
+to their location fields.
+Now on our study of the Twitter location
+field, we found that about 16% of
+Twitter location field entries
+contained non-goegraphic information.
+And what do I mean by non
+geographic information?
+Well, I mean things like this.
+Loserville with God Middle-Earth,
+and then a a popular
+favorite when I present this research
+back in 2011, Justin Bieber's heart.
+And once again, these are the values that
+Twitter users are entering into their
+location fields.
+And these are the values that are showing
+up publicly in their user profiles.
+More generally we saw a number of
+categories in non-geographic information
+and these are really fun.
+Some of the more common categories
+were popular cultural references.
+So we already saw Justin Bieber's Heart.
+There were a lot of references to Justin
+Bieber's Heart in the location field in
+fact I think around .5% of location field
+entries that we randomly sampled had
+some reference to Justin Bieber at that
+time and when we did this study in 2010,
+so we have BieberTown, PLZJustinFollowme,
+this is Twitter's Global rights.
+We also see, JaeJoongs heart and
+we also see a personal favorite of
+mine Schrute Farms, I'm a fan of
+The Office, so that one got me chuckling.
+We also saw a number of
+references to privacy.
+Like for
+instance stalk Stalker kgb answers and for
+me to know n u to find out.
+And then lastly, we saw a number of
+negative emotions towards people's current
+locations, so they say things like,
+preferably anywhere but
+here, a hole in the ground swirling
+in the abyss, and so on and so forth.
+I'm from a small town, so
+I can imagine when I was in high school,
+I might have written something like that.
+But now I,
+I realize how lovely my small town is.
+So, there are a number of
+hazards associated with
+non-geographing information
+in location fields.
+And probably the most important of
+these hazards is that geocoders can be
+much worse at geo,
+non-geo ambiguity than geo parsers.
+So for instance,
+at the time we ran our study in 2010,
+Yahoo's geocoder returned at least
+one possible lat line coordinate for
+over 80% of the non-geographic location.
+Now geocoders have got, have gotten
+a quite a bit better since then, but it's
+important to keep an eye on this issue
+when doing location field positioning,
+just before I came in here to record I was
+messing around with Google's geocoder.
+It wasn't fooled too often by these
+non geographic locations, but
+it was fooled a few times.
+Now, broadening or discussion here a bit,
+the inability of geocoders to handle
+geo/non geo and geo/geo ambiguity
+is the final weakness of location field
+positioning that I'm going to cover today.
+Now the reason geocoders struggle with
+ambiguity is that unlike geoparsers,
+geocarders don't have the rich
+textual context that we use to
+disambiguate cases of
+ambiguity like Washington.
+So if someone just entered the topic
+in Washington in their location field,
+its much more difficult for
+a geocoder to address both geo/geo
+ambiguity and geo/non geo ambiguity.
+And this basically means, right, we don't
+know whether this Washington refers to
+the, Washington, to Washington State,
+to Washington D.C., to the University of
+Washington or even to George Washington if
+the person is a history buff or something.
+So that's it for the cons.
+Given how lopsided this screen is you may
+be wondering why on earth anyone would
+want to use Location Field Positioning.
+Well, the first pro should answer
+your question pretty directly.
+Location field positioning
+works when other options don't.
+So, in other words, location field
+positioning allows developers and
+researchers to get a position for
+users in cases where
+other positioning techniques are much
+harder to use or are impossible to use.
+Now, this is such an important point
+that I'm actually going to make that
+font bigger so that we can visually
+counteract it so that this,
+this pro can visually counteract the the
+cons as much as it does in real life.
+Now we touched on why location
+field positioning has this very
+important advantage at
+the beginning of this lecture.
+But as a quick reminder let's say you
+want to geotag tweets for the millions of
+Twitter accounts that don't use geotagging
+and you want to do this to include them in
+some sort of spatial computing analysis or
+spatial computing application.
+Or maybe let's say you want to do
+the same thing Instagram accounts that
+don't geotag and so on and so forth.
+Now in these cases pretty much are only
+option besides an inference attack which
+is something we'll talk about in a second.
+Your only option in these cases is to
+use the information from location field.
+There's also another lesser known
+advantage of location field
+positioning and that is that location
+fields contain information that is
+at a different spatiotemporal resolution,
+than most other position,
+position information we
+encounter in spatial computing.
+Now in particular, while GPS and Wi-Fi and
+cellular positioning give you up to the
+second position information, and geotags
+on social media give position information
+at the exact time content was produced,
+location field information can be an easy
+way to determine where someone spends most
+of their time or where they live, rather
+than where they are at a specific moment.
+And to understand what I mean let's say
+we want to determine the home county of
+the owner of this Twitter account @bhecht.
+That's obviously my Twitter account and my
+home county happens to be Hennepin County.
+We'll see that more in a second here.
+This type of thing determining the home
+counties of users is done frequently in
+practice, for instance, in public
+health applications, market research,
+academic research and so on and so forth.
+And to be very clear here we don't want to
+know where I am at, at any given time for
+instance at the time I tweet.
+We want to know where I live.
+Now let's say we observe five
+fictionalized tweets from
+@bhecht these two from Hennepin County
+here where I actually live.
+So, Go Gophers!
+Beat the Badgers!
+And, doing some recording for
+@Spatial CompMOOC, very meta there.
+And let's say we also observe this tweet,
+at dentist appointment #toothfail.
+This is at Ramsey county, right next
+store, where my dentist, actually,
+happens to be.
+And we also observe this tweet, OMG!
+Just drove on a lake it's it's cold.
+Now I did actually happen to
+drive on a lake this, pas,
+past winter in Bayfield County up there.
+It was, as someone who was born and
+raised in California and
+saw snow all of three times before I
+first moved to Minnesota this was one
+of the coolest things I have ever done.
+But I digress.
+Let's return to our example here and
+let's look at our fifth fictional tweet,
+and this one.
+#ah, headed to Amsterdam.
+Ha headed to #Amsterdam, excuse me.
+It's from Wayne County where
+the Detroit airport happens to be.
+So given all of these tweets from
+all of these different counties,
+in which county does the owner
+of @Bhecht actually live?
+Well there's all sorts
+of data driven ways and
+fancy ways to infer home counties,
+but there's also a much easier way.
+And that is just to use the entry
+in the location field, right?
+Of course to do this you have to
+be sure that the disadvantages I
+talked about earlier,
+don't apply to your project or that you've
+already taken advantage of them, but for
+many applications for home locations.
+Just using the location field
+is definitely sufficient.
+Okay, so the last subject we're
+going to cover in this video, and
+the last subject we're going to cover
+actually in this entire module.
+Is we're going to briefly talk
+about location inference attacks.
+And to understand location
+inference attacks,
+lets consider a hypothetical
+Twitter account here, @geoprivacy.
+And this belongs to a person who is
+very privacy conscious with respect to
+her position information and
+other personal data.
+You can see that this
+person has participated in
+the surprisingly common practice
+of using the location field to
+express her privacy value with
+regard to position information.
+This person of course hasn't
+geo tagged any tweets at all.
+And let's pause here for
+a second and think about whether or
+not @privacy has succeeded at
+protecting her position information.
+From say marketers who want to figure
+out where she is or for instance in
+other cases government agencies that
+might want to do the same thing.
+Now as you might have guessed here
+the answer is definitely not.
+@geoprivacy has revealed
+tons of implicit and
+explicit position information,
+in the content of her tweets themselves.
+Now, as a result
+@geoprivacy can be easily,
+easily locating using actually
+relatively straightforward algorithms.
+To understand this let's walk through
+a few examples of what I mean by
+explicit and implicit information starting
+with this text here local wild rice.
+Wild rice is more common in
+some regions than in others.
+And one region in which wild rice is
+quite common is here in Minnesota.
+This information is substantiated by
+the fact that, @geoprivacy here has
+mentioned Lunds which happens to be
+a local, supermarket, to the Twin Cities.
+And there's also a Snickers-on-a-stick
+at the fair and a youbetcha.
+Snickers-on-a-stick are a,
+it's a common food people eat here at
+the Minnesota State Fair
+at the end of the summer.
+And then you betcha is a common
+Minnesotan expression.
+Gophers, that's a that's
+our team mascot right.
+So go gophers.
+this, as you'll prolly see is
+happily they won last night.
+And then cheese curds are a common
+food here in Minnesota.
+Some, so reading this as either a human or
+as an algorithm,
+it's pretty easy to tell that this
+person is here in the Twin Cities.
+Now, because of all this explicit and
+implicit geographying information,
+a really straightforward
+algorithm is related to and
+actually including geo parsing, can
+easily infer a position for, for geo, for
+geo privacy, as I mentioning earlier at
+least low spacial temporo resolution.
+So some colleagues and
+I did some of the first work using
+algorithms for this type of application.
+And we were able to predict the location
+of Twitter users at the country level
+using a subset of countries at a pretty
+high accuracy, at,at a 89% accuracy.
+At the state level,
+we were less accurate but
+still still significantly more
+accurate than a, than random guessing.
+We got Twitter users in the United States.
+We go the correct state 30% of the time.
+Now since we did this work a lot
+of folks have followed up on it.
+And these accuracy levels
+have really been blown out of
+the water by other researchers.
+And one technique they've used which
+has been particularly powerful is,
+is to take advantage of
+social network information.
+So you can see here that @geoprivacy
+is following the current which is a,
+Twin Cities radio station.
+And the Minnesota State Fair,
+which is the Twitter account for
+the, state fair I was
+talking about a second ago.
+Using this information, right,
+just, just intuitively speaking.
+And algorithms can do this very easily.
+It's pretty straightforward
+to determine right here,
+right, that @geoprivacy is
+local here to the Twin Cities.
+And this, of course, can be combined with
+the content-oriented approaches looking at
+the tweets, and you get a pretty strong
+signal @geoprivacy is a, a Twin Cities
+local, even though she doesn't geo-tag her
+tweets, and she hasn't entered anything.
+Any sort of geographing information
+into her location field.
+So the fact that your location
+can be easily inferred even if
+you're as privacy
+conscious as @geoprivacy.
+This is a major concern and when that
+is occurring beyond spatial computing,
+beyond computer science, beyond geography.
+It's one that's occurring
+at a societal level.
+Many people consider the specific of their
+location extremely sensitive personal
+information I'm one of these people.
+And as it stands, thanks to both signal
+based and content based positioning.
+This information is often in
+the hands of numerous companies and
+institutions, a many of which that,
+many of which actually haven't directly
+interacted with the person about whom
+they have collected position information.
+Location privacy is a major topic and
+outside the scope of this particular MOOC.
+But if you're interested I highly
+recommend that you watch this speech by
+Al Franken, who's one of the two
+senators from the state of Minnesota.
+It's a powerful speech and actually one
+that very elegantly addresses the need for
+regulation or other solutions to
+the invasion of location privacy.
+That is the downside of the many
+positioning technologies we've
+covered in this video.
+Okay, that is it for this video I
+hope you've enjoyed learning about
+positioning and
+I'll see you in the next module.
+

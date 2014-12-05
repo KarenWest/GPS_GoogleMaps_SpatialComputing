@@ -1,0 +1,1181 @@
+Welcome back to the VGI module.
+In this video, we're going to cover,
+we're going to cover two of our learning
+objectives understanding
+the sociotechnical systems behind BGI, and
+being able to evaluate the pros and
+cons of using, using VGI for
+a given problem context.
+What we're going to do through the video,
+is walk through a series of pros and
+cons, and I'll explain the sociotechnical
+mechanisms behind many of the pros and
+the cons.
+But first,
+what on Earth am I talking about,
+when I use this term, sociotechnical?
+Unfortunately, this isn't going to be
+a lecture about the borg or a terminator,
+although I'm happy to discuss these topics
+with you all in the discussion forum,
+I'm a fan of both of these movies.
+Instead, within computer science,
+the term,
+socio-technical, is often used
+to refer to computing systems,
+in which there are two mutually dependent,
+and equally important components.
+The first component is people
+interacting with each other,
+and the second component is technology
+mediating, or supporting that interaction.
+Many of the hottest websites and
+apps these days, like Facebook and
+Twitter are indeed sociotechnical systems.
+So, for instance, Facebook has hundreds of
+really smart computer scientists, working
+on cool algorithms that serve us the most
+interesting content in our news feeds, and
+help us easily search
+our friend's content.
+But without people signing up and actually
+interacting wi, with each other on
+Facebook, Facebook would be basically
+worthless, it is a socio-technical system.
+Most platforms on which people
+create VGI are indeed like Facebook,
+like Twitter socio-technical systems.
+This is the case for VGI produ,
+peer production, VGI excuse me
+like Wikipedia and OpenStreetMap, and for
+social media VGI like Twitter and Flickr.
+And speaking of which, let's talk
+about the first major pro of VGI, and
+that is that VGI occurs at a truly massive
+scale, Many VGI datasets can really,
+justifiably be called, big data.
+So for instance,
+as of earlier this year OpenStreetMap
+had over 3.8 billion GPS points.
+Foursquare had over 5 billion check ins.
+Twitter has over a million
+geo-tagged tweets a day, and
+flickr just released a data set of
+49 million geo-tagged flickr photos.
+Now comparing VGI to traditional data
+sources is easiest with Wikipedia.
+Now if printed, the English Wikipedia
+would fill about 2000 volumes of
+Encyclopedia Britannica, which in it's
+final printed version had only 32 volumes.
+And, since about 20% of the English
+Wikipedia is explicitly geotagged,
+20% of English Wikipedia articles, have
+these latitude and longitude coordinates.
+This means that the English Wikipedia
+has far more geotagged content,
+than the Encyclopedia Britannica
+has content overall.
+Now clearly one major
+benefit of the VGIs scale.
+In examining this benefit from
+a socio-technical perspective,
+two themes emerge One is technical and
+one is social.
+Now from a technical perspective, the
+massive scale of VGI is enabled first and
+foremost by the democratization of
+the means of geographic information
+production and dissemination.
+And this roughly corresponds to
+the enabling technologies we discussed in
+the first video in the module.
+Primarily, the fact,
+the fact that many people now have
+advanced GPS devices in their pockets, and
+can easily publish Geotag information,
+that can be read by the entire world.
+Now the same time,
+there is indeed a strong social component.
+Namely, people actually have to
+use a specific VGI platform, for
+there to be a lot of
+VGI from that platform.
+And there are many examples of VGI
+platforms that this didn't occur for
+right that these VGI
+platforms never took off.
+So for example, there's this
+Wikipedia-like site, or a Wiki.
+Which is dedicated exclusively
+to New York Topics, and
+has only received three edits in the past
+30 days, and has only 175 pages overall.
+Now in fact, although there
+are important exceptions like for
+instance the Star Wars Wiki,
+called Wookiepedia, which is a great name.
+Most wikis on the popular wiki hosting
+platform wikia are largely failures.
+This is true even though they
+are based on the roughly the same wiki
+software as Wikipedia.
+So in other words,
+they have nearly identical technology,
+but they have a hugely different outcome.
+This is the power of social,
+in the success of a VGI system.
+Now the grow, growing graveyard here
+of failed and mostly failed social
+network companies, provide analogies
+on the social media VGI side of things.
+Many of these sites would be
+providers of large datasets and
+view tag content,
+if they still were prominent today.
+Now similar to the situation
+with the New York Wiki and
+Wikipedia, these websites had many of
+the same technological features as
+successful competitors like Facebook.
+But people just stopped
+interacting on these platforms.
+While the technological differences
+probably played at least some
+small role in these sites' decline, there
+was certainly a social factor as well.
+Now understanding the success and
+the failure of online
+communities including those that produce
+social media and peer production BGI.
+This is a major topic of study in
+the social computing research community,
+which is my other main research
+area besides Spatial Computing.
+You know, great research on resource,
+excuse me, on online communities written
+for our general audience,
+is building successful online communities,
+a book project led by two social commuting
+all-stars, Dr. Bob Kraut and Dr.
+Paul Resnick.
+Now in this book Dr.
+Resnick and Kraut, and
+their colleagues, write that the famous
+line from the movie Field of Dreams,
+if you build it they will come, does not
+at all apply for online communities.
+Instead they write that a new online
+community, say for instance a social
+network that supports geo-tagging, needs
+to overcome three important challenges.
+The first of these challenges is
+carving out a useful niche, or
+making sure that what your community
+is going to do, is unique and valuable.
+So for instance back in the year 2000,
+there was no free online encyclopedia so
+Wikipedia was created,
+it had a unique and valuable niche.
+The second challenge is in the words
+of Doctor Kraut and Doctor Resnick.
+Defending your niche in the ecology
+of competing communities, and
+alternative ways that potential
+members can spend their time.
+And finally, the last challenge, and
+this is a really big one, is making sure
+you can get a critical mass of users.
+Any community that fails to address these
+challenges, will likely not succeed and
+there are many examples of this occurring,
+for
+instance, the New York wiki on Wikia,
+Friendster, and Myspace.
+So what are the implications
+of this research,
+into the social side of online
+communities for VGA data sets.
+Well, it means that there are a number
+of very large scale VGA data sets,
+these were the successful communities.
+And there are lots and lots and
+lots of very, very small VGA data sets,
+these are the failed communities.
+And as a consumer of VGI this probably
+won't be a big problem for you.
+You can simply take advantage of
+the really unprecedented amount of
+geographically referenced content,
+from prolific VGI data sources,
+like Wikipedia and Twitter.
+However if you work in spatial computing
+long enough you might find that you
+want to gather a large amount
+of data about some topic you
+can't study with existing VGI data sets.
+What the research of Dr.
+Kraut and Dr. Resnick and
+their many colleagues tells us, is that
+trying to develop your own special VGI
+community to gather this data, must be
+done with great care and preparation.
+And unfortunately, is unlikely to
+succeed without extensive effort,
+in the alignment of forces that
+may be out of your control.
+So basically you'll need
+a little bit of good luck.
+So, to learn how to increase
+your chances of success,
+there are a number of strategies one
+can employ but those are best left for
+a social computing course rather
+than a spatial computing course.
+For those of you who are interested,
+you can check out Dr. Resnick and Dr.
+Kraut's book.
+So let's add a quick qualifier here to our
+large scale pro, and that is that it's
+only large when the community succeeds and
+this is only occurs in special cases.
+These special cases are very important,
+like Twitter and
+Wikipedia but there are actually,
+if you look at the whole ecology of VGI
+communities they're actually quite rare.
+Okay, let's move on to our second
+pro here and that is accessibility.
+VGI tends to be quite
+accessible to researchers and
+developers, and
+this is a pretty awesome advantage of VGI.
+So for instance both major sources of
+peer production VGI, Open Street Map and
+Wikipedia, allow anyone to download
+full database dumps of their data, and
+both data sets have licenses that
+permit a wide range of uses.
+Premade Open Street Map extracts for the
+entire world, or just parts of the world
+can be downloaded from Open Street Map's
+website, or a number of third party
+partner sites For instance Gail Fabric.de,
+that's generally the most popular one.
+Now it's even easier to obtain and
+use Wikipedia data.
+My my lab working with Dr.
+who's a professor at Macalester College,
+we recently released out
+Wiki Brain software.
+We're pretty excited about Wiki Brain
+with Wiki Brain anyone with Java
+programming skills can easily download and
+leverage the information in Wikipedia,
+including its geo tags you can imagine
+that I made sure that was included.
+We've also included implementations of
+some of the most well known artificial
+intelligence Wikipedia based
+algorithms that have been published in
+the last few years.
+Those of you in the technical track
+will actually get a chance to use Wiki,
+WikiBrain for yourself in,
+in an assignment at the end of the module.
+Now WikiBrain is far from the only
+way to get and use Wikipedia data.
+There are Wikipedia libraries in
+other programming languages as well.
+And you can download, for
+instance, here Wikipedia data
+straight from Wikipedia's website.
+Wikipedia also has an API,
+which we'll talk,
+which we'll be talking
+about just in a bit here.
+So social media VGI tends to also be
+very accessible, although less so
+than Wikipedia and Open Street Map.
+So nearly all online communities in
+which people produce social media BGI,
+provide researchers and
+developers access to the community's VGI
+through something called an application
+programming interface or
+if you talk to programmers
+they'll call it an API.
+Now broadly speaking, in this context APIs
+allow any programmer to build a system,
+that can interact with another system,
+in this case, for
+instance a website that has VGI data.
+So for example, as I noted earlier,
+I used the Twitter API to download
+tweets that mention the term gopher, so
+that I could make the map I
+showed you in the last video.
+Now unfortunately website APIs tend to
+come with a very robust set of rules and
+limitations, and
+social media VGI APIs are no exception.
+So for instance, the Twitter API one
+can use to download public tweets,
+as they're posted is called
+the Twitter Streaming API.
+The streaming API only provides
+a very small sample of all tweets.
+So to get all tweets, you really have
+to shell out big bucks to Twitter, or
+a third party data provider.
+However, actually, for those of us in VGI,
+there's some really good news to report.
+Recent research by Morstatter and
+colleagues,
+found out something pretty cool about API
+access to geo tag Tweets, specifically.
+It appears that at least as of a year or
+two ago, the Twitter Streaming API
+includes 90% of all geotag Tweets.
+So while the Streaming API will only
+provide you with a tiny percentage of
+overall Tweets for a known,
+unknown reason when it
+comes to VGI the Twitter API includes
+nearly everything posted by Twitter users.
+So this is very good news for
+those of us in spatial computing.
+Now another lim, another really common
+limitation of APIs in the VGI space is
+that the data you receive using the API,
+is not yours to do what you
+want with there are some very common and
+very strict limitations on usage.
+So for instance, I actually can't
+post the data about gophers that I
+downloaded on the Internet for
+you all to access and use for
+instance in an assignment, because I'll
+be in big trouble with Twitter if I do.
+Now finally, APIs also tend to come
+with something known as rate limits.
+So for instance Instagram in many cases
+will only allow programmers to ask for
+information about 5,000 photos per hour.
+Now while it seems like a lot, why would
+you ever need 5,000 photos per hour.
+This actually runs out pretty quickly,
+if you want to build an application about
+a popular area, or
+analyze a whole bunch of instagram photos.
+All of these restrictions rate limits,
+small samples of data,
+usage limitations, these are all
+put in for a number of reasons.
+Profit for the social media VGI company,
+privacy, making sure people don't overload
+the social media VGI company servers.
+But the important thing to remember,
+is that even though you can get lots and
+lots of VGI data through APIs
+access to that data is going to
+be restricted in some way.
+So if you have a project that violates
+some of those restrictions you need to
+be aware of that.
+Okay let's move on to the final
+VGI advantage I'm going to
+be talking about today.
+And this is the fact that VGI
+is an unprecedented source of
+platial information.
+Now to understand this advantage,
+it's important to first understand
+the concepts of Space and
+Place and their relationship.
+Now to people who are not
+in spatial computing and
+related fields like geography,
+these terms mean roughly the same thing.
+But to those of us in these fields,
+they describe two fundamentally
+different concepts.
+These two concepts are important
+ideas that can help us organize and
+interpret, qualitative and
+quantitative geographic information.
+Space and place have been researched and
+discussed and discussed over again, and
+over and over again and analyzed and
+so on and so forth for decades.
+And it's really quite difficult
+to summarize these concepts in
+just a few short moments.
+But for the purposes of just
+giving you an over an overview so
+you can understand this advantage of VGI,
+I'm going to give it a shot here.
+So, space can very roughly be defined
+as referring to the positions of
+entities on the surface of the earth,
+and the relationships between them.
+With space,
+we're talking about latitude and
+longitude points, well defined polygons
+and polylines, raster cells and so on.
+We're also talking about the time and
+cost required to move between locations,
+and so on and so forth.
+Now, one good way to think about space,
+is to think about the types of data and
+operations supported by traditional
+geographic information systems.
+So here we're talking
+about spatial queries,
+network analyses, formal representations
+of geometries and so on and
+so forth, these are all spatial in nature.
+So in other words, in all of Dr. Shankar's
+lectures, you were basically dealing with
+geographic information,
+largely from a spatial perspective.
+Now place on the other hand is,
+in the words of
+the highly influential place scholar,
+Yi-Fu Tuan, humanized space.
+Now very roughly speaking you can
+think of a place as a personal and
+emotional connections to a given space.
+So more formally, the widely used Human
+Geography text book series by Fellman,
+Gettis, Gettis and colleagues describes
+place as referring to the attributes and
+values we individually
+associate with a location.
+Although our sense of place is individual,
+there can be broad similarities with
+many other people, something that
+should be clear and a little bit here.
+Now space and
+place are complex concepts and can really
+seem somewhat amorphous especially to
+those of us with a technical background.
+So I thought a concrete
+example here might help.
+And for this example let's turn our
+attention to Century Link Field in
+Seattle, where the Seattle Seahawks
+play their games.
+The Seattle Seahawks are an American
+football team, that is the hated rival of
+the finest American football
+team in the entire world,
+the team with the best looking and the
+smartest fans, the San Francisco 49ers.
+Now the 49ers just happened
+to be my home team, and
+the team I have grown up cheering for
+now I guess for the past 31 years.
+So in summary, all you need to know
+about American Football, for those of
+you outside the United States, is that the
+49ers are the team you should root for.
+And the Seahawks are the team
+that you should root against.
+So, by continuing on with our space and
+place example, the 49ers and the Seahawks
+played each other at CenturyLink
+field in the semi-finals last year.
+And unfortunately the Seahawks managed
+to achieve a last minute victory.
+Now fortunately while this was a terrible
+day in the lives of the entire family,
+this event was a wonderful teaching moment
+for the concepts of space and place.
+Now in this case the space
+under consideration is
+the well-defined polygonal
+outline of CenturyLink Field.
+This polygonal outline can be
+described as a series of latitude and
+longitude coordinates, and this outline
+can be stored in a spacial database and
+can be considered in, for
+instance, a spatial query.
+There is also a polygon that,
+in an absolute sense, is understood and
+operationalized by both fans of
+the 49ers and fans of the Seahawks.
+However, thanks to the heartbreaking 49ers
+loss that occurred in CenturyLink Field,
+the sense of place of the field
+differs extensively a,
+across these two fan groups.
+So for 49ers fans like myself, Century
+Link Field evokes anger, frustration and
+sad memories.
+Now on the other hand for Sea Hawks fans,
+CenturyLink Field evokes happiness,
+confidence and well, excitement.
+So for spatial information,
+it's easy to see in this example how
+traditional geographic
+information is really sufficient.
+As we saw in the previous video, official
+agencies like local governments as well
+as private companies, can provide us
+with the outlines of polygons like
+CenturyLink Field, as well, as well
+as those of cities, states and so on.
+It's important to note that VGI from
+open street map is also good for
+this purpose, at is as open street
+maps meant to replicate and
+extend this official information.
+However, traditional geographic
+information in open street map VGI,
+is quite limited when it comes to
+rich information describing place.
+You can't download a record of
+the emotions that a large number of
+people associate with different locations
+from government agencies, for instance.
+Right?
+Where you can find this type of
+of data is in social media VGI.
+The best example here comes from Twitter.
+Using Twitter's public API, it would've
+been relatively straightforward for
+any researcher or developer, that includes
+those of you in the technical track,
+to download a large number of Tweets
+coming from CenturyLink Field, or
+about the semi-finals game in general.
+And then you could examine them for
+their emotional content.
+So in fact, using a series of algorithms
+called Sentiment Analysis Algorithms, it's
+actually possible to do this type of study
+or type of work in an automated fashion.
+For instance Quercia and colleagues used
+Geotag tweets and Sentiment Analysis,
+to identify the happiest and
+saddest communities in the London area.
+So for example here,
+you can see the town of
+Brent it's named after me just
+kidding I'm named after the town.
+You can see in Brent here,
+there's a sad are it's light blue and
+a happier area, light red.
+And too there are some happier
+areas down in the suburbs here and
+up here and
+then some sadder areas over here as well.
+It's easy to imagine
+doing something similar,
+with any number of social
+media VGI resources.
+So for instance, by mining the caption
+of this geotagged Instagram photo.
+It's easy to assess the authors that's me,
+my positive emotional connection
+to the University of Minnesota.
+Okay, so just to summarize here, while
+traditional geographic information and
+open street map VGI are great for
+spatial information.
+Social media VGI presents
+new possibilities,
+when it comes to place based or
+platial information.
+Never before has platial information
+been available at such a large scale.
+So we, before we move on to the cons
+of VGI let's make sure we're all on
+the same page with a quick in video quiz.
+So, I'm sure you all aced that quiz,
+so we're ready to move onto the cons
+of volunteered geographic information.
+Now, just like there were three pros,
+I'm going to present three cons, and they
+might be a bit of a downer in that they
+provide constraints on the utility of VGI.
+But it's really critical that you
+understand these downsides of VGI,
+well before you use VGI in a study or
+a system.
+I think you'll agree with that
+statement by the time we go through all
+three of these.
+The good news here is that
+the disadvantages in my view
+are more interesting significantly so
+actually, than the advantages.
+Now, the first disadvantage of VGI we're
+going to talk about is coverage bias, and
+this is a really fascinating one.
+To understand coverage bias in VGI,
+it's important to note two things.
+first, VGI strongly reflects the cultural
+context of its contributors.
+Second, certain cultural groups
+produce far more VGI than others.
+Now, if we put these together,
+it's easy to see that VGI tends to
+be focused more on certain cultural
+groups, than on other cultural groups.
+A straightforward and a very fun set
+of examples comes from Wikipedia.
+So at this point in the module,
+all of you should be familiar with
+the English Wikipedia,
+even if you've been lying under a rock for
+the past 10 years and just decided
+to come out just to take this MOOC.
+However, many folks are much less
+familiar with the dozens, and
+dozens, and dozens of other language
+editions in which Wikipedia exists.
+I just checked the other day, and
+there were 287 in total,
+286 that had at least one article.
+Now, a couple of years ago,
+my colleagues and
+I did the first large scale comparisons,
+of
+how encyclopedic knowledge is represented
+across many of these language editions.
+We found that each language edition
+describes the world very differently.
+So, for example let's look at
+the concepts that have an article in
+each language edition that we looked at.
+So for instance, the concept of chocolate,
+as you might imagine,
+had an article in all 25 language editions
+that we examined in this particular study.
+So for instance,
+here is the English article, chocolate.
+Here is the Spanish article, [FOREIGN].
+Here is the Chinese article I'm
+told this is pronounced [FOREIGN].
+Here is the Russian article I'm not
+going to try to pronounce that one.
+Here is the German article,
+[FOREIGN] and so on and so forth.
+However, we actually found that the
+commonest of chocolate across all of these
+language editions, was actually very rare,
+in fact, most concepts looked like this.
+It's a concept that we, or
+a type of concept, excuse me,
+that we call single language concepts.
+And this chart here on the x axis,
+you can see the number of languages
+in which a concept appeared.
+And on the Y axis, you can see
+the number of concepts that appeared in
+that number of languages, and it's pretty
+easy to see that the vast majority of
+concepts appear in only a single language.
+So in other words, it's a concept that,
+that's only described in by an article in
+one language edition or one of the 25
+language editions, that we looked at.
+And if we look all the way over here
+here we're talking about concepts that
+appear in all 25 language
+editions that we looked at.
+We're talking about a very small
+percentage of concepts, so only 0.17%.
+Chocolate happens to be one of these,
+but there aren't very many others.
+Every language edition that we looked at
+had a ton of single language concepts.
+So for
+instance here in the English Wikipedia.
+The article on Hillbilly Jedi describes
+a concept that is only described in
+the English Wikipedia.
+You can't find an article on
+Hillbilly Jedi, anywhere else.
+Hillbilly Jedi is the latest
+album by the country music duo,
+the American country music duo,
+Big & Rich.
+Has a wonderful item,
+album title but despite that,
+there are not articles on Hillbilly Jedi
+in any other language edition.
+Moving over to the Spanish Wikipedia,
+we can see that
+the Festival Internacional Chihuahua.
+This is roughly speaking, for
+those of you in the United States,
+the state fair of the state of Chihuahua,
+Mexico.
+The Festival Internacional in
+Chihuahua had only an article in
+the Spanish Wikipedia.
+Here is Dieter Mietz, he's a soccer
+player from the 1970s from Germany.
+He only had an article
+on the German Wikipedia.
+Here's Dieter Groß,
+a german politician, he also only had
+an article in the German Wikipedia.
+Here's Dieter Klumpp, Dieter Klumpp
+is a German business executive.
+Also only has an article in the German
+Wikipedia, and in fact, we looked into it,
+and there were 762 more Dieters that only
+had articles in the German Wikipedia.
+Up until now,
+we've looked at entire language editions.
+What about the VGI, or
+the geotag Wikipedia articles
+in each language edition?
+Well these articles are no exception.
+They're biased towards the interests
+of the cultural communities,
+that created them just like
+the larger language editions are.
+So for example, my colleagues and
+I developed a metric called indegree
+sums that examines the lengths between
+articles in a given language edition, and
+determines how important
+a certain region of the world is,
+as determined by that language edition.
+So, if you'll follow me over
+here you can see that here we
+have a map of indegree sums in Europe,
+according to the Polish Wikipedia.
+And it's pretty easy to see that
+Poland has by far the highest,
+indegree sum in all of Europe.
+And in fact, if we zoom out,
+we can see that Poland has by far
+the highest indegree sum in the entire
+world, according to the Polish Wikipedia.
+Now as I said earlier, we can think of
+indegree sums as a metric of importance,
+so according to this map, we can say that
+Poland has by is Poland excuse me is
+by far the most important country in the
+world according to the Polish Wikipedia.
+It's Indegree Sum is actually 3.4 times
+higher, than the country with the next
+highest Indegree sum which in
+this case is the United States.
+Now it wasn't just the Polish Wikipedia,
+we saw this with,
+it was with all of them that we
+looked at for the most part.
+So here's the same map according
+to the Russian Wikipedia.
+You can see that according
+to the Russian Wikipedia.
+Russia is by far the most
+important country in the world.
+Here is the same map according
+to the English Wikipedia,
+we can see that England and
+the United States very much stand out.
+And then here is the same map
+according to the Japenese Wikipedia.
+Janepese Wikipedia was
+something of an outlier.
+According to Japenese Wikipedia,
+Japan is as defined as an indegree sums,
+seven times more important than any
+other country in the entire world.
+Now if we size each country,
+by the, its importance according to
+the Japanese Wikipedia, we can see that
+the world would look something like this.
+Now this is something that's
+called a cartogram, and
+we'll cover cartograms just briefly
+in the cartography lecture.
+We can also look at indegree sums, at the
+first order administrative district level,
+so here I'm talking about states and
+provinces, and so on and so forth.
+Now, here's indegree sums in
+the English Wikipedia in North America.
+And you can see that,
+at least north of the Mexican border,
+indegree sums roughly follow
+the distribution and population, so
+California is a very popular state
+it has the highest indegree sum,
+Texas is also very populous and New York,
+Pennsylvania and so on and so forth.
+Now I want to call your attention over
+here to French Canada,is specifically
+Quebec, as I show you Indegree
+sums not according to
+the English Wikipedia ,but
+according to the French Wikipedia.
+So we have English Wikipedia,
+and French Wikipedia.
+In addition, it's not just language groups
+where we see these types of biases.
+Although it's less familiar, we can also
+talk about cultural groups in terms of
+profession, age, religion,
+gender, and many other factor.
+Recent research out of group lens,
+my lab here at the University
+of Minnesota, has shown that we
+see the same issues across gender lines in
+Wikipedia as we did across language lines.
+Now some of you may be aware that
+Wikipedia has a disproportionately male
+editor population.
+A 2009 survey for instance found that
+87% of Wikipedia's, editors were male.
+Now investigating this further,
+my colleagues and
+students in our lab used movie,
+movie rating data from our lab's MovieLens
+website, you can see MovieLens right here.
+And we use this data to show
+that due to the fact that there
+are fewer female editors in Wikipedia,
+articles about movies like
+the Notebook which are more highly
+rated by female movie lens users,
+tend to be shorter on average than
+articles about movies like Rambo,
+which tend to be more highly
+rated by male movie lens users.
+So it's pretty clear that Wikipedia tends
+to be biased towards the interests of
+it's population of editors,
+whether we look at that population from
+the perspective of language, gender or
+likely other factors as well.
+Now before we move on,
+I want to highlight that I've referred to
+these biases as coverage biases,
+rather than more explicit biases.
+It's important to point out that
+the issue of bias in Wikipedia,
+is not one in which for instance people
+of one political viewpoint, like for
+instance what I'm showing here
+Insult opposing politicians.
+Now this is considered vandalism in
+Wikipedia and is, is quickly corrected.
+Something that we'll talk
+about a little more in a bit.
+Instead, bias in Wikipedia,
+including in its VGI, exists in
+a more implicit fashion in which certain
+topics get covered more than other topics.
+And, the topics that do get covered,
+tend to be those that are of particular
+interest to Wikipedia's editor community.
+So, we're talking specifically
+about coverage biases here.
+Coverage biases are an equally
+important issue in social media VGI.
+People of certain cultural groups,
+political viewpoints, genders,
+professions, et cetera, tend to contribute
+more social media VGI than others.
+And what they contribute tends to
+reflect their backgrounds, even more so
+than in the case of pure production VGI.
+As such, when we download social media,
+media VGI, for
+instance, using the Twitter API, and then
+we use this VGI in our systems and in our
+research studies, we're always including
+more of some view points than of others.
+So for instance my colleagues and
+I have found that across several
+types of social media VGI.
+The perspectives of people
+living in urban areas,
+are disproportionately represented at
+the expense of the perspectives of people
+living in rural areas at least within
+the United States where we did this study.
+So for instance, if you'll look over here,
+you'll see that we found that there are
+3.5 times more Twitter users per capita,
+in urban areas than in rural areas.
+And these urban users produced 5.3 times
+more tweets per capita, than rural users.
+No more surprisingly you can
+see here that the urban bias in
+Four Square is particularly strong.
+There are over 24 times more Four Square
+users per capita in urban areas than in
+rural ones.
+And the ratio is about the same for
+check ins per capita.
+It's important to point out however,
+that when it comes to social media VGI,
+we shouldn't just rely on stereotypes
+in terms of which viewpoints will be
+over-represented and which viewpoints
+will be under-represented.
+So let's take Pinterest, for example.
+Pinterest recently introduced its place
+pins feature, which means that Pinterest,
+like many of its brethren is now
+in the social media VGI business.
+So you can see here that I've made
+a Pinterest board of some of my
+favorite places, on or near the University
+of Minnesota's Eastbank Campus.
+If you come here to study eventually,
+you'll probably frequent
+some of these spots.
+Now as it turns out, not many people
+like me are active on Pinterest and
+specifically Pinterest unlike Wikipedia,
+is predominantly dominated
+by female perspectives.
+And as a result recent research has shown
+that about 80% of Pinterest user base is
+female, and the percentage of
+active pinners is likely higher.
+So as we might expect a topics that men
+pin more than women tend
+to be underrepresented.
+Along the same lines, research taking
+a number of different approaches, has
+shown an African American perspectives,
+are likely over represented on Twitter.
+So for instance, the Pew Internet and
+American Life Project,
+found that while 16% of Americans
+who identify as white use Twitter,
+22% of Americans who identify
+as African American do so.
+Now as a quick side note,
+the Pew Internet and
+American Life Project is
+a wonderful resource for
+understanding the role the internet
+plays in the lives of folks who live in
+the United States, I highly recommend
+that you check their website out.
+Okay?
+So
+we've see that there are large coverage
+biases in both peer production and
+social media VGI.
+What does this mean for those of us who
+want to engage in VGI based projects?
+Well, and this in, it,
+this is quite important,
+it means we have to be very careful.
+In particular, we can't assume
+that VGI presents an objective or
+complete description of areas of interest.
+Instead, we must acknowledge and
+account for the fact that VGI will
+present a view of the world that is
+biased towards the perspectives,
+of the people who contribute it.
+And these people are likely far
+from a representative sample,
+of the stakeholders of
+an area of interest.
+Moving on here,
+our second VGI disadvantage, is one
+that is quite related to the first one.
+And that is that not all
+voices are equal in VGI, or
+in other words people contribute to
+VGI at very, very different rates.
+Now this disadvantage is directly
+connected to a very common
+social technical phenomenon that
+exists in online communities,
+specifically long tail
+contribution patterns.
+In a long tail contribution pattern,
+a small percentage of
+users contribute a ton and mos,
+most users contribute much less.
+Right, so on, in this graph here we have
+got the of contributions on the X axis,
+and the number of contributors
+on the Y axis, and
+this graph is roughly representative
+of man contribution patterns you'll
+see from online communities.
+So over here we have a small number
+of users, right, who, who submit and
+contribute a lot of information, and
+a much larger number of users who
+contribute much less information.
+Now these users over here, the users
+that contribute a ton of information,
+these are often called power editors or
+power users.
+For example, researchers here at
+the University of Minnesota,uh,
+led by a former grad student here
+at the U, named Reid Priedhorsky.
+Reid and his colleagues found that
+huge percentage of the content that
+is viewed on the English Wikipedia,
+is contributed by power enders.
+So here's a graph from that,
+that paper that came out in 2007.
+This line here shows
+that at least as of 2006,
+the 10% of English Wikipedia editors,
+with the most edits
+contributed around 86% of the words people
+actually viewed on the English Wikipedia.
+This bottom line is even more incredible,
+it tells us that the top 0.1% of
+editors alone just these editors,
+contributed over 40% of the words that
+people viewed in the English Wikipedia.
+Now, Dr. Muki Haklay,
+a prominent professor of Geography at
+the University College London,
+is one of my favorite researchers and
+contributors on long tail
+contribution patterns and VGI.
+He has a wonderful presentation about
+the dominance of power editors on
+Open Street Map, and this is a, this is,
+here is a slide from that presentation.
+Now in the Y axis here,
+you can see the percentage of
+the contributions in the United Kingdom to
+Open Street Map, and on the X axis you can
+see a bunch of different user names right,
+So down here you can see the user names.
+Now, what this graph tells
+us is that just these users,
+explicitly listed here by name
+are responsible for over 80%
+of the contributions to Open Street Map
+in the United Kingdom in the year 2008.
+Now the last point I want to make about
+the unequal contribution patterns in
+VGI producing online communities,
+is that at a high level,
+this phenomenon might really sound quite
+familiar to you from the we are the 99%
+slogan of the Occupy Wall Street movement.
+Now that movement wanted to call
+attention to the fact that,
+at least in the United States,
+the top 1% of income earners earners,
+over 20% of the nation's total income.
+In VGI producing online communities,
+we see similar disparities except we're
+not talking about income and
+top income earners.
+We're talking about VGI contrib, VGI
+contributions and top VGI contributors.
+Okay, so it's time to talk
+about the elephant in the room,
+the final con of VGI, we're going to
+be talking about which is, accuracy.
+Now this is a particularly
+important issue,
+when considering peer production VGI.
+Now many of you have probably
+been told by your teachers and
+perhaps your parents, to be skeptical of
+everything you read in Wiki, on Wikipedia.
+Now I get the pleasure of telling you
+that at least in this very specific case,
+your parents and
+teachers are largely wrong.
+Now in 2005 Nature, one of the most pro,
+prominent scientific
+journals in the world.
+Nature published a comparison
+of the English Wikipedia and
+the Encyclopedia Britannica,
+which is one of your readings this week,
+this paper from Nature.
+Now in the study,
+experts found four serious errors in both
+Wikipedia and the Encyclopedia Britannica.
+So, the same number of serious errors
+in both of these two resources,
+one that's peer produced and
+the other that is produced by experts.
+Encyclopedia Britannica did, however,
+have moderately fewer factual errors,
+omissions and misleading statements,
+with Britannica having,
+I believe, let's see, 123 factual errors,
+and the English Wikipedia having 162.
+You'll find out the details about this,
+say, when you do the readings this week.
+Wikipedia has been found to be even
+more accurate in specific domains.
+So for instance, Reavley and
+colleagues found that, to quote them,
+the quality of information on depression
+and schizophrenia on Wikipedia,
+is generally as good or better than, that
+provided by centrally controlled websites,
+the Encyclopaedia Britannica and
+a psychiatry textbook.
+Now Doclar, Dr. Hacklay here has found
+something similar with OpenStreetMap.
+Specifically he compared OpenStreetMap
+data to that produced by
+the United Kingdom, the government
+of the United Kingdom, excuse me.
+And he found that where
+OpenStreetMap had coverage,
+it was quite similar to
+the government data.
+Now this isn't to say that VGI
+peer production communities don't
+have egregious inaccuracies on occasion.
+So, for instance, a few months ago I
+saw this on the Wikipedia page for
+the American football
+team from Washington,
+D.C. Their rivals are the Dallas Cowboys.
+And it, and it appears that someone
+who is a fan of the Cowboys,
+decided to vandalize the Washing,
+Washington, D.C.
+teams page by writing that the Cowboys
+were the best team in the division.
+It also appears they failed to realize
+that they were bragging about the Cowboys
+status from 1933 to 1949,
+rather than in the present day.
+However, I checked a little while later,
+and
+found that this vandalism had been fixed.
+Now this is a very typical story when it
+comes to Wikipedia vandalism, it appears,
+but it's fixed, quickly.
+Okay, so in general while VGI might be
+slightly less accurate than other sources
+of information in some cases, in other
+cases it's as accurate or more accurate.
+So for most projects VGI will probably be
+good enough from an accuracy standpoint.
+So this do, this downside,
+this disadvantage is,
+is relatively light weight
+compared to the other two.
+Okay, so
+that's it for the pros and the cons of
+VGI, I'll see you in the next video.
+

@@ -1,0 +1,283 @@
+Hey folks, welcome back to the University
+of Minnesota Spacial Computing MOOC.
+The last thing we're going to do in
+the first module is talk with a series of
+experts in the spacial computing field.
+And the first expert we're going to
+talk to is Dr. Johannes Schöning.
+He is a professor of computer science
+at Hasselt University in Belgium,.
+And let's welcome Yohannes
+here in via Skype.
+Hi Yohannes.
+>> Hey Brand, how are you doing?
+>> Good.
+So we have a series of questions for
+you today.
+The first thing I want to ask is,
+can you tell me a bit about
+your research interests?
+>> Yeah, sure, of course.
+So in, in general,
+my research interests are new and
+novel interfaces to interact and
+navigate through spatial information.
+So what does it mean?
+So let's make this thing
+a bit more concrete.
+So as I've said,
+in general I'm interested to design,
+develop, and test user interfaces.
+That help people to to solve
+their daily task more,
+more efficiently or more enjoyable.
+For example, you know a standard problem,
+navigating from A to B.
+And my work really includes
+the development of, of various types of
+different user interfaces, ranging from
+mobile augmented reality interfaces.
+For example, my, in my early work,
+I combined the advantages of,
+of the paper map with the advantages
+of of, of the mobile device.
+By using the mobile device like a,
+like a magic lens over the paper map.
+As I, I still think that paper
+maps are still superior to
+their digital counterparts in,
+in several ways.
+And with that the magic lenses of reality
+approach we combine the advantages of both
+medium, but as I said its not just only
+magic reality its a range of different
+user interfaces, interactive surfaces, and
+tabletops, and post desktop interfaces.
+Yeah that's more or less in a nutshell my,
+my main research interests.
+>> Great Yohannes, now I was wondering
+if you could tell us how you
+began working in the spacial
+computer domain.
+>> Mm-hm.
+Yeah, well as as I said,
+I studied geoinformatics at
+the University of Muenster in, in Germany.
+And the institute for geoinformatics
+there is one of the leading institute in,
+in that area, in the world.
+And geoinformatics is an interdisciplinary
+and a very interesting subject,
+between computer science, and
+all the other geoscience.
+And yap,
+that's how I dived into into the research.
+And of course you know,
+before that, before studying
+geoformatics I'm addicted to maps.
+I was addicted to maps before,
+I enjoy to hike and climb high mountains.
+So, take the maps our and are still mine.
+My daily com companions and therefore, of
+course I was attracted for such an very,
+very interesting interdisciplinary study
+area like, like [INAUDIBLE] informatics.
+>> You and I both have that in common.
+We both were, were big math nerds
+before getting into this field, yeah.
+I suspect that many of you were as well.
+Okay, let's move on to the next question.
+What do you think has been the most
+important new spatial technology, or
+research paper over the past two or
+so years.
+>> Okay, that's, that's a tough question.
+Of course.
+>> It is a tough one.
+[LAUGH].
+>> Yeah.
+There was a lot of stuff, but for me, for
+me a really, really interesting and
+influencing point was the release of
+Google Earth now like nine or
+ten years ago.
+I was still an undergrad
+student at this time.
+That's as far I can, as I can remember.
+But, I was amazed how simple it could
+be to develop the user interface
+that gives the user the power to access
+satellite data from all over the globe.
+So while being, you know, while
+studying geoinformatics, you know, I,
+we, we worked with, like,
+highly complex commercial GIS systems.
+And it was always very,
+very hard to integrate, like,
+satellite data from different sources,
+or even get hold of the satellite data.
+And Google Earth was really,
+really like a turning point in,
+in that, it was really a big step
+forward providing the really an easy and
+intuitive user interface to access,
+to access a rich amount of,
+of rusta spacia, spacial information.
+And also, the technology itself,
+you know, it's, it's a globe, and
+if you put the, put the,
+put the satellite data on,
+the technology itself, I think,
+it's not very, very complicated.
+I really think that this simple idea was
+really one of the breakthroughs of, of,
+geoinformatics, or spacial computing in
+the last I would say, in the last decade.
+And it also, it, it brought the power
+of spatial information, to the users.
+This, I think, was also an,
+an important point.
+>> Yeah, I remember you did some very
+interesting work going back I guess
+seven or eight years where you projected
+Google Earth onto a wall-size display.
+well, actually on a wall
+using a projector, right?
+And you were,
+you were interacting with that,
+with a all sorts of
+interesting techniques.
+I think I recall you do,
+doing one where you're able to turn
+the Earth with your nose, is that correct?
+>> [LAUGH]
+>> [LAUGH]
+>> It was just, you know, right?
+It was a fun project.
+It was a fun project.
+And now, you know, it dates back to 2005.
+We were also, you know, I'm not sure
+if the course, audience is familiar,
+is the work of Jeff Han,
+he had a famous Ted Talk,
+presenting his technique to realize
+a large multi-touch surface.
+We picked up that that idea of FDIR
+that he brough back in 2005, 2006, and
+of course, you couldn't interact with
+a virtual globe with your hands,
+and feet and also with the nose.
+But of course, mainly we use our hands-
+>> [LAUGH]
+>> to direct with spatial information.
+Actually, we, we did not work with,
+with Google Earth.
+It was not a Word Wine.
+>> Oh, that's right, that's right.
+>> the, the, the virtual globe of,
+of, of [INAUDIBLE] and
+of the Google Earth product.
+We call this, the [INAUDIBLE]
+it's far more open that you have,
+a better chance to,
+to interface with, with it.
+>> That's right.
+I recall that now.
+So, moving on to the next question.
+What is the project that you're working
+on right now, that gets you most excited?
+Of course tons of stuff is
+going on at the moment we
+are right before an important deadline.
+>> [LAUGH]
+>> And I'm, I'm,
+I'm working on various project.
+And I guess I could fill up you know,
+the whole course with all
+the project I'm working on.
+But let's take like two,
+three recent example.
+One example I would like to mention is for
+the map project, it takes back a couple
+of years ago, and for the photo map was
+a mobile application that helps
+user to snap a photo of a map,
+and then geo-reference that photo of
+the map on the fly meaning you assign,.
+We would coordinate to the pixels of
+the photo of the map and then you can use
+that photo of a public map that you found,
+you know, in, in a park or
+wherever you, you walk around,
+you can use that photo for navigation.
+And this was proved a very,
+very useful application for the user.
+So this was one,
+one a recent project, which also,
+you know, contained a very, you know,
+simple idea, but it was quite powerful.
+A second one I would like to mention,
+it's a very,
+very recent one, we're currently working
+on how to print maps to smart watches.
+I guess we have seen the keynote, a few,
+a few days ago from Apple they are
+presenting their smart watch interface.
+And here the challenge is from the human
+computer interaction points are that you
+have a very, very tiny display, and
+very, very limited interaction.
+And we currently working on
+different to explore different
+visualization ma, methods.
+To bring maps back to such a tiny wrist
+worn device like, like the Apple watch.
+And maybe the third one a fun
+one is our a social hiking app.
+So you know
+>> That is a fun one.
+[LAUGH].
+>> I told you before I love going to
+the mountains, I love the woods, and
+the a social hiking app is a mobile
+application again that helps people first.
+We have a desktop client
+to help people to find
+routes that are more likely to be
+lonely roots through the words.
+So, we analyze, you know, open speed map
+data, we analyze Flickr information to
+get information whether a root is
+more likely to be lonely or not, and
+then we also have a mobile prototype and a
+mobile extension, where we use network and
+technology to also try to sense
+if cohikers are nearby or
+approaching you to give you a warning
+to still feel alone on your hike.
+For me, a very,
+very important application to escape from,
+from university live over the weekend and
+not meet any colleagues in, interpret.
+[LAUGH] And I think these are like two,
+three recent examples.
+I, I could continue,
+I guess for the next hours, but
+I guess, you know,
+the course time is also limited.
+>> And, and you know, they a social hiking
+app is one that I really like as well.
+I think many of us can relate to
+the feeling of being over-connected, and,
+and has done some wonderful work on
+using technology to actually
+reverse that effect.
+So I'm looking forward to seeing
+what happens with that project next.
+Thanks so much for joining us Yohannes.
+And I encourage everyone to go ahead and
+check out Yohannes papers, they're
+really wonderful and, and very creative.
+>> Thank you, Brand.
+[SOUND]
+

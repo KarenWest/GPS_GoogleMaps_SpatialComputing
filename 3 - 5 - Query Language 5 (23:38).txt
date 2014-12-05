@@ -1,0 +1,757 @@
+Welcome back to our continued
+discussion of query languages with
+spatial equating facilities.
+So if you recall in last three videos,
+you know,
+we first covered the notion of queries and
+query languages.
+And then we introduced SQL.
+We talked about data definition language.
+To show you how to create a table and
+simple data manipulation language
+statements, like insert,
+to populate those table.
+And then, in the last video
+we got into select statement.
+And we saw how to retrieve data from
+single tables using different clauses.
+And we went through select, from where.
+As well as group by and
+having at least five different clauses.
+But the focus was to
+work with a single table.
+And we saw a number of queries
+which could take a table and
+retrieve subset of rows or
+subset of columns.
+And could do even some statistics, 'kay?
+So first a good news, you know, if you
+mastered that material, then you know,
+you know as much SQL as probably
+90% of the people in the industry.
+Because you know most of
+the people in industry,
+they come from programming background.
+You know, whether it's Java,
+Python, Visual Basic or Cobol.
+And they are very used to loops and
+simple variables so
+they like to look through an array and
+so on.
+So they often use single
+table queries 'Kay?
+But SQL can do a lot more and in fact
+when you see code which has nested loop,
+you know each loop going
+over a separate table.
+Those are opportunities for
+you to improve performance, so
+if that code is running slow,
+then you can do a very simple thing.
+Something called table joints,
+which is what we will learn in
+this particular video, okay?
+So, let me first introduce very simple
+multi-table query using two tables.
+And then we'll get little more ambitious
+and try more than two tables, okay?
+So our goals would be to first
+look at a multi-table SQL query,
+we know specifically two table.
+And try to understand its output.
+And also understand why you may
+need more than one table, okay?
+And then we'll also talk a little
+bit about composing such queries, so
+if you were given an English question.
+Then how, how do you determine how
+many tables are needed, right?
+Do you really need one table,
+or more than one table?
+And, we'll show you at least two
+different styles of doing that, okay?
+So, with this let's start
+with this very simple query.
+Which is, which is asking you for
+capital cities, okay?
+Which is here in purple.
+So we are asking for capital cities and
+populations of countries.
+And there is a condition here.
+Okay?
+So when you look at the country
+table which is shown right here so
+you can try to see the GDP or
+gross domestic product is available here.
+Right?
+So for
+each country we can put
+a condition in the rare clause.
+And figure out which countries
+have GDP of a trillion dollars.
+Population, you could also
+find that in this table.
+There is a population column and
+we could list it there.
+Okay?
+But what about capital cities?
+If you look at this country
+table I don't see any
+information on the capital city right,
+so where does this come from?
+So, so one answer here would
+be to look at other tables.
+So do we remember the other
+tables like river and cities and
+do you remember in wha, which of these
+tables may have this information, right?
+So probably your natural guess
+will be the city table and,
+you can quickly recall the city
+table had many columns.
+Including this capital column.
+Okay?
+It also had a country column.
+So, between these two columns there is
+information about the capital
+city of a country.
+Okay?
+But in order to pull this together
+you will need both tables because now
+your query is asking some things from one
+table and other things from other table.
+Okay?
+So, so we'll need to learn how
+to work with two tables and
+in SQL framework there is
+an abstract operation called join.
+And what that essentially does is to allow
+you to put two tables together, okay?
+So in order to understand join
+you may want to first look at a,
+a more in a simpler operation
+called cross product.
+Okay?
+So what Crown's product does,
+is to allow you to take all
+combinations of rows in one table and
+rows in another table, okay?
+So if you simply listed these two tables,
+City and Country and
+City in the From clause.
+Then it will give you all
+possible combinations of rows.
+So in the city if you count one,
+two, three, four, five, six,
+seven, eight, nine.
+And country you have roughly six.
+So simply by listing the two tables
+will give you nine times six or
+54 combinations.
+Right?
+But as you know many of these
+combinations won't be interesting, right?
+If there's no point pairing up a city
+with a country that it doesn't belong to.
+Okay?
+So we are going to pair
+down those 54 pairs, and
+we only want pairs where this city
+belongs to a specific country.
+So in order to do that,
+you can attach a condition.
+You can essentially match the country
+name, so countrytable.name.
+It should be matched to
+its city.table.country.
+Okay?
+So if you put that condition,
+something of this kind.
+So you say well, match the rows in
+city table and country table, but the,
+there is a condition, that the country
+name should match the city's country.
+Okay?
+If we did that.
+Then many of the irrelevant pairs
+in that 54 will go away, okay?
+And we will only have the relevant
+pairs where the cities will be
+matched with their own countries, okay?
+We will still have to do more work to
+get rid of non-capital cities, okay?
+And that you may want to
+do via this condition.
+So we can in addition say.
+That on the city table make
+sure the capital column is yes.
+Okay?
+So with these two conditions now we have
+pulled in the capital information
+from the city table and
+put it together with country table, okay?
+So once we understand this logic then we
+can start to compose this SQL table okay?
+So here is the Query back.
+And this is the kind of result we want.
+And here is your, you know,
+start of SQL query.
+So we first say okay we need two tables.
+In order to answer this query
+one table is not sufficient.
+So we need Country table and City table.
+We're also putting aliases here, because
+we are trying to reduce typing, okay?
+In the result, we only want two things,
+like they said,
+the city name and its population and
+rest is in the condition.
+So, in order to combine the two tables,
+we put this condition which matches
+the country column in city table.
+With name column in the country table,
+okay?
+So what else do we need to do here?
+So first you know,
+we haven't checked for GDP, right?
+So we need to put the you know,
+some condition on GDP.
+And we haven't tested for capitals.
+So those conditions come in, okay?
+So this kind of shows you a simple
+situation where we are using two tables.
+We are matching up the rows of this table
+using a condition which spans columns
+of the two tables.
+And this is called The Join Condition.
+Okay?
+Most common join conditions are equality.
+Okay?
+And, and then we are putting
+the simple single table conditions to
+complete the query.
+Okay?
+Great, so this hopefully gives you a sense
+of how to even read a multi-table query.
+Okay?
+So suppose that somebody gave you
+this SQL statement and they wanted
+to ask you what will be the output?
+Then in some sense you can you know,
+revisit the discussion we just had.
+Okay?
+So in order to interpret
+this query you read it in,
+in a slightly different
+order than it is written.
+So essentially you start reading
+it from the from clause,
+not from the select clause, okay?
+You start from the from clause, and
+from clause has multiple, if it
+has multiple tables, then you first form
+combinations of rows from those tables.
+Okay?
+So this case you may have nine cities,
+six countries,
+you make 54 combinations, 'Kay.
+Then you go to where clause.
+And you apply this test
+on all those pairs, and
+throw out any pair which doesn't
+meet this condition, right?
+So a lot of 54 pairs will
+go away because the country
+name will not match the city's country,
+okay?
+Then further pruning will happen
+due to GDP, and capital, okay?
+Now for the remaining rows or pairs.
+We are going to go to select statement,
+and
+pick out city name and
+country, you know, population.
+Great, so this gives us a feel for
+how to read multi table queries.
+The big next question is,
+how do you compose one?
+Okay?
+So we are going to talk
+about this other aspect.
+Where we'll think about how
+do you compose one, okay?
+And and again you know, in general
+select statements can be complicated.
+So the next heuristic I'm going
+to give you is not going to
+apply to all like nested and, and so on.
+But it will apply to a very common family.
+So if you at least start with
+single block select statement.
+These meta questions or
+heuristics will help you.
+And at this stage and
+if you can master that,
+that will take us quite farther,
+sufficient for this course, okay?
+And with more experience you will
+master the next nested query.
+So here are the three meta questions.
+We always begin with the from clause,
+'Kay?
+And in from clause,
+your meta question is which tables
+are needed to answer a query, okay?
+So in our scheme there were three tables,
+Country, City and River.
+So we'll go through those tables
+one by one for any query at hand.
+And you ask,
+do I really need all three of them?
+Or could I get away with two of them?
+Or maybe some cases even
+one table is enough, right?
+So you start with that.
+So once you have narrowed that down,.
+Then the question we ask is the following,
+you know, how they,
+are these tables combined?
+Most likely, okay,
+most questions post to relation databases,
+they try to combine,
+matching columns from the two tables.
+Okay.
+So if you remember the schema just like
+we saw between the city and country.
+That was a common column which
+was the name of the country.
+right?
+It was in both tables and
+you can match that.
+And again, if you remember it would
+mean the river table and country table.
+Again, we had a shared column.
+Every river had country of origin.
+Okay?
+So usually in, in a properly designed
+databases the second questions can be
+answered very easily.
+So you basically look at the two tables.
+And see if there is a matching column.
+If it is there, you use that, okay?
+And this will take you quite far.
+These are the most common queries.
+Once in a while the conditions
+are more complicated than that.
+And this course we'll
+probably not need it, okay?
+The last question has to do with
+the use of statistics, okay?
+So once you know which tables are needed,
+how you join them.
+Then you ask the following question.
+When I am looking at the rows
+in the results, you know,
+how do they correspond to the rows
+in the tables that we selected?
+Is there a one-to-one match?
+Or am I forming groups and
+doing statistics?
+Okay?
+If there is one-to-one match, then all you
+need is select from where, maybe order by.
+Okay?
+You don't need group by inhaving,
+and your life is simple, okay?
+However, if we are forming groups, and
+we are doing statistics, then you need to,
+you know, consider group by inhaving,
+you asked how many groups are there,
+is it like a single group?
+Is it a global statistics?
+Then you can still stay with select from,
+where, order by.
+But if you're forming multiple groups
+by continents or by city names or
+something else, then you do need group by.
+And then you know, possibly having,
+if you're eliminating some of them.
+So let's exercise this heuristic with a,
+with a you know, one query.
+So here is English query.
+It is asking for name and
+population of capital cities
+of the country where this
+particular river originates.
+Okay?
+So, so in this English query, you know
+I could pause in a couple of seconds,
+try to again think about in our schema.
+We had City table,
+Country table, River table.
+Which of those are needed, okay?
+And again, this English query,
+it will give you some clue.
+Either there are conditions, or
+there's something we want in the result.
+And then, only few, you know,
+specific table has that.
+Okay?
+So, as you start analyzing it Okay?
+You start seeing river,
+right, so St. Lawrence river.
+And that will probably give you a hint
+that river table is important, okay?
+And then you start seeing country, okay?
+Now country information is
+there in multiple tables, so
+you have to be careful and see do you
+really need country table or not.
+Maybe you can get away with the country
+information in river table or
+the city table, okay?
+If that's the case we don't
+need country table, but
+if that's not the case you will
+need the country table, okay?
+And you also see this capital and
+if you remember in the previous query.
+Capital information was
+only in the City table.
+It was not in the Country table.
+So you probably need to
+save the City table, okay?
+So again, you want to go back and
+check the columns of these tables and
+see which ones you need.
+But you know, possibly in this
+case we may need all three.
+Okay?
+All right, so that's question A,
+which tables are needed?
+Okay?
+So once we have answered that and
+we look at second question,
+how do we combine the tables?
+Okay?
+And again in order to do this in SQL
+usually we combine two tables at a time.
+Its, you pair them, and then you add
+one more and one more and so on, okay?
+So when you look at these tables,
+you know, you will notice that city and
+country, we,
+we know how to join them, right?
+Because city,
+did city table did have it a country table
+had a name column and they were matching.
+So, you could start there,
+you could match them,
+city.country equal to country.name, okay?
+And also we know that river table has a
+country column for the country of origin.
+So you could use that column to
+combine river with country, and
+with these two conditions you would have
+combined the rows across three tables.
+'Kay?
+So here river and country and
+then country and city, okay?
+And then the last question is asking
+about I mean are we doing statistics?
+So again you can scan this English
+question, and see do we have notions like
+groups or statistical functions
+like minimum, maximum, average sum?
+And that you scan this we don't see
+any of those grouping aggregate or
+statistical words.
+So chances are you know,
+here the answer is no.
+So once we know these three, then we kind
+of know that we don't need group by,
+we don't need having.
+In this query,
+select from where are probably essential.
+And we don't see any
+sorting request either, so
+probably we don't need order by, okay?
+So you already go the template.
+You've got select from where.
+And for at least one clause, you know,
+you already have all the information.
+And try to think about
+which clause is that.
+Okay?
+So, for example, question a lists all
+the table, and that's your from clause.
+Okay?
+So now you can start composing the text,
+starting from the from clause.
+So here ois the front plus where
+we listed all the three tables.
+In the where clause we can put
+in the join condition, okay?
+So these join conditions now
+help you combine the table.
+So second question and first questions are
+used, and now we can fill in the rest, ok?
+So one part is to say that,
+you know, what is in the result?
+And this is saying we are asking for the
+name and population of the city, right?
+So name and population of the city.
+Ci is alias for the city, okay?
+What else is missing here, right?
+So we combined the tables.
+We are getting name and population.
+Now you compare this code
+with the English one.
+And say are there further restrictions?
+It looks like there are.
+We are not interested in all cities.
+We are only interested in
+cities which are capital.
+So we'll need to test that
+capital column inside city table.
+And also we are not
+interested in all rivers.
+We are only interested in a specific
+river named St. Lawrence.
+So you are going to add
+these restrictions.
+You are going to say rivers,
+only those where the name is St. Lawrence.
+And cities, only those which are capital.
+Okay?
+So, so the three here basic meta-questions
+they give you the bulk of this query.
+And then you work through and
+compare your query with English
+to fill in rest of the details.
+So hopefully this gives you
+flavor of how to compose query.
+And this works very well if your query
+can be presented as a single block.
+Again, if you are into generality and
+so on, then, you know,
+there are other queries where
+you need more than one block.
+And over there,
+you will have to break it up and
+for each single block,
+you could use these meta questions, okay?
+But if you look at from pragmatics.
+Vast majority of the queries that
+people write are single block.
+And using single block, you can do a lot.
+Because, you know, you now have
+this capability of joining table.
+Okay, In fact, theoretically, you know,
+when the relational algebra was
+first proposed by Codd, you know, he even
+said is that all you need are, you know,
+three relational operations called Select,
+Project and Join.
+And all three can be done in
+single blocks select statement.
+Okay?
+So the first operation is select,
+all it does is to subset rows.
+And you remember the where clause
+allows you to subset rows.
+Okay?
+Project is subsetting columns, and
+your select clause allows you to do that,
+and the join is combining tables.
+So this single block query is very
+powerful and you can do a lot.
+With this, okay, chances are you
+are not going to need a whole lot more.
+Okay?
+But as you get experienced you
+will find situations where you
+may need to write multiple single
+block queries and combine them
+either using set operations like union or
+intersection or nesting Okay?
+So so we'll give you at least
+a flavor of nesting but
+I said this single block multi-table
+query if you can master that then you
+know you would be ahead of 90%
+of people in the industry.
+And using join, okay, so
+joins is an operation which is very
+common in relational algebra but
+it is missing in the traditional
+languages like Java, like Python.
+Right, they don't have this operator.
+In fact they dont' have
+a lot of set operators.
+So if you can understand and
+master join, you are ahead of
+the game because most people in industry
+they came from this particular language.
+And for them,
+it's intuitive to loop through a table.
+But it's not natural for them to do,
+you know,
+combine two tables using a join against.
+So they would often go into a nested loop.
+You know, one outer loop, and
+one table in a loop on the other table.
+And that tends to, and
+it can get the job done, but
+if the tables are bigger,
+they tend to be very inefficient.
+You get to, you fetch a lot more data
+from the database than it, it is needed.
+In contrast, if you wrote queries like
+this, where you're using join across
+multiple table, then your database server
+is allow, you know, is able to see that,
+and it eliminates all the irrelevant
+data that your application doesn't need.
+And then your applications will
+scale better, and, and run faster.
+Okay.
+So, with this, you know,
+having said that, let me at least show
+you what is beyond the single block.
+And one common thing is nested queries.
+And you're chances are again,
+you will see this in application code.
+Primarily because a lot of people have
+done nested loops in Java and Python.
+When they come to SQL they
+keep doing that, right?
+And you know, it's okay for the prototype,
+but it can have scaling issues.
+But, nonetheless,
+let's look at one of them.
+So here is a another English query,
+where we are looking at
+countries where gross domestic product
+is greater than that of Canada.
+Okay?
+So one way to write this query is
+to decompose it into two parts.
+You can see a natural nesting here.
+So you can first find out the gross
+domestic product of Canada, okay?
+Lets sup, suppose somebody
+gave you that number, okay?
+And hypothetically,
+lets say its a trillion dollar, right?
+So if I had that number in hand,
+then this query becomes very simple.
+It's like a single table query.
+You go through the country table,
+and check if the coun,
+the country GDP's higher
+than one trillion.
+Then, you put it in the results.
+Otherwise, you let it go.
+Okay?
+So your logic may look
+something like this.
+When you're going through
+country table and
+you're checking GDP
+greater than the trillion.
+Okay?
+But since we don't know that number,
+we're, we have to
+go look up the value of GDP for Canada,
+you could use another query to go do that.
+And here it is, okay?
+So, in order to find GDP of Canada,
+you could write the inner query.
+And you say, well,
+you go to country table.
+Find the row where
+the country name is Canada.
+Find it's GDP and use that value in
+comparison for the output query, okay?
+So here you're seeing
+the nesting way to compose.
+So the inner query the green
+one is a single block query.
+The outer one is a single
+block query In this case,
+fortunately they are independent so
+in that query doesn't use any
+information from output query table.
+So can actually decompose it well and then
+put them back together as a nested query.
+So this kind of gives you a flavor of what
+is beyond a simple single block query.
+There is this kind of nesting, there
+is even more complicated nesting where
+inner query uses the table of outer query.
+Sometimes called correlated queries.
+And those get pretty
+difficult to interpret, and
+understand, so getting the first course,
+we are not going to go there.
+But there is more on the horizon
+as you get experienced,
+you will learn those, okay.
+So with this, you know,
+hopefully we have given a few of flavor
+of multi-table select statement.
+We started with just two table situation,
+where we also gave you, some guidance
+on how to read two table queries.
+Starting from from clause you combine
+the rows of multiple tables then you
+go to ver clause and
+eliminate the pairs which don't qualify.
+If they are grouped by in having clause
+you can go to the statistics and
+then finally come to select clause and,
+and form the result.
+Okay?
+We also gave you some
+hints on how to write
+a single block select statement
+which may use multiple tables.
+And you remember three
+different meta questions,
+you always first ask
+which tables are needed?
+So look at your English query,
+and see either part of result or
+condition, which tables
+are being referred to.
+Second, try to figure out how
+these tables are combined.
+So which columns are shared
+between at least two tables.
+So you come up with a joint condition.
+And then finally, ask yourself if
+there is any statistics involved.
+Are the rows in results are representing
+individual rows in the previous step?
+Or are they representing groups of rows?
+So, if you ask those three
+mirror questions, it will eh,
+remove a lot of common mistakes from
+the single block select statement.
+And if you can reach there,
+you can do joins of multiple queries,
+you will be well ahead of vast
+majority of people in the industry.
+And then you can build on those
+skills later on to go and
+do situations where you need more
+that one single block queries.
+So this wraps up our basic
+introduction to select statement.
+Next time when we come back, we'll focus
+on spatial functions and operators.
+And we'll show you how to use
+that with select statement.
+[SOUND]
+

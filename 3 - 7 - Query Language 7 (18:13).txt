@@ -1,0 +1,550 @@
+Welcome back to the discussion
+of spatial query languages.
+In last few videos, we talked about
+the notion of queries, query languages.
+We looked through the old SQL and
+we also noticed how tedious it
+was to express spatial
+queries in the old SQL, okay?
+So now we are coming to the, the main
+topic of this particular chapter and
+we are going to go look at OGIS library,
+which supports spatial data types and
+operations and is used within SQL, okay?
+So, at the end of this section, we should
+all be able to recognize spatial data
+types and operators which are provided
+by OGIS library and, you know,
+this in particular is one library called
+simple features within OGIS, okay?
+All right.
+And we'll also look at couple of very,
+very simple queries,
+which do not use spatial joins and try to
+use simple operatives like distance or
+area which are probably
+familiar to many of us, okay?
+So, before we go there, let's,
+first see how SQL changed, which
+allowed us to add spatial data types.
+So essentially SQL has gone
+through many standards.
+The first one was in 1986,
+sometimes called SQL 1 and
+that's the first standard
+which was very basic, okay?
+The second one came in early 90s,
+formerly known as SQL 2.
+It added some more features,
+for spatial join and so on.
+For basic join, it added keywords.
+But really for
+spatial data type, the major change came
+in 2003 and formerly known as SQL 3.
+Since then, you have had another
+version in it in 2008, okay?
+But SQL 3 added user defined data types,
+so it gave you ability to
+go beyond the built-in data types of
+numbers, currency, and so on, and
+then many different vendors took advantage
+of that to add spatial data types, okay?
+So the OGIS is implemented in
+most SQL system through this
+user defined data type facility of SQL 3.
+Now what is inside OGIS?
+Okay, so
+OGIS again is a standardization body and
+they have proposed many
+different libraries.
+The one we are going to look
+at is called simple features.
+That was the first standard they
+proposed and it is widely adopted.
+And inside that standard, you see about
+half a dozen spatial data types, so
+things like points and
+polygons you are going to see here.
+In addition, it also provides many
+operations, so distance, area,
+inside, you know, those kinds of
+things are now supported directly.
+So you don't have to come up
+with its logic, and, you know,
+look for how to compare polygons with
+points and things like that, okay?
+This standard actually started in mid 90s.
+It was based on very sound,
+mathematical principles.
+In fact, there was a thesis
+by Max Egenhofer, you know,
+completed in late 80s, which was already
+used in some GIS packages in ESRI, and
+it was basis for
+the topological operations here.
+And many vendors very
+quickly came on board.
+You know, the ESRI,
+which is the GIS vendor, the Oracle and
+IBM, the database vendors.
+They came on, and, since then, public
+domain databases like post CREST and
+now even MySQL and so
+on are using this, okay?
+So, so let's go look at the data types.
+The main data type of interest to us
+is this data type called Geometry and
+it is going to model geometries in
+zero-dimension, one-dimension, and
+two-dimension largely, and
+those are the sub-classes.
+So essentially for
+zero-dimension it models points and these
+points usually have a X-coordinate and
+a Y-coordinate and a set of operations.
+Then it also has one-dimensional
+geometries, such as, curves, or
+LineStrings, okay?
+So LineString is related to
+the straight lines we all know, but
+it essentially is a sequence of
+straight lines which are connected.
+So if you were thinking about
+a river which snakes around,
+then it's hard to model it as a single
+straight line, but you could model it
+as a sequence of straight lines which
+are connected, and that's a LineString.
+And then finally polygons.
+For the two-dimensional geometries,
+it provides you polygons, and
+again we'll treat these polygons to
+be very simple now, but in general,
+these polygons can have holes or,
+you know, other details in there, okay?
+So, so this is very intuitive.
+If you took any geometry in your
+junior high or high school,
+you probably learned these kind of data
+types and you know these very well.
+But, when you bring this to data
+based query languages like SQL,
+then you have to worry about
+one other consideration and
+that mathematically is called
+closure of an algebra, okay?
+But let me explain this to you in English.
+The basic idea is that, in SQL, you know,
+we may start with a collection of
+points or, polygons and so on and
+then, when we perform some operations,
+the operation may be geometric
+intersection or geometric union, but often
+times we may want to store the result back
+in the database and do a subsequent query.
+Okay?
+So if you want to compose these queries,
+then it's important for the result to be,
+you know, also represented using the date
+types we are already providing, okay?
+So, so that is an objective in
+SQL kind of query languages, so
+essentially these data types have to
+form an algebra with a closure property.
+Now, if you only look at points, lines and
+polygons, that property does not hold.
+So just imagine you had a union of two
+points which are not on the same location.
+Now, what you get back
+are two different points.
+So it's certainly not one point.
+So it's hard to represent, and the same
+thing you can see about polygons, okay?
+So, in order to represent those kinds of
+results, we just added another notion
+called GeometryCollection, and
+within which you have you have basic data
+types such as PointCollection, you know,
+PolygonCollection, and so on, okay?
+So they provide this nice closure,
+so that you can do multi-step query.
+But they also provide
+simplicity of modeling.
+You know, now if you wanted to
+model Hawaii or Japan, you know,
+which are collections of islands,
+then it's much simpler to
+simply use polygon connection,
+collection and work with that, okay?
+So this gives you the basic,
+you know, data types inside OGIS.
+Now, let's go and
+look at the operations, okay?
+So OGIS also provides a set
+of operations which can be
+grouped into three categories.
+The first one is in some sense universal
+operations and they are very simple, and
+here are some of them.
+So, SpatialReference is talking
+about a coordinate system, so if you
+have ever played with map data, then you
+maybe realize that all the locations,
+the measurements come
+with a reference frame.
+If you have worked with, let's say,
+Google Maps, you might see latitude and
+longitude which is a spherical coordinate.
+But if you have worked
+with other GIS data sets,
+you will realize there are many
+other coordinate systems.
+In fact, latitude, longitude, the model
+earth has a sphere, but, regional
+agencies, they prefer a ellipsoidal model
+which is more accurate for a small region.
+Unfortunately, there is
+no unique ellipsoid.
+So, around the world, there are hundreds
+of them, so depending on which
+state agency you got the data from,
+they may use a different ellipsoid.
+And then, you know,
+if you are even in a smaller area, some
+people may use planar projections, okay?
+So cut the story short, there are hundreds
+of these and it's important for
+your data set to specify which
+coordinate system they are referring to.
+Okay, then they have other basic things.
+The envelope is operation
+which takes a polygon,
+it returns a bounding rectangle,
+and so on, okay?
+The second group tests for
+topological relationships.
+So again, if you, look at dictionary
+meaning of topology, you know,
+it's a mathematical notion.
+There is a branch of mathematical,
+mathematics called topology, and it deals
+with those spatial relationships which are
+independent of your map projection, okay?
+Not all properties are like that, so, in
+fact, if you want to look at things like
+distance or area, these metric properties,
+they depend on your map projection.
+And, in fact, in the popular map
+projection which we all see on
+paper called UTM,
+the areas are highly distorted.
+You know, things closer to pole look
+much bigger than their real area.
+Things closer to equator look smaller.
+So if you were to compare areas of
+Greenland and India in common maps,
+you will probably come to the wrong
+conclusion in terms of the order, okay?
+But there are other relationships which
+are independent of map projection.
+Where you see a map on a sphere,
+like a globe, or on the paper,
+these relationships do not change and
+they are called Topological Relationships.
+An example of that is this touch or
+neighbor.
+So suppose I'm asking a question,
+you know,
+which countries are neighbors of USA?
+Now, this answer will not depend on
+which map projection you look at.
+On globe, you will still see Canada,
+Mexico, maybe Russia as neighbors and
+so would you on,
+on a piece of paper, okay?
+So topology, you know, this is where
+Max Egenhofer's thesis actually came in
+handy and what he did was to
+generalize another, you know,
+one-dimensional topological model called
+[INAUDIBLE] in artificial intelligence.
+He generalizes to two-dimension and
+he looked at many possible topological
+relationships and he boiled them down to
+roughly half a dozen to a dozen and
+he basically came to the conclusion that,
+in most applications, those are sufficient
+and they're also mathematically complete.
+So here are, you know,
+the representative ones.
+Okay, we already saw Touch, which is,
+which allows you to look at neighbors
+where the two polygons share boundary.
+But you have other things like Disjoint.
+So, if you think about two polygons
+which don't share either boundary or
+interior, then they'll be disjoint.
+Equal means, you know, they have exactly
+same boundary and interior, and so on.
+Most of these are pretty intuitive.
+I would say the only one which
+is not intuitive is Cross.
+So Cross is a topological relationship
+between a linear geometry and
+a polygon geometry.
+So you can ask a river and a country.
+So suppose rivers are modeled
+as center line and
+countries are modeled as polygons,
+then you can ask, you know,
+which countries are crossed by river
+Rhine or Nile and so on, okay?
+The third family has to do with
+the metric or measurement, and
+this is where things we are very
+familiar with such as distance come in.
+Distance, area, and
+it also has geometric operations,
+like ConvexHull and so on, okay?
+What we will do is to try a few of these
+operations with SQL to show you how
+they are used, okay?
+So here is a quick quiz that, you know,
+you may want to test your understanding of
+these operations for
+the query we just saw in the last video.
+So if you wanted to check
+origin as inside point for
+rectangle, you may want to check which
+OGIS operator is irrelevant, okay?
+Okay.
+So again, you know, going back to SQL and
+OGIS, here is some other things to
+know about the render implementation.
+There, they are, you know,
+supported by many vendor.
+However, the syntax changes slightly,
+okay?
+So conceptually, you will,
+you are likely to see same data types and
+operations, but the way they will appear
+will be slightly different, okay?
+So in case you want to run some of the
+queries we are discussing on a particular
+platform, you may not be able to take the
+code from these slides and run it there.
+You will have to check
+vendor-specific syntax and comply.
+Now we do provide you at least two short
+articles to, to show you the format from
+Oracle space shell and POSTGIS, and these
+are provided at the end of this lecture.
+So those encyclopedia articles you
+can quickly look at before you
+go use those web brands, okay?
+So, so be aware of that, you know,
+the queries we are showing, you know,
+we are providing you
+intuitive simple syntax.
+But they may not run on a particular
+product that you are working with, okay?
+Okay, so next question, you know, what do
+we do with OGIS data types and operators?
+Where do we use it in SQL?
+And, we say we can use it in
+at least two different places.
+First is data definition language.
+So if you remember that create table
+we looked at very, very early,
+probably second video in this module, we,
+in create table, we list our table name,
+then we listed a set of columns
+with their names and data types.
+Now in the data type,
+you could use OGIS data types.
+So our table can container a column,
+lets say shape, and
+that could use either point,
+polygon, or LineString, okay?
+We can also use it in data manipulation.
+So if you remember your select statements,
+insert and
+so on, so there again, many of these
+data types and operators can be used.
+And in these slides, we will actually
+show you a number of examples of
+select statements which
+are using OGIS operations, okay?
+All right.
+So let's start with, you know,
+a very simple example.
+So what we'll do in this video is to show
+you the simple listings like area and
+distance, so that we get a feel for
+what this syntax looks like.
+And then, and we'll come back in
+next video, show you more details,
+particularly spatial-join using various
+topological operations such as Touch,
+Cross, and so on, okay?
+And we may even show you more
+complex operators like Buffer, okay?
+So, for now, let's at least get started
+and see some very simple things, okay?
+So here is the simplest query.
+You can think of it as the "hello,
+world" of spatial SQL, okay?
+So we are looking at,
+in this case, you know,
+country table and, for
+every country, we want name and
+population and, remember,
+those were already there in the table.
+So we just have to get those columns,
+but, in addition,
+we want area, and if you recall the
+country table, there is no Area column.
+The closest thing in the country
+table was the shape, where we may
+have a polygon provided, and that polygon
+may have all the corner points and
+their locations, but
+certainly area was not there, okay?
+So, in order to produce the area, now
+we can think about the OGIS operations.
+And there is an operator called
+Area which can be called.
+So here is a quick syntax.
+So only one table is needed,
+Country table.
+We pick the name and
+population just directly as columns and
+then, to compute area,
+you can call the Area function or method
+on the Shape column in Country, okay?
+And this will give you the names,
+population, or
+area of the whole country, okay?
+So, essentially, new says the main
+thing to note is the following.
+The methods or the operations
+that are provided inside, OGIS,
+they can be used in many places in SELECT,
+okay?
+But particularly, you know,
+if they return a number, okay,
+if they return a number or a string or
+a geometry, then they can be used in the
+SELECT clause in place of another column.
+So here, notice Name and
+Population are actual table columns.
+But Area is a function which is
+applied on another column, okay?
+So this is one way to use OGIS operations.
+Let's look at another example and
+then we'll wrap up this first in, set of,
+you know,
+the first video on spatial SQL, and
+we'll come back,
+see details in the next one.
+So here is another query and,
+in this case, you know,
+we are asking for gross domestic product,
+GDP, and a spatial property,
+that's distance of country's
+capital city from equator, okay?
+Again, equator,
+you probably know, is, you know,
+a great circle on Earth which is
+equidistant from both North Pole and
+south Pole, okay,
+assuming Earth is a sphere, okay?
+So again, if you think about
+how to answer this query,
+first question you ask is
+how many tables do we need?
+And you can probably see
+the Country table is needed and
+that probably has all the information.
+So we don't need to worry about joining
+things, it's also not aggregate query.
+So in this particular table,
+we have Gross Domestic Product, so
+we can get that directly.
+But it certainly does not have
+distance from the capital city.
+So, now this second part, in order to
+get that, we need to ask two things.
+So first, does this Country
+table have the capital city?
+And again, from, you know, previous video,
+you will recall it doesn't.
+So, in order to get the capital city,
+I need to bring in one other
+table which is the City table.
+And in the City table,
+there is a column, you know, which says
+which country the city belongs to and
+whether the city is the capital
+of the country or not, okay?
+So just to get the capital, we'll need to
+join City table and Country table, and
+we did that before.
+Two videos ago, we saw that, okay?
+So I will assume that that part
+you are comfortable with, okay?
+And then once we have done that,
+then we can look at the coordinates of
+this city and try to compute
+distance from equator, okay?
+So here is, you know,
+what we actually want, country name,
+GDP, and distance from equator.
+And in order to do that,
+two tables are needed,
+as we just discussed, Country and City.
+These tables are joined using a,
+you know, a foreign key primary key join.
+There is no spatial join yet.
+So, you match in the City table,
+there is a Country column,
+you match it to country name.
+And once we have done that,
+then for every country,
+you know, we will have all the cities
+there, you can add this constraint,
+that the city's a capital, so now for
+every country, we have the capital.
+And then finally, in the SELECT clause,
+you know, we can put the GDP as well as
+this distance and this distance,
+you know, takes the city's location,
+XY coordinate, and here,
+you know, it creates a new point.
+So this is a constructor where it
+says that the latitude is zero,
+and the longitude is same as
+the longitude of the city.
+Right.
+So this is a way to mark up equator, okay?
+And then you call the OGIS
+operation called Distance,
+in order to compute the distance, okay?
+So this is a little bit more complicated
+query, you know, here we did use two
+OGIS features, we used Distance operator,
+we also used the constructor called Point
+and, and that together gave us the
+distance of a city to the equator, okay?
+So we'll wrap up discussion of, you know,
+the first discussion
+of OGIS at this point.
+In the next video, when we'll come back,
+we'll show you spatial join and
+more details of OGIS, okay?
+So here is another quiz that you may
+want to, you know, look at in order to,
+to exercise your knowledge
+of OGIS operations.
+[SOUND]
+

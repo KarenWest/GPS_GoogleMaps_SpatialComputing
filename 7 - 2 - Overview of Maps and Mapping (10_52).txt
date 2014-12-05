@@ -1,0 +1,390 @@
+Hey folks.
+Welcome back to the Cartography module.
+In this video, we're going to discuss
+the highest level distinction in maps.
+And, that is between thematic maps and
+reference maps.
+And, when you're making a reference map,
+the set of design decisions and options
+for those decisions, is quite different
+than when you're making a thematic map.
+So, being familiar with this distinction
+is obviously quite important.
+Now, to understand the difference
+between reference maps and
+thematic maps,
+let's first take a step back.
+And examine the types of maps that
+we typically encounter these days,
+as well as those that people
+typically encountered in the past.
+Not only will, will this help
+us ground our discussion here in
+this video about thematic and
+reference maps.
+It's also going to set the stage nicely
+for the rest of the videos in this module.
+On a day to day basis, for most of us,
+the maps we're most likely to
+encounter are online maps
+using our desktop browsers.
+And mobile maps using our smart phones.
+Now on the online maps side,
+of course Google Maps is the 800 pound
+gorilla, but there are of course others.
+And I wanted to call
+them out specifically,
+because I didn't have a chance
+to in the last video.
+There's MapQuest which
+is still quite active.
+We talked about that in module five,
+I believe.
+Bing Maps.
+You've seen some screen shots from
+Bing Maps throughout this MOOC.
+And then of course OpenStreetMap
+which we've spent a lot of time with.
+On the mobile side, we've, we have of
+course got the Google Maps app and
+the controversial Apple Maps app.
+A Windows phone has the Nokia HERE Map.
+There's also Waze and
+these types of things.
+And as we saw in the last video,
+the most recent data suggests that
+Google has a comfortable lead in map apps,
+a market share.
+Although Apple isn't all that far behind.
+Now personally,
+I think I use these apps and
+websites an average around,
+of around one to two times per day.
+Although my use goes way up when
+I'm travelling in a new area.
+And I suspect you're somewhere
+around that usage level as well.
+Now another type of map
+I frequently encounter,
+although significantly less often, is maps
+that appear in news outlets that support,
+augment and complement news articles.
+So for instance, here you can see
+that in the American southeast.
+The income inequality is more serious and
+it's more difficult for
+someone who is poor to, as we say in the
+United States, climb the income ladder.
+Whereas up here in the great plains and
+to a certain extent in
+the Rocky Mountain region here,
+it's, it's more easy to do so.
+Although, still somewhat difficult.
+Okay.
+This map from the Washington Post
+is another wonderful example of
+a contextually relevant and very
+interesting compliment to news coverage.
+In this case about people who
+are going to Syria to fight in
+the various militias there.
+Including, including the Islamic State.
+This is a great example of
+what's called a flow map.
+Even more local news organizations
+are in the mapping business.
+So for instance,
+here's a map that recently appeared in
+the Twin Cities' Minneapolis and St.
+Paul's primary newspaper here,
+The Star Tribune.
+This shows the best places to be
+a transit commuter in the Twin Cities.
+And as you can see, right around here,
+where the U is, the university is.
+The university is a great place
+to work if you're someone who
+likes to ride public transport.
+Now we're coming up on the 2014
+election here in the United States.
+And around election time,
+another map genre, the election
+map enters many people's lives.
+And it generally does so
+in a very serious way.
+So, I'm sure many of you are familiar with
+the election maps like this one here.
+This shows the elections of the,
+this shows, excuse me,
+the results of the 2012, election
+between Barack Obama and Mitt Romney.
+Of course, election maps are not only
+popular, popular in the United States.
+Here's one from the recent
+German Federal elections.
+It's just showing Berlin.
+And then here is one from
+the recent Indian elections.
+Which was something of a landslide,
+as you can see from this map.
+Of course, beyond news maps and
+election maps, there are other types
+of maps we encounter online as well.
+For instance, I look at this
+map here at least once a week.
+It tells me which American football games
+are going to be shown in Minneapolis on
+the upcoming Sunday.
+I'm always crossing my fingers
+that the San Francisco 49ers,
+my home team, are going to be on TV.
+But even with the dominance of this, these
+types of online maps, of election maps,
+of news maps.
+And of course of Google maps, and
+other online and mobile maps,.
+Most of us also frequently
+encounter offline maps, and
+actually probably on a daily basis.
+So for instance, for
+those of you who work in a downtown or
+on a corporate or university campus.
+Or who ride public transportation, or
+who go to malls regularly, and so on, and
+so forth.
+Those of us who do these types of
+things are very familiar probably with
+the publicly displayed local maps.
+Of course, those of us who can
+remember maps before the Internet,
+know that there were also a, a large
+number of other types of paper based maps.
+For instance, I know in my family,
+road atlases,
+like this Rand McNally Road Atlas
+were quite popular.
+And world atlases like this, an Atlas
+of the World by National Geographic,
+was also something that my brothers and
+I spent a good amount of time looking at.
+Now going back further in time, I'm sure
+some of you are probably familiar with
+this map here by Charles Joseph Minard.
+It was created in 1861, and it shows
+the Napoleon's campaign on Russia in 1812.
+It's a very famous map.
+You can see here, this line here
+represents the size of Napoleon's army,
+and so does this line.
+As he goes towards Russia,
+the army gets smaller, and
+smaller, and smaller, and smaller.
+And I'm not going to get into
+the history of this particular campaign.
+But weather and some scorch earth
+approaches by the Russians,
+made this campaign very unsuccessful.
+And you can see this by the time that
+Napoleon's Army gets all the way
+back to where it started,
+the army’s size is a fraction of
+what it was when it started out.
+It’s a very famous map, early map.
+You can also see that the temperature at
+the time that the army was progressing was
+also displayed here.
+Now going back even further,
+we have this map here,
+which we saw in the last lecture.
+It significantly predates even
+paper as it's 14,000 years old.
+It was found on a stone tablet
+in a cave in Northern Spain.
+It depicts you know,
+various things in the local area.
+So, a mountain, a river,
+a pass, these types of things.
+Okay.
+So, that was a lot of maps.
+I hope you enjoyed that,
+going through them.
+I know I enjoyed putting
+those maps together.
+But let's go ahead and
+pop back up and return to our
+primary learning objective here.
+Which is the distinction between
+reference maps and thematic maps.
+Now of the maps we just saw,
+these here are reference maps.
+And these here are thematic maps.
+Now why is this the case?
+Well, let's look at these two
+groups of maps in more detail.
+Now, on the left hand side of this slide,
+right?
+We see maps that are primarily
+about communicating the location of
+specific entities.
+And often how to navigate
+to these entities as well.
+So another way to put this,
+is that the main use cases,
+the main reason why people use reference
+maps are navigation, and orientation.
+We use reference maps to orient
+ourselves in our surroundings.
+As well to figure out and
+orient where things are in
+the context of their surroundings.
+And of these maps,
+as a result of their primary use cases
+being navigation and orientation.
+We frequently find ourselves asking, and
+in fact, we typically almost always find
+ourselves asking questions like,
+where is this place I'm looking for?
+Where am I relative to this place?
+Where is this place
+relative to things I know?
+How do I get to this place,
+and so on and so forth.
+Now this is true of the latest and
+greatest version of Google Maps.
+And it's also true of publicly
+displayed local maps we encounter
+in our environment.
+And interestingly, and this makes sense
+because all of these are reference maps.
+It's also true of what the folks were
+using this map on this stone tablet 14,000
+years ago in Spain.
+Right?
+All of these have very similar use cases.
+They're all reference maps.
+Thematic maps on the other hand,
+aid in a fundamentally different
+geocommunication purpose.
+Rather than being intended to communicate
+the locations of specific entities.
+Thematic maps are,
+in the words of the well known Thematic
+Cartography Textbook by Dr. Terry Slocum
+the University of Minnesota's very own Dr.
+McMaster, and their colleagues.
+Thematic maps are used to emphasize
+the spatial distribution,
+spatial distribution, key word.
+Of one or more geographic attributes.
+You don't use thematic maps,
+like those I put on this slide to help
+readers find the nearest pizza parlor.
+Or to help them figure out where they
+are in the context of their surroundings.
+You, you use these thematic maps,
+like those on the slide, to help readers
+understand the spacial distributions
+of things like, for instance.
+The size of an army, where an army comes
+from, which football game is on TV, and
+of course election results.
+So, to summarize,
+reference maps are used to communicate
+the location of specific entities.
+For instance, pizza parlors, mountains
+in Spain 14,000 years ago, and so
+on and so forth.
+And of course, reference maps are also
+used to communicate how to get to
+these places.
+Whereas thematic maps are used to
+communicate the spatial distribution of
+one or more geographic attributes.
+Now, because of the fundamentally
+different geocommunication functions of
+reference and thematic maps.
+Understanding whether you need
+to create a reference map or
+a thematic map, is one of the first things
+you need to do in the map-making process.
+So for instance, if,
+if the number one thing I
+am trying to communicate is
+the location of specific entities,
+I'm going to want to be
+thinking about a reference map.
+On the other hand,
+if I'm trying to communicate the spatial
+distribution of a geographic attribute.
+Say for instance, what football games
+are playing in which places, or
+election results,
+I'm going to want to make a thematic map.
+Now, on a much more basic level, knowing
+the difference between reference and
+thematic maps, is a key early step
+towards being an educated map reader.
+And a member of the broader
+cartography community.
+And speaking of which,
+I want to circle back to something
+I foreshadowed in the first video.
+About the dramatic impact of
+the transition from paper to
+digital media in cartography.
+In his web cartography text book,
+referring to the rise of web
+cartography in the past 20 years.
+Dr. Muehlenhaus writes, the last time
+cartography went through such a sea change
+was with the advent of thematic mapping.
+Which occurred in earnest in the 19th
+century with maps like Minard's map of
+Napoleon's 1812 Campaign on Russia.
+So now that you understand
+the difference between thematic and
+reference maps, you can really understand
+the strength of this statement.
+He's saying that now,
+there's now a third big transition.
+We went from reference maps,
+added thematic maps, and now we have this
+third thing which is web cartography.
+So, I do want to clarify
+one common point of
+confusion when distinguishing thematic and
+reference maps.
+And that is well,
+I'm looking at search results here for
+Korean barbecue in Chicago.
+[INAUDIBLE] showing just
+a spacial distribution of
+Korean barbecue restaurants.
+But you said that Google Maps
+is a reference map.
+Well, it comes down to the emphasis of
+what your map is trying to do, right?
+Google Maps is not trying to show
+me what parts of the city have more
+Korean barbecue, although,
+certainly I can tell that.
+The main goal of Google Maps
+is to help me navigate to.
+And figure out where these
+Korean restaurants are, so
+that I can get my lovely.
+And my personal favorite is a,
+a Korean burrito which they
+do quite well in, in Chicago.
+Okay.
+In the following two videos,
+we're going to individually focus on
+reference maps first,
+and then thematic maps.
+And then lastly of course, we are going
+to do a brief video on spatialization.
+And that is it for this video.
+I'll see you in the next video,
+where we'll talk about reference maps.
+[SOUND]
+

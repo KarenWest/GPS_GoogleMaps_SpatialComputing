@@ -1,0 +1,722 @@
+Welcome back to the discussion
+of Spatial Query Languages.
+In the last two videos,
+we briefly talked about the notion of
+queries, the notion of query languages.
+And we also started looking at SQL,
+particularly facilities and
+statements to create tables and
+to populate them.
+Okay.
+Today the focus is to look
+at the actual query part of
+SQL which is primarily
+the select statement.
+Now, select statement is
+fairly sophisticated,
+it has many many facilities,
+you can do a lot with SELECT Statement.
+So, that's we are going to decompose
+the discussion into a couple of pieces.
+Okay?
+So first, we'll simply look at the,
+the easiest part of SELECT,
+working with single tables.
+So, at the completion of this module,
+we should all be comfortable looking
+at a single table SQL statement,
+a single block without nesting and
+understand its output.
+The second objective would be to
+compose simple single-block SELECT
+statement to retrieve data from one table.
+So before we do that, let's look at
+the big picture of SELECT statement.
+It's part of the data manipulation
+language sub-component of SQL.
+In contrast to data definition,
+that's where the Create table and
+Alter table resided.
+Inside data manipulation we have SELECT
+statement as well as INSERT that we
+saw in the last module,
+UPDATE as well as DELETE.
+Okay?
+For a SELECT statement, the main purpose
+is to retrieve data from one table or
+a set of tables.
+Okay?
+And the result of SELECT also is a table.
+So, it's essentially a part
+of Relational Algebra.
+So SELECT takes one or
+more table and returns a new
+table representing the results.
+Okay.
+It has many features.
+You can do many things with it.
+The first thing to be aware of is
+that SELECT statement has about
+half a dozen clauses, and we'll start with
+the simplest one first and move forward.
+In addition to this,
+it can also make use of many operators and
+functions, and
+we'll show some examples very soon.
+So you can arithmetic,
+string manipulation, statistics and
+things of that kind with SELECT.
+And finally, it can also do nesting.
+So if you have seen programs in Java or
+Python where you nest loops or you define
+one method or function inside the other,
+there is a similar nesting
+facility available with SELECT.
+And again,
+if you have done nested loops and
+so on, it may feel very natural to you.
+But if you are beginning and you haven't
+seen those before, it's best to postpone
+the discussion of nested and first get
+used to the simple single block form.
+Okay.
+Now our discussion of SELECT statement
+is going to be somewhat limited,
+because our real goal is to
+understand spatial querying part.
+So essentially look at spatial
+operators and functions and data type.
+But in order to appreciate the full power,
+we want to
+learn at least some common uses of SELECT
+in order to do single table query,
+multi-table query, and then we will
+use those with spatial aspects, okay?
+And in terms of our learning,
+it will be primarily based on examples.
+So, in some sense you can think of it
+as design patterns, so I'll show you
+some common queries and common things
+people do with SELECT statements.
+And main goal would be to read and
+compose the SELECT statements.
+And again, this idea would be to
+locate very, very common used cases.
+So we'll show you the clauses
+such as SELECT, FROM, WHERE.
+And we'll show you the operators as well.
+Okay?
+All right, so
+looking at the clauses, okay?
+There are about half a dozen clauses.
+The two which are mandatory.
+So, in order for you to have any query
+that the database can understand,
+you need at least two clauses.
+The first clause has same name
+as the overall statement.
+It's called the SELECT clause, and
+it usually specifies
+the format of the result.
+So, in the result if you want 2 columns,
+then those 2 have to be
+listed in the select clause.
+Okay.
+The next clause is FROM, and
+in the FROM clause, we list the tables.
+So, let's say if the data comes from
+country table, or the city table, and
+then you want to take a subset of data
+from those tables, then country and
+city table may be listed from clause.
+Okay?
+So, in any Select statement,
+the database can understand
+these 2 clauses must be present.
+Okay?
+In addition, there are many Optional
+clauses, first of which is Where.
+And, using Where you can
+specify your subset of rules.
+So let's say we are querying data in the
+country table, and we are only interested
+in countries with large population,
+maybe population above 100 million.
+Then, that's the condition which
+we'll specify in WHERE, okay?
+You can also think of
+subsetting the columns.
+So let's say country table
+had half a dozen columns, and
+we want only two columns.
+Then those columns could
+be listed in Select.
+So between Select and Where,
+you could specify subsets of columns and
+subsets of roles.
+The next set of columns have to, in
+some sense, further process the results.
+So, there's order by column
+which sorts your result.
+So, let's say when we get these list
+of countries with population of several
+hundred million, and we want the results
+sorted alphabetically by country name,
+then that can be specified by order,
+by clause.
+Okay?
+And finally,
+we have a pair of clauses Group By and
+Having using which we can
+do small simple statistics.
+So for example, you know, you may want
+to ask for the average population for
+the group of countries where
+the population is at least 100 million.
+And in that case,
+we can use GROUP BY or HAVING.
+To compute the statistics such as average,
+sum, minimum, maximum, and so on, okay.
+So this gives us a big picture
+of SELECT statement clauses.
+Another part of SELECT statement
+is the richness of operators and
+the richness of functions.
+So at least we can give you a feel for
+what type of operators you are likely to
+see, and many of these are very familiar.
+If you have done programming
+in any language, you know,
+Perl, Python, Java,
+you're going to see these operators.
+For example, arithmetic.
+So if you had numeric columns, you can
+add, subtract, multiply, and so on, okay.
+There are comparison operators.
+So when we wanted countries with
+population greater than 100 million,
+then we look at the column population, and
+we may have to compare it with 100,000,000
+using operators less than, greater than,
+and those are all supported.
+In addition to the conventional
+comparison like equal to,
+greater than, less than,
+Select statement also has a few more,
+which are in some sense shortcuts,
+such as between.
+So when you look at this between,
+it is a short cut for
+a combination of two conditions.
+So let's say we say population
+between 100 million and 500 million,
+then that's a short cut for saying
+population greater than 100 million and
+population less than 500 million, okay.
+And then you have operators for
+string matching, which is like
+this operative called LIKE, that allows
+you to do exact string matching.
+So you may want to ask for
+all the countries whose name begin
+with the letter A or end with A.
+And those kind of string
+matching is provided in the LIKE.
+Okay?
+There are other operators.
+So, if you are interested in
+forming more complex conditions,
+you can use the logical conjunction,
+disjunction, and so on.
+And these are again pretty similar to
+what you may see in other languages.
+In SQL they are, you know, given their
+English names like AND, OR, NOT and so on.
+So let's say we wanted to list all
+countries which qualify two conditions.
+Number one, there populations
+are above 100 million, and second,
+maybe we want to say
+the continent is Asia.
+Then you could specify those
+2 simple conditions and
+compose them together with AND Okay.
+Other families of operators
+include statistics, so
+basic SQL has about half a dozen
+simple statistical operations.
+So, for a group of countries, you could
+compute minimum, maximum, average,
+sum, etc.
+Okay?
+There are other statistical
+packages within SQL,
+these tend to be vendor-specific.
+So, you can also do other
+common statistics in here.
+Okay.
+And then finally, if you are familiar
+with set algebra, then we can take two
+different SELECT statements and combine
+them using set operations such as Union or
+an Intersection, you can even
+put some conditions on the set.
+So, you can look at, you know, if
+a particular value is a member of the set.
+And so on.
+OK?
+Great.
+So, this gives you
+a beginning of what is SQL.
+There are other unique things in SQL,
+there are other data types such
+as currency, date, and so on.
+And with SQL3, in fact,
+there are user defined data types.
+So, you can even add spatial
+data types such as points,
+polygons, and later part of this chapter,
+we are going to see those.
+Okay.
+Great.
+So with this, you know,
+let's start looking at the actual query,
+which we saw the big picture,
+what SELECT can do.
+But let's try to go do
+something simple with it and
+we'll slyly, you know, build on that
+simple examples to strengthen our skill.
+So let's start with the hello
+world example in SELECT, okay.
+The first, the most simple thing you
+can do with SELECT statement, and
+in that case, we are only going to use
+two clauses, the SELECT and the FROM.
+And our capability would be to
+essentially list a subset of columns.
+Okay.
+We won't be able to do
+subset of rows using these two clauses.
+But we could certainly ask for
+a subset of columns, okay.
+So let's, you know,
+recall this city table.
+We saw that in the last module.
+And for every city, we have one, two,
+three, four, five columns, right.
+We have name, country,
+population, capital, and
+also the geometric footprint
+that's called Shape here, okay?
+So suppose we want a subset of columns,
+such as specified by this English query,
+where we are saying, you know,
+list the cities where there are countries.
+So we want the name of the city and
+the country.
+So in order to specify that, we could list
+those two columns in the SELECT clause,
+and then the result will give
+us just these two columns, okay?
+So the result may be name and
+country, okay?
+So this is the input and output,
+and in order to specify this,
+we will have a very simple SELECT
+statement with two clauses.
+In the,
+in the from clause we list the table.
+So we are saying,
+let's look at the table city.
+It may have many, many columns, but
+in the result, we only want two columns.
+We want name and country, okay?
+So with this very,
+very small query, you are going to
+extract two columns from this table and
+the result may look like this, okay?
+So this is, you know, I'm going to
+assume that this is simple enough for
+us to understand.
+I'm not going to give an execution or
+interpretation algorithm for
+now, but let's rely on your encution,
+and we'll build on that for a while.
+Maybe in the next video,
+we'll come back and
+talk formally about how to
+interpret these operators.
+Mm-hm.
+Good, so
+once we are done with this Hello World,
+let's try to get a little more ambitious
+and try to do some more things.
+Okay?
+So the Hello World with the Select and
+From clause,
+we could pick a subset of columns.
+Okay?
+So natural next question may be,
+how do you pick subset of rows.
+And this is where the next clause comes
+in the play, is called the Where clause.
+So now, we are going to have a SELECT
+statement with three clauses.
+So here let's say English
+query is the following.
+We want names of cities
+from the city table.
+But now there is a condition.
+And you may want to see where
+the condition is, and it shows up here.
+So we don't want all the cities,
+we only want cities which are capital.
+So if we go back to last slide and
+see the city table.
+You notice there is a column
+a boolean column called Capital.
+Some cities, the value is yes saying they
+are Capital like Havana is capital of
+Cuba, but
+other cities you know the value is no.
+Toronto is not a capital of Canada.
+So, we only want the cities
+where this capital is yes.
+So in order to extract those.
+We will use the WHERE clause.
+And in the WHERE clause,
+you can put a condition on that
+particular column called Capitol.
+Okay.
+So our result may look like this.
+Here we are extracting
+a subset of rows and
+notice that the condition says
+the Capitol column is always yes.
+Okay.
+So to specify this,
+your SQL query may look like this.
+So again we are saying,
+work with the table named CITY.
+And in this table, only select
+rows which satisfy this condition,
+CAPITAL equal to yes.
+Okay?
+Now what about the columns,
+how many columns do we want?
+And in this case we actually
+want it to select all columns.
+And here is a shorthand you could use
+to list all the columns if you like.
+Our shorthand is star,
+which says all the columns.
+And you might actually recall
+a similar expression in
+Unix shell scripting languages, where star
+matches all the files in a directory.
+Some of the regular expressions,
+you know, use a different way,
+but it's sort of coming from Unix, okay.
+So here is another very simple query
+which shows you now three clauses.
+Okay, the FROM clause lists a table.
+The SELECT simply says get me all
+the columns, leave them as it is.
+And the WHERE is saying,
+give me a subset of rows, okay.
+Great.
+So we'll show you one
+more example of a WHERE.
+And in this case, we are using aliasing.
+So sometimes the table names are long.
+And, you know, that's good for
+documentation and for a broad audience.
+But if you are writing it again and
+again in a query, some of us may,
+you know, find it tedious to type,
+so either you can lean on
+your editor to complete the table names,
+or you can simply use a short alias, okay?
+So here is another query, so
+let's first look at the query, and
+then we can come back and
+talk about alias, okay?
+So here is another query with SELECT,
+FROM, WHERE, only three clauses.
+So notice we are working with
+the table Country at this time, okay?
+So we are going to put some conditions
+on columns inside Country table, and
+we might even subset
+the columns themselves.
+So then look at the Where clause.
+So there is a condition which says.
+CO dot life expectancy is seven,
+less then 70, kay?
+So this life expectancy is
+a column in country table,
+but instead of saying country dot
+life expectancy we are saying CO,
+which is an alias for country and
+in the from clause we have specified.
+This new name or short name for country.
+So we're asking for only those rows
+where life expectancy's less than 70.
+And now notice in the SELECT
+clause we did not use a star, but
+instead we listed two specific columns.
+So in this particular query, we
+are doing actually two different things.
+One, show you aliasing.
+In order to reduce the amount
+of text you have to type in.
+And second, we also showed you a situation
+where we are subsetting not only those but
+also columns.
+So it's combining with
+the power of Select and Where.
+Great.
+So, at this point, the one thing to
+understand is the following, Even though
+what we showed you so far is very simple,
+all it did was to subset rows or columns.
+But these represent the most popular forms
+of select statement, and you know if you
+are writing an application program like
+JAVA or PYTHON, which goes and fetches
+data from database, just learning this
+simple form will give you a lot of power.
+OK?
+So again,
+try to think of all the used cases.
+Most of the systems you see on the web,
+you know,
+they all have databases behind them.
+And the type of queries they are sending
+are simple queries like this.
+So for example,
+try to imagine Facebook, right.
+In case of Facebook, you know,
+when individual user logs in, all they
+see are information about themselves.
+They may see whats posted on their
+wall and what's their profile.
+But in the back,
+there are big databases which
+are storing data about all the users.
+So try to now imagine the query
+Facebook generates when
+an individual user like you logs in.
+It is one of these select
+queries where the condition is
+set to get me the [INAUDIBLE]
+this user who just logged in.
+So, you pass the user ID, and
+then Facebook may choose to
+retrieve all the data table of this user,
+possibly, or a subset of data.
+Maybe they don't want
+the entire time history.
+And they first give you your
+current snapshot, and so on.
+So, so again, a lot of queries that
+these systems generate are very
+simple SELECT queries like this.
+So having learned this itself
+gives you a lot of power, okay.
+But beyond that, you can do more things
+with these kind of SELECT statements.
+So let's carry, you know, on and
+let's continue our journey.
+To look at the other clauses.
+OK?
+So again, try to
+remember which other clauses
+are there in select, we haven't seen.
+Right?
+Remember there were half a dozen clauses,
+so we saw 3.
+And, few we haven't seen.
+So, we are going to see
+a couple more in this slide.
+So, here we are going to do
+a little bit of statistics maybe.
+Even in context of Facebook,
+you know, people might want to know
+the number of friends each user has.
+You know, things of that kind and
+that such statistics are very,
+very powerful and useful.
+So let's come back to our simple
+example with country, city, and
+rivers, and
+talk about simple statistical query.
+So here is our first one.
+And it's asking for
+average population across capital cities.
+So remember in the table, there were
+quite a few cities which were capitals of
+their country and they all had different
+populations, but perhaps, you know,
+we just wanted to do a simple
+statistics and find the average, okay?
+So in order to represent that, you know,
+the simplest way to do statistics is to
+use these functions, such as average,
+max or mean in the Select clause.
+Okay.
+So this is the simplest way
+to get computer statistics.
+So, if when you look at this query
+we are using select from where and
+in this case you can compute just
+one statistic just one summary ok?
+So what does that summary represent here?
+The group is specified in
+the where clause in this case,
+so we are picking up all cities
+which are capital cities.
+And then for that group of city,
+we are computing average, okay?
+So there are the simple statistics, it's
+the one global number, instead of average,
+if you put a different
+function like max or min.
+You will get the most populated or
+most, you know,
+populous capital city or
+least populous capital city and so on.
+Okay?
+So again, this is quite powerful,
+you know,
+this basic statistics itself
+can take you very far.
+Okay?
+But once you go past that, you will notice
+that many times people actually want to
+break up these capital
+statistics into finer groups.
+Okay?
+And SQL allows you to do that.
+So this is where the group by clause
+comes in and that's the next example.
+So notice the second query.
+So here, we are still interested
+in average of a column,
+gross domestic product, but we don't want
+one single average across the board.
+But instead we are forming groups.
+And the groups here
+are defined by continents.
+Okay?
+So, you know, if there are let's say
+about half a dozen continents or so.
+For each continent we
+want a separate average.
+Okay?
+So these are group statistics.
+Again, SQL specification is rather simple.
+The key new part you see
+here is the GROUP BY clause.
+Okay?
+So notice this continent is
+specified in the GROUP BY clause.
+So you're saying, well,
+look at the continent column and
+every distinct value in
+that column forms a group.
+So all the countries with
+North America form one group.
+All the countries from South America
+forms a separate group.
+Countries with Europe
+forms a separate group.
+Asia, another group and so on.
+And some groups may have very few
+countries and that's fine, right.
+But those are the groups and for each
+group, so we start with country table,
+form these group by continent and
+then for each group.
+Sorry, then for
+each group compute the average.
+And report the group
+average with the group ID.
+So in this output there
+will be multiple rules.
+You get one rule per continent.
+And there will be two columns.
+So we'll have the name of the continent
+and the average population.
+Now, sometimes we may not be
+interested in all of this group.
+So, for example,
+there may be a continent named Antarctica,
+and as we know doesn't have a lot of
+Gross Domestic Product at least til now.
+Maybe with climate change it will change,
+but for
+now, maybe we want to exclude some
+of those continents from the result.
+And there is a having clause which allows
+you to exclude some of those groups.
+So, we are going to take
+a slightly different example.
+So here, we have actually made the queries
+a little bit more complicated.
+So we are saying, OK,
+the groups are by country, OK?
+So each country look at how
+many rivers originate there.
+If a country has only one river,
+we are not interested in that group.
+But, if they have at least 2,
+say if they have 2 or
+3 or 4, then you look at those rivers and
+say, give me length of the shortest river.
+OK?
+So here again we start
+with the river table.
+First we define the groups, and
+these groups are going to be,
+you know, the origin which is
+the country where the reverse originate.
+And we are also saying
+the country has only 1 river, or
+0 river,
+then those are excluded from the result.
+And, then, finally,
+we say that if they have multiple rivers,
+I only want to report a statistic which
+is the length of the shortest river.
+So with this we have shown you
+the richness of select statement.
+Even when you are just working
+with a single table ok?
+And we have shown you how
+to use different clauses.
+We went and we started with select and
+from, that is the simplest case.
+But using that you could create
+a subset of columns, okay?
+Then we brought in where clause which
+allows you to subset the roles.
+And then finally, we brought in the group
+by and having clauses which allows you
+to do statistics and break the statistics
+into smaller group and exclude some group.
+In the next module, we are going
+to get a little more ambitious and
+try to show you how to
+work with multiple tables.
+Okay.
+So we'll wrap up at this point.
+You know, do look at them again,
+you know, do practice with the quiz.
+Or if you have access to SQL,
+you know, try some of these out.
+In the next module we'll come back and
+play with multiple tables.
+[SOUND]
+

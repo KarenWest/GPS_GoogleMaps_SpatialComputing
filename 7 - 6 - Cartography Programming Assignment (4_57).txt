@@ -1,0 +1,132 @@
+Hello, folks!
+Welcome to the second program
+assignment of the University of
+Minnesota's Spatial Computing MOOC.
+In this assignment, we will have a real
+exciting task, making your own map.
+Of course I do not mean to
+draw your map on a paper, but
+instead make an interactive web-based map
+using the latest state-of-art technology.
+For this assignment,
+we'll use TileMill and Mapbox.
+With a technology used by
+many larger companies like,
+Foursquare, Pinterest and Evernote.
+You have a chance to upload and
+publish the map you made for
+this assignment, online.
+Which enables people from all
+over the world to access your
+map on both computers and mobile devices.
+If you have already set up the VM for
+our last program assignment,
+you can keep using the VM as I have
+already included TileMill in the VM.
+Otherwise, you can visit the TileMill
+website to download software.
+You can just go to Google, search for
+TileMill, and go to their website.
+As you can see, the software
+supports Windows, Linux, and Mac.
+Also, TimeMill is a more mature software.
+So setting up process is much easier
+than however, as stated in the syllabus,
+we cannot provide individual technical
+support for the setting up process.
+Now we are going back
+to the virtual machine.
+I opened the virtual box, and
+I start the virtual machine.
+[NOISE] Both our username and
+password for the VM is special.
+As you can see TileMill is on the desktop.
+You just double-click it.
+Now you're at TileMill.
+TileMill comes with
+a few example projects.
+We'll open Open Street DC 1.
+Now we're in the map developing
+interface of TileMill.
+On the left hand side, as you can see,
+the preview of the map you are working on.
+On the right hand side is the editor.
+TileMill uses a styling language called
+CartoCSS which looks familiar to those of
+you who are familiar with CSS.
+Don't worry if you know nothing about CSS
+as CartoCSS will use in this assignment.
+The is simple and
+should not require any background in CSS.
+You can click save at any
+time to save your edits and
+preview, preview your edits.
+Let's see I'll just change
+the color of water to red,
+let's see, naw to, to white.
+[NOISE] As you can see
+the water used to be blue and
+now it becomes white,
+because I changed the color for water.
+And after you have clicked save,
+you can preview the edit you just made.
+After we're done with editing it,
+you can export your map to image file,
+or envy tiles, which is a format that
+allows you to publish your map on map box.
+Now, we're going through the assignment.
+Now, we're looking at
+the programming assignment.
+I'll skip the introduction.
+You guys need to follow the instructions
+very closely in order to
+get the correct results.
+Task one is more like a how to work
+example that gets you familiar with
+the TileMill environment and
+the basic CartoCSS format.
+You'll be working on the Washington D.C.
+map example, which I just showed you,
+to you guys.
+Make sure you follow the instructions
+closely and then answer questions.
+Remember to save your work in order
+to see an updated preview map.
+[NOISE] Task two is my favorite one.
+You have a chance to apply what you've
+just learned about starting the map
+using CartoCSS.
+You are expected to make a really
+ugly map, you can do that by
+changing various elements, like the color
+scheme, the fonts, and so forth.
+Remember to save your map and
+post it on the discussion form.
+I'll start a new thread in the forum for
+this purpose.
+You won't be graded by
+how ugly the map is,
+as long you completed this task
+you'll earn full points on this one.
+For task three you'll make
+an interactive thematic map
+to visualize the poverty rate
+in Twin Cities, Minnesota.
+Again, make sure to follow
+the instructions carefully.
+After completing this task, you can also
+try to visualize some other attributes for
+other cities,
+like your hometown, probably.
+All right guys, you've now learned
+the basic skills to make a web-based map.
+I hope you guys enjoy this assignment.
+If you are excited about making maps,
+show some creativity.
+Make your own map and
+publish them on Mapbox.
+Don't forget to share your
+maps with us on the forum.
+Have fun.
+[SOUND]
+

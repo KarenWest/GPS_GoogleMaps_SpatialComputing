@@ -1,0 +1,188 @@
+Okay folks we're continuing
+our series of interviews here.
+I'm here with Martin Raubal
+who is a professor of
+Geo Information Engineering at ETH Zürich,
+in Switzerland.
+One of the best universities
+in all of Europe.
+Hi Martin, how are you doing?
+>> Doing great.
+Hi Brent.
+>> So, I have a list of questions for
+you here as you know, and the,
+the first question I'm going to ask you
+is just to explain to everyone your
+research interest.
+>> Okay, so basically, in my group we
+focus on on you know two research issues.
+The one has,
+deals with cognitive engineering for
+geographic information science.
+So, basically bringing cognitive
+aspects into the design of of
+geo spatial services and tools.
+And we also have a mobile eye-tracking
+lab that is most people know static
+eye-trackers that basically, where you can
+you know, get sequences of gaze patterns.
+And we're doing this research
+with a mobile eye-tracker.
+So, that means that we can go out in,
+into the field.
+And really find out you know, what is
+really going on when people are trying to
+solve their problems,
+when they interact with mobile devices.
+And that provides feedback to
+the design of these tools.
+The second area is actually how to use
+geographic information systems for
+energy types of energy.
+Meaning that, you know,
+if you do renewable energy planning,
+you create the new wind park that has
+to be connected to the energy network.
+So, we do transmission
+line planning there,
+in terms of a multi-criteria
+decision analysis.
+And we also focus on spacial-temporal
+optimization problems.
+How to locate biomass power plants,
+et cetera.
+>> Okay.
+So, the second question I had was can you
+tell me a bit about how you began
+working in the spatial computing or
+the geographic information area?
+>> Well I have to start
+a little bit earlier there.
+Because when I graduated from high
+school I actually wanted to study law.
+And in the vacation before
+starting the study,
+I was trying to find a job to pay for
+my travels.
+And so another job at this survey,
+the local surveying office and
+this is how I you know, came familiar
+with surveying engineering, and I think
+one week before the semester started I
+decided to study surveying engineering.
+And then when I did that, actually I
+became a teaching assistant, and it was
+the time when my professor Andrew Frank
+came to Vienna and started the GS program.
+And this is how I ended up GIS.
+You know went to the U.S for
+a Master's degree.
+Did a PhD in chi information and that's
+how I got into the area of spatial things,
+spatial engineering, spatial computing.
+>> You have one of my favorite stories
+about finding finding spatial computing.
+[LAUGH]
+>> Yeah.
+>> okay.
+So, what do you think has been
+the most important new technology or
+research paper, in the spatial
+computing area in the past few years?
+>> That's a difficult question.
+I, I wouldn't want to limit myself
+to naming one particular thing.
+because, you know, when they came
+up with location based services,
+they were always talking
+about the kill application.
+And I was always wondering, why are you
+looking for the kill application?
+It's already there.
+It's navigation systems.
+So last couple of years, I would still say
+that location based services is really
+something that has,
+you know, brought some new
+ideas into the spatial computing area, and
+it, it actually already went mainstream.
+But in terms of of the, the progress and
+development there in the area,
+I think, it's some of the new
+interaction modes that fascinate me.
+So it's, you know,
+what are your instructions?
+It's just interacting with various
+tools with this system, and
+this whole area that you're quite familiar
+with, the Chiwage CI this integration of.
+Chi is spatial stuff as we name it.
+And human computer direction.
+>> Well Martin you've given a great
+preview of module seven of the course.
+We'll be dedicating a whole module to
+geographic human computer interaction.
+So, thank you.
+>> Very good.
+>> I'll pay you later.
+Okay [LAUGH] next up I was wondering if
+you could talk a bit about about
+the project you're working on, right now.
+That has you particularly excited.
+>> Yeah I started my job here
+about three and a half years ago.
+And you know, I, I always worked in the
+area of spacial commission and wayfinding.
+And, one particular problem
+there was if we wanted to
+find out where people
+made wayfinding errors.
+There were certain methods
+that you could apply.
+Like, you know, watching people,
+measuring some kind of stuff.
+But we never,
+there was always the question of
+where did people have problems.
+But we never could get to the question
+of why people had these problems.
+So, my idea was to come up with the Mobile
+Eye-Tracking lab here at ETH Zürich.
+And I think that actually is very
+exciting for me and for my group.
+Because that gives us some ideas about,
+why do we have peop, why do
+people have problems during interaction
+with mobile systems or during way finding.
+So and we combine that with
+location functionality so
+we can actually call it location
+aware mobile Eye-Tracking.
+Because at the same time,
+when we know where people are looking at,
+we know where they are.
+And we know when they'll look at
+like landmarks during wave finding,
+when they look at their mobile device,
+when they need help,
+when a decision point is very complex.
+And we can get a lot of this information
+just from the gaze patterns alone.
+So, by looking at the gaze
+patterns we can automatically.
+Find out where the people are lost,
+whether they have problems with
+orientation with finding landmarks and so
+on, so, this whole map matching process.
+And I think mobile ad tracking brought
+really a new perspective into my research,
+which I am quite excited about.
+>> Yeah, some of that work coming out of
+your group is really quite impressive.
+the, the paper at the workshop last year,
+I very much enjoyed.
+Well, thank you Martin for your time.
+You're welcome, Brent.
+It's nice talking to you.
+[SOUND]
+

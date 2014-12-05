@@ -1,0 +1,642 @@
+Welcome back to the discussion of spatial
+data mining, in the last few
+videos we first try to define what spatial
+data mining is and what it is not.
+We gave examples of several pattern
+families and then we also went and
+looked at the input spatial data types as
+well as spatial statistical foundation.
+So some of you probably recall from last
+video that spatial data often violates
+common assumptions made in statistics,
+such as,
+data samples are drawn independently of
+each other.
+Spatial data, and again, the first law
+of geography says that nearby things are
+similar.
+So in other words, spatial data samples,
+are often not independent of each-other.
+And this is often quantified as spatial
+auto-correlation.
+And you saw at least way to quantify that
+in the last video.
+Okay?
+In this video, we are going to look at
+the impact of spatial auto-correlation on
+one pattern family, namely.
+The location prediction.
+Okay.
+So at the end of this particular video, we
+want to
+very clearly distinguish the classical
+prediction problem and location prediction
+problem.
+And second, we want to see how this
+auto-correlation impacts basic prediction
+models such as regression.
+All right.
+So without further ado, let's recall the
+location prediction problem.
+So, you remember in the very first video
+in spatial data mining, we
+brought up this problem of predicting
+locations where a bird likes to nest.
+Okay?
+The other location prediction problems.
+Relate to things like spread of infectious
+disease, or landfall for hurricane, or a
+tornado.
+Things of that kind, okay?
+But in the bird nest problem, you know
+we're essentially looking at the map.
+This is a wetland near Lake Erie.
+The green areas are vegetation.
+The white areas are water.
+And then you see little crosses around the
+edge and so on.
+These have been the old nest locations.
+So a graduate student very painstakingly
+went to this wetland and mapped
+out the entire area into five meter by
+five meter grid cells, okay.
+And the grid cells with nests were marked
+with X, okay.
+So given this data, we want to predict
+that
+in future years where these birds may like
+to nest.
+Okay.
+In addition to bird nests, we also had
+many explanatory variables.
+So here is vegetation index.
+So these birds often prefer a dense
+vegetation, because
+those do not sway too much with the wind.
+There is water depth, and then there is
+distance to water.
+And distance to water is a proxy for
+protection from predation.
+If the nests are really, you know, close
+to the edge
+then dogs, cats, and other kind of
+predators can attack them.
+So there are several such other maps, and
+given these explanatory variable maps,
+we want to build a model which can assess
+the nest-worthiness of various sites.
+So this problem actually may remind you of
+many classical prediction problems.
+If you have taken any course in machine
+learning, statistics, or even
+data mining, then you can pose this
+problem in terms of data models.
+So for example, you know, if you imagine
+if tabular representation
+of this data, where each pixel is thought
+of as a row
+in the table and there will be four
+columns, so there is
+a nest column in that table which may say
+yes or no.
+And the other three columns, Vegetation
+Index, Distance to Open
+Water, and Water Depth may give you a
+numerical value.
+So given such a table, you may ask what
+prediction models you will use.
+And, you know, this place you may want to
+pause the video and think about those.
+When we come back, you know, very likely,
+the first model,
+you know, that will come to mind is this
+regression model, okay.
+This is the most popular prediction model.
+In fact, areas like marketing, you know,
+people have said
+if you know your problem well, all you
+need is regression.
+In other words, if you can select very
+good features then this simple model will
+work.
+Okay?
+Others may use Bayesian classifiers or
+neural networks or
+SVM and you know, decision trees and so
+on.
+Kay, the arguments we will make in context
+of regression will apply to many
+of these other models, but let's, to
+keep the discussion simple, let's look at
+regression.
+And remember from statistical foundations,
+regression assumes that
+data samples are drawn independently of
+each other.
+So what happens, you know, when you apply
+to spatial data.
+Where we do know the first law of
+geography tells us, that IID is not true,
+okay?
+But if you go ahead and apply this model,
+you know, y could be the nest.
+And x could be all these prediction
+variable.
+And, you know, if you just run it
+through a software, it will learn some
+coefficient beta.
+And it will, you know, try to give you
+some model, okay?
+But what's the implication of violating
+the IID assumption behind regression,
+okay.
+So if you went through this, essentially
+the following things will happen.
+You know, these models in linear
+regression may give you a weaker model.
+It may have lower prediction accuracy and
+so on.
+Okay?
+So in contrast, people have introduced
+this new model called Spatial
+autoregression.
+Where, you know, in addition to this
+linear combination of
+explanatory variables, there is a new
+term, rho w y.
+Okay?
+So let's briefly understand what this term
+means,
+and then we'll go into a case study.
+So this w is a neighborhood matrix.
+Essentially, given two pixels, it tells us
+whether they are neighbors of each other.
+Are they close to each other or not?
+And then rho is a scalar.
+Rho is just a number.
+It tells you.
+Auto correlation.
+So data sites where nearby locations are
+very similar.
+Rho will be close to one.
+If nearby locations are independent of
+each other, like the white noise.
+Rho will be zero.
+Okay?
+In, conceptually there can be a negative
+rho.
+So these birds don't like each other, they
+are very territorial.
+And they push each other away, then you
+could have a negative rho.
+Okay?
+So in this spatial auto regression model,
+we will learn this rho and beta.
+Okay.
+We'll, we, the traditional way we actually
+give W as a input, we
+tell which locations are neighbor of each
+other and it's usually based on distance.
+Okay?
+So let me actually go back to a previous
+slide and quickly show you what W looks
+like.
+And then we'll come back here.
+Okay?
+So suppose, you have a very simple map
+with four polygons, A, B, C and D.
+So in this case, the neighbor is being
+defined by adjacent C.
+So, you may come up with a neighborhood
+matrix
+like this W, which is shown in the middle.
+And you know, for example, polygon A and B
+are adjacent to each other.
+So, the, there is a one in the, in row for
+A and column for B.
+But if you see the row for A and column
+for C there is zero.
+It means polygons A and C are not adjacent
+to each other.
+This is one way to define neighborhood
+matrix.
+You could also define it by distance.
+And once this neighborhood matrix is
+defined sometimes people do rogue
+normalization.
+So for example, in case of B there are
+three neighbors A, C and D.
+So we essentially divide each number by
+three.
+In order to make sure the row sums are
+constant.
+So, so coming back to this model, you
+know,
+essentially a spatial auto regression is
+telling you something different.
+Okay.
+In regression, we said that nest at any
+location is
+completely determined by the explanatory
+variables at the same location.
+The water depth, the vegetation durability
+and so on.
+In contrast to that, spatial auto
+regression is saying to you something
+different.
+It's saying that nest at the location, y,
+on the left
+hand side, is only partially determined by
+explanatory variables at that location.
+Okay.
+But it's also determined by nests in the
+neighborhood.
+So W is the neighborhood and y W,
+essentially it's telling you nests in the
+neighborhood.
+Okay, so again try to think about, you
+know, what
+it means for example in our own choices of
+homes.
+Okay, so if you look at a city, the first
+dwellers
+come there and they pick the best land to
+build them.
+These are high land protected from flood
+and all that, right?
+But then the city grows, and more people
+come in there, and they are coming there
+because
+there are jobs, and they may pick sites
+which are not the best sites for building
+houses.
+They may build houses on low land which
+are prone to flooding.
+Okay.
+In fact some of you if you remember
+hurricane Katrina in New
+Orleans you may want to look at the map of
+flooding there.
+And what was surprising is the following.
+French quarters, a major tourist
+attraction was not flooded.
+But a lot of downtown and other nearby
+areas were flooded.
+And again, think about and see why that
+happened.
+The first settlers came and they settled
+in
+French quarters which was a highly
+protected land.
+And then more people came and you know and
+they just settled near that area.
+So that's the road the blue eye term.
+People are social, birds are social and
+partially we go and live
+where other people who are not
+particularly where the places are the
+best.
+Okay.
+So that's what Spatial autoregression is.
+And in case your data does not show
+auto correlation, you know, in case things
+are independent,
+when you learn this model, rho will come
+out to be zero, so you're not losing
+anything.
+This model is strictly more general than
+the previous model.
+Okay.
+Auto correlation can be incorporated in
+other prediction models.
+So if you know Bayesian Classifier.
+You know, which looks something like this,
+where probability of a class at a
+location in classical Bayesian classifier
+is dependent
+only on explanatory variables on the same
+location.
+And you can write Bayes rule, and try to
+learn an underlying model.
+But in contrast to that, we can bring in
+spatial auto-correlation.
+In this world, this is al, also called
+Markov random field.
+And you can rewrite this equation and say
+that the probability of a nest
+at a location is only partially dependent
+on explanatory value of the same location.
+And it's partially dependent on nest in
+the neighborhood.
+And you can build modest like this.
+Okay.
+So this is the mathematical
+representation.
+But let's go and look at the case study.
+So the bird nest data and that we showed
+you.
+Was part of a PhD thesis in Department of
+Ecology at the University of Minnesota.
+And initially the PhD student [UNKNOWN] he
+tried linear regression.
+He also tried neural networks, and his
+predictions were very poor, only about 50,
+55%.
+So, so this is what he was experiencing,
+and this is what many have experienced.
+If you ignore auto correlation and you
+continue to use
+models which make IID assumption you may
+have lower prediction accuracy.
+In addition, your confidence in the model
+the r squared will be low.
+And worse yet, if you make a map
+of residual errors, those maps will show
+auto correlation.
+So you will see a lot of positive errors
+in one area
+a lot of negative errors in other area and
+so on, Okay?
+So so can spatial auto-regression models
+help?
+So finally in his thesis, spatial
+auto-regression was tried.
+And these curves are showing you a little
+bit of the impact, okay?
+So in this one we are showing you the ROC
+curve.
+The dotted line or the dashed line is
+linear regression.
+And solid line is spatial auto-regression.
+And you can kind of see 10 to 20%
+improvement in prediction accuracy.
+Both for learning, as well as for testing.
+This is also tested for a different red
+line than the map we showed you.
+Okay.
+So many other people have found similar
+benefits.
+Okay.
+But it, it is computationally more
+expensive.
+In order to try this you need special
+software.
+You know?
+This is implemented in Math Lab.
+Or you can go use packages in R.
+And you have to have little bit more
+CPU horsepower in order to crunch the data
+sets.
+and.
+But it's worked in many of the special
+data sets.
+Okay.
+There are other models.
+If you remember our statistical
+foundation, special
+auto correlation was the first law of
+geography.
+But then we went beyond, and we looked at
+other issues such as heterogeneity.
+So people have also tried to generalize
+linear regression
+kind of models to, to account for spatial
+heterogeneity, okay.
+One such popular model is geographically
+weighted regression.
+And what it does is essentially to state
+that we may have a linear relationship.
+Between a, a predictum, you know,
+prediction variable, an explanatory
+variable but that relationship may vary
+from place to place.
+In other word, the weights for different
+explanatory variables may change.
+Okay.
+So in this case, in G, GWR, the form of
+relationship is left alone.
+You are still using linear relationship.
+Maybe nest start, the location is part is
+explained by prediction variables in the
+same location.
+However, beta is a function of location.
+Okay?
+So beta are location dependent.
+Okay?
+So when you learn this regression model,
+then instead of learning skill or
+values for beta zero, beta one, beta two,
+all the elements in beta vector.
+What we are learning are maps.
+So you are in a cof, the beta not varies
+from location to location.
+And here the intensity of the color is
+showing that.
+Beta 1 varies from location to location,
+beta
+2 varies from location to location, and so
+on.
+Okay?
+Of course, you know, in general you could
+combine both model.
+You can combine the spatial auto
+regression and GWR.
+And model both first law of geography as
+well as second half geography, and so on,
+okay?
+Again, GWR is widely available.
+You know you can just go to Wikipedia,
+find
+software packages which implement it and
+try that out.
+Okay.
+So with this we'll try to wrap up the
+discussion of location prediction models.
+And again, key messages are that spatial
+auto-regression map matters, okay.
+Many spatial data site's samples are not
+independent of each other, and modelling
+special
+auto-correlation in your model often
+improves prediction
+accuracy and, and the goodness of fate.
+It also reduces auto-correlation, the
+residual errors.
+.
+We saw example of spatial auto-regression.
+And you know we also saw little bit about
+geographic
+rate of regression, which is a way to
+model heterogeneity.
+Now, this field is still evolving.
+A lot of developments have happened in the
+last few decades,
+and there are still new ideas that people
+are looking at.
+So one such idea is, you know, for
+example, you know, we
+have in spatial auto-regression the users
+provided the W matrix, the neighborhood
+relationship.
+And with the advent of, you know, big
+spatial, big data.
+Now, you know, as we have more and more
+data sets, People are getting
+more ambitious, and they're asking could
+we estimate W out of the data, okay?
+So they say one new opportunity in the
+field.
+Another issue is you know if you look at
+the terms inside spatial auto-regression.
+The two terms rho, w, i, and x beta often
+tend to have very different magnitude.
+Because you know w is normalized, rho is
+between zero
+and one and, you know, y is only vector
+whereas x.
+Essentially ends up having very large
+magnitudes, so x beta
+can often have very large magnitude
+relative to rho w beta.
+And this kind of scaling issue often has
+to be addressed
+in order for us to get reliable estimates
+of both, okay.
+Let me also mention one other aspect which
+has not been modeled very
+well by statistical talk, which has to do
+with your, your error measures, okay.
+So in space if you remember our data
+discussion.
+You know we have many, many interesting
+operations and functions.
+One of which is distance.
+Okay, so let me illustrate how that may
+play a role in location prediction.
+So let me first show you a quick example.
+You know so suppose here is a continuous
+map.
+You know somebody went and took a picture
+of an area.
+And we found three bird nest which are the
+three dots with circles.
+Okay?
+When we discretized this map into a grid,
+you know, we
+probably, let's say have four by four
+grids and three cells, the
+lower left corner, you know, the lower
+right corner, you know, which
+I've listed by A in this place where mark
+as actual nests.
+Okay?
+Now consider two different prediction
+models.
+The C is one prediction model which
+predicts nests
+over here in upper left corner with three
+P's.
+Where the actual nests are, down here.
+And let's look at another model D which
+predicts nests sort of in
+the center with three P's and the A's are
+still at the bottom, okay?
+So again, what I would like you to do is
+to pause the video
+at this point and ask yourself if these
+two prediction models were given to you.
+Which one will you prefer.
+Okay?
+And you know, I have, I have often asked
+this to
+many audiences and lot more hands go up
+for model D.
+Okay.
+Lot more people prefer that.
+Okay?
+And and then I also ask you to pause and
+ask that you know, all the statistical
+models we learned.
+Whether it was a regression, or whether
+it was spatial auto-regression, or
+Bayesian classifier.
+How will they rank model C and D.
+Okay?
+So again, pause the video, think about it,
+you know.
+How they are ranked.
+And they are usually ranked by the number
+of errors.
+So in this case, there are 16 pixels.
+And note that statistically, you have six
+errors in model C.
+Because all three positive, you know, the
+P predictions are
+false positives according to statistics
+and actuals are true negatives.
+And the same six errors happen in model D.
+In other words statistically C and D are
+the same.
+Okay.
+So why do most people prefer D?
+Okay.
+And again, you know, most of the answers
+come back saying
+that if you look at the actual distance
+between prediction and actual.
+Those distances are much smaller in the,
+the model D.
+Okay.
+In other words statistical ranking does
+not take
+into account simple spatial relationship
+such as distance.
+It treats each pixel independent of each
+other when we talk about error.
+But most of us do have other spatial
+notions and they prefer model D.
+So, so this is something again which
+is hard to model in current statistical
+model.
+And, you know, currently in terms of
+research
+and other explanation, people are thinking
+about it.
+And they are looking at notions like, you
+know, putting a penalty function.
+In order to favor the distance kind of
+method, okay.
+So, let's kind of look back on this video
+very quickly.
+We primarily talked about location
+prediction problem and we distinguished it
+from classical prediction by pointing out
+the presence spatial auto correlation.
+Our learning examples are not independent
+of each other.
+And distances between pixel matter, as we
+just talked about.
+Because of that, people have introduced
+new model.
+So linear regression has been generalized
+to spatial auto regression.
+By adding this neighborhood term.
+Even Bayesian classifier you can bring in
+Markov random field.
+And in research people have done similar
+things for a decision tree.
+So there is a thesis working on spatial
+decision tree and so on.
+So by at least using the current model
+with spatial data you are likely to
+improve
+the model accuracy and as time goes by,
+you know, there will be new ideas coming.
+Hopefully you will also be contributing to
+some of these ideas.
+So with this we'll wrap up the discussion
+of location prediction.
+When we come back in the next video, we'll
+look at one other pattern family.
+Thank you.
+

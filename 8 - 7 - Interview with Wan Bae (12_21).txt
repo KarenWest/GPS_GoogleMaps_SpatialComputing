@@ -1,0 +1,381 @@
+Welcome back to the discussion
+of spatial computing.
+Today we are going to meet Professor Wan
+Bae at University of Wisconsin-Stout.
+And she has been working on some
+very exciting research projects in
+spatial computing relating to
+environmental health and asthma, okay.
+So please say hello to Professor Wan Bae.
+Hello, Anna.
+>> Hi, Dr. Shetkar.
+How are you?
+>> Hi, it's very nice to see you.
+>> Nice to see you.
+>> And thank you for
+taking time away from your busy schedule.
+I know you have an SF Grant
+proposal pending.
+>> It's my pleasure.
+>> So a short deadline, so
+I really appreciate you
+taking the time and sharing.
+Your enthusiasm about spatial computing
+with all the students in this course.
+So, the first question we wanted
+to ask you is that, you know,
+your undergraduate degree is in
+architecture, which is you know.
+It's not obvious what the connection
+to spatial computing may be.
+>> Mm-hm.
+>> So, would you share how you you know
+got started with spatial computing?
+>> After my college Degree in
+Architectural Engineering,
+I started working in a company and
+acted to form Samsung.
+>> Okay.
+>> And I worked in a high risk building.
+And mainly I focused on
+the building design.
+>> Uh-huh.
+>> But, I stand over my career.
+And I do work, I did some work
+on the building management.
+>> I see.
+>> There were lots of databases involved,
+and also the, you know,
+facility management systems as well.
+>> All right.
+>> So I was quite in, pleased then,
+to involved in the project.
+>> Mm-hm.
+>> And very interest in some
+computing feature.
+>> Okay.
+>> That's the motivation I came to America
+to study.
+Computer Science in Master and the Ph.D.
+>> Neat, neat.
+So where this database is spatial?
+Did you have two dimensional or third?
+>> Spatial databases.
+And although it's a indoor mainly.
+>> Okay.
+>> And at that time, there is no such
+a concept of a indoor computing.
+>> Okay.
+>> Everything systems.
+>> All right.
+>> Although there were
+pure mechanical engineering,
+electrical engineering,
+they have a systems to manage those
+equipments and possibilities, but but
+not in computer science
+>> Okay, okay wonderful.
+So, what kind of things
+are you working on nowadays?
+>> My thesis was based on online
+quality processing and GIS.
+>> Okay.
+>> And I did some active special
+joint [INAUDIBLE] range inquiries,
+and those particular data structures and
+items.
+>> Right.
+>> And, then I joined the this
+university then and I work
+on something relationship between
+computing and medical theory.
+And the coolant project I am involved
+in is that in asthma monitoring system.
+>> Okay.
+>> In which I had a collaborators in
+United Arab Emirates.
+>> Okay.
+>> University, and
+then we're working on the data models and
+algorithms to Provide individual
+health care for the asthma patient.
+>> So what are some special computing
+aspects of understanding asthma and
+helping asthma patients?
+>> So there is a term,
+which is the you know,
+medic you know kind of
+the term medical doctors used.
+They want to know like if backup
+would imbalance the factors
+on And what a interesting thing
+about the asthma is that
+>> Mm-hm.
+>> Individual patients they has
+different symptoms and triggers.
+>> Okay.
+>> And those triggers,
+is the based on the imbalanced factors.
+As you know, the imbalanced data,
+there is time and location.
+>> Okay.
+>> So there is lots of what, you know,
+the computing involved in maps.
+>> Okay.
+>> And special data sets.
+>> Okay, wonderful.
+So in this course you know,
+we are going to talk about spatial data
+mining where you have
+patterns like hot spots.
+>> Mm-hm.
+>> Or you can correlate some environmental
+factors with disease and so on.
+So do you have any special data
+analytics aspects in your project?
+>> It is.
+At the current,
+the beginning of the project we
+focus on measuring of the exporter
+of the individual and then we implement
+algorithms to estimate exporter time.
+>> Okay, okay.
+>> Then there are lots of
+special [INAUDIBLE] and
+ingredients that we have to develop.
+Then, those data is collected and
+after the [INAUDIBLE] the patient's data
+will be collected in,
+starting this December.
+>> All right.
+>> Then, we need to develop the new data
+mining tools, or best data mining tools
+to find out the relationship between
+exposure time and the human head.
+At the same time, what are they, or
+how much, you know, of the percentage of,
+you know,
+influence of each of the data sets.
+[INAUDIBLE] In terms of the human head.
+>> Wonderful.
+>> So, there is lots of data mining.
+The item we used to implement in a,
+in a, in a developed.
+And at the same time prediction model,
+along with the individual the behavior
+model need to be developed.
+>> Wonderful so so
+why this collaboration with the UAE.
+Are there some unique expertise or
+collaborations there that made you.
+Situate the project in
+collaboration with the UAE.
+>> What's the point here, UAE and has the
+problem with the impact of the factors,
+for example the asthma, the mortality
+rate is very high, and as you know,
+higher as the, the United States.
+And they have very extreme
+weather conditions.
+>> Okay.
+>> Which is like very high humidity, and
+high temperature in Dubai and Abu Dhabi.
+>> Okay.
+>> And at the same time,
+most of the people stay in a house.
+>> Okay.
+>> Which is very, very, you know,
+you know cool under air condition.
+So, Shows that the people stay inside,
+which is air conditioned the condition.
+They have, you know, susceptibility
+to the extreme weather conditions.
+>> Right.
+>> So that's the one of the motivation.
+>> Okay.
+>> And second motivation about
+data availability in the states,
+it's very harder to
+Collect the patient's data and
+research on the, the, those data set.
+Whether UA be.
+>> Why, why is that?
+[LAUGH].
+>> It's very restricted of,
+about the privacy and security.
+>> So it's the HIPPA regulations then.
+>> Right and but UAE is a kind of
+a you know, a little lousy way of
+policies of data sets which is another
+you know, motivation we collaborate.
+>> Very okay, wonderful.
+[CROSSTALK].
+>> The only point is that
+that between two communities,
+which is the medical field researchers and
+computer scientists.
+And we have some gaps between
+those two communities.
+>> Okay.
+>> We use different languages,
+the way we see the problems
+that There wasn't workshop
+between those a two communities.
+And then we had to very
+successful at researching
+>> Very wonderful.
+Now this was an excellent workshop
+sponsored by National Science Foundation.
+>> Right.
+>> Thank you for organizing.
+So looking ahead next five to seven years,
+wha, what do you see
+as the major research directions
+in this project and in the field.
+>> I think it I my specialty is the GIS,
+and
+especially they algorithms and joints,
+send in their drawings and their.
+But my group is the loaning
+to a data mining algorithms.
+>> Okay.
+>> So the first three years that we
+do some modeling and
+algorithms about their special joints.
+>> Okay.
+>> Then next three years that we spend
+most of the time on data mining tools and
+development.
+They are wonderful, wonderful.
+>> Mm-hm.
+>> You mentioned Exposume and
+what is that and what is its future?
+>> Exposume is a study of what the effect
+of [INAUDIBLE] that factors on human hair.
+>> Okay.
+>> So, it could be very short,
+time period.
+>> Uh-huh.
+>> For example, asthma, you.
+Patient exposed in
+a surgeon like a smoker.
+[INAUDIBLE].
+>> And they got attack.
+>> Yeah.
+>> Or exposing could be like a very, you
+know, long life period which is a cancer.
+>> Right, right.
+[NOISE].
+>> So timing tables of
+the patient's monitoring are required.
+>> All right.
+>> And to expose them to
+words is just a study in 2006
+>> Okay.
+So, it's quite new fears and there is
+a lot of problems over measurement, and
+on the modeling, and algorithms.
+>> Wonderful.
+And one last question, most of us
+are used to having GPS on smartphones and
+the cars and so on.
+>> Mm-hm.
+>> But your group and
+your neighbor in Asthmapolis.
+>> Mm-hm.
+>> They were putting GPS on inhalers used
+by asthma patients.
+>> Right, right.
+>> So do you do you see more use of GPS
+with sensors to monitor personal health,
+and environmental health in coming years?
+>> Right.
+So asthma patients are recommended
+to carry inhalers.
+And also they use
+the [INAUDIBLE] gauge everyday.
+Those two are the main.
+It could not afford those
+a patients need to carry.
+>> All right.
+>> And so, we developed new sensors.
+>> Okay.
+>> That is very a tiny,
+tiny microprocessor that is fit in.
+And inhaler.
+This is a kind of what inhaler,
+the U.S and U.A patients use.
+>> Right.
+>> So we developed a small cap.
+>> All right.
+>> That actually come with this inhaler.
+>> Okay.
+>> Whenever the patient to
+pushes the inhaler button.
+We measure the time and location.
+>> Okay.
+>> And also how long it actually pressed,
+so that, and
+doctors know when the patient is
+properly used [INAUDIBLE] as well.
+>> Okay.
+>> So, it can be used today and.
+And there is in our location and time.
+Exposure time.
+At the same time, it can be used to,
+for the patient's training.
+>> Yeah.
+Okay.
+Wonderful.
+>> And this data is going to
+be transport you know,
+you just the patient's mobile phone.
+>> Okay.
+>> And then we store this one
+in a secure so that put a,
+you know, data analysis later.
+>> Yeah, wonderful.
+So, personal health may be a big area for
+spatial computing.
+>> Right.
+>> We move forwards.
+>> Yeah, and we could, this is
+the individual, again, had the care.
+>> The care, okay.
+>> So, most of the doctors in
+the current research in medical field,
+they use the average of this, you know,
+some of the symptoms, the average
+of their temperature, and so on.
+But more likely people are,
+their reaction,
+their symptoms could have varied
+based on the individual symptoms.
+So this is what we want to do, provide
+the individual the cure of their you know,
+health and systems.
+>> Wonderful.
+So thank you so much Joan for
+sharing you know your exciting project,
+which is clearly very futuristic
+>> Thank you.
+>> And we appreciate you know,
+with despite your answer,
+proposal deadline, and we, we wish you
+lot of success with this project and.
+>> Thank you so much.
+>> Great.
+>> Thank you.
+>> Wonderful.
+This was Professor Von Veigh,
+from University of Wisconsin Stout.
+Sharing her excitement about
+use of spatial computing
+to improve personalized health.
+So when we come back in next interviews,
+we'll meet with a few other
+community members and
+share in their excitement of using spatial
+computing for different society problems.
+Thank you.
+

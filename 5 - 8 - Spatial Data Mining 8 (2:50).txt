@@ -1,0 +1,102 @@
+Welcome back to the wrap-up session on
+spatial data mining,
+you know, with the sequence of last seven
+videos of Saul.
+We talked about what spatial data mining
+is, and you know, what it is not.
+We talked about different pattern
+families,
+we looked at statistical foundations, also
+the
+input data, and then we went into depth of
+many many packing families.
+Okay, so, at the end of this course, and
+after you're done with all of your quizzes
+and exams, maybe a year from now, what
+should
+you remember, you know, what's the take
+away message?
+Because it is a lot of details, and if
+needed you can always
+come back if you're working in the field,
+to dig into the details.
+But here are a couple of take aways that I
+would like you to have.
+Okay?
+Geo-spacial data is different, you know,
+it doesn't meet many,
+many assumptions that you have with
+classical data coming from internet.
+So, you saw that even in the input part,
+okay, there were things which were
+different, for example relationships.
+Many spacial relationships, like distance
+or inside outside, they're implicit.
+They have to be computed.
+So, even if you're using classical data
+mining,
+and you want to select features from
+spacial data.
+Don't just look into what's already there
+in the table, but think about
+what are the relationships like distance
+or insight are relevent to your problem.
+And have a spacial software, you know,
+either database or GIS computed
+for you and then you could feed it into a
+statistical package.
+Also the types are different.
+You remember points, lines, polygons,
+[UNKNOWN]
+These are more complex than numbers
+and text and you have seen that in
+previous chapter as well.
+Okay?
+The second, you should remember that the
+statistical foundations are different.
+In classical statistics, you know, for
+simplifying their calculations.
+They often made, you know, assumptions
+like IID.
+Learning samples are drawn independently
+from
+each other, they are from identical
+distribution.
+These assumptions are probably not true
+for very many data sets, but certainly in
+geographic data sets, these assumptions
+are terrible,
+and we showed you examples of that.
+So again, you know, when you are analyzing
+spatial data, don't
+just use traditional methods like
+linear regression, or Pearson correlation
+coefficient.
+Look at spatial or statistical ideas so
+that
+you take in to account spatial article
+relation, okay.
+And then finally, pattern families, and we
+showed you
+that you know, whether you are doing
+association or
+clusters, that patterns in space have
+unique meanings and
+you should look at techniques which
+capture that meaning well.
+If you don't, then your manual work
+of post-processing will be a lot more
+detailed.
+So, hopefully you will remember that
+geography data
+is special, and it requires specialized
+statistics, specialized
+background families, and as long as you
+remember that, I think we did a good job.
+But you know, if you are diving into more
+details, hopefully you will use
+software available in MacLab and RTIS to
+look at these techniques and working tips.
+Thank you so much.
+[SOUND]
+

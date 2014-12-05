@@ -1,0 +1,614 @@
+We'll come back to another section on
+spatial data mining.
+In the previews videos, you know, we
+defined what
+spatial data mining is and what it is not.
+We gave you examples of common pattern
+families.
+We defused spatial data input and
+including in place of relationships.
+We reviewed spatial statistical
+foundations, and then
+we went into the details of different
+pattern families such as location
+prediction, you
+know hotspots, as well as spatial out
+lies.
+In the video, we are going into the
+details of spacial colocations patterns.
+So at the end of this video we should all
+understand the difference between spatial
+colocation patterns and the traditional
+association role
+patterns which are commonly explored in
+data mining.
+We should also understanding the interest
+measures of colocation patterns and
+how they are different from the interest
+measures for association rules.
+Okay.
+So let's first recall what association
+rules are.
+If you have taken a course in data mining,
+you may have come across that.
+Otherwise let's take a, you know, quick
+glance, and, and review what this notion
+is.
+So association rules have a legendary
+stature in data mining.
+You know, historically it started in 1984,
+as I mentioned in, in your earlier slide.
+Where Walmart was looking at, you
+know, identifying item pairs which sell
+together.
+Because if they could do that, they could
+use something called a lost
+leader strategy, by putting one item on
+sale and making money on the other.
+It's sort of like, you know, when you use
+your cell phone.
+Your cell phone hardware is often
+subsidized heavily.
+You, you don't pay full price for the cell
+phone itself.
+But then later on we all have to buy a
+plan, the minutes and the
+data plan, and that's where the company
+makes up the loss, and probably more,
+okay?
+So so Walmart was initially looking at
+these
+millions of items that they sell, and
+asking
+which pairs can be you know, are bought
+together so that they could use this
+strategy,.
+And they concluded that using traditional
+statistics, you know, was
+not feasible even though they had 8000
+computer back in 1984.
+So they came up with this notion called
+association rule.
+So, they first defined this notion called
+support, okay.
+So, their data sets looks like this market
+basket data.
+So you know customer one comes and let's
+a customer one bought socks, diaper, milk,
+beer, etc.
+Customer two bought pillow, beer, tooth
+brush, etc.
+Customer three bought this and let's say
+customer four bought this, okay?
+So that's the input data, and the output
+are pairs.
+So for example you know they might find a
+pattern called
+you know if people bought diaper, they
+also bought beer, okay?
+And this, we told the story of this that
+was one of the
+in, an unusual interesting pattern that
+has
+been talked about in the folklores okay.
+So in order to find this Pearson
+correlation coefficient is very
+expensive so they came up with a new
+interest major called support.
+An support for a subset of item like
+diaper and beer
+simply is the fraction of the transactions
+in which they occur together.
+So, in this case, if you only look at
+four transactions, one, two, three, and n,
+and I
+ask support for diaper and beer, then you
+can
+see that occurs in transaction one and
+transaction three.
+So, two out of four support is, you know,
+in this
+case we are assuming five transactions, so
+two out of five okay.
+Now this support has some very interesting
+comparative property.
+You know, for example the support for
+diaper has to
+be greater than the support for the pair
+diaper and beer.
+Because every transaction that has diaper
+and beer certainly has diaper, okay?
+And because of that, you know, if we
+wanted to find patterns
+where support is at least 10%, then you
+can start with single turn.
+Just look at individual items.
+Throw away all items which have support
+less than 10% and then you make pairs
+out of remaining item and then you
+continue
+on and I will show you the algorithm.
+So, this was able to scale up very well,
+okay?
+They also had another interest major
+called confidence, which is asymmetric.
+So you can ask, you know, given that
+diaper is in
+a transaction what's the probability of
+beer being in the same transaction?
+So in this case you know, diaper shows up
+twice
+and beer shows up, you know, in both of
+them.
+So in this data set this probability is
+one, two out of two.
+So, so these particular interest, where
+they particularly
+support has this very interesting property
+called monotonicity.
+In other words you know, support for beer
+is greater than equal to support for
+beer and diaper, and this goes on for you
+know, the other set, subset relationships.
+So, support for a set is always less than
+equal to support for
+one of it's subsets okay, and because of
+that you can do pruning.
+So let me illustrate that via this common
+algorithm called Apriori.
+So suppose, you know, we have these four
+transactions.
+So, the first transaction has milk, bread,
+cookies, and
+juice and so on, so there are four
+transactions.
+And we want to find out all that's pairs
+or
+triples which have support greater than a
+given threshold, okay?
+In this case that threshold is 50%, so at
+least two transactions should support it.
+So in order to process this, this
+algorithm first starts with singleton.
+So there are, you know, these six
+different items,
+and for each one we can compute the
+support.
+So there's three out of four, you know,
+two
+out of four, two out of four and so on.
+So, 50% support means at least two
+transactions to contain it okay?
+So, looking at this singleton, you can
+already
+eliminate a couple of them like coffee and
+eggs.
+They only occur in one transaction.
+So any pair, or triple that contains them
+is
+not going to occur in two transactions,
+and meet
+this threshold, so these two can be thrown
+away,
+and that's what is shown by the color
+coding here.
+So when we look at the pairs, instead of
+looking at six juice two pairs,
+we can only look at four juice
+two, which are the singletonsf which
+qualifying, okay?
+So in the next one we basically make pairs
+out of those four.
+So four juice two, you make these six
+pairs, but
+notice that none of them involve coffee
+and egg, okay?
+For these pairs again we can compute
+support, and we can right
+away throw away the pairs, you know, which
+have below two okay?
+So pairs like milk and bread are gone you
+know,
+we remove them and which is shown by this
+one.
+So essentially three pairs, milk cookies,
+milk juice, and then bread cookies
+survive.
+The other pairs are thrown away right away
+okay?
+So when we form triples, you can just use
+these three pairs.
+And in this case, they actually use one
+other property.
+It turns out that none of these
+pairs actually share you know, enough
+items okay.
+So, so you could take milk and cookie and
+milk
+and juice and try to make a triple out of
+it.
+And, and then try to look at it's, it's
+support and,
+so you know, these, these would be the
+triples and even
+milk cookie and milk juice you know, you
+could have made
+milk in you could have made a triple out
+of it.
+But notice that cookies and use as a pair
+don't qualify okay?
+So if there was a pair milk, cookie,
+juice, there was this
+triple which could have qualified, then we
+should have seen juice and cookie.
+We didn't see that.
+So even in forming the triple, you don't
+really have to form the triple okay?
+So, you can use this monotonicity property
+in multiple ways to prune it.
+And this is a very, very popular and
+successful algorithm.
+And since then, you know, many other
+retailers have tried it and
+nowadays there are many other algorithms
+like frequent pattern trees and so on.
+Okay, so, this association rule has been a
+popular paradigm since 90s, okay?
+So, now we can ask, can we use
+this paradigm to mine similar patterns in
+geographic data?
+So remember we showed you a map where
+there were many different
+geography features, such as dry tree, and
+house, bluebird, fire, green tree.
+And we were asking you which features tend
+to co-locate in space.
+And now the question is, can we apply
+association rule to mine those pairs?
+Okay?
+And the argument, you know that we will
+make is that it's not, you know, correct
+or applicable to do so, even though some
+people in the early literature did try it.
+So let's look at the limitations of
+association rule.
+So first limitation is that you know, this
+whole notion
+of support and the priority algorithm is
+built around transactions.
+Okay, so support is defined using
+transactions.
+You're asking what fractions of
+transactions contain this particular
+subset.
+An Apriori algorithm uses a property of
+support, which is transaction based, okay?
+Now look at some spatial data you know,
+for example, here.
+I am showing you a very simple spatial
+data
+with three features, A, B, and C and their
+instances.
+So in this case we can easily find the
+feature types or item types.
+I can even ask you which item types
+colocate and you might say,
+well, A and B seem to be often together, B
+and C together okay?
+But can I apply this association rule
+mining?
+In order to apply this, I need
+transactions.
+Where are the transactions?
+Okay, they are not there in spatial data,
+which is embedded in a continuous space.
+Okay, can we just make up these
+transactions?
+And some people did try that and I'll show
+you one approach.
+And then formally you know, it is
+difficult because you know, if you create
+this transactions which are disjoined,
+then you
+often lose neighborhood relationships
+which cross to transactions.
+If you make this transaction overlap,
+there
+is the risk of double counting, okay.
+But let's look at the first approach that
+people tried, okay?
+So now we are going back a couple of
+decades and again same data sets.
+The first approach was called spatial
+association
+rule you know, Professor Jiawei Han, who
+is very prominent in association rule
+mining,
+has thousands of algorithms for that
+trying this.
+And what he basically said well, let us
+make
+up some transactions, particularly if you
+have a reference feature.
+So you pick one of the features, A B or C,
+to be very special.
+And then, if, for ins, you know, a dark
+feature for each instance you draw a
+circle around it.
+So suppose we chose C as the spatial
+feature.
+Then the circle around C1, circle around
+C2 gives you transaction.
+But you can right away notice this
+approach.
+You know, the first transaction will
+contain C1, B1
+second, C2, B2, but neither of them
+contains A.
+So essentially, no patterns will contain
+A.
+You know, so in this case, actually
+transactionally around B might have
+given you the same result but in general,
+you have risk of doublecounting and so on.
+Okay, so what, using C as the
+reference feature and these transactions,
+the only pattern
+we are going to get is B, C, but you're
+not going to be A B.
+When you contrast it with Cross-K
+Function, that
+is something we saw in yesterday's
+statistical foundation.
+You will notice that Cross-K function will
+find both, you know AB as well as BC.
+The Cross-K function value is 0.5 for
+both, and if,
+if that is the threshold, both will be
+searched, okay.
+So given this background, you know we have
+two choices.
+Either you can say, let's use Cross-K
+function.
+Okay, but Cross-K function computationally
+is not that interesting.
+It does not meet that monotonicity
+property that association rule has.
+So scaling from pairs to triples and you
+know subsets of four is difficult.
+Okay so in this background a colocation
+approach was mentioned
+which tries to combine the best of the two
+worlds.
+Association rule is scalable.
+It computes things fast.
+Cross-K function gives you statistical
+sense all right?
+So if you wanted to have a middle
+ground and that's where spatial
+colocations come in.
+So let's try to see how it is defined.
+So here again we start with a set of
+features
+A, B, and C in this case and their
+instances.
+And the candidate collocations have
+subsets of features.
+It could be A B, A C, B C, A B C and so
+on, okay?
+In this case we always start from pair,
+it's not defined on singleton, okay?
+Then in times, in terms of interest
+measures we define two notions.
+The first notion is participation ratio.
+So you can look at a candidate subset A,B.
+And you can ask, you know, for a
+particular feature A, where it is the
+participation ratio.
+So let's look at this particular example,
+participation ratio of
+A in the set A,B, in this data set okay?
+So it is defined as the fraction of
+instances of
+A which, parti, you know, which has B in
+the neighborhood.
+In other words, fractions of instances of
+A,
+which is an instance of the colocation of
+AB.
+So here there are two instances of A,
+Okay?
+A1 and A1 has a B in the neighborhood.
+So does A2 okay?
+So there are two instances of A and both
+of them have B in their neighborhood.
+So participation ratio of A in AB subset
+is two by two or one.
+You can compute it in the, you know, other
+way as well
+and ask what's the participation ratio for
+B in the subset AB.
+Now, notice there are two instances of B,
+B1 and B2.
+B1 has A nearby, B2 doesn't, so in this
+case,
+participation ratio is 1 out of 2, or 0.5,
+okay?
+Once we have participation ratio, you can
+define participation index.
+Because ratio is asymmetric and index is
+symmetric.
+So we basically take the minimum of
+two participation ratio to define
+participation index and
+in this case you're taking a minimum of
+one in half and it becomes 0.5.
+So participation index for AB is 0.5.
+Similarly you can compute participation
+index for
+BC and in this case notice that for
+participation ratio for B is one and C is
+one and minimum is one, okay?
+Now participation index has two very
+interesting property.
+The first properties that it has, the
+similar property is support.
+So computationally, once you find a pair,
+which falls below
+the threshold for participation index, you
+can quickly rule it out.
+You don't need to form triples and subsets
+of four out of
+it because they are not going to have any
+higher participation index.
+So it has this nice computational property
+which gives you a priority like algorithm
+okay?
+But it also has a nice statistical
+property.
+It is an upper bound on cross K function.
+And because, of that you can make
+statistical
+sense out of it, in terms of the result.
+So let's illustrate the statistical
+property in a little bit more detail.
+So here are three examples okay?
+In the first case you see three instances
+of A and two instances of B.
+And if you look at Cross-K function, in
+this case
+it's two out of you know there are six
+pairs possible.
+Only two pairs are neighbors.
+This point three three.
+Participation index in this case you can
+count
+in case of B the participation ratio is
+one.
+In case if A is two by three, so minimum
+of two is two by three okay?
+You can, you know, compute the other two.I
+will leave this as an exercise for you.
+And you will notice that, you know, these
+are the values and it
+again illustrates that participation index
+is
+an upper bound on Cross-K function okay?
+So, if you want to look at the big picture
+of how colocations
+are different from association rules, we
+can
+look at a couple of different dimension.
+First underlying space, in association
+rule we our looking
+at market baskets you know, what each
+individual customer buys.
+But in case of colocation we are looking
+at continuous geography or maps okay?
+It, the event types in association rule we
+are looking at you know, items in a store
+now we are looking at Boolean even types
+like
+crime types or disease types on so on,
+okay?
+In terms of transactions, you know we are
+talking
+about essentially neighborhoods and the
+interest measures are different, okay?
+So if you go back to the same data sets
+you know, where spatial association rule
+only found one pattern.
+Cross-K function wanted to have two and a
+colocation will find both of these
+patterns okay?
+So, that's a quick summary.
+So, let's briefly look at the trends.
+In terms of the actual trends, you know,
+there
+are two basic areas in which work is
+growing.
+One is the algorithms.
+People are looking for a scalable
+algorithms.
+The initial algorithms were based on
+spatial join.
+Again a connection back to your spatial
+query language.
+So if you have a database which can
+implement spacial
+joints well, you can run colocation
+algorithm leveraging that, okay.
+Essentially for each candidate colocation,
+one spatial join is computed, and that
+can help you compute the interest
+measured, and you can do thresholding.
+There are other newer algorithms which do
+not use join.
+They essentially take subsets of the data,
+they are sort of mimic transactionizing,
+but they take into account all the edges
+which are cut by the transaction.
+So the under counting and double counting
+is explicitly accounted for,
+and that way they don't make the mistake
+of association rule okay?
+The second direction is in terms of
+pattern semantics.
+So in particular people have looked at
+Spatio-temporal data, where each point
+comes with also a times ten, and they ask
+questions like the following.
+Which types of events co-occur not only in
+geography, but also in time?
+For example lot of people have observed
+that you
+know many downtowns you know particularly
+or touristy days
+bar closing is often following by minor
+offenses in
+the neighborhood, drunk driving kind of
+citations further away.
+Other things people are also looking are
+you know objects with types which move
+together.
+So if you you know watched soccer or
+American
+football, you can ask which player types,
+often move together.
+You know, in some big roles in defensive
+and offensive you find these patterns.
+Similar things can be observed, on the
+types of
+[INAUDIBLE] and soldiers in the war field
+and so on.
+So with this lecture let's wrap up the
+discussion of Colocation and Association.
+You know, broadly you know, association
+rule is a popular technique in traditional
+data mining, however geographic data is
+in continuous space, transactions are not
+natural.
+So brute force application of association
+rule can often lead to
+erroneous patterns because of under
+counting or you know, double counting.
+So and then the results may be very
+different than what spatial statistics
+would, would expect.
+So, colocation was introduced to take the
+advantage of the strengths of both sides.
+It tries to give you scalability
+by having interest measure with
+monotonicity property
+that allows scalable algorithm, but at the
+same time, it has a statistical
+interpretation.
+It is an upper bound on the Ripley Cross-K
+function, and so you get the best of both
+worlds.
+Okay, so with this, we'll wrap the
+discussion of colocation pattern.
+In the next video we'll try to wrap up the
+discussion of spatial data mining.
+Thank you.
+

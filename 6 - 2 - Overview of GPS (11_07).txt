@@ -1,0 +1,359 @@
+Welcome back to the Positioning Module.
+Now, in the last video we talked about
+how positioning techniques can be
+split into two categories, signal-based
+and content-based positioning.
+Now, in this video we're going to
+begin our discussion focusing on
+signal-based positioning.
+Now among many, many,
+many other important applications,
+signal based positioning is how your
+smartphone knows where you are.
+It's through signal based positioning
+that your smartphone can provide that
+little blue dot that you see in mobile
+map applications like Google Maps and
+the Apple Maps app.
+It's also through signal-based positioning
+that your smartphone can determine
+the correct latitude and longitude
+coordinate with which to tag an Instagram
+photo or a Tweet or other forms of social
+media volunteered geographing information.
+And although it's less visible,
+signal-based positioning is also key in
+helping us excuse me helping
+location-based services determine what's
+nearby in apps like Yelp,
+Foursquare, and so on.
+Now, you can see here that Yelp is telling
+me that the very delicious restaurant,
+Bun Mee Sandwiches, is on,
+is only 0.1 miles from my current
+position at the time which was my office.
+Now this is one reason that if I end up
+recording additional videos, perhaps for
+a second offering of this MOOC,
+I might appear a little bit heavier.
+Of course signal-based
+positioning does more than
+just help professors fatten themselves up.
+And, more generally know,
+help smartphones know where they are.
+so, for instance, signal-based
+positioning is used by scientists to
+help track migratory species, it's used by
+farmer to implement optimal strategies for
+their crops, and it's used many, many,
+many more applications in public
+safety and so on and so forth.
+Now there are a number of signal-based
+positioning strategies that are in
+common use, but the three most employed
+types are satellite based positioning,
+Wi-Fi positioning, and cellular
+positioning, or cell tower positioning.
+There are two names for that.
+Now in this video we'll look in more
+detail at satellite based positioning, and
+we'll handle the other
+two in the next video.
+Okay.
+The formal name for
+a satellite based positioning system is
+a global navigation satellite system.
+Although I will note
+that not all GNSS's or
+global navigation satellite
+systems are global.
+And I'll get to that in a bit.
+Now, as you might have guessed, the most
+well-known and the most utilized global
+navigation satellite system is
+the Global Positioning System or GPS.
+GPS has a very interesting history.
+At a high level, it was, and it actually
+still is, a U.S. government technology.
+It's run by the U.S. government.
+And it's definitely a product of
+the Cold War between the United States and
+the USSR.
+Now those of you who know your Cold War
+history know that the USSR launched
+Sputnik I.
+The first man made satellite in 1957.
+Now this scared the bagebbies
+out of most Americans and
+the US government at the time.
+And some American physicists, as a result,
+were assigned to locate
+Sputnik as it orbited Earth.
+And through that process,
+they realized that they could use
+Sputnik's radio signals to do this.
+And this got folks thinking about
+maybe doing the reverse, right,
+using satellites for
+positioning here on Earth,.
+Rather than trying to locate a satellite.
+Now over the next decade or
+two, the technology necessary for
+doing this process, using satellites for
+positioning here on Earth, was developed
+by the United States military for
+missile targeting and for
+a number of other military applications.
+Now this technology evolved to
+become the GPS system we know today.
+The transition of GPS from a purely
+military technology to a civilian one
+began when the USSR shot down
+Korean Airlines Flight Seven when it
+drifted into Soviet airspace in 1983.
+Ronald Reagan who was the president of
+the United States at the time instructed,
+after that pretty famous incident, we
+heard a little bit more about that summer,
+right, when The, the Malaysian Airlines
+flight went down over Ukraine.
+After this,
+this Korean Airlines in, incident,
+Ronald Reagan instructed that the GPS
+system move towards public availability.
+But this didn't happen until
+the year 2000, fully at least,
+because prior to that year,
+the GPS signal was actually degraded so
+that just the military could have
+access to the precise positioning.
+That we actually all have
+on our smartphones today.
+Now in 2000, Bill Clinton removed this
+intentional signal degradation which
+was called selective availability.
+Now this single order by Bill Clinton
+has made possible so many of
+the applications of positioning that we
+discussed at the beginning of this video.
+And we'll continue discuss,
+to discuss throughout the module.
+Now because of this history I like
+to think of Ronald Reagan and
+Bill Clinton as GPS B, BFFs.
+Even though they had many many
+political disagreements Reagan and
+Clinton realized the power and
+importance of positioning in
+civilian applications and they both
+are responsible for making that possible.
+Okay.
+So how does the global
+positioning system work?
+Well it consists of 24 satellites,
+plus a few extras.
+All of which are on a fixed 12
+hour orbit around the earth.
+Each satellite transmits radio
+signals at fixed intervals, and
+these radio signals
+are used by GPS devices,
+like a smartphone, in a prositioning
+approach called trilateration.
+Now at a high level
+trilateration works like this.
+Let's say that you and your smartphone
+are located in this big white abyss here.
+Let's just pretend it's a snowy field,
+right?
+And let's say that you and
+your smartphone can see this satellite.
+Now when I say see,
+I mean it's just in the line of sight.
+GPS does require roughly speaking
+line of site which means that if,
+you can’t see the sky chances are your
+smartphone can’t see the sky,
+and that also means, your smartphone
+won’t be able to see the GPS satellites.
+Now if your smartphone can detect signals
+from the satellite if it’s in the line of
+site of the satellites.
+It can actually relatively easy,
+easily calculate the distance between
+the satellite and the smartphone or
+any other GPS device, of course.
+And it does this by just figuring out the,
+the difference in time between when the,
+when a signal leaves the satellite and
+when it is received by the smartphone or
+other GPS device.
+And with time and
+the speed of light which is the, the speed
+at which the GPS signal travels, right?
+It's pretty easy to
+determine the distance.
+But just knowing the distance from one
+satellite won't help you much, right?
+Because you could be anywhere that is
+that distance away from the satellite.
+And although this of course
+operates in three dimensions.
+I've simplified things here down to two.
+And so basically if you are a certain
+distance away from the satellite,
+you could be anywhere on this circle,
+right?
+So the good news here is if you can see a
+second satellite, things get a lot better.
+Because if you can calculate
+the distance from that satellite there.
+At least in the simple in the,
+in the simplification.
+Excuse me.
+There becomes only two places
+where you can be, right?
+And those two places are the two places
+where these two circles intersect.
+And if you can see a third satellite,
+well your position is now resolved.
+And, indeed, for GPS to work,
+your GPS device, or your smartphone.
+Needs to find at least three
+satellites for just an x, y coordinate.
+Excuse me, an, an x, y position,
+a latitude and longitude position, and
+if you're going to do altitude as well,
+you'll need a fourth satellite.
+And in general, the more satellites
+you have with GPS, the better.
+Public access to GPS was a complete
+positioning game-changer.
+Prior to its availability.
+People were pretty much on their own.
+When it came to figuring out
+exactly where they were.
+And for
+those of you who are my age or older.
+You definitely remember how incredibly
+difficult this could be sometimes.
+Now for scientists and professionals
+the situation was actually even worse.
+Obtaining an accurate latitude and
+longitude coordinate.
+Which is needed for so
+many different applications.
+This was a very expensive process and
+it required people with
+a great deal of training.
+However, even though it's a complete
+game changer in positioning GPS is
+definitively not perfect.
+So for instance, unless you're watching
+this move while sun tanning somewhere,
+chances are that GPS is
+actually failing you right now.
+One of GPS' key disadvantages is
+that it does not work indoors,
+although this is changing a little bit.
+But for the part with current technology
+you can assume that GPS will not
+work if you can't see the sky.
+If your smartphone can't
+see the satellites, right?
+Another limitation of GPS is that it's
+accuracy can be somewhat limited for
+certain applications.
+For most location based services that we
+talked about so for instance Yelp, right?
+GPS is totally fine.
+But if you're going to want to do
+something with a lot of precision like for
+instance map a gas line or something like
+that where you definitely want to make
+sure you have that that gas line's exact
+latitude and longitude coordinate.
+A series of latitude and
+longitude coordinates or
+else something bad could happen.
+You're not going to want to
+use a GPS in a smartphone.
+You could get more expensive GPS equipment
+that is quite a bit more accurate,
+uses a bunch of different
+correctional approaches.
+But for the purposes of smartphone GPS
+the accuracy could be somewhat limited.
+The time to first fix can
+be challenging with GPS.
+What this means is, effectively, it's the
+time that the GPS needs to see three or
+more satellites.
+And this, this can be slow.
+It's aided by a number of
+different technologies but
+it still is not instantaneous.
+Another key limitation in GPS is that
+line of sight can be really blocked in,
+a highly urban downtown areas.
+This is called the multifa,
+the multipath effect.
+Or somebody will call
+these multi path issues.
+So basically what this means is that if
+you're in an urban canyon like the one you
+see here this was taken from the the CN
+Tower, that's the name of it in Toronto.
+chan, your GPS is going to have a hard
+time finding the satellites because
+the whole view of the sky right, is
+blocked by these enormous tall buildings.
+So GPS has a limitation there.
+Now finally an important
+limitation of GPS especially in
+a smartphone context is that it
+can be a big drain on power.
+So these are these are a number
+of important limitations of GPS.
+And we will be returning to these
+limitations in the next video.
+Before we get to that next video I want
+cover one more important thing and
+that is this.
+We have added another bBFF
+to our series of BFF.
+Why is that?
+Well because GPS is not alone
+now in terms of operational and
+usable global navigation
+satellite systems.
+The Russians, actually, launched their,
+own, they finished it up in 2011.
+It's called GLONASS and actually
+many modern smartphones use GLONASS.
+So, for instance, I have an iPhone 5.
+My I phone five not only looks for
+GPS satellites now it also looks for
+GLONASS satellites.
+And this has a number of benefits
+once again I said the the more
+satellites the more accurate right?
+It also could be that for instance some
+GLONASS satellites are in your line of
+sight faster than for
+instance GPS satellites.
+So, your phone is able to
+establish a position faster.
+Now there are a number of other,
+Global Navigation Satellite Systems
+that will be completed relatively soon.
+One is the Galileo system
+from the European Union, and
+another is the BeiDou system from China.
+Okay, that is it for,
+Global Navigation Satellite Systems.
+We'll continue in the next video
+with wi-fi positioning and
+cell tower positioning.
+[SOUND]
+

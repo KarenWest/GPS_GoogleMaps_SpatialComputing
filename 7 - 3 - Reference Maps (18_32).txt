@@ -1,0 +1,632 @@
+Hi folks,
+welcome back to the cartography module.
+In this video, we're going to target
+our third learning objective,
+which is to know the limitations
+of popular online and
+mobile reference maps, like Google Maps,
+Apple Maps, Bing Maps, and so on.
+Using the technical track,
+we will be learning how to address some of
+these limitations in your assignment this
+week, which we'll cover in another video.
+Now you've noticed that this learning
+objective is phrased somewhat negatively,
+knowing the limitations of
+popular online and mobile maps.
+The reason this is the case,
+is that you probably are,
+are already quite aware of
+the benefits of these technologies.
+So recall that the high level
+geocommunication goal of reference maps,
+is to help the map user to understand
+the location of specific entities, and
+that people use reference maps
+primarily for orientation and
+navigation with respect to
+these specific entities.
+So, for the majority of reference
+map use cases, Google Maps and
+it's competitors do
+really an amazing job and
+in fact, in all of human history, I think
+we've never had reference maps this good.
+So for example, prior to Google Maps and
+it's competitors, if I wanted a reference
+map that for instance shows me all
+the Japanese restaurants near Berkeley,
+California, I would have had to spend a
+great deal of time using a phone book and
+either a paper map or
+a geographic information system to
+make my own custom reference map.
+Now these days,
+I can just query Google Maps and voila.
+I'm sure you guys have done this many,
+many times.
+Now in addition, if I want to get a map
+that shows me how to get to one of
+these restaurants, right?
+Remember that navigation is another
+important high level use case of
+reference maps,
+you can do that just as easily.
+Even in some reference map use cases
+where normal Google maps largely fails,
+Google and other companies offer other
+products that support these use cases.
+So let's say, for instance, you want to
+make a map of all the festivities going on
+for a wedding celebration in Chicago,
+Illinois.
+Now you can make a webpage that lists out
+all the addresses of where the wedding
+ceremony is, where the wedding reception
+is, where the hotels are and so on and so
+forth, or you can make a custom map using
+Google's My Maps, which is totally free.
+Now using Google My Maps in just
+a few moments I was able to turn
+these addresses into a passable map to
+put on, for instance, a wedding webpage.
+And in fact you can actually even in
+add in navigation instructions for
+your wedding guests.
+And of course, you don't really
+need anything this fancy to
+make this type of map.
+For many use cases, it's really often
+just sufficient to take a screenshot of
+an online map and load it into Microsoft
+Paint or some presentation software, and
+point out the specific locations
+you'd like folks to know about.
+And while this often
+doesn't look quite as nice,
+a lot of the time it's just as useful.
+I will note that you do have to pay
+attention to the terms of service for
+these maps if you're going to
+do something like this.
+And that's something we'll be
+talking about in a little bit.
+Okay.
+So while Google Maps, Apple Maps, and
+so on are fantastic,
+they also have important limitations.
+And my expectation is that you're much
+less aware of these limitations than you
+are of the benefits of these technologies.
+What we're going to do for
+the rest of this video is discuss
+a number of these limitations.
+Now knowing these limitations will
+make you a more educated user of maps.
+And if you're in the technical track,
+it will set the stage for
+your assignment, which will help you
+become familiar with the tools you
+need to make better reference maps for
+certain use cases.
+Okay, so let's get started with
+limitation number one, here.
+And that is that Google Maps, Apple Maps,
+Bing Maps and so on, all have made
+certain tradeoffs, that while they may
+be optimal for important use cases,
+they result in them communicating
+inaccurate representations of the world.
+The most famous example of this,
+is that the Web Mercator projection has
+become the defacto standard for
+online and global maps.
+Now we're not going to go into detail
+about map projections in this course, but
+I do want to briefly go
+over why they're necessary.
+So the world is three dimensional, right?
+It's a, most folks think of it a sphere,
+other folks maybe who
+have taken a cartography class
+think of it as an ellipsoid.
+It's actually something called a geoid,
+which takes into account all of
+the little mountains and valleys
+that distort the shape of the earth.
+So then we have a,
+a three dimensional world here and
+in order to take something that's round
+and three dimensional and represent it on
+a 2D surface like for instance,
+a tablet or a computer, or a smartphone.
+You really have to make
+certain sacrifices.
+This is necessary.
+And if you're going to show the whole
+surface of the geoid here on a 2D screen,
+you have to distort the surface somehow.
+Arthur Robinson, who's been described as
+the founder of the modern discipline of
+cartography in the United States,
+he described the situation as follows.
+Take an orange and
+draw something on it, say human face.
+Now carefully remove the peel,
+trying to keep it in one piece, and
+flatten it against your kitchen table.
+You'll see that in making a two
+dimensional object out of a round one,
+something has to give.
+Either the face gets distorted and
+looks all mushed out.
+Or in flattening the peel,
+it breaks into segments, dividing
+the face as well into several parts.
+Now there are all sorts of ways
+that people have come up for
+flattening the orange peel, or
+stepping away from the analogy,
+distorting the surface of the Earth.
+Now each of these ways is
+called a map projection.
+And each map projection seeks to preserve
+some property of the surface of the Earth,
+siphoning all of the air from
+the distortion into other properties.
+[SOUND] So, Google and other online and
+mobile maps use a projection called
+Web Mercator, which is a minor derivation
+of the typical Mercator projection.
+The Mercator projection is a very
+old projection that was designed to
+preserve properties that were useful for,
+for sailing, actually, in the 1500s.
+However, as it turns out,
+Mercator also has some properties that
+are really valuable for maps in the 2010s.
+Namely, North can always be up.
+Mercator is a computational
+inexpensive algorithm to implement.
+And there are, is very little distortion
+with Mercator at zoomed in scales.
+And this is a very important use case for,
+or high level use case for
+Google Maps, right?
+Most of what we do in Google Maps
+is at a zoomed in scale.
+Now, the Mercator projection also happens
+to result in a rectangular global map,
+which means that it also fills
+up the browser quite nicely.
+Of course as I was just mentioning,
+when it comes to projections
+there are inherent tradeoffs.
+You can't win somewhere
+without losing somewhere else.
+And when it comes to Mercator, the loss,
+and it's a big loss, is that at global and
+regional scales like we see here,
+Mercator extensively
+misrepresents the size of places.
+Especially as one gets closer and
+closer to the poles of the North Pole and
+the South pole.
+So for example, let me ask you,
+which region here is larger?
+Greenland or Mexico?
+Now even though the Mercator Projection
+makes Greenland look,
+I don't know,
+something like 10 times larger.
+As it turns out they're actually
+basically the same size.
+I Greenland is 2.17 million square
+kilometers, and Mexico is 1.94 million.
+The map here is really distorting
+the area of these two regions,
+particularly Greenland because
+it's closer to the Pole.d.
+Now there's a major side effect here,
+and that is that since online and
+mobile maps that use Web Mercator
+have become the predominate way by
+which people experience cartography,
+these misrepresentations are migrating
+into people's mental maps of the world.
+In fact, I bet if you ask most people on
+the street the question I just asked you,
+they'd answer the same way as if they
+were looking directly at a Mercator map.
+Mercator Projections were quite prolific
+prior to online and mobile maps.
+But Google Maps and its competitors
+are certainly doing a lot to
+make this how people around
+the world see the world.
+Before we leave projections,
+I want to briefly discuss what is
+called the unprojected projection,
+which involves plotting longitude and
+latitude coordinates.
+Which are angular in nature as X,
+Y coordinates, which are linear in nature.
+Unlike all other commonly used
+projections, the unprojected projection
+preserves absolutely nothing, so
+it distorts absolutely everything.
+For exploratory data analysis and
+intermediate projects,
+this is totally okay.
+You know, I do this myself you know, when
+I'm working with colleagues showing them
+the results of some study or
+these types of things.
+But for presentation or
+publication at least use Web Mercator,
+this is the unprojected
+projection is not acceptable.
+Also and
+this is actually more critical and
+occurs for very similar reasons you
+should actually never use latitude and
+magnitude coordinates for
+area or distance calculations.
+Which is something I see a surprising
+number of computer scientists,
+in particular doing in both industry and
+actually in published papers and
+academia as well.
+Now the reason you don't want to do this
+is that lat, as a latitude increases,
+a degree of longitude here becomes
+a shorter, and shorter, and shorter, and
+shorter linear distance as you
+move up in latitude, right?
+So as such, 5.26 degrees squared, or
+3.2 degrees used as linear distance,
+mean something very different
+at different latitudes.
+At the equator it's, it's bigger or
+longer, towards the poles it's smaller or
+shorter.
+So if you see results reported
+in decimal degrees squared, or
+distances reported in decimal degrees,
+you can inform the person presenting these
+results that you might as well present
+areas in, for instance, hamburger size,
+which you know, of course, varies across
+the country and around the world.
+And you know, distance and
+length of sandwiches, right?
+There are all sorts of different
+lengths of sandwiches.
+Because that's basically
+the same precision and
+consistency as the reporting if they
+were to report something like this.
+Now, the second disadvantage of online and
+mobile maps.
+We're done with our first one here.
+The second one is that, and
+this is not often discussed in spatial
+computing, but there are a number of
+use cases where paper maps are actually
+still better than online and mobile maps.
+And in particular,
+there are two I want to talk about.
+The first of these advantages for paper
+maps is that paper maps actually afford
+a much larger display size,
+very cheaply, as you can see here.
+Right?
+We've got our little smartphone map, and
+our much larger paper map.
+And another, another advantage of paper
+maps that folks often don't think about,
+is that they require absolutely
+zero power after they've been made,
+which is definitely not
+true of smartphones and
+laptops, which need to be,
+powered very frequently.
+So for instance,
+in emergency scenarios, having a paper
+map is a good thing to have around.
+Now, I thought a great way to hammer
+home this zero-power, requirement for
+paper maps, or
+in this case stone maps, was to reiterate
+or to bring back up this stone map here.
+This lasted 14,000 years and there wasn't
+any power involved once the person put in
+the effort to ash this into stone.
+Right?
+The third disadvantage of many online and
+mobile maps comes from their terms
+of use and related restrictions.
+Now we're not going to go into
+a great deal of detail here,
+as that's probably more appropriate for
+a course taught by a legal expert,
+which I'm not.
+However, I do want to highlight
+that all commercial, online and
+mobile maps have terms of
+use that prevent a number of
+different applications of their maps or
+imagery.
+So for example, here's Google's FAQ
+page on using Google Maps and
+Google Earth in printed materials and
+offline media.
+You can see here there
+are a number of restrictions.
+For instance, if you thought that
+you were going to start a business
+to sell t-shirts with little portions of
+Google Maps on them you would
+be breaking their terms of use.
+There are a number of different rules when
+you want to use Google Maps and print.
+For instance,
+if you're in the news media and so on and
+so forth,
+you can check out more rules here.
+And actually if you look at Google's
+documentation more broadly,
+you'll see that if you use
+Google Maps on your website, for
+instance, if you're Hotels.com and
+you use it to show all the available and
+non-available hotels on a given night.
+Or, for instance,
+if your door dashing, and
+you use it to show all the restaurants
+that are available near your location, and
+you happen to generate more than 25,000
+map loads in 90 consecutive days,
+you actually have to start paying Google
+to use Google Maps, even through the API,
+which is something that those even the
+technical track might be familiar with.
+There is however,
+one online map that is much more
+open when it comes to terms of use.
+And that is, as you might have guessed,
+OpenStreetMap.
+OpenStreetMap's map tiles are licensed
+under the creative commons
+attribute share alike 2.0 generic license.
+That's a mouth full.
+But it's relatively easy to
+understand if you take a look at
+the creative comments webpage here.
+So this license means that with
+OpenStreetMap's tiles you can copy and
+redistribute them in any medium or format
+you can remix and transform them and build
+on the tiles, and you can even do this in
+a product that makes you money, right?
+We saw that Google wouldn't let you do,
+make t-shirts.
+You can make t-shirts
+with open street map.
+However, if you do this, you must,
+must, must attribute OpenStreetMap.
+If you use OpenStreetMap tiles period,
+you must attribute OpenStreetMap and
+do so appropriately, and if you make
+modifications of the OpenStreetMap tiles
+you have to distribute those modifications
+under the same license here.
+This was just about OpenStreetMap,
+OpenStreetMap's tiles, excuse me.
+OpenStreetMap data has a, a very similar
+very similar licensing structure.
+Be sure to check out
+OpenStreetMap copyright and
+licensing page here for more information.
+Okay, time for the fourth disadvantage
+we're going to be talking about today,
+which is the cartographic
+hegemony of online and
+mobile maps, particularly Google Maps.
+Now, prior to online and mobile maps,
+we accessed maps by all sorts of
+different cartographers from all
+sorts of different organizations.
+These days, on the other hand,
+we generally look at the world through a
+single map made by a single organization,
+and that organization is typically Google,
+although, this is true of
+increasingly Apple as well for those of
+you who rely on Apple maps on your phone.
+Now this means that one organization's
+representation or point of
+view about the world is being blasted
+into our brains on a very frequent basis.
+And on a practical level, this means that
+mistakes can have outside excuse me,
+outsized implications.
+So for instance, Nicaragua recently
+invaded Costa Rica by accident because it
+put too much faith in Google Maps and
+Google Maps had a mistake as to which
+country controlled a particular island.
+Now along the same lines, cartographers
+local to a particular area or
+more familiar with the audience of
+a particular map, may make entirely
+different choices than Google about
+how to make a map of a specific area.
+So for instance, in a recent paper,
+some colleagues and I compared
+the cartographic choices made by map
+makers of publicly displayed local maps.
+And the cartographic choices
+made by popular online and
+mobile maps, in which we found
+an enormous number of differences.
+So for instance, local maps often
+include what we call space usage rules.
+These include things like no camping,
+no dogs, and so on, like you can see here.
+Now, unlike many publicly displayed
+local maps, Google Maps and
+its competitors currently do not
+display any space usage rules.
+Since more and more people are likely
+ignoring publicly displayed local maps,
+and instead looking at their smartphone
+maps, the fact that space usage rules
+are not displayed on smartphone maps
+really presents a risk to public safety,
+public order, the environment,
+and so on and so forth.
+We've actually started a project
+here to help map these rules so
+they can be included in online and
+mobile maps in the future.
+You can read more about this project
+in our tech report at this URL here.
+We've also teamed up with
+the informatiCup in Germany, and
+made mapping space usage rules actually
+this year's informatiCup challenge.
+Now, for those of you who speak German and
+are in the technical track, and
+I know there are some of you,
+I really encourage you to participate.
+Okay, so those are some of the more
+practical disadvantages of
+having just a few map makers to find
+our choreographic views of the world.
+It's important to point out that there are
+also some critical higher level concerns.
+So Google, Apple, Microsoft, et cetera,
+they all map and surface things on
+the map that are in some direct or
+indirect way in their commercial interest.
+So for instance the places where homeless
+people tend to spend the night are not
+displayed on any of these maps.
+Now because of our reliance on these maps,
+we don't have access to
+information about the importance of these
+places to this disadvantaged population.
+Now similarly,
+richer places tend to get mapped first.
+So for instance,
+here is a map of from Apple Maps,
+of Mostar in Bosnia and Herzegovina.
+This is one of the poorest countries
+in Europe, and you can see from the,
+the equivalent satellite photo that
+Apple really missed a ton of the,
+the roads there, right?
+So for comparison,
+here's Apple Map showing Santa Barbra,
+California, which is a smaller,
+but a much richer city.
+You can see that Santa Barbra is much
+more completely mapped even though it's
+population is less than that of
+Mostar in Bosnia and Herzegovina.
+Consider for
+instance this map of the University of
+Minnesota's Minneapolis campus.
+For general reference purposes,
+this map is great, but let's say I want to
+make a reference map that emphasizes
+the location of bike, of bike paths, or
+running paths or some other type of
+feature rather than the roads for
+cars, which is what is emphasized,
+typically, in online and mobile maps.
+Now, since I can't edit the base map,
+this is going to be quite difficult, and
+there all sorts of reasons why I
+might want to do this type of thing.
+For instance, I had a student in one of my
+seminars here last semester who worked on
+a class project that involved
+the mobile map app that would adapt its
+cartographic approaches to
+the user's current activity.
+So for instance if the user were jogging,
+it would show a jogging oriented map.
+If the user were walk, were walking,
+it would do the equivalent, and so on and
+so forth.
+This type of app is very difficult to
+implement using existing mobile maps.
+And their, and their APIs because we
+actually can't edit the base map.
+Another example of this limitation
+comes from rural areas.
+Google Maps often struggles to
+communicate the variation and
+the size of quality of
+roads in these areas.
+So, for instance, here is Google Maps
+showing a portion of rural Minnesota.
+The road I'm on here, you can see a blue
+dot is not very good quality asphalt.
+But still asphalt.
+It could use a resurfacing.
+However, when I, I decided to try and
+take a shortcut here which is shown in
+the same cardiographic symbol, right?
+Same symbol here as here this
+road here looked like this.
+As you can see, that is not asphalt, that
+is dirt and to a certain extent, grass.
+Now if I wanted to use Google Maps or
+its API to make a location in
+where technology for rural areas.
+For instance, one that has much
+better road quality discrimination at
+the low end of the quality spectrum.
+There's no easy way for me to do this
+because I need to alter the base map.
+Of course Google and its competitors
+do generally provide a selection of
+different base maps through
+various settings and options, so
+we all know that we can turn
+on the satellite view here.
+We've seen this several
+times in this lecture.
+And actually, if we go to Google My Maps,
+we can also use the terrain base map here.
+Or the Simple Atlas base map.
+Or the Whitewater base map.
+There are a number of them, however,
+no matter how many you make,
+they can't come close to covering all the
+possible base map needs, which means that
+Google Maps and other online and mobile
+maps are going to be less useful for
+a certain number of
+reference map use cases.
+They're useful for the majority of them
+but they're less useful for some of them.
+Fortunately, using some new tools and
+open data, like that from OpenStreetMap,
+many of these limitations can
+actually be addresses with folks
+with even limited technical skills.
+Learning the basics of how to do so
+is the goal of this module’s programming
+assignment, but we’ll leave that
+to the details of the assignment.
+For now, we’ve gone through our five
+limitations of popular online and
+mobile reference maps,
+which means that I will be seeing you in
+the next lecture when we're going to
+turn our attention to thematic maps.
+

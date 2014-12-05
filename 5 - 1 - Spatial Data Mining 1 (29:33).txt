@@ -1,0 +1,958 @@
+Welcome to the modular and spatial data
+mining, so for next half a dozen videos or
+so we'll explore this topic of data mining
+in context of geographic and spatial data
+sense.
+So in the very first video the learning
+objectives are as follows.
+It is after this module, after this video
+you should
+be able to talk about the motivation for
+spatial data mining.
+You know, what are the societal use cases,
+what are the benefits, why people are
+engaging in this, and second, we should
+al,
+also be able to name common pattern
+families.
+Which I explored with spatial data, okay?
+So, so first let's look at the, the
+overall context.
+So, data mining is among a, a set or a
+family of techniques that people use for
+informed decision making.
+Okay, and informed decision making has a
+long history.
+It's often considered better than gut
+based, or instinct based,
+decision making because one is able to see
+a little
+bit of information about the competition,
+about the market, you
+know, about different trends within the
+organization, and so on, 'kay?
+In recent times, informed decision making
+has been
+aided by technologies to collect data and
+information.
+These technologies include sensors as well
+as databases.
+So, for example, if you go to retail
+stores.
+So if you're shopping in Wal-Mart or
+Target, you will probably note that
+your transactions, so the set of items
+that you buy, are being recorded
+in a database, and these stores then look
+through those transactions to identify
+many different patterns, such as which
+items
+sell together, because once they know
+that.
+They can use different strategies such as
+lost you know, leaders strategies.
+Where they put one item on sale and make
+money on
+the other, and similarly if you're on a
+website, such as Amazon.com.
+Almost every click that you make whether
+you're on Facebook or so on.
+Those are recorded and people again look
+at different patterns.
+For example, e-commerce companies often
+are interested in a selection of
+colors, fonts, or other tactics to
+increase click rates on advertisement,
+okay.
+Now as you come to spatial word, if you're
+using a
+smartphone, it has GPS, then your
+locations are being recorded, okay.
+So all these sensors, you know, are
+enabling data
+collection, and then the advent of
+relational databases has
+made it very very cheap to archive large
+amount
+of data, and analyze them for their own
+purposes.
+However there is a challenge.
+In past, this data was analyzed by human
+experts, or analysts.
+So they would essentially sit through
+and try different statistical techniques,
+and if
+they found some patterns they will go
+through further analysis to confirm it.
+But with the rapid change in technology,
+the rate of data collection is growing
+very,
+very fast, and certainly much faster than
+number
+of human analysts that an organization can
+hire.
+So, in this context we need, some
+automation.
+We need to help these human analysts.
+To focus on most promising pattern, or the
+patterns which seem to be most supported
+by data.
+Okay, some of you may have come across the
+term big data, which is another
+way to articulate the same vision.Okay, so
+there
+are many different approaches to assess to
+humans.
+Okay, so one simple approach we saw
+earlier when we were looking at Query
+languages.
+So [INAUDIBLE] languages like SQL or even
+simple Google search also help identify
+simple subsets
+of data and one can use simple
+summary queries there also to find basic
+[INAUDIBLE].
+Now spacial data mining is another
+technique and it's a little bit different.
+It's able to answer more complex
+questions.
+So let's first look at the difference
+between
+these two techniques, and also we should
+realize that
+there are other techniques, such as
+visualization and so
+on, which are there to help human
+analysts, okay?
+But, at least in this course we would have
+looked at spatial equating already.
+That was the module on spatial equating
+languages, and we are going to look at
+spacial data mining in this module so
+let's
+at least compare and contrast these two
+techniques.
+So what is the difference between spatial
+equating and spatial data mining, okay.
+So assuming you have already watched the
+videos and
+gone through the exercise in a spatial
+query language.
+Here are some limitations of query
+languages that you know, we can go over.
+So, first, the query languages like SQL
+work with with a closed word exemption.
+In other words, if some information is not
+in
+the database, these query languages can
+not create that.
+They essentially will answer false.
+So now try to imagine many interesting
+questions such as the following.
+Suppose you want to predict the weather
+for tomorrow.
+So as you can imagine, a database can only
+contain history, it can have data for
+yesterday, day before.
+You know, here before and so on.
+But given all that information, if you ask
+a database SQL query about weather
+tomorrow, it
+essentially will come back and say, I
+don't
+know, or essentially give you an empty
+answer.
+So it does not have a way to estimate or
+create things which are not in database.
+Another such example is the following.
+If you, let's say, are looking at credit
+worthiness.
+So the way it is, credit card companies,
+you know, they get applications, and the
+database
+they may have thousands of past
+applications and
+their decisions, whether they were
+accepted or denied.
+But given all that information, if you ask
+the database whether a new
+application should be approved or
+declined, database
+SQL would not have much to say.
+In addition,you know, the [INAUDIBLE]
+complexity in databases are limited.
+If you remember in SQL we learned about
+simple selection and join.
+We could use spatial relationships for
+those, but, Join
+Inside is still very limited to simply
+form pairs.
+If you want to go beyond pairs, to ask for
+groups.
+You know, for example you are looking at
+all the
+customers who are buying a new product,
+such as iPhone
+and or, a completely new part, and you
+want to
+understand that are there some natural
+groups of customers there.
+So data basis and SQL would have a very
+hard
+time finding these because these are much
+more complex than
+join okay, and other, you know, such
+queries are given
+a set of items, in a retail store like
+Wal-Mart.
+You want to ask which items are often
+bought together.
+You know, looking at customer
+transactions.
+Again this credit turns start to be much
+more complex than joined.
+In SQL, the traditional one will not be
+able to help you.
+So, in such context, the role for data
+mining.
+Data mining is able to use database in
+new, creative ways.
+So for example, it can do prediction.
+So if we already know the weather for
+yesterday, day before and so
+on, then we could use prediction model to
+estimate the weather for tomorrow.
+So oftentimes they would essentially have
+the
+weather for many geographic location, so
+if
+they notice a storm is moving at certain
+velocity or speed in a certain direction.
+They can project, and predict where it
+will be that, tomorrow,
+and based on that they could even predict
+the local weather.
+It may not be 100% accurate, but at least
+there is a prediction, and that is often
+quite useful.
+Similarly other complex questions such as
+natural
+groups can be answered in data mining,
+okay?
+So, in that sense, if you think about
+spatial querying and data mining, then
+querying often focuses
+on what is in the database, that is, the
+parts, and it can give you a summary
+of the parts, but estimate querying will
+not
+try to to estimate something that's not in
+the
+database, and that's where the spatial
+data mining
+comes into play, it can try to do
+forecast.
+And it can also enter, answer more complex
+questions which are difficult to express
+using joins, okay.
+So let's formally define spatial data
+mining.
+So there are many different definitions.
+So, but, for our discussion, the following
+definition would be a reasonable place to
+start.
+So it is a process of discovering
+patterns.
+So here, you notice, we put the word
+patterns in red
+color, and then there are three objectives
+in front of that.
+So let's go over all the three objectives.
+So, first objective is non trivial.
+So these patterns are non trivial.
+It essentially means that if I look at
+the brewed first approach, and say, well
+Let me
+look at possible candidates, and then
+somehow rank
+them to get the most useful and
+interesting one.
+Then that's going to take a very long
+time,
+because the set of candidates is very very
+large.
+In other words, this nontriviality is
+motivating use of computer algorhythms.
+To sort through candidates to identify
+most interesting one.
+The second objective is useful.
+This is essentially telling us that data
+mining is an applied field of research.
+There is always a customer on the other
+end.
+So there is an organization, maybe a
+business, a government, or a consumer.
+Who has a certain goal and these patterns
+are going to be used by this customer.
+It is not basic research, it is not basic
+research you just don't
+take a theory and extend it to say here is
+another beautiful thing.
+That's often not done it data mining.
+It maybe done modern machine learning or
+statistical
+theory, and finally the third objective is
+interesting.
+So the patterns we find should give us new
+knowledge.
+They should give us some surprised or
+difference.
+It should not be something people already
+know.
+So for example, you know, if we look at
+climate data
+for last several decades or centuries, and
+ask for some correlations,.
+You know you might find correlations such
+as the climate in Minneapolis.
+It is very similar to climate in St. Paul,
+but if
+you ask the, you know, most people, that
+won't be very interesting,
+because people know that nearby places
+have similar climate, and given
+that St. Paul and Minneapolis are only
+about a dozen miles apart.
+That's something most people will expect
+so it's not interesting.
+However if you know, analyzing the same
+client history data somebody
+notices a pattern that warming of pacific
+leads to milder winters
+in Minnesota that is certainly interesting
+because most people or not
+aware of these teleconnections at least
+they were not aware of that.
+In a few decades ago, with more climate
+research we have seen these kind of
+connections.
+So interesting it has to do with some
+novelty, something that's not normal.
+But again, the keywords are patterns and
+what
+we'll do slowly is to give you examples
+of those so that you form and indution
+about the kinds of patterns we work with.
+In terms of interestingness, you know, the
+patterns,
+themselves, could be of interest to non
+spatialists.
+So, for example, when I mentioned that
+Pacific
+warming, also called El Nino, affects
+winters in Minnesota.
+People who are not familiar with climate
+science and data, may find it interesting.
+But people who already know this actually
+may
+be more interested in when these patterns
+are violated.
+So when are the exceptions?
+For example, global warming is another
+trend that has been noticed
+for the last several decades, and but you
+know, there are anomalies.
+For example, we know that in last decade
+we
+know that the rate of global warming has
+slowed.
+So the specialist, the climate scientists,
+are more interested in
+that anomaly to figure out where is the
+heat going, okay?
+So there are different ways to talk about
+interesting this, okay?
+Also in our contexts, we are looking at
+very large data sets,
+So computers scalability to large data
+sets is also a factor here, okay?
+Okay, good.
+So let's go down and look at the pattern
+families that we are
+interested in, and in spatial data
+mining there are several interesting
+pattern families.
+We'll give you examples of a couple of
+those.
+So here is a quick list.
+Hotspots, and I'll show you an example
+very quickly.
+People talk spatial discontinuities, or
+spatial outliers, poll locations.
+Location prediction model, etc.
+So, let's go look at an example of each,
+okay.
+So the first one, Hotspots.
+So hotspots, probably, are the most
+popular pattern familied
+in spatial data, and they have a very
+interesting history.
+So let me first take you, you know, to the
+historic example, in London, 1854.
+So here you are seeing a very historic
+map, drawn by John Snow.
+Some of you may have seen this map
+in others courses on visualization or in
+public health.
+So at this time people did not understand
+the cause for cholera.
+In fact, the prevalent theory said that
+cholera is spread through air, and it's a
+bad air or miasma theory, okay, and based
+on that, you know, people managed their
+cities.
+You know, if you remember, this is the
+time when the cities are just emerging.
+Say it is like New York and London you
+know, they essentially assume that you
+know, when if you have some dirty places
+you know, they are thinking in terms of
+chemistry and saying even if you have a
+water well next to it as long as
+you're digging deep enough chemistry says
+the toxins
+will dilute and your water quality is
+fine.
+So even in cities like London and New
+York, you know things are not that
+clean at this time in 1854, and it results
+in many of you know these diseases.
+But in 1854, John Snow, a public
+health official in London, tries a
+different approach.
+He puts a, a together a map, and in this
+map he's showing the locations of debts.
+So when you see these little dots in this
+map,
+they are showing you the locations of
+debts due to cholera.
+Now once he looks at this map of London,
+he finds a very interesting pattern.
+What now a days we call hot spots, so you
+notice that these deaths are concentrated
+in a geographic area.
+They are not uniformly distributed all
+over
+London, but they are concentrated in this
+area.
+Not only that, he also notices that there
+is a water pump.
+You know, these big black boxes are water
+pumps,
+and he notices areas have water pumps at
+the center.
+Of this hard spot.
+So [UNKNOWN] comes up with the hypothesis,
+a conjecture.
+It says well, maybe this water pump has
+something to
+do with cholera, but the scientific theory
+at the time
+says that cholera is spread through air,
+so no one
+believes John Snow, and it takes him three
+or four days.
+To convince city council to just take a
+chance,
+he simply argues that, you know, what's
+the harm?
+Let's take the handle off and see what is
+does
+and very reluctantly city council does
+that and then Cholera subsides.
+So this essentially is a big change in
+scientific thinking.
+So the pattern here is hotspot and based
+on
+that we also created a hypothesis that the
+things at
+the center of the hotspot may be cause of
+this
+pattern, and it actually helps you know
+control the disease.
+So science changes at this point an
+alternative
+hypothesis is born which says cholera may
+be spread
+through water, and the people start
+putting microscopered the
+water and 20 years later germ theory comes
+around.
+And you know, that changes the way we
+think about cholera today.
+Not only that, many other diseases which
+are waterborne.
+You know, the whole notion of germ comes
+around.
+So again to back up, for our course what
+is interesting is
+the pattern, and what we are interested in
+are these hotspot pattern.
+Which are roughly a geographic area inside
+which the
+concentration of some activity is much
+higher than outside.
+This activity could be disease it could be
+something else, so
+this pattern is routinely checked for by
+Center for Disease control.
+Many public health agencies routinely make
+maps
+of infectious disease, and if they find
+an area where this concentration is much
+higher than outside, they often launch
+environmental investigation.
+Now, this pattern has moved from public
+health to also public
+safety and you can do the same analysis
+with crime locations.
+So many police departments today make a
+map of
+all the crime reports every week, and they
+they look
+for geographic areas where the crime
+density is very high,
+and if they find that, then they try
+different interventions.
+For example, they may increase police
+patrol, or they may
+have social inter, intervention and things
+of that kind, okay?
+So this is first pattern family, with a
+very
+long history and it's used quite a bit
+today.
+Let's look at second pattern family, but
+before that we
+will show you that hot spot today has more
+semantics.
+Okay, so, John [UNKNOWN] where you had a
+single map
+and one disease in a small area is long
+way.
+Today, you have to monitor very, very
+large areas, so that
+your software tools are interesting but in
+addition you had more semantics.
+Okay, for example, you may have time and
+in urban areas, you may even have spatial
+network.
+So let me very quickly show you the impact
+of those.
+So here in this picture we are showing you
+crime locations in a
+large city in US and you can try
+traditional hot spots to find
+this ellipses where the crime density is
+high, but in many urban areas, which also
+have sparse aid locations, some crimes are
+generated a long transportation network.
+So in the same data site, if you notice,
+if I think in terms
+of roads you may find that certain
+roads have high concentration of these
+activities.
+So linear hotspots are often [INAUDIBLE]
+and actually if you look at
+it in full richness there is an animation
+of crime activities in Amsterdam,
+and you notice that over 24 hours of a
+day, which is
+shown by this clock, the, the locations
+and intensity of crime changes, okay.
+So there are new semantics to hotspots
+which are being explored today, okay.
+So let's go look at another pattern
+family, and
+this is sort of in some sense opposite of
+hotspots.
+These are spatial discontinuities or
+outliers, and
+in this case, you know, we are
+going to show you a quick example of
+traffic data in twin cities and
+so, many you know, modern cities have a
+lot of sensors on the highways
+to monitor traffic and you know, they can
+quickly traffic issues and resolve them.
+So, we are showing you a map of twin
+cities.
+You know, many applicant fall in Minnesota
+and this, these are the major
+highways here, and you're seeing roughly
+4000 sensors every mile on the highway
+there are sensors which give you the data,
+now on this you know
+let me maybe show you a subset of the data
+for one highway I-35.
+Which goes like, you know, this direction
+north, south, and if I show
+this data for a day, then this is what it
+may look like.
+So on the y axis, I have given you
+locations of sensors
+on I-35W, one of the interstate, and these
+sensors are mile apart.
+There are roughly 60 sensors.
+On the x axis, I'm showing time of the
+day.
+So you're starting with midnight on the
+left
+hand, morning, then noon, afternoon, and
+night, okay.
+The color coding here is showing you
+traffic levels,
+so red means high traffic, blue means no
+traffic, okay?
+So in this particular picture, you can see
+many many patterns.
+So for example you can see rush hour in
+the morning.
+You know, to have shower in the evening.
+It is showing you only one direction of
+the highway.
+If you see the other direction, it will be
+mirror image, okay?
+But the pattern of interest that I want to
+talk about is this sensor number nine.
+You notice this line, okay, this line is
+sensor number
+nine and there is something very strange
+about this sensor.
+If you have ever observed traffic or maps
+in general, okay?
+So first notice that individual reading of
+the sensor.
+So if I go and look at the individual
+sensor.
+So if I go and look at the individual
+colors here.
+They are not global outliers.
+There is plenty of this magenta color in
+this map, okay?
+Yet the sensor looks very strange.
+So if I, you may want to pause here and
+think about why it looks so strange, and
+you, you know,
+you realize that this sensor nine is
+detecting traffic, even though
+the sensor before and after does not
+detect any traffic, okay?
+So, this is an example of spatial
+discontinuities, and
+it's happening all the, you know, the
+entire day, okay?
+These things are very unusual in space
+because
+many phenomenon in space, they vary
+smoothly Okay?
+If you look at temperature.
+Look at precipitation, and same way look
+at highway traffic.
+Then, you know, most people don't really
+know immediately enter the freeway and
+exit.
+You know, a few might do that.
+But most people go several miles on a
+freeway.
+So, this discontinuity is strange, and you
+know, one of our
+project, we had this data and when we
+flagged this pattern
+and showed it to the local department of
+transport officials, they
+thought it was a bad sensor and they
+changed that, okay?
+So again, any discontinuities in space is
+interesting
+and you know, we call that spatial
+outline.
+Let's look at the third pattern family,
+what we call
+predictive models, and here again we'll
+show you an example.
+So first we are showing you a map of the
+red [INAUDIBLE] near
+Lake Erie, one of the Great Lakes, and you
+see the green areas.
+These are vegetation, and then you can see
+little dark, you know,
+the crosses, around here, and these are
+nests of a particular bird.
+So in this example, people wanted to
+create a model to predict nest worthy
+sites.
+So that you know, if there is a
+development, if they want to build a house
+or freeway, they can try to protect the
+damage or impact on the bird's nest, okay?
+So we basically want to predict the
+locations where this
+bird likes to nest, and you, you have that
+information available.
+So, for example you may have vegetation
+durability index, you may have distance to
+water,
+and many other geography variables that
+are
+available using which we can make this
+prediction.
+Again, on the surface of this this may
+look like many other
+prediction problems that you may have seen
+in different states on machine learning.
+But we'll come back to this pattern family
+later on
+to discuss why this problem may require
+additional attention, okay.
+But, basically, we are doing location
+prediction in this case.
+Whether it's the location of a bird nest,
+or location of where a hurricane
+will land, or a location of which a
+tornado will go and so on.
+But we're essentially trying to prediction
+location
+and time based on many Geography
+variables.
+The last [INAUDIBLE] family we want to
+talk about, is co location, and
+again let me first give you a picture, to
+try to motivate this pattern.
+So here, suppose I gave a map, of this
+kind, and this map has many features.
+So for example you may see Blue birds.
+There are many Blue bird nests, one here,
+one there, here, here, here, and so on.
+You might see green trees, again there are
+many locations of green trees,
+or fire, or dry tree, and so on or another
+kind of bird.
+So given a map of many, many features such
+as bluebird nests, you know,
+green tree, dry tree, fire, house, the
+question we are asking is the following.
+Is, are there pairs or triples of these
+even types.
+You know, whose locations are often
+together.
+Okay so whose instances are often located
+together in space.
+So again it will be best for us to pause
+this video here for a few second and
+you may want to stare at this map and see
+if you can identify at least one pair.
+Where the locations are often together,
+okay?
+So, you know, assuming you have already
+done that, I'll show you, you know,
+the two patterns that many people will
+find in this picture are the following.
+So first, many people will say dry tree
+and fire
+are co-located, and you can start seeing
+those pairs here.
+So on the right hand side you see dry
+tree, fire.
+A lot of them, you know, lot of them here.
+Blue bird and house.
+Again, you will see these pairs a lot of
+time in this map, OK, so not
+all houses have bluebird, like this house
+doesn't
+have bluebird but, you know, most of them
+have.
+So these are often thought of as a
+co-location pattern.
+We can ask similar questions with retail
+stores and ask which retail store types.
+Tend to co-locate, you know, things of
+that kind but this is the fourth pattern.
+Okay, so, you know, so having shown you
+many positive
+examples of spatial data mining I also
+want to quickly
+go over and tell you what is not spatial
+data
+mining and the reason I think it's
+important is the following.
+The term data mining started in mid-90s
+and, you know, at that time,
+the meaning was very specific, but then it
+took a life of its own.
+You know, media and all kinds of people
+love to
+use this phrase and they stretch the
+meaning, and you know,
+today if you see the word data mining used
+in literature,
+it may mean lots of lots of things,
+particularly in media.
+But in this course, we are going to stick
+to the scientific meaning.
+Which is little bit more specific.
+So here are the things we do not consider
+data mining.
+So first is simple query.
+As I told you if you are using some basic
+SQL join or select, that's querying,
+that's not data mining.
+So if you do Google search, yeah, some
+media article may call it
+data mining, but in this course we will
+not call that dat mining.
+'Kay, so you remember in spatial query
+languages, we were able
+to use SQL simple joins to find neighbors
+of a country.
+Or, you know, we can go to Google and find
+shortest
+path on a road map, and these are not
+considered data mining.
+Same way, you know, if you came from
+statistics side, you may have done
+hypothesis testing.
+Even though statistical hypothesis testing
+is often done after data mining.
+But that itself is not, you know,
+considered data mining.
+The reason is is that the set of
+hypotheses is very small, okay.
+So if you are only looking at one
+hypothesis,
+such as, you know, some of you remember
+the
+movie Erin Brockovich, and you know, she
+found this
+cancer cluster in California, and they won
+a major lawsuit.
+But if you think about her problem, and
+scientifically it may be thought of as a
+very
+simple thing, a simple hypothesis asking
+whether cancer incidence
+rates are much higher inside Hinkley than
+outside, okay?
+It will not be considered [UNKNOWN] per se
+because there is only hypothesis, okay?
+Of course, if we didn't know the location
+Hinkley, and you
+wanted to ask this question for all
+possible locations in California
+or United States or worldwide then it may
+become data mining
+because the number of locations is very,
+very large and potentially infinite.
+Also the shape of the footprint and so on,
+okay.
+The third part, you know, which we talked
+about.
+You know, remember the objective about
+interesting.
+So if we are mining for pattern which
+are well known or obvious that's not data
+mining.
+So just like, you know, if you said well
+if St.
+Paul is warm today you know Minneapolis
+will also be warm.
+You know most people know it's not
+interesting, okay.
+However teleconnections which many of us
+are not aware
+of, and you know, those maybe more
+interesting that a
+remote area such as Pacific warming
+effects in winters
+and Minnesota, and there are many other
+such [UNKNOWN] connections.
+North Atlantic oscillation you know, which
+is sort of the near
+green land, that seems to effect weather
+in Europe and so on.
+Okay, and finally, in this course, we
+are not interested in non-spatial data or
+pattern.
+So, for example, in the data mining world,
+there is a very famous pattern
+which, you know, Wal-Mart found, saying
+that
+diaper and beer sales are correlated,
+okay?
+If you look at that patent per say it is
+relevant to data mining.
+It's very interesting and many retailers
+use such patterns to make money,
+but if it has no special component it's
+not of interest to
+this course, and in fact you know if you
+already know this
+pattern you may want to ask yourself is
+this pattern spacial or not?
+So if you have ever read the complete
+story it does have
+spacial component because this pattern is
+not true everywhere in the world.
+It's only true in blue collar
+neighborhoods, and in week day evening.
+Because you know the anthropologist who
+followed these shoppers and interviewed
+them.
+They found that many of them were young
+fathers, and you know they got a call.
+From home to pick up Diaper, you know, at
+the end of the work day and while
+they were there, you know, the
+stereotypical, you know,
+beer drinking folks, they also picked up
+beer, okay?
+So hopefully, you know, this discussion
+gives you a sense of two things.
+Number one, what's the motivation for Data
+Mining?
+You know why do we have to go beyond basic
+you know, query?
+And you saw that this equating cannot
+answer complicated questions like groups.
+It can also not predict things which are
+outside database, and that's
+where Data Mining can help, and second,
+what is Spatial Data Mining?
+So at least we saw four pattern families
+which are commonly explored in
+Spatial Data Mining, and we also talked
+about things which are not spacial, you
+know, data mining, and with that,
+hopefully you have got a good feel
+for the motivation as well as the basic
+intuitive idea about spacial data mining.
+So we will wrap up you know the discussion
+of the first video here.
+You may want to try a quiz to review your
+knowledge.
+When we come back in the next video, we
+will look at, you know, the
+spatial data quick time, just to, you know
+have a quick review, you know, if
+you, haven't seen the spatial equating
+discussion
+recently, and then we'll follow it with
+[INAUDIBLE]
+spatial statistical foundations and then
+start going
+into the deft of each pack and family.
+So thank you, I look forward to seeing you
+in the next video.
+[SOUND]
+[BLANK_AUDIO]
+

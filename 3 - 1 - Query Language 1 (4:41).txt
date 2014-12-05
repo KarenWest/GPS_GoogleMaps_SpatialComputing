@@ -1,0 +1,133 @@
+Welcome to the Spatial Computing Massive
+Open Online Course.
+This module we will be studying spatial
+query languages.
+And in the first short video, the goal
+would be simply
+to understand the notion of query and the
+notion of query languages.
+So, after this short video you should be
+able to describe the
+purpose of a query and the purpose of a
+query language, okay?
+So lets start with the notion of queries,
+okay?
+So a dictionary meaning of query is a
+question.
+So the idea is to pose a question to an
+audience which may be a human or a
+computer system.
+And in our course, a database which has
+geographic information.
+So how do we pose such querys nowadays?
+The simplest one is to use a pointing
+device, like a mouse.
+So, if you were using a mapping system,
+such
+as geographic information system, or even
+Google Earth, if you
+simply mouse over a place in the map,
+usually
+the system will pop up the name of that
+place.
+Okay.
+So essentially with the mouse action, one
+can attach a default
+query, such as give me the place name or
+some other property.
+Okay.
+Another common query many of us have
+experienced is via search engines.
+If you're working with Google search or
+Bing
+search we can type in a couple of keywords
+and the search engine provides us a list
+of
+documents or URLs which has information
+about the keywords.
+So for example if you wanted to learn more
+about spacial computing or SQL,
+you could type in those keywords and get
+documents which give you more detail.
+Now in databases, in this course, our
+queries will look little more
+structured, such as what is written on the
+bottom of the slide.
+You, here you're seeing a Select statement
+from SQL query language.
+And this is a way to essentially ask for
+all senators who are female.
+So assuming we had a table listing all the
+senators then
+you could essentially find the set of
+senators which are female.
+Now once we understand the notion of
+query, we can talk about query language.
+So broadly, a query language is a language
+through which we pose questions.
+And again we have experienced this in real
+world in many different ways.
+The broadest language through which we
+pose question is
+a natural language,such as English or
+French or Spanish.
+But this is very effective when we are
+posing questions to other human
+beings, such as instructors in this course
+or another student or your friend, okay?
+Computer systems have often tried to
+understand questions posed in natural
+language.
+Apple Siri is an example of that.
+But at present their capabilities are
+limited, they can usually
+only answer very simple questions in
+English, not general questions.
+So in general when we work with computers,
+we still primarily use computer languages.
+An example of that may be Java.
+So if you know how to do programming in
+Java,
+you can actually write programs to answer
+many, many different questions.
+However, for most of us the Java
+programming is very, very verbose
+and tedious and it takes a long time to
+pose such queries.
+So if you think about the database word
+back
+in 1950s, that's how queries were posed to
+databases.
+People would write [UNKNOWN] programs just
+to create a simple
+report but nowadays you know, we can do
+something simpler.
+So structured query language arose in
+1980s
+and very soon it became the Lingua Franca.
+You know, some people call it universal
+data speak.
+And most relational databases understand
+SQL queries, such
+as the one we saw in the last slide.
+In mapping systems or geographic
+information systems,
+sometimes SQL is supplemented by the
+interaction devices.
+So with mouse clicks or mouse over simple
+default queries can also be attached.
+So in this particular course we'll focus a
+lot on SQL.
+In the following video segments we'll go
+and look at the details of SQLs
+by looking at different statements and
+different
+kind of questions that can be posed.
+So with this, we'll wrap up this
+particular video segment.
+In the following ones we'll come and see
+more details
+of SQL, including details relevant to
+posing questions of geographic data.
+>> [SOUND]
+

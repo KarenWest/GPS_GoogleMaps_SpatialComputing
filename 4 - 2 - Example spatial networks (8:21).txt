@@ -1,0 +1,258 @@
+Welcome back to the discussion
+of spacial networks.
+In previous video,
+we looked at the societal motivation for
+studying spacial network and
+we saw that there are many,
+many use cases,
+particularly in an urban society.
+All of us use navigation, for
+example, on either a web-based or
+smart phone based platform, okay?
+We also saw the limitations, and we argued
+that the spacial equating we learned so
+far in the previous week is not
+adequate to model these queries on
+spacial networks, okay?
+In this video segment,
+we have very modest goal.
+We are just going to look at three simple
+examples of spatial networks, okay?
+And these will be used for
+running examples through all this module.
+So, when we come back in later videos,
+we will often see these networks and
+associated queries being used to
+illustrate various ideas, okay?
+For example, when we introduce the graph
+model, we'll show you the graph
+representation of three example networks
+from this particular module, okay?
+So at the end of this video, we should
+all be able to describe at least three
+simple spatial networks and
+a few queries associated with that, okay?
+So let's look at the first one,
+which is already quite familiar to us, and
+this is a road network.
+So on the left we are giving you a very
+simple view of road networks, with major
+roads in the city of Minneapolis where,
+you know, city of Minnesota is located.
+It also has, you know, two routes.
+So you kind of see a blue line and
+a red line, and they are representing two
+kinds of shortest path between this upper
+left corner and lower right corner.
+The, as you can guess, the red line
+is probably shortest distance but
+the blue line is shortest travel time
+as it takes advantage of the freeway.
+Highway 94 in this case, okay?
+So types of queries yet, again,
+are probably familiar to you.
+The very fast one we already talked about.
+We may ask for a shorted path.
+So given a starting location, maybe in
+Residio, Minnesota, and a destination,
+maybe the airport, we may ask, what is the
+shortest path to reach there, either for
+distance or travel time and so on, okay?
+But there are other queries of interest.
+Again, you know, like location-based
+services, if you have access to that.
+You could also ask for near, nearest
+instance of facilities from our location.
+Let's imagine you were in computer science
+building at University of Minnesota and
+it is lunch time, and you are looking for
+any rest, you know, restaurant.
+You could ask for that query.
+Or, for some reason, you wanted to
+get a flu shot, you could ask for
+the nearest hospital and so on.
+A third query may be including
+a set of destinations.
+So we saw this from the business
+context in network analysis.
+Here, you know it's there may be a
+starting point like a store and they have
+to deliver a set of, you know, furniture
+to many, many houses and they may ask for
+a route, which covers all theses houses
+and minimizes the total distance, okay?
+And, finally, you know,
+we also looked at allocate query.
+So, let's say you have a set
+of service centers maybe many,
+many retail stores, and you have a set of,
+of customers, and you are assigning
+customers to the nearest store.
+So, you could define service areas or
+number of customers likely to easiest
+reach your store and so on, okay?
+All right, so let's switch and
+look at a very different network,
+which may be less familiar to
+some of us if, unless you live in
+urban area which has public transportation
+such as train networks, okay?
+So here,
+we are showing you a subway network.
+In Minneapolis areas right now,
+we have a very simple network,
+just one line, so it's not as interesting.
+In next few years,
+we may have more lines and use that.
+So we are showing you a network
+from San Francisco area.
+It's called BART, and it has, you know, in
+this map, it's showing four lines, okay?
+So you can kind of see one line going from
+top right to bottom left, and so on, okay?
+The colors are not shown, but
+they are listed in the text,
+if you could zoom in you will see.
+So, you know, this particular
+route is Yellow West, you know,
+it's shown in yellow arrow here.
+And then one could do a very
+simple aggregate query here.
+You could say on Yellow West route, tell
+me how many stations are located, okay?
+So one could count and
+see how many route, you know,
+stations these, shown as black
+dots are covered by this, okay?
+Another query, you know, may have
+to do with a particular stop, okay?
+So in subway network usually you
+have routes and you have stop.
+And one interesting stop here is Berkeley,
+downtown, which is number two.
+It's shown as that red square here.
+And we may ask questions like, you know,
+which other stops are reachable
+from Berkley, okay?
+Hopefully, if it is a rich network it
+would reach all of them
+by switching trains.
+So, you could ask whether
+you can reach it directly or
+do you have to change trains, okay?
+Now, in addition to that, you could
+still do the shortest path queries.
+So, here we are showing you another
+destination called Daley city, and
+here is Berkeley.
+And you could ask, give me the routes
+which connect a particular start point
+such as Downtown Berkeley and
+a destination such as Daley city.
+Okay and then finally,
+we could ask for, you know,
+some other aggregate
+queries on certain routes.
+So here is a blue route, Blue West,
+and we can ask for the first stop or
+last stop, okay?
+So these are subway
+network kind of queries.
+Let's look at a third network.
+And again, you know, if you, unless you
+have worked with natural resources or
+you're a geography enthusiast
+it maybe a little bit new, okay?
+So here we are showing you
+a natural network of rivers.
+You know this map is showing you some of
+the major rivers in the United States.
+For example, Mississippi River
+starts in the state of Minnesota,
+and then kind of flows south to
+New Orleans and then Gulf of Mexico, okay?
+But on the way it pick up
+water from many tributaries.
+So on the way it pick up from Missouri,
+Colorado, Platte and so on, okay?
+Oh, not Colorado,
+Colorado was the other way.
+But, you know,
+you have a set of river networks and
+it's interesting to know which river
+falls into which other river and
+that could be modeled as
+a spatial network, okay?
+So, types of queries here may
+be of the following kind.
+So you could ask, you know,
+for a river Mississippi.
+You know, list all the other rivers
+which contribute water to Mississippi,
+which are tributaries to Mississippi.
+And in this answer, Colorado will not be
+included, because it goes the other way.
+But you will have Missouri and
+other rivers, okay?
+We may ask other questions,
+because sometimes, you know,
+these rivers may contribute
+water directly by falling or
+merging with a river or
+sometimes they may be indirect.
+So, you could separate them out and
+just ask for direct tributaries, okay?
+Now if you're interested in,
+in emergency management and
+so on, then a common query is to,
+you know, take care of pollutions.
+So sometimes you have train lines or
+there are other incidents,
+there are farms next to rivers, and
+occasionally, accidents happen, all right?
+So you may have a oil spill, or a
+fertilizer spill and then people want to,
+essentially, inform everyone
+downstream about water quality.
+In case they were using it for
+drinking water or
+other uses, they may have to take
+precaution and stop that, right?
+That there has been similar incident
+in east coast North Carolina recently.
+so, so given a particular spill,
+we may want to ask a question about
+all the rivers that may get affected.
+And then from there,
+you can inform the communities, okay?
+So this is a third kind of network and
+slightly different questions.
+So just to sum up, you know,
+we saw three different spatial networks.
+A road network, a train network,
+and a river network.
+And on each we saw some questions, okay?
+And these were mixed questions.
+Some of them required
+transitive closure and
+recursion and will need new knowledge
+that we will learn in this chapter.
+And somewere very simple like aggregate
+queries that you could have answered using
+spatial query.
+And it may be a good exercise for
+you to go back to those questions and
+ask yourself which of these you can
+answer easily using spatial query, and
+where do we need new knowledge.
+So well, this we'll wrap up
+this particular video segment.
+When we come back,
+we'll introduce mathematical model and
+information model for spatial networks.
+So that you can answer all
+of these queries, okay?
+So looking forward to seeing you in the,
+the next set of video segments.
+Thank you.
+

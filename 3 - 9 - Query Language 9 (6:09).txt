@@ -1,0 +1,189 @@
+[SOUND] Welcome back to the last video
+segment on spatial query language.
+We know we have had a long journey, we've,
+we started with the notion of queries,
+query languages,
+we walked through the old SQL.
+We also discussed why it was so
+inconvenient to model spatial data and
+queries in old SQL.
+Then we got into the with SQL 3,
+which allows us to at least,
+specify simple spatial queries.
+And we saw, even spatial joints and so on.
+And now we are going to wrap up
+this journey by telling, you know,
+by at least summarizing things and
+telling you that there is more.
+So if these things work out, you know, for
+your goals and you want to learn more,
+there are more things you can explore,
+okay?
+So at the end of this video segment,
+we are going to know a little bit about
+the trends in spatial query languages.
+And also know, you know,
+little bit more about SQL 3,
+the mechanism using which,
+these query libraries are added, okay?
+So, so the key thing is to to know
+about SQL 3 is the following.
+It has provided a mechanism to
+add either defined data types.
+And once you have that mechanism, many
+many different libraries can be added to
+SQL 3 and each library can have a new
+set of data types and operations.
+So what you saw in OGIS
+is just one example.
+But there are many other such
+libraries which are being added, okay?
+So, for example you know,
+you may have a spherical [INAUDIBLE]
+you know, data types that are added.
+People have added other things
+like XML and so on as well in SQL.
+But, within geography data sites, they are
+looking at roster, graphs and so on, okay?
+So, you know so
+whichever libraries get popular,
+then those get adopted by many vendors.
+Okay?
+And in addition, and if you don't find
+the libraries that you're looking for,
+you can go add your own library.
+And some of that is happening today,
+particularly, for GPS tracks.
+So, you know OGIS, you can model the time
+part of the GPS track very well.
+And lot of people now
+are generating GPS track data, so
+they are adding their own libraries, okay?
+So, we are not going to actually get
+into a lot of detail of this mechanism,
+called Create Type, but let me just
+give you a glimpse, of how these things
+are added, so that you might at least look
+at other libraries, or add your own, okay?
+[SOUND] So create, create type, the syntax
+looks very similar to create table.
+It's part of data definition language.
+So in this case, you know, we are creating
+a new type and the name is point, okay?
+And in that, inside this type we can
+list its attributes and metrics.
+So for example, in point we wanted
+two different numbers, right?
+x Coordinate,
+y coordinate in a planar system.
+It's very consistent, you may have
+latitude, longitude, altitude and so on.
+You can also add methods.
+So here you are showing a member function.
+The name is distance, which,
+where there are two arguments.
+One is specified here,
+which is another point.
+And you may want to wonder,
+where is the first argument.
+And if you came from Java,
+Python object-oriented world you realize
+that the first argument is the point,
+that itself on which this
+method will called, okay?
+And then, you know, we can have also
+other ideas where interface and
+implementation is separated, so here I
+am not showing you implementation, for
+this function only thing I
+showed you is interface.
+And finally it has a few other
+details which are SQL specific.
+You may not see them in other languages
+and it basically puts some restriction on
+what kinds of things can be
+done further with this object.
+Can you define subtypes, can you use it
+to instantiate objects, and so on, okay?
+So but, you know, using this facility you
+can actually define many libraries and
+there are many which are coming along.
+So with this let's go and
+try to summarize our discussion.
+You know, we started with our first query,
+talking about queries and query languages.
+So, queries at the high level, are simply
+questions that can be posed, okay?
+And query languages provide
+you a declarative language to
+pose this question, where you don't
+have to say how to answer it.
+You simply say this in
+the subsiditive that I want, okay?
+SQL is a language.
+You know, starting in mid 80s,
+it has become very popular and
+this is sort of the language
+almost all databases speak today.
+In many case, you may see a graphical
+user interface in front and,
+you know,
+it may allow you to do popping a point and
+clicks, such as in a geographic
+information system.
+But then, those interfaces generate SQL
+to a backend database on your behalf.
+Okay?
+Standard SQL used to have very simple data
+type, like numbers, currency, and so on.
+And, those were not really sufficient for
+spatial queries.
+It used to be very tedious to
+write spatial queries back in 80s.
+So through 90s,
+lot of discussions happened.
+You know, the vendors and
+the user communities came together and
+they added user defined data types, which
+allowed us to add spatial data types.
+And one popular library of spatial data
+types is OGIS and particularly the simple
+feature types within OGIS, which is widely
+implemented and it's worth knowing.
+Okay?
+But that's not the end of the world.
+As we just mentioned there are other
+libraries because create type
+statement allows you to add more and the
+vendors have brought out new libraries and
+even more are being added today with newer
+types of geography data such as GPS track.
+So as you develop, you know,
+more interest in this topic you can
+go learn about those libraries.
+And finally here are some more references.
+If you wanted to see little more
+detail of the basic material,
+you can look at chapter three of
+this book on spatial databases.
+And if you,
+want to see the syntax in a in a public
+domain library such as PostgreSQL,
+you might see this encyclopedia article.
+If you are looking at or this in
+encyclopedia article on PostGIS and
+finally some vendor specific
+syntax is given in,
+oracle spatial article
+inside encyclopedia GIS.
+So I hope you will enjoy this journey and
+you will try the basics and go beyond and,
+and try some more details of this topic.
+So with this we will wrap up
+the discussion of spatial query languages.
+And hopefully we will see you in
+another module on spatial data mining,
+or location based services and
+so on pretty soon.
+Thank you, [SOUND].
+

@@ -1,0 +1,225 @@
+Welcome back to the discussion
+of spatial networks.
+And so far we've looked at
+the societal use cases and
+motivation for
+learning about spatial networks.
+You know, for example all of us use
+navigation apps on smartphone or
+on web based services like Google Maps.
+We also looked at conceptual
+models of spatial network.
+We looked at en,
+an entity relationship diagram.
+But also graph models,
+which have very nice mathematical and
+computational properties.
+So in this video,
+we are going to start discussion of the
+logical data model for spatial networks.
+So at the end of this video,
+we should be able to describe the need for
+extensions to the SQL spatial querying
+language we have learned so far.
+And also specify specific details such as
+the recursive querying facility in SQL.
+So there is different ways to extend and
+we can list them.
+All right so
+clicks again recall the context,
+you know we have discussed conceptual data
+model and this case we are in a video.
+We are going to look at logical data
+model and we look at two different ways
+to extend SQL to support queries on
+spatial networks such as shortest path.
+And in subsequent videos we will see
+the details of those two ways and
+then we'll come back and
+look at physical data model,
+how to perform these queries very,
+very efficiently on large networks.
+Okay, so first let's look at a basic
+notion called Transitive Closure.
+Because this is one way to formally
+describe the limitations of traditional
+query languages, including the spatial
+querying we have learned so far, okay?
+So consider a graph G which has a set
+a vertices V and a set of edges E.
+Then Transitive Closure of this graph
+is described as another graph G star.
+And it has a set of vertices V star,
+another set of edges E star, okay.
+And formally, the set of vertices is same
+as the set of vertices in original graph.
+So V and V star are the same.
+But the set of edges is much richer.
+So not only we have the original edges,
+but we also add all the paths.
+To illustrate this,
+let's look at a very simple graph.
+So here we have a graph with about five
+nodes, one, two, three, four, five.
+And you also see five edges, okay.
+So this is your basic graph G.
+Now if we were to look at its Transitive
+Closure it will have same set of nodes, so
+five nodes, but many more edges.
+Which will represent all possible parts,
+okay?
+So here if you look at G star,
+so five nodes and nine edges.
+And here is the picture of that, okay?
+So you see the same five nodes show up
+here but the set of edges is richer.
+Okay?
+So where did they come from?
+They are essentially listing the,
+all possible paths.
+So, for example,
+notice in the original graph,
+we could go from node one to node four,
+but there was no direct edge.
+In order to reach there, you either
+had to go through five, three, and
+four, or via two, three, and four, okay.
+But nonetheless,
+there is a path from one to four.
+So in the Transitive Closure you
+see an edge from one to four.
+Okay?
+So all possible paths have been listed,
+okay?
+So this path 1, 2, 3, 4, for
+example, is listed as 1, 4.
+You can also see it in a tabular manner.
+Okay.
+Now you probably realize that
+the shortest pathway that we
+all used to on Google Maps and
+on your smartphone nav applications.
+Are examples of Transitive Closure.
+Okay.
+But
+in addition to shortest path there
+are other Transitive Closure operations.
+For example if you're looking
+at the electric network then you
+might see connectivity.
+Okay.
+Will the current flow from point A to B,
+that's another example
+of Transitive Closure.
+Okay.
+So why are we talking about
+all this Transitive Closure?
+Okay, the reason is that if you remember
+the spatial querying we learned so far.
+It was based on relational algebra.
+And there is a formal result, which
+basically says that the Original SQL, and
+other relational algebra
+based query languages.
+Are not able to compute
+transitive closures.
+So in other words if you wanted to support
+the shortest path using the spatial query
+language we learned so far with
+operations like select, project and join.
+We were out of luck.
+Okay.
+Unless we knew the length of the path.
+If you know your path length
+is limited to five or ten.
+You could use a sequence of those five or
+ten joins.
+But if we don't know the path length a
+priori, there is no way to do that, okay.
+In other words,
+we need to extend our query languages
+to support transitive closure.
+So this discussion happened quite
+a bit in late 80s and early 90s.
+And people looked at
+many different choices.
+And here are the two basic
+choices which are possible.
+So one mechanism to extend query
+languages is via abstract data type.
+And this is how we extended basic SQL3 to
+support spatial data types like points,
+lines, strings, polygons.
+And we spent a lot of time in, you know,
+in previous spatial query language
+discussion to illustrate that.
+'Kay?
+Now the same mechanism can be
+used to support spatial networks.
+If we can design a set of abstract data
+types, then we could add it to SQL3.
+Okay?
+What may these data types be?
+We'll come back and
+see the details in next video.
+But you can imagine data types
+like graphs, nodes, vertices, or
+maybe even paths.
+What kind of operations
+we may want on those.
+Certainly shortest path will be one
+of them, connectivity, and so on.
+Okay, so if we could design
+these abstract data types,
+then SQL3 is capable of
+incorporating those.
+And then you will be able to use the
+existing select statement to query graphs.
+Okay.
+However, there's another way
+to extend query languages and
+those are custom statements.
+And SQL has gone actually that way.
+So first the vendors were making
+their own custom statements.
+So, for example in Oracle.
+You will find, Oracle SQL,
+you will find a statement called CONNECT.
+And this was created for directed acyclic
+graphs or hierarchies because many,
+many companies have trees, for
+example to to present build of materials,
+you know, what ingredients do I need to
+produce a particular food product, okay?
+And they often want a transitive
+closure on these hierarchies.
+So Oracle added this statement, and
+it's little bit easier to implement
+than general graph, okay?
+These are not going to help
+you on shortest path and
+road networks,
+because road networks have cycles, right?
+So a more general approach
+was taken with SQL3
+to add another statement
+called the WITH RECURSIVE.
+And that supports general graph and
+transitive closure such as
+shortest path on general graphs.
+So when you come back in next video,
+we will look at the details
+of these statements.
+And and then, go back and,
+see how to implement them efficiently in
+the discussion of physical data models.
+So thank you for your attention, I hope
+this video showed you the limitations of
+traditional query languages and
+motivated you to learn some new features
+which can support spatial network queries.
+And look forward seeing you to discuss
+the details of these in the next videos.
+Thank you.
+[SOUND]
+

@@ -1,0 +1,410 @@
+Welcome back to the discussion
+of spatial computing.
+With this video,
+we start a new module on Spatial Networks.
+So at the end of the first
+video we have two objectives.
+All of us should be able to describe the
+societal importance of spatial networks.
+Why we are studying this,
+who can benefit and so on.
+And in addition, we also want to discuss
+the limitations of spatial querying that
+we discussed earlier in context of spatial
+networks and their applications, okay.
+So, let's first look at spatial
+networks and where they come from.
+A very classical use case is navigation.
+So navigation pertains to finding
+routes to a particular destination,
+and that navigation is really you know,
+as old as humans, right.
+So, you know, when humans, they had
+not settled down for agriculture and
+so on, they still had to go find food and
+water and other things.
+And they had to probably remember routes,
+very much like how elephants and
+other migratory species do that today,
+okay.
+Once humans settled, then you will still
+see the notions like treasure hunt, right.
+Even Columbus, you know, when he came to
+West Indies or what we call America today,
+was looking for trade routes to
+to get spices from India, okay.
+So again, knowing the routes were very,
+very important for different kind of
+trades, and there were well known
+routes like silk route over land and
+people are finding routes over ocean.
+Another important group which deals with
+navigation a lot is you can say Defense or
+Armed Forces, right.
+So they again, need to have
+many different kinds of routes.
+So if they have a particular target,
+they need to find a stealth route to
+reach there without getting
+detected by the adversary.
+And even if they are not looking for
+target if,
+if just, you know, the units are placed
+somewhere, they need to get food and
+supplies to the troops and for
+that they need supply routes.
+So routes and navigations are, you know,
+very, very core activities
+in human society, okay.
+But more recently, you know,
+this has come to all of us and
+you can probably recognize the next
+set of examples much quicker, okay.
+So probably, you know, many of you use
+these navigation apps on smartphones.
+Using which you can essentially find
+a route to your friends place or
+to work or school.
+Before smartphone apps were popular,
+we were also had dedicated devices,
+sometimes called GPS devices.
+So you kind of see a picture
+of this GPS device.
+People who go off-road, you know,
+where you may not have cellphone signal
+as readily available, may still use that.
+So people who do hiking and boating,
+they still use the dedicated devices.
+And these devices are also being
+imbedded in many other areas.
+So for example, many modern cars
+have a navigation system in their
+instrument board and
+people use that, okay.
+So you probably know that, you know,
+using these devices, you can very
+easily find routes and locations, okay.
+Also another platform is World Wide Web.
+So beginning mid 90s,
+you have services, such as MapQuest.
+And in the last decade,
+you have Google Maps.
+So you could actually from
+your desktop computer or
+tablet, you know, go onto World Wide Web
+and also do routing, okay.
+So these things tell us
+many different things.
+So first, you know, if you are in a new
+place and you just want to see what's
+around you, they can display a map
+around the current location.
+And they can also compute inner distance.
+They can find you routes to
+a destination and so on, okay.
+So navigation systems are often built
+around what we call spatial networks.
+For example, in these cases we
+are looking at road networks.
+But you could also use public
+transportation, such as train and
+so on and find routes across those, okay.
+All right, so
+let's let's look at another category
+of application, which is very similar.
+So broadly, what we saw in navigation
+system audio smartphone app
+are all, you know,
+part of a general category of services
+called Location Based Services, okay.
+So within Location Based Services,
+there are many different kinds of
+questions that can be answered.
+So very first question is,
+where am I, okay.
+In outdoor world,
+one can get that through GPS, but
+indoor there are other kind of sensors.
+Okay, if you are you know,
+in tunnel and so
+on, they're may be different
+sensors that tell you that.
+But there is a very simple
+software interface.
+So using a simple function call,
+we can find the location.
+And these locations
+come in multiple forms.
+So most of us are used to symbolic
+place names, so a street address.
+The computer science building in
+the University of Minnesota may have
+a street address such as 200 Union Street,
+Southeast Minneapolis, Minnesota 55455.
+Or you may have another symbolic name
+such as Mall of America and so on.
+But there is anoth, a different
+system which is numerical system.
+So these symbolic street addresses can
+be converted to numerical systems,
+such as latitude, longitude.
+So, if you are Goog, using Google Earth
+web service, you will often see that.
+And also if you have seen
+the readings from your GPS, they
+often start their life in this numerical
+form, latitude, longitude as an example.
+So these services also allow you to
+translate between symbolic form,
+such as street address and numerical form,
+and that service is called Geocoding.
+You could also go other way.
+So if you just have a latitude,
+longitude, you could ask then symbolic
+place name for that particular place.
+Maybe it's a well known point
+of interest or a city, okay.
+A second category of service is
+broadly called directory service wh,
+where you can ask what's around me.
+So it could be as simple as asking for
+nearest instance of a service.
+Let's say, you want to locate a doctor or
+clinic, you can go and ask for
+nearest clinic from your current location,
+or a particular location of choice, okay.
+You can ask for a restaurant or,
+you know, taxi and so on.
+In addition,
+you could also ask a range query so
+you could essentially say, well, if I am
+willing to walk a mile along the roads or
+drive a mile what are the instances
+of banks within a mile.
+And you can then choose the ones
+which is most convenient, okay.
+And the last part of this is route okay,
+which you have seen in
+navigation quite a bit.
+Once you have selected an instance of
+a service, you can ask how do I get
+there either walking or driving or through
+public transportation and so on, okay.
+And location based services as
+a segment has been growing quite a bit.
+Besides the consumer application there
+are many, many business applications where
+businesses ask questions
+of their own interests.
+And I will show some of those very
+soon under network analysis, okay.
+Okay, now going beyond the,
+you know, the current consumer services
+such as location based services.
+You can ask who else in the society
+cares about spatial networks and
+the key thing to note,
+which is what this slide is telling you.
+Is that if you are in any urban area,
+you know, there are many,
+many very critical spatial
+networks of interest, okay.
+So, this is actually showing you critical
+infrastructure listed by Department of
+Homeland Security, and
+let me point out some of them, okay.
+Very first one was transportation,
+which is what we had been talking about so
+far but, you know.
+Next, you can go look at energy,
+if you think about electricity supply.
+Okay, the electricity is carried through
+different electricity network from
+the generation capacity to your home.
+And again, you know, people have
+to keep track of that network for
+many different reasons.
+One of which is to protect
+against adversaries, all right.
+Or if, you know, certain fault happens,
+if there was a storm and power lines went
+down, they still need to track them on
+geography and go repair them, okay.
+So, you know, there are similar networks
+for gas, the cooking gas that comes to
+most houses again,
+comes through a network of pipelines.
+Oil is transported often
+through pipelines.
+Another network is water, okay.
+In most urban areas,
+the water is piped, right.
+So there is a central
+place where water tank or
+water is located and
+then it comes through pipes to all homes.
+Even broader the, you know,
+there are river networks and so on.
+So, this water flows along different
+networks that people have to monitor.
+One last example, which many of
+us relate to is communication.
+We all use internet,
+which is another kind of spatial network.
+In past, people were not paying attention
+to the locations of these switches.
+But now,
+there is a lot more awareness of that.
+And particularly for cellphone, which can
+move around if you want to tap internet.
+Then, you know, your internet companies
+have to keep track of where it is and
+route things properly and
+geography plays a role, and so on.
+So essentially, if you are in
+an urban setting, there are lots and
+lots of these spatial networks
+which are of interest.
+And people, you know,
+use them in different ways,
+ask different questions, okay.
+All right so, you know so
+there are many societal applications.
+Now the big question is, you know,
+do we already know enough?
+You know, we had a whole week on spatial
+query, and we saw lots of spatial,
+you know, data types and
+different kind of querying in SQL.
+And the big question is,
+you know, does that already
+cover all this spatial network?
+Do we really need to spend another
+week learning new computational ideas
+here, okay.
+So this slide essentially telling
+you that, what we learned so
+far is not adequate, okay.
+So first, you remember, you know,
+we learned OGIS Simple Feature Types which
+provided us points, linestrings, polygons.
+So, key thing to notice is that
+those data types model geometry.
+They do not model street
+network very well, where you
+need slightly different data types, you
+know, as the mathematical model of graphs.
+Okay, if you want to compute shortest
+path, then you need those operators and
+a new data type called graphs
+which are missing, okay.
+Same way in SQL, you know,
+we learn joins and many different things.
+But you have to realize that
+shortest paths cannot easily be
+expressed using these joins, okay.
+They belong to a special category of
+operations called transitive closure.
+And there is a well known critical result
+that your basic relational algebra or
+basic SQL cannot expressive transitive
+closure set as shortest path.
+And I will show you many other
+examples of that on the next slide.
+Now there is some good news in SQL real,
+starting SQL3 recursion was added,
+which can allow you to express
+some of these queries.
+Of course, the performance is still
+something people are working on,
+but you can express some of
+these queries there, okay.
+So, let's go down and
+look at these network analysis queries.
+And this is now giving you
+the business side of spatial network,
+what many businesses do with this, okay.
+So one part, you know, the first thing
+businesses do is very similar to
+what consumers do, which is routing, okay.
+So often times, you know, let's say,
+you know, a business has to ship some
+item from a factory to a warehouse, and
+they want shortest path for that, okay.
+So that is very simple.
+So they just wanted to know how to get
+some items from factory to a warehouse.
+But usually their queries
+are a little bit more complex,
+which some of us might have experienced.
+That, you know,
+they might not have one destination,
+they have multiple destination, okay.
+So these routes get a little
+more combinatory and
+interesting, because you may also have
+to choose the order of destination.
+So again, try to imagine, you know you may
+have a warehouse eh, store like Sears or
+Walmart, where many people came and they
+ordered some appliances, like washers or
+dryers, right.
+Next, you know, morning, the drivers
+basically get a collection of five or six
+of these deliveries, and they have to go
+and deliver that within couple of hours.
+So it's important to know in which
+order these should be delivered and
+what route, okay.
+So this is a very typical query.
+Another query is in terms of allocation.
+So many businesses has many,
+many stores, right.
+If you think about a post office, it has
+many different locations, right, and
+then they have many customers.
+So a big question for them is to allocate
+customers to service centers, okay.
+And in, you know, reverse of this
+is to designate service areas for
+each service center, okay.
+And finally, there is a third
+question called site selection.
+So let's say, they wanted to add a new
+service center because customers have now
+grown in a certain area.
+Then, you know, they want to essentially
+ask which are the best locations.
+So that you might minimize distance to
+the new customers to solve that, or
+you might minimize some other things,
+okay.
+Now again, you know, this list of queries,
+they all belong to this graph-based
+questions, and almost all of them
+include transitive closure recursion.
+So expressing these using simple joins,
+select and
+project, what we learn in spatial
+querying before, is not possible.
+So we need to learn new things.
+So as we go along in this chapter,
+we'll learn about graph data types and
+the algorithms and
+how we handle these kind of queries, okay.
+So again, to sum up, you know,
+we talked about spatial networks,
+their societal importance.
+Who uses them and
+we saw consumer applications, business
+application, government application.
+And we also discussed the limitations
+of spatial querying in
+supporting such questions.
+And as the chapter goes by,
+we'll come and learn new things
+to represent these queries.
+Thank you and I look forward to
+seeing you in the next segment.
+[NOISE]
+

@@ -1,0 +1,89 @@
+Hey, folks.
+Welcome back to the University of
+Minnesota's MOOC from GPS and
+Google Maps, to spacial computing.
+It's hard to believe, but
+this is the last module of the MOOC.
+We very much enjoyed getting to know
+you all in the discussion forums, and
+of course, via our Twitter account, and
+we hope you've had a wonderful experience
+learning about spacial computing.
+Now one theme that we hope has really
+come across in many of the modules is
+that spacial computing is
+a rapidly developing area.
+It's definitely a living subject and
+it's really just beginning to take off.
+Now in this vein, when discussing what to
+cover in our last module, Dr. Sheker and
+I decided that we wanted to give you
+a sample of a hot off the presses work.
+Going on in special computing.
+So you might get a sense of
+where the field might be going.
+Now to do so
+the format, the format of this module
+is going to be a little different.
+Dr. Shakir and
+I are, are each going to present two
+emerging topics from our research areas.
+We're also going to feature new interviews
+with a number of experts in the field.
+And lastly we have put together a montage
+of interview respondents discussing where
+they think the field of spatial
+computing is headed in the short and
+in the long term.
+Be sure to check out that last video.
+Okay before signing off here
+I want to do two things.
+First I want to remind you to finish
+your concepts track quiz for this
+module before the course ends, which of
+course is at the end of Monday as usual.
+For those of you in the technical track,
+do remember to submit your answers
+to the final programming assignment.
+Now second, I would like to offer
+a few notes of gratitude here.
+Now this MOOC could not have been
+made without the expert guidance of
+Keith Brown, our Cristina Lopez, and
+their colleagues at the University of
+Minnesota's Academic Technology
+Support Services group.
+We also want to thank our
+videographers James Ondrey and
+David Lindeman, and
+their team of undergraduates for
+doing an amazing job at putting
+all of these videos together.
+You may remember James and
+University of Minnesota undergraduate
+Colin here from, from module five.
+We also want to thank the University of
+Minnesota Libraries for their very helpful
+guidance navigating copyright issues in
+this very new educational environment.
+Now this MOOC was generously supported by
+the University of Minnesota's Department
+of Computer Science and Engineering,
+the College of Science and
+Engineering and especially
+the Vice President and Provost's Office.
+The National Science Foundation and Google
+also provided support for this MOOC.
+And last but not definitely,
+definitely not least here.
+I would like to offer a major thank
+you to our wonderful TAs Toby Li and
+Xun Tang they really did an amazing job.
+So that's it for
+me on behalf of Doctor Shashi Sheker,
+myself Doctor Brant Heck and
+the University of Minnesota.
+Thanks for participating in the MOOC and
+we hope you've learned a great
+deal about spatial computing.
+

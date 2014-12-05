@@ -1,0 +1,245 @@
+Hey folks, welcome back to the
+Positioning Module in the University of
+Minnesota's MOOC on spacial computing.
+Now in the last few videos we've
+discussed signal-based positioning.
+Signal-based positioning techniques, as we
+learned, include technologies like GPS,
+Wi-Fi positioning and
+cellular positioning.
+And these techniques are used to, for
+instance, locate a device like
+a smartphone as it moves through the,
+the environment and
+a number of other applications for
+instance, in the natural sciences,
+the military, and so on and so forth.
+Signal-based positioning
+is what is responsible for
+the blue dot that indicates your location
+in your mobile map applications.
+The locational context given to
+location based service apps like Yelp,
+by your smartphone, and
+so on and so forth.
+Now most lectures on positioning you'll
+encounter generally stop after they
+cover signal positioning.
+So once you're done with GPS,
+Wi-Fi positioning and
+cell positioning, that's about it.
+But there's another family of positioning
+methods, that in the past few years,
+has really been gaining prominence
+in both research and practice.
+And although there's no official name for
+this family of methods yet,
+in my own research and
+my teaching, I've called these methods
+content-based positioning methods.
+Another reasonable name might be
+inference-based positioning, or
+more intriguingly location
+inference attacks.
+You'll understand why inference,
+inference attack might be a reasonable
+name by the end of this module.
+Now, because these methods have been
+attracting so much interest, and
+are gaining so much applied value.
+I thought it was important to cover
+them in some detail, in this module.
+An added benefit is that, in addition to
+discussing content based positioning.
+We will also touch on spatial computing
+topics that we weren't able to
+squeeze into the course schedule,
+like geographing information retrieval and
+the geo web scale problem.
+Okay so digging in here the dominant use
+case in content based positioning is
+some what different than that
+in signal-based positioning.
+So in the case of the latter,
+in the case of signal-based positioning,
+you'll recall that we were primarily
+interested in determining the location of
+a client's device for
+instance a smart phone of course.
+As accurately and as quickly as possible
+so that this position could be used in
+applications like mobile maps,
+located based services etc.
+When you are applying content
+based positioning methods,
+you are generally doing so when no
+signal-based position information is
+available to your spatial
+computing system and, or
+when the signal based positioning
+information that is available to
+your spatial computing system isn't
+satisfactory for your systems' needs.
+Now the number of applications for
+which signal-based positioning is
+insufficient is growing and growing.
+And the number of applications for
+content-based positioning is
+accordingly also growing and
+growing growing and growing, excuse me.
+For instance, let's say that
+you're an analyst in the public
+relations division of a large company and
+you've been tasked with
+understanding how people feel about your
+company in different parts of the world.
+Well one reasonable way to go about
+this project is to acquire a data set of
+geo tag tweets using the Twitter API,
+as we discussed in the volunteer
+geographic information module.
+Are the latitude and longitude coordinates
+that make up these geotags, as we
+discussed, generally come from smartphone
+signal-based positioning sensors.
+Now once you have these geotag Tweets,
+you can then use the sentiment analysis
+algorithms we also discussed in the
+volunteer geographic information module
+to determine whether each tweet
+was positive, negative or
+neutral and produce a map as you recall
+Quercia did and you can see that map here.
+However you'll also recall from
+the volunteer geographic information on
+the module that there's a very big
+limitation to this approach, and
+that is that only one to three percent
+of tweets over all are geotagged,
+very few Twitter users use this feature.
+So if you've just looked at geotag tweets,
+you'd actually be missing out on 97 to 99%
+of tweets overall, and more importantly,
+it's actually, it's pretty unclear in
+the literature whether this tweet sample
+just your tag tweets would be at all
+representative of overall Twitter users,
+or the overall population for that matter.
+So, this is where content-based
+positioning comes in.
+When users tweet they often implicitly and
+explicitly reveal their location,
+regardless of whether they
+use the geotagging feature.
+So for instance, lets consider
+this tweet from my colleague Dr.
+Ed Chi,
+who is a research scientist at Google, and
+a really accomplished researcher in
+social computing and human computer
+interaction and he also happens to be
+a University of Minnesota alumnus.
+Now in this tweet Dr.
+Chi wrote wonderful afternoon at
+the 20th anniversary of HCI at Stanford.
+Terry Winograd toasted by many including
+my ex and current boss Stewart Card and
+Larry Page, so Larry Page is of
+course the cofounder of Google.
+Stewart Card very famous HCI researcher
+same deal with Terry Winograd.
+Now we can actually do the same thing with
+this tweet, which is from my colleague Dr.
+Jessica Vitak.
+She's a professor who does some very
+impressive research understanding how
+people use Facebook and
+how it affects our relationships.
+Now like me Dr.
+Vitak is an American football fan and
+at the start of the last football season
+Dr. Vitak tweeted let's go Ravens.
+Now the Ravens are the team of
+the city of Baltimore, Maryland.
+And so even though Dr Vitak didn't
+explicitly mention a location, right?
+There's no explicit location here,
+and of course, we have no access to
+her smartphone sensors, even without
+this information we can still make
+a decent guess as to where Jessica
+is located, namely, near Baltimore.
+And indeed, Dr.
+Vitak is a professor at the University
+of Maryland, which is located near,
+near, near Baltimore, and that also
+happens to be where a Dr. Vitak grew up.
+Now returning to our positioning scenario,
+if you as the public relations analyst
+were able to include these two
+tweets in your project neither of
+which were geo-tagged, and
+the billions of tweets like it, right?
+The billions of un, un geo-tagged tweets
+or some percentage of them your study of,
+of, the geography of the public approval
+of your company would, of course,
+be significantly improved right?
+You would increase the number of tweets
+you consider by many, many, many-fold.
+Now helping to reform these types of
+analyses among many other analyses in
+domains ranging from advertising
+to public safety is what
+content-based positioning is all about.
+Now more generally we can loosely define
+content-based positioning as the use of
+implicit and explicit geographic
+information contributed or
+consumed by Internet users
+to generate a position for
+these users with or
+without their knowledge or consent.
+Now we'll be unpacking this definition,
+including the somewhat controversial
+parenthetical clause there in our
+discussion of content-based positioning
+over the next few vid, next few videos.
+Now more specifically, in these videos
+we'll be focusing on the following two
+topics which are central to
+content-based positioning.
+So, the first topic we'll look at,
+is geoparsing and geocoding and this
+involves the extraction and resolution
+places names and natural language text.
+The term natural language text is just a,
+a really a fancy way of
+describing text that regular people have
+written without any consideration of
+any computer that may want to
+extract information from it, right?
+So, it's just text that you
+post on Twitter maybe submit to
+Wikipedia use as a caption on
+Instagram and so on and so forth.
+Now the other topic we'll focus on is
+the identification of home locations.
+And this is an important, a, an important
+type of position information that can be
+really difficult to detect
+using signal-based positioning.
+Now as part of this video, we'll discuss
+how to use location field information in,
+in user profiles for this purpose.
+This is a really fun topic,
+I did some research in this area.
+It's really some of the most
+fun research I've done.
+And we'll talk about that.
+So do stay tuned for
+this part of the module.
+Okay, so that's it for this video.
+In the next video we'll begin
+tackling Geoparsing and Geocoding.
+

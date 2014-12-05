@@ -1,0 +1,494 @@
+So welcome back to the discussion of
+spatial data mining.
+In the first video we simply talked about
+the motivation for spatial data mining.
+And we saw many, many societal use
+cases, ranging from public health to
+public safety.
+We also tried to informally describe
+spatial data mining in terms
+of, you know, looking for patterns which
+are interesting, useful, and non-trivial.
+And we also gave you examples of many
+pattern families.
+In this video, you know, we are going to
+look at the input data.
+So that spatial data that is processed
+through spatial
+data mining is, will be covered in this
+video.
+When we come back to next video we will
+look at statistical foundations.
+It turns out that the type of statistics
+used for spatial
+data is a little bit different than the
+traditional conventional statistics.
+And then we'll follow that by exploration
+of individual
+pattern families such as heart sparks and
+so on, okay.
+So at the end of the first video when we
+have
+talked about spatial data we should be
+able to do three things.
+You know, first, describe the basic inputs
+of spatial data mining.
+In more detail we can talk about the
+common spatial data types and operations.
+And you may again wonder why we revisiting
+the data types and
+operations, we did see a little bit of
+this in spatial querying anyway.
+But in context of data mining machine
+learning statistics, there
+is an additional motivation, which has to
+do with feature selection.
+So, when you see this keyword feature
+selection,
+then that is one way to process spatial
+data.
+So, people who are familiar with
+traditional machine learning statistics
+data mining, and are not aware of any
+unique techniques that
+we will discuss, they would often model
+the special parts of
+geospatial data in terms of features, such
+as distance to water.
+Okay?
+Something you saw in that baldness
+prediction case study.
+So again if we know the common spatial
+data types and
+operations then we will have a better
+choice of these features.
+So we can go beyond simply distance to
+water or distance to
+transportation to include other things
+such as overlap and things of that kind.
+So without further ado, let's, let's go
+and look at these data types.
+So the first, look at the basic data.
+So we are all used to non-spatial data
+such as numbers and text strings.
+So if we were modeling cities or
+countries, we did have some numeric
+and text attributes such as name of the
+country or name of the city.
+Those are string data types.
+You can also look at population of a city
+or a country.
+Those are numeric data types.
+But in addition to that, we also model
+location
+of the city or the footprint of a city.
+And those are spatial data types.
+So when we have attributes which are
+geographically referenced, such as the
+location, city
+center, maybe specified by a longitude and
+a latitude, perhaps even by its elevation.
+So that is a spatial attribute.
+Same way if we are looking the extent, the
+footprint of a city.
+Its outer boundary, or it, or a country.
+Those are spatial attributes, okay.
+So when we were working with spatial query
+languages, we only
+saw one specific representation of spatial
+data what we call vector.
+But in general, you know, there are more.
+So, in spatial data mining you are
+actually going
+to see, you know, three different types of
+data.
+Okay?
+The, the middle one, or the vector, is
+something we saw with all
+these data type, and we work with it in
+spatial querying quite a bit.
+And here is a map, which is showing you
+a vector map, around the campus of
+University of Minnesota.
+So here we have a river, you know, roads,
+you know, little buildings.
+The buildings are you know, sort of, you
+know, modeled
+as polygons, roads are modeled as center
+lines, and so on.
+But you, you have also seen satellite
+imagery, so if
+you were on Google Earth, you can see the
+raster version
+of the same data, so here is University of
+Minnesota
+campus from a satellite imagery kind of
+data set perspective, okay?
+Something like what you will see on Google
+Earth.
+And this data set is a bit different.
+So a raster data set is similar to what
+you get from your digital camera.
+Where, you know, okay, area is divided
+into uniform grids, so
+you can imagine columns and rows, and then
+you have pixels.
+So intersection of row and column is a
+pixel.
+So this entire data set may be composed of
+1000 pixels in
+each row and 1000 columns, so maybe there
+is a million pixel.
+And for each pixel, we may specify some
+value
+such as elevation or the reflectance, and
+so on.
+Okay?
+So these are two very common data types,
+and they're both used in spatial data
+mining.
+So for example in satellite imagery people
+often start
+from that, and they want to get land cover
+types.
+So which areas are forested?
+Which are water?
+And if one can do that for every year, you
+can start to see the change.
+You know, is a city growing, or is a
+forest reducing, and so on.
+Now there is a third data type called
+graph.
+In urban areas we have many transportation
+network.
+Okay, so when you use GPS based devices
+for routing,
+you are actually using these road maps in
+a graph
+format where road intersections may be
+modeled as nodes, and
+the road segments connecting adjacent
+intersections may be modeled as edges.
+And this kind of a format is very helpful
+for routing and navigation.
+Okay.
+All right.
+Now, one unique aspect of spatial data is
+the relationships, okay?
+So, let's again talk about relationships
+across non-spatial and spatial data.
+So, traditionally, if you have used
+relational
+databases, you have used their traditional
+non-spatial relationships.
+And they're always explicit.
+In fact your database schema lists a set
+of relationships, and which are
+being stored in the data set, and that's
+why we are calling it explicit.
+So, in our own schema for spacial
+querying, you remember that
+cities and countries were related by a
+relationship called capital of.
+So certain cities were capital of their
+countries, and this was explicitly stored,
+okay.
+In the table, if you remember, in the city
+table there was a column which said
+capital of.
+And it had a country, so you were
+explicitly storing it.
+Now, contrast this with spatial
+relationships, such as distance.
+The city table that we saw, given the city
+center locations,
+we could call the [UNKNOWN] function and
+compute the distance between cities.
+Right?
+However the distance was not explicitly
+stored in the table.
+Okay.
+And this is very typical of spatial
+relationships.
+So these are implicit.
+But you know you can compute it on demand
+as long as all
+the locations of geodata are using
+compatible coordinate systems such as
+latitude, longitude.
+Okay, and there are many of these spatial
+relationships.
+So, in spatial querying chapter, we saw
+topological relationships such
+as you know, two countries boundaries,
+they meet, they are neighbors.
+Or, a city maybe within a country and so
+on.
+But, you know, there are other
+relationships, such as direction.
+So people who do navigation, they often
+look
+at absolute direction such as north,
+south, east, west.
+So for example, you can ask whether the
+city, you know,
+Toronto, in which direction is it from a
+city like Mexico City.
+Okay?
+And based on these predicates you can just
+say roughly
+north, maybe a little bit to the east and
+so on.
+Okay?
+There are metric relationships, such as
+distance, areas and so on.
+And if you got to raster data set, you
+have other types
+of relationships which are often
+categorized
+into focal, local and zonal, okay?
+So focal relationships takes a location
+and compares it with the neighborhood.
+So if you imagine an elevation map given
+in a raster format, then
+given the elevation of each, you know,
+cell or pixel in the roster,
+we can compute the slope, we can ask if
+you put the water
+on this particular pixel, will it stay
+there or it will flow down?
+If it flows down which direction it will
+flow down?
+Okay, so these are called focal
+relationships because
+it's comparing a location with their
+immediate neighbors.
+People also define zonal relationships, so
+given a raster data set and some kind of a
+zone definition, such as country boundary,
+you can ask for aggregate queries.
+So let's say I have elevation data for
+entire world and I have country boundaries
+defining zones.
+Then I can ask for the highest elevation
+value for each country.
+And that would essentially aggregate
+elevation data or
+pixels within each country to compute as
+statistical aggregate.
+So there is a rich side of these spatial
+relationships.
+They're all implicit, in other words, you
+know, when you start with
+a spatial data, you probably do not see
+any spatial relationship there.
+And, but if you want to add spatial
+features and use
+classical data mining model, you can use
+these rich set of operators.
+Okay, so distances are very, very popular.
+People often use distance to
+transportation or
+distance to water in order to assess
+the home value and so on, but you could
+use other things like this.
+You can ask for, you know, the elevation,
+you know, the slope, and things of that
+kind.
+Now quick recall for the vector data type.
+We did study this OGIS standard.
+And you know, this provided you six data
+types,
+which has points, line strings, polygons
+and their collections.
+It also provided you these operations.
+Now, these operations are very standard.
+So, if you were using a product like you
+know, post [UNKNOWN] PostGIS or you know,
+other spatial libraries in Oracle and
+Java, then
+many of these functions are already
+provided to you.
+So if you were using these for your
+spatial feature selection then your
+programming effort is minimal.
+Okay.
+In fact many statistical software such as
+SAS have built
+a bridge to ESIRGIS software and they will
+allow you to
+compute even additional spatial features,
+and bring them back in your
+statistical environment as new features
+for your statistical model building, okay?
+And once your models are built, you can
+just export them back
+to ESIR your mapping environment to create
+maps of your results, okay.
+Now we are going to actually look at a
+little bit more formal detail of this
+topological operations.
+You know, just to give you the sense of
+the mathematical rigor behind it, this is
+something we
+didn't have time for in the spatial query
+language,
+but it's good for us to revisit a quick
+minute.
+So these topological operations in OGIS,
+they are built on the
+basis of a very nice
+regressed mathematical framework called
+topology, okay?
+And in this case you know, they basically
+you know, use three topological notion.
+So if you have a let's say, a
+country, topologically we can ask for
+three different things.
+What's the interior of the country, so
+these are
+all the places or locations which are
+inside the country.
+What's the boundary of this country, and
+what's the exterior, things that are
+outside.
+So each country we can have three
+topological property.
+Now if I want to study relationship
+between two countries
+then I can look at the three topological
+properties of
+country B, three topological properties of
+country A, and if
+I look at all combinations I'm going to
+get nine combinations.
+And for each, we can look at the
+intersection.
+And that's what is called line
+intersection model.
+Okay?
+So here in terms of notation, when you see
+the superscript 0, that's the interior.
+So here, this column, we are looking at
+interior of B.
+When you see delta, that's boundary.
+So this is all boundary of B.
+And minus sign is exterior.
+This is exterior of B.
+And same with interior of A, you know
+boundary of A, and exterior of A.
+So, if you look at these nine
+combinations, in
+each case we can ask whether they
+intersect or not.
+Just a boolean true false question, or a
+zero one
+question, that will allow us to formalize
+this topological property.
+So, for example, here when I am looking at
+disjoint,
+then here is your nine intersection model,
+and what it
+is telling is that the interiors don't
+intersect, boundaries don't
+intersect, and interior and boundary don't
+intersect and so on.
+So if you get this answer then that
+relationship is disjoint.
+On the other hand if I look at a
+signature of this kind you notice
+interiors don't intersect, okay.
+But boundaries do intersect, remember,
+this is the boundary.
+So interiors don't intersect, but
+boundaries intersect.
+And this is the situation when you're
+saying two countries are neighbors and so
+on.
+Okay?
+So again these relationships are very
+formally defined, so if you go use it in
+PostGIS or Oracle, or you know IBM DB2 or
+any Java libraries, and if you're using
+OGIS kind of standard operations, your
+results have
+very rigorous, meaningful definition and
+you can use
+them to, to do your feature selection and
+use classical data mining model if you
+would.
+Okay.
+But in this course we'll show you other
+models
+which will take into account some of the
+spatial properties.
+Okay.
+So with this we'll try to wrap up
+the discussion of spatial data and feature
+selection.
+And the main thing is to say that at
+least today, there is a simple features
+module from OGC.
+And that takes you quite far, but in
+future, things will improve.
+You know, right now OGC does not
+model their directional predicate we
+talked about.
+It does not model three dimensional and
+visibility relationships.
+So if you are in an area where the
+elevation varies, and you
+want to ask what is visible from this
+building top, or what is visible
+from this particular window in a building,
+those things are not built into OGIS,
+and you have to do custom programming,
+something like computer graphics to do
+that.
+Same way if you have spatio-temporal data,
+such as GPS trajectory.
+Those are not well supported in these
+standards, and
+we are going to see new standards and new
+research
+in, you know, coming out to give you more,
+you
+know clean ways or mathematically elegant
+ways to model this.
+Okay.
+So this is, was a short discussion of
+spatial data.
+Again in summary, you know, we are going
+to see many types of spatial data.
+It could be raster which is a imagery just
+like what you see from a digital camera.
+This may be collected through a satellite
+or
+a UAV, and there is plenty of that data.
+It may be a vector data.
+So sometimes the satellite data, you know,
+is hand processed and we identity lakes
+or road boundaries, you know, road center
+lines, and we create vectors, points,
+lines, polygons.
+And then finally, in urban areas, we also
+model transportation networks as graphs.
+And we are going to see all this data as
+we proceed.
+And these data sets again have
+relationships.
+A unique part of spatial relationship is
+that they are implicit, so
+you can compute them, they may not be
+sitting in your table.
+But there are quite a few of those
+relationships and that will help you do
+feature selection.
+So with this we'll wrap up the discussion
+of spatial data.
+Next time when we come back we'll talk
+about statistical
+foundation, and what we need to change for
+mining spatial data.
+Thank you.
+

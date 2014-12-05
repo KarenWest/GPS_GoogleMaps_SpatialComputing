@@ -1,0 +1,463 @@
+Welcome back to the discussion of spatial
+data mining in previous videos we talked
+about the definition of spatial data
+mining, what it is, what it is not?
+We gave examples of common pattern
+families we briefly visited the
+spatial statistical foundations, and
+talked
+about notions like auto-correlation, and
+heterogeneity.
+And so since then we have been looking at
+different Barton families in detail.
+We looked at location prediction models,
+and how
+they are different from the classical
+prediction models.
+We also looked at the Hart Spar detection
+techniques, and
+how they are different from classical
+clustering methods like Cayman's.
+In this video segment, we are going to
+visit the topic of anomalies.
+Or outliers.
+Okay?
+So after this module, we are going to we
+should all be able to know
+about spatial outlier detection tests and
+distinguish those
+from you know, the classical outlier
+detection test.
+In addition, we should also notice that
+conceptually
+spatial outliers are very different, than
+global outliers.
+And be able to distinguish the two.
+Okay.
+So with this let's go back, and quickly
+recall the example we had for spatial
+outliers.
+So we all remember this traffic data from
+Twin Cities Highways where, you
+know, the y-axis were sensors on one
+particular freeway, I-35 W, 60 sensors.
+And x-axis was time of the day.
+And, in particular, we were curious about
+the sensor number
+nine, because it's readings were very
+different from its neighbors.
+Okay.
+Even though the individual readings were
+not anomalous, because
+there is plenty of this teal color in the
+picture.
+But, the you know, the.
+Interesting part was that we, these
+readings were different from neighbors,
+okay.
+To give you a much more simple
+example to contrast global outlier, and
+spatial outlier
+let's look at a much simpler space so here
+is a one dimensional space just location.
+And we are looking at a simple attribute,
+you
+know, this attribute maybe traffic flow
+along the highway.
+It may be, you know, some other attribute
+like rainfall along a river's length and
+so on.
+Okay?
+So in the beginning at location zero, and
+so on, the values are low.
+Then it rises, peaks, comes down.
+Then there is a spike here.
+Then it all comes down, and then it
+flattens out.
+So, in this picture, if we first want to
+talk
+about the global outliers, what the
+traditional statistics talks about.
+Then it will essentially look at the
+values.
+It will essentially watch the values on
+the attribute value x-axis, y-axis.
+Okay.
+And then if you do that, then essentially
+values which are really
+high, like the maxima, which I circled
+here already look like the minima.
+They will look very different than the
+population.
+Because most of the values are in the
+center.
+There only a couple of values this high or
+that low.
+And those are called global outliers,
+okay?
+In contrast to that, the spacial outliers
+are values like this,
+this spike, where this value is very
+different than the neighbor.
+So if you look at the location of s,
+and then the locations near by just before
+or after.
+The values are very different, okay?
+So again, if you know calculus, you can
+treat it as the derivative notion, or
+discontinuity notion.
+And those are more interesting in space.
+And again you can ask, why are these
+interesting?
+Okay, so you can relate this back to first
+log geography.
+Which basically said.
+That nearby things are very similar.
+So whenever there is an exception to First
+Law of
+Geography, it is interesting and people
+want to look at that.
+For example, in case of this traffic, when
+this pattern was shown to the Department
+of
+Transportation, they felt that the sensor
+nine was
+a bad sensor and they replaced it, okay?
+All right and the same thing can happen in
+other
+domains as well, where discontinuities may
+flag some strange behavior.
+So let's try to go, and see how people
+detect it statistically.
+So so the simplest tests are based on
+visualization.
+So one test is called Variogram Cloud.
+So in this case, you know, if you again
+look at the same data set.
+Then, you know, we can create a
+visualization of
+this in two-dimension, which is shown on
+the right.
+Here x-axis and y-axis, are going to plot
+pairs of points.
+So if there are n points, in your original
+data set.
+In variogram plot, there are n queues two
+points, roughly quadratic, okay?
+For each pair, so if you think about a
+pair, you know, which takes s, and it's
+neighbor p.
+So, p comma s is a pair.
+For that pair, we compute two things.
+First, we compute the difference in their
+attribute value.
+Which is very high right?
+This difference is high and that goes on
+the y-axis, okay.
+It's a high difference.
+The second thing we compute is, the
+difference in
+their location in space and that is very
+low.
+So that goes on the X-axis.
+So this x-axis is the distance between the
+two points, y-axis is the difference
+between their attributes.
+Okay, and then we put all the plot point
+pairs in this plot.
+Now once we have that then we essentially
+say that points
+that are close to this x equal to y axis
+here.
+In other words, their attribute value
+difference is proportional to their
+geographic distance.
+Those points are considered normal,
+because, they
+are complying with first law of geography,
+okay.
+However, points which are on this left
+corner, where attribute value difference
+is much higher.
+You know it's very very higher, but
+geography difference
+is low, they are flagged as pairs which
+are anomalous.
+And those pairs have to then processed, to
+find the real spatial discontinuity.
+So in this particular diagram, if you did
+that, then you know, remember the special
+outlier s.
+So, the pairs involving that show up here
+in the diagram,
+and notice they have both in the upper
+left hand corner.
+Okay?
+So they are the closest to, are farthest
+away from this x equal to y line.
+So these have to be processed, and once
+you look at
+them you notice that spatial outlier s
+shows up in multiple pairs.
+So that would be taken out, by manual
+processing or eyeballing.
+As the most often in data set.
+And then you have to remove that and
+reprocess the data to see if
+the other points like b and q continue to
+be often in or not.
+Okay, so this is one test.
+It's primarily for human conjunction or
+it's a visualization based test.
+There is another test called Scatterplot.
+In this case we look at the same data set,
+but
+you know, the plot that we are creating is
+slightly different.
+So here in x-axis we look at attribute
+value.
+Okay?
+So in, in plot, you know, each point in
+Scatterplot, correspondce to an individual
+original point, so if original data has n
+point, Scatterplot also has n point.
+However, those plot are pointed
+differently.
+Okay, for a given point let's say s or
+p, in the scatter plot x-axis attribute
+value, okay.
+And the y-axis is average value in the
+neighborhood, so we are in some sense.
+Comparing attribute value of each point
+with attribute value in the neighborhood.
+You're sort of trying to do a difference
+or derivative.
+So if you plotted it this way, then you
+can imagine that wherever you have first
+law of
+geography where the point is similar to
+it's neighbors,
+then they would like near x equal to y
+line.
+Okay?
+But if the points are very far from this
+line, then they're violating the first law
+of geography.
+So, again in this case, s turns out to be
+the farthest one from the line.
+But, you know, because of s, it turns out
+it's neighbors p and q also get flagged,
+because p and q also are moved away from
+the line due to s, okay?
+So again in this process, you have
+to first remove the highest offending
+point s.
+And re-compute the value for its neighbors
+to see if s
+were not in the data set, will the
+neighbors still be offending.
+Okay?
+So you have to do again one step of at a
+time.
+Okay?
+Now scatterplot has been you know, if we
+find a little bit to something
+called moran scatter plot, and where the x
+and y axis are refined slightly.
+Okay?
+So let's quickly take a look at that.
+So in Moran's scatter plot, the x and y
+axis, instead of being
+that tribute value or neighborhood average
+at
+tribute value directly, they are
+normalized statistically.
+Okay?
+So they are the z scores.
+If you remember from your statistics,
+given a
+random variable x, it's z score
+essentially is x.
+You know, you subtract the mean of x, and
+you divide it by it's entire deviation of
+x.
+Okay?
+And that normalizes the value between zero
+and one.
+So that's what is done to each axis.
+So here x-axis instead of guarding
+attribute value for the point.
+We are plotting z-score of attribute value
+for the point okay?
+And same thing on the y-axis.
+Instead of plotting neighborhood average.
+We are doing z-score of neighborhood
+average.
+And again, you look at, you know, this x
+equal to y line,
+things which are further away are flagged
+and in this case, again, s
+will be flagged and this method again you
+have to take out the
+highest offending point, and re-adjust the
+neighbor's value before you flag other
+points.
+Okay?
+You can do the same thing more directly
+and in this case we're
+going to show you a Z-test where you
+basically take the safety end points.
+And in this case your x-axis can be left
+as location.
+So the same location that we had before in
+x-axis, can be used here.
+And y-axis is essentially the difference,
+between the
+neighborhood attribute value, and the
+points own attribute value.
+So, you look at the difference and then
+you normalize it, and when you do that,
+then
+essentially this horizontal line zero, is
+where everything is
+expected to lie based on first law of
+geography.
+Things which are very far away from this
+zero.
+Are considered outliers.
+So for example, s in this case is about
+two, three standard deviations away, and
+is the highest offending.
+Once you take out s, and readjust the
+neighborhood value,
+then you can look at for the second one,
+okay?
+So there are many different tests, that
+people have designed to look at spatial
+outlier.
+From computing perspective.
+Here is an interesting observation.
+You know, in, in these cases, as you will
+essentially see two types of computation.
+One is model building.
+For example in case of z-test, we had to
+go and find the
+average for the attribute, average for the
+neighborhood minus the location and so on.
+And once you have done that, then people
+do the testing.
+Then you can go back and revisit each
+point and compute the value and complete
+the test.
+So a major insight is the following that
+your neighbour, you
+know, the model building phase is based on
+a database operation called self join.
+So if you remember the spatial equating
+chapter that we did
+before, we talked about spatial drawing
+and we also talked about spatial
+self drawing, and it turns out that most
+of these are
+cloud detection tests in terms of
+computation behave like spatial self
+drawing.
+So if you have access to a good
+SQL or just product, which implements
+spatial drawing well.
+Then you can scale up special out-lie
+detection test, to very large data sets.
+Okay?
+All right.
+And essentially, one scan of spatial joint
+can give you these results.
+Okay.
+Great.
+So again, spatial out-lie detection, you
+know there are many tests.
+And they are supported through many
+software.
+And you can even code them very easily
+yourself.
+But what is happening next, okay.
+So, one issue with this test, if you
+remember that in every case, we said, you
+detect
+one outlier at a time, because a bad
+apple gives, you know, highest score to
+its neighbors.
+So if your dataset has many, many spatial
+outliers, then it takes many iterations to
+remove them.
+So one direction of research, is looking
+at ways to
+predict multiple spatial outliers
+simultaneously,
+and reduce computational cost, okay.
+The other issue you might have also seen
+that
+all the tests were based on a single
+attribute, okay.
+But in many data sets you have many, many
+attributes.
+So people, again, are looking at ways to
+define tests with many attributes, okay.
+And in general you know we look at scaling
+up to larger data.
+People are also looking at, other creative
+ways to define outliers.
+So again you might remember from the first
+video, there
+was an example of you know, farm lands in
+North Korea.
+Where somewhere close to transportation
+features like,
+roads, rivers, and others were not closed.
+The ones which are not close, we have
+flagged
+as outliers, because they have violated
+this common co-locations.
+So farmlands being accessible by
+transportation.
+And again, if you're coming from an
+agricultural domain that will make a
+lot of sense, because you have to move the
+product out and so on.
+And things which are not closer
+transportation, may have other nefarious
+interpretations, okay.
+And those are more creative definitions of
+outliers, and
+people are looking at many of those as
+well okay.
+So to wrap up this video segment, you
+know, we
+essentially wanted to look at the notion
+of spacial outlier.
+We first contrasted it, with the notion of
+global outlier.
+And we saw that in all, in many case,
+these still give you different patterns.
+Spatial outliers are a violation of, the
+spatial smoothness of first law of
+geography,
+where as global outliers look at things
+which are extreme values, either maximum
+or minimum.
+We also looked at several outlier
+detection tests.
+Some were visual and manual, and others
+were algorithmic.
+And finally, we notice that their
+computational structure is the same
+as spatial self-join, which we have seen
+in the recording libraries.
+So with this we will wrap up this video
+segment.
+In the next video segment we will look at
+you know,
+the fourth pattern family of co-locations,
+which is related to association groups.
+So I look forward to seeing you there.
+Thank you.
+

@@ -1,0 +1,345 @@
+Hi folks.
+In this video we're going to cover some
+advances in positioning which was our
+subject in module six.
+The research presented in this video is
+a collaboration between our group here at
+the University of Minnesota and Dr.
+Johannes Schoening's group at
+Hasselt University in Belgium.
+You might remember Dr. Schoening from
+his interview in the first module.
+Now this module, module eight,
+is all about learning about spatial
+computing topics that
+are hot off the presses.
+And let me tell you,
+this work is truly hot off the presses.
+In fact, exactly one week
+before module eight went live,
+I will have presented our paper on this
+research at ACM's SIGSPATIAL which is
+one of the most important
+spatial computing conferences.
+And through it, its conference
+proceedings ACM SIGSPATIAL is also one of
+the most important spatial
+computing publication venues.
+Now if you're looking for
+recent developments in spatial computing
+ACM SIGSPATIAL proceedings are one good
+place to look.
+Now, recall from module six that most
+modern smart phones use three types of
+signal based positioning.
+Satellite based positioning, WiFi
+positioning, and cellular positioning or
+cell tower positioning.
+Now, between these three types
+your smartphone can figure out
+your position with decent
+accuracies in most cases.
+So for instance if you're indoors
+here you, you can't see GPS or
+Glonass satellites, but
+this isn't a problem.
+There are usually WiFi networks
+in range to help you out,
+and there are probably cellphone
+networks available as a back up too.
+The same type of deal exists right in
+urban canyons no it's difficult to get
+satellite signals, but you definitely have
+access to WiFi and cellular positioning.
+Similarly, if you're in a very
+rural area like this and
+there are no WiFi networks in range
+this is also not a problem right?
+Chances are there aren't going to
+be a large number of buildings to
+block your global navigation
+satellite signals.
+Now there is one type of
+place however that lots of
+people visit every single day where their
+smartphones can't establish a position and
+what I"m referring to as you might guess
+from the title of our research project
+here are underground public
+transportation networks.
+Like the New York City subway,
+Berlin's UBA, and so on and so forth.
+Now because these subways are below
+ground, GPS is not currently an option.
+And similarly, in most cases WiFi networks
+are out of range and anyone who has been
+on a subway knows that, except in special
+cases there's generally no cell signal.
+This means that cell positioning
+is also out of the question.
+Now if we could do positioning in
+underground public transportation networks
+the applications would
+really be extensive.
+So the most obvious application
+is that positioning in these
+networks would put subway riders
+effectively back on the map.
+So for example here is a screen grab from
+my iPhone that I took while traveling in
+the underground portion of
+the Chicago Red Line, near downtown.
+While the, the phone apparently
+thinks that I'm over here,
+my actual location was
+around this location.
+And positioning in subway networks
+would solve this problem.
+Now, another, another application would
+be to help people who are traveling on
+very crowded subway cars know
+when to move towards the door.
+This is one that's particularly
+close to my heart.
+Positioning in subway networks would
+make developing an app that does this,
+extremely straightforward.
+And similarly one can easily imagine
+location-based advertising, right,
+taking advantage of underground
+public transportation positioning.
+So, for instance, you can imagine
+getting pinged with coupons for
+restaurants at the next subway stop.
+The potential impact of these and
+other subway positioning based
+technologies motivated us to develop a new
+technique that we call SubwayPS, which
+takes the first steps towards finding
+a way to do smart phone positioning
+while people are traveling on subways.
+Now, at the beginning of this
+research project, we thought long and
+hard about how to determine
+a smartphone's position while it
+was traveling in an underground
+public transportation network.
+So, for instance one option we
+thought about was adding sensors to
+the environment.
+For instance sensors that would fire each
+time the train passed a certain point,
+uploading that data to the internet, and
+then this data could be accessed by
+the positioning APIs in smartphones.
+However this approach has two problems
+first you have to get the transportation
+agencies to that run the subways to add
+these sensors, and provide access to them.
+And this presents enormous bureaucratic
+and of course financial problem.
+Second, WiFi and
+cell are of course more than just
+smart phone positioning technologies.
+They're also how smart phones connect to
+the internet, so the fact that they're not
+consistently available in subways means
+that this arrow here also won't work.
+Our solution ended up coming
+from an entirely different and
+relative to our early thoughts
+entirely unexpected direction.
+specifically, we took advantage of the
+fact that when a train is not moving it,
+it really doesn't shake back and
+forth at all, but when it is moving, it
+shakes back and forth in many directions.
+And for instance, on,
+on a some subway systems in particular,
+it can do the shaking quite violently.
+Right?
+Now most smart, most modern smartphones
+contain two sensors that can
+actually help us detect
+this type of shaking.
+Specifically they contain
+accelerometer and a gyroscope.
+You can see here from
+the apple spec page for
+the iPhone five, that the iPhone
+five contains both of these sensors.
+So for example here is a smartphone's
+accelerometer readings for the x, y, and
+z axises from a three minute ride on
+the central line in London, England.
+These are effectively readings of
+the shakiness on each of these dimensions.
+And you can see clear, excuse me,
+you can see clear gaps in the shaking
+in all three dimensions, right?
+As expected these these gaps map
+perfectly to when the train was stopped.
+What we did with SubwayPS was implement
+some very straightforward methods that
+allowed us to detect these troughs in the
+signal, and combined with basic time table
+information, this approach can give us
+smartphone position along a subway line.
+And one that is critically robust
+against unplanned stops and delays.
+Now, when developing
+positioning technology, and
+when developing most
+other technologies for
+that matter, evaluating the accuracy of
+your approach is absolutely critical.
+As is understanding its performance
+along a number of other dimensions.
+Now, as such with SubwayPS,
+we performed three separate evaluations.
+That looked at a different
+aspect of SubwayPS,
+from stop detection accuracy
+to user experience.
+Now, with regard to stop detection
+accuracy we found that we were about
+85% accurate across four
+separate subway systems.
+Particularly the subway system in London,
+Brussels, Cologne, and
+then the small subway we here,
+have here in Minneapolis.
+Now this was particularly exciting to
+us as our current detection methods use
+very straightforward approaches and
+their should be some relatively
+easy routes to improvement.
+We also looked at the accuracy
+of SubwayPS across entire trips.
+And the reason we did that, the reason we
+did this is that if SubwayPS misses a stop
+currently it actually can't recover so
+the whole trip will be incorrect.
+Now this can be addressed using relatively
+straightforward approaches I'll
+talk about that in a sec.
+We wanted to see how big
+of a problem this was.
+And we found on the Cologne,
+Germany subway system that SubwayPS word
+tracked about 80% of trips 100%
+accurately, when we define accurate as
+having predicted the correct arrival
+time within a 30 second window.
+Now comparing this to the baseline and
+just interpolating location
+from a time table.
+We found the baseline would
+only be about 42% accurate so
+the timetables aren't very,
+aren't very good for much.
+Now in general much of my,
+in much of research whenever possible,
+I like to use a mixed methods approach.
+And broadly speaking, this means that we
+don't just look at quantitative data like
+accuracy statistics and log information.
+But we also develop qualitative data,
+for instance,
+having real people use our systems and
+conducting interviews with these people.
+So to do so in this case, we developed
+a proof of concept application that
+takes advantage of SubwayPS's position
+information called MetroNavigator.
+MetroNavigator has a number
+of features the most basic of
+which is a visualization of your current
+position along the track up here.
+It also has a number of other features.
+For instance, it's going to notify,
+notify you when there's an unscheduled
+stop when you're, when you're,
+also when you're crossing under a point
+of interest, and so on and so forth.
+Now we also have developed
+a smartwatch extension for SubwayPS so
+folks to have to look at their phone to
+get basic subway positioning information.
+So we took a smartphone loaded with Metro
+Navigator, to the Cologne subway system.
+And asked people riding on the subway
+to use Metro Navigator while they
+went on their journey.
+Now in total,
+16 participants volunteered, and
+they gave us some valuable
+feedback on SubwayPS.
+A great deal of this
+feedback was quite positive.
+So, for instance,
+this participant here said,
+as my GPS does not work here this is
+like a GPS for underground trains.
+I want to have it
+integrated in Google Maps.
+You can imagine this was exciting for us.
+Another participant said it's just
+cool to see the train stopping and
+moving on the map.
+I feel safer when I can see that I've
+stopped close to the next station
+when we're stopped in
+the middle of a tunnel.
+This was an unexpected benefit for us.
+We didn't expect a perceptions of
+safety to benefit of SubwayPS but
+of course we were quite happy
+that it did have that benefit.
+Of course when SubwayPS failed
+the feedback wasn't so good.
+For instance after SubwayPS stop detection
+missed a stop this participant here
+said oops, it seems like the system
+missed a stop, that's not so good.
+I would also be happy to help
+the system to detect the stops,
+if the system could help me
+get out at the right station.
+That would be totally fine with me.
+So the good news here is that while
+the participant wasn't happy with
+the failure the participant also
+presented us with a new idea.
+Crowdsourcing the, the collection of
+data to improve our stop detection.
+Now, our current stop detection
+techniques are very straightforward, and
+the next stage of the project
+will likely involve applying and
+applying advanced machine learning
+techniques for stop detection.
+This participant has suggested perhaps
+one way to collect training data for
+our machine learning work.
+Now another direction of future work for
+us is integrate WiFi positioning
+directly into SubwayPS so
+that if a wifi network is available for
+instance at a subway station.
+We can use that to see if
+SubwayPS missed a station, so
+that one mistake won't cause a problem for
+the entire trip.
+Well that's it for SubwayPS.
+If you're interested in the details,
+a link to our paper is provided
+on the readings webpage.
+Hopefully this video gave you
+a sense of the advances going on in
+positioning right now.
+As well as a sense of how this
+type of research gets done,
+especially at the early stages of a new
+area of work like subway positioning.
+

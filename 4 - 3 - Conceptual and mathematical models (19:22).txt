@@ -1,0 +1,591 @@
+Welcome back to the discussion
+of spatial networks.
+In our previous two videos, we primarily
+looked at the multivision, and
+we saw that spatial networks
+are societally very important.
+Many of us already have already used
+them in navigation applications on
+our smartphone as well as on web
+services like Google Maps, okay?
+What we want to do now is to go under
+the hood and see how these networks
+are modeled computationally and then
+how do we design scalable algorithms so
+that we can compute spatial network
+queries like shortest path very quickly,
+even on roadmaps spanning the entire
+country or the whole world, okay?
+So at the end of this module,
+we should be able to talk about
+conceptual models of spatial networks.
+In a later video module we'll
+come back and look at logical and
+physical model as well.
+And in particular we are going
+to look at Graph models, okay?
+That is something which has nice
+mathematical properties, and
+has been investigated in computer
+science for a long time, and
+it's a very popular computational
+model of spatial networks, okay?
+So the big picture,
+essentially in this video and
+the next two videos, we are going to look
+at different models of spatial network,
+in this particular case we
+are looking at conceptual model.
+So we'll look at conceptual
+model at two level,
+one is the conceptual model
+from database perspective,
+It's often called the entity relationship
+diagram and we saw a similar model in
+spatial query chapter, describing the data
+sets involving country, river, and cities.
+In this chapter,
+we are going to describe road networks and
+spatial networks using this too.
+But the main focus would be to
+understand the mathematical model
+called graph because that's widely
+used both in mathematics and
+in software to model spatial networks.
+After this video when we come back to next
+video, we'll look at logical data model,
+in some sense the facilities for creating
+it, as well as physical data model.
+How do we stores networks so that we can
+scale up to very large networks, okay?
+So without further ado,
+let's take a look at one of
+the spatial networks many of
+us are familiar with, right?
+Probably most of us have used road
+maps in navigation application.
+So here'd we are showing
+a small picture office.
+A tiny section of a road map near
+the University of Minnesota in
+an area called Dinky Town.
+So, you might actually
+recognize this cartography.
+You know, very typical of Google Maps.
+And here you see roads like 4th Street
+which is sort of going from the right side
+to the left side or 5th Street which
+is going from left to the right.
+University Avenue which again,
+going from East to West.
+But you also see these avenues,
+5th Avenue and 6th Avenue.
+This is 5th and 6th which are going
+sort of North-South direction.
+Now, if you were to model this is using,
+entity-relationship diagram,
+then we often ask about the concepts which
+people used to think about roadmaps.
+So common concepts include the notion
+of roads, streets, and avenues.
+And we already illustrate, illustrated
+many of those a few seconds ago, okay?
+But in addition people talk
+about road intersection, so for
+example you know when you
+look at University Avenue and
+it intersects with 7th Avenue Southeast,
+this may be an intersection, okay?
+So here is another intersection, okay?
+Where 6th Avenue and
+5th Street intersect, okay?
+Another common concept is segment.
+Once we have the notion
+of road intersection,
+then people often decompose a road or
+a street into smaller pieces.
+So for example, you know if you
+look at this intersection and
+that intersection then the segment of
+5th Street, just this little piece
+that connects adjacent road intersection
+is often thought of as a road segment.,
+okay, and so on.
+Another concept that we will
+use is the notion of turns.
+And if you have driven in urban areas,
+you might have encountered
+many turn restrictions.
+You know, it may say no left turn at this
+intersection if you're coming from north,
+or no right turn if you're
+coming from south and so on.
+Some of these turn restrictions may
+be due to one-way nature of the road,
+all right, and other may be imposed
+just to make the traffic flow smoothly.
+And so on, so there are many,
+many concepts we used when
+dealing with road maps.
+And all these concepts can be put together
+into an entity relationship diagram.
+So we'll quickly show you
+a very big picture, you know
+high level set of concepts that hopefully
+you know you have used before and
+many of us use in day to day, life.
+So first concept is road map.
+You know, you may look at a large,
+you know, paper map, or you may go to and
+look at a digital map.
+And this road map as we just talked about,
+consists of many,
+many road intersections, and
+many road segments, okay.
+So an entity relationship diagram,
+you know, and
+you'll see this chicken foot, it's saying
+a road map has many road intersections.
+And same way a road map
+has many road segments,
+each road segment may have two road
+intersections that it connects, 'kay?
+Other interesting concepts are those
+of the notion of the streets and
+roads themselves, which as you know
+are being shown as a box here, and
+they can be modeled as a sequence
+of road segments, okay?
+Turns may also be thought
+of as something imposed on
+a sequence of road segments, okay?
+And same with routes.
+If you have your favorite
+route from home to work,
+again that's often modeled as a sequence
+of road segments and intersections, okay?
+You know other ideas may
+be points of interest.
+On a road map,
+often certain places of interest
+are highlighted such as airports, right?
+Or downtowns, schools, and these
+are often part of this point of interest,
+they often have an address.
+In many countries, this address comes
+in the form of street address, so you
+may give the name of the street and then a
+building number on that particular street.
+But, you know, this is a new system,
+it's only about 100 to 150 years old and
+countries like England and
+US have gone through a lot of
+legislative process to systematize it.
+But many other countries we
+don't have street address and
+there your address may
+be much more simpler.
+It may be based on a landmark but
+if you have a smartphone and GPS,
+you can simply provide the latitude and
+longitude.
+So these addresses may come in many forms,
+okay, and so on.
+Another concept that we may visit
+later is the observational framework.
+Nowadays we have lot of sensors on the
+road, and these sensors may be static or
+moving, and they observe different
+properties of the road and so on.
+And also in the map you need
+some kind of coordinate system.
+Latititude longitude is one in
+order to specify these locations.
+So they are showing you a rich site of
+concepts people may use to model roads.
+And you know, we have just given
+you a few common concepts and
+you can probably enrich this
+diagram with more concepts.
+So let's now switch gears and
+look at the, the graph model, okay?
+My entity-relationship
+diagram was very rich.
+It could model many, many concepts.
+Graph is a much simpler model, okay?
+So let's first look at its
+mathematical definition and
+then apply it to model roadmaps, okay?
+So mathematically graph just is a pair.
+Okay, it has two components,
+a graph G has two components.
+The first symbol, V, stands for
+a set of nodes or vertices, okay.
+The second symbol, E,
+stands for a set of edges.
+And they model one binary
+relationship among vertices, okay.
+So let's illustrate it to see, you know,
+if you were to use this to model road map,
+what would they look like?
+So here is the road map we saw before,
+which had many road intersections and
+many road segments connecting them.
+And one way to model it as a graph is to
+use road intersections as the nodes, and
+road segments connecting edges and
+intersections as the edges.
+And if you did that,
+the graph model may look like this.
+So here you notice, you know,
+all these nodes and 7, and 4 and 5.
+And these are modeling
+road intersections here.
+Just to show that correspondence
+little bit easier let me
+show you an overlay of these two
+images and it may look like this.
+So you now see these nodes that
+we had in the graph they match up
+with the road intersection.
+And then the edges we have, they match
+up with the road segments, okay?
+So this is one way to model roadmaps and
+graphs, and
+it's a popular way to model that, okay?
+It's often used for
+computing shortest path, okay?
+Now, now when you look
+at this graph model and
+you've tried to compare it with the
+entity-relationship model we showed you in
+the last, dia, slide,
+you probably realized that this graph is
+not modeling all the information in
+that entity-relationship diagram, right?
+So we can do a very quick big picture
+comparison of the two models and
+try to see the pros and cons, okay.
+Before that, we'll also show you
+another example of graph model.
+If you remember the River Network that
+we covered in the previous video,
+where you had these major
+rivers in United States, and
+we had a relationship called falls into.
+Okay, that may be modeled
+as a graph like this.
+So here,
+River Mississippi is maybe node 1.
+River Missouri maybe node, another node,
+and this arrow might show you that this,
+you know, large river falls
+into another river, okay?
+So graph models can be used to model
+different spatial networks, but
+they are simple, okay?
+So going back to the road example, and
+if you compare the entity-relationship
+diagram for the roads, and the graph model
+for the roads, here are the strengths and
+weaknesses of graph models, okay?
+So in terms of strength graph models
+have very, very nice mathematics.
+In fact there is a whole branch of
+mathematics called graph theory
+which has characterized many
+properties of the graph and
+it has classified graphs
+into different kind.
+And those properties can help us
+reason about graphs very well, okay?
+So, for example when we compute shortest
+path, this mathematics can help us
+tell whether the path returned by our
+algorithm is indeed the optimal or
+shortest path, or whether it is not, okay?
+The second strength is that
+the graphs have been very popular in
+computer science.
+And over the last 50 to 60 years,
+computer scientists have designed very
+nice algorithms to manipulate graph.
+So you know, you,
+you have enjoyed the fruits of those.
+For example when you go to Google Maps and
+compute shortest path,
+you probably don't realize how big a graph
+it is using to model road map of US.
+Okay, that graph has billions of nodes,
+and
+yet the shortest path is
+computed almost instantaneously.
+You don't even feel the time it takes,
+right?
+So those are the nice computational
+algorithms that have been designed over
+the last 50, 60 years, and we can leverage
+those if you use graphs as the model.
+Okay, but what's the down side?
+Okay, and here is the down side.
+If you think about that entity
+relationship diagram I showed you,
+then graphs are modeling only
+a small part of that, okay?
+And to be more precise, they are modeling
+only one binary relationship, okay?
+So if you think of nodes as road
+intersections then this relationship could
+be that a road segment connects to
+a different road intersection, okay?
+But if you wanted to model another
+relationship, okay, besides connect.
+If you want to model, let's say, turn
+restriction, then there is a quandary.
+Okay, in a graph,
+you can only model one relationship well.
+Okay, so trying to model two
+relationship adds complexity, and
+I will illustrate that very quickly.
+And in fact, in many traditional graph
+theory and graph algorithm scores,
+you know, asking for
+a shortest path which minimizes turns or
+has no left turn often confounds these
+computer scientists because that's
+a limitation of graph, okay.
+Another implication of
+this is the following.
+Based on your preference for
+the relationship, right,
+in other words you know if you
+look at your dominant queries.
+And those, those queries are asking for
+you know a different set of
+relationships than the one
+modeled by popular graph model.
+Then, you have limitations.
+Either you have to change
+your graph model or
+look for multiple graph models for
+the same road network, okay?
+So let's look at an example of both.
+So let's first think about turn modeling,
+and
+we all note modeling turns
+are important in road maps.
+In fact you might have even seen a recent
+New York Times story that a major
+logistics company, UPS, you know,
+they were looking for new ways to
+minimize fuel consumption going beyond
+what Google Maps can do for you.
+And one of the insights they had was
+that their trucks were spending a lot of
+time idling on left turns
+in the United States, okay?
+If you were in Britain, and, you know,
+it may be the right turns, but
+usually the turns are asymmetric.
+One turn usually is quicker because
+you don't have to wait, and
+the other turn you have to wait for the
+opposite traffic to stop for you, okay?
+And UPS noticed that and they redid
+their routes to reduce left turns in
+United States and it saved them
+millions of gallons of fuel, okay?
+So modeling turns
+are important societally.
+If you imagine everybody else doing that,
+you know,
+you could probably reduce fuel
+consumption in a much bigger way.
+But how do we model that, okay?
+So, so if you want to model that,
+there are a couple of
+different approaches, okay?
+One approach is to translate it back
+to the basic relationship connects and
+some people have tried that, but
+it simply expands your graph a lot, so
+let me illustrate that.
+So if you remember,
+you know, this road map.
+So you have many one ways here.
+So, for example, if you think about this
+road intersection between this one-way and
+a two-way,
+then there are turn restrictions.
+For example, you know,
+going this, up, like this, we cannot turn
+right, right, because that's a one way.
+So if you want to model that, you know,
+you know, enter, so then what we can do is
+to take the intersection N5, modeling
+this place, and expand it further.
+Okay, expand it further
+into a bigger graph, okay?
+And in that graph you will have many,
+many extra edges modeling
+all possible turns, okay?
+So, so in this graph, you know,
+if, let's say you're going on this
+one way, it is going up here.
+Then you know, this will allow you
+to turn in different direction.
+It can take a right turn and you can,
+you know, take a left turn, okay?
+However if I was going on this road, okay?
+If I'm going on this road which
+are these two edges, then, you know,
+I have a right turn available,
+but there is no left turn.
+I cannot go back this way.
+So that is just missing, okay?
+So this is one way to model the turns.
+And in this case, your sight of nodes and
+edges grows a lot.
+So essentially this node N5 now has
+been replaced by six different notes and
+a bunch of edges, okay?
+So if you were to do that,
+your graph size will go up.
+In addition, doing this is still,
+you know, for no U-turn is harder, okay,
+because U-turn involves actually
+a sequence of more than two edges,
+it's three edges.
+So, it's a little harder here, okay?
+So, there are some other approaches,
+as well.
+You know, ideally,
+we should switch to another notion
+called hyper-graphs and hyper-edges.
+If you want to model U-turns, you may
+have to model three edges, and so on.
+And that is very hard to model in
+regular graphs but hyper-edges and
+hyper-graphs can do that.
+Another approach is to
+actually go beyond graphs.
+So whether you use graphs or
+hyper-graphs, we can actually annotate,
+we can add some additional information
+to nodes like N5, the whole table.
+Which lists all possible turns that
+there are delays and restrictions.
+And this is something commercial
+systems like ESRI, have been,
+you know have gone this way, okay?
+But again the main point is that modeling
+multiple relationships is difficult and
+we illustrated that by showing
+you the example of turn, okay?
+Now another implication is that you know,
+if you take a single spatial road,
+you know, spatial network,
+such as a road map, then it has, you know,
+many, many different relationships.
+And depending on your workload, or
+your application, the priorities of those
+relationships may be different, okay?
+So depending on, you know,
+your favorite relationship,
+the graph model will also change.
+Okay, so for the same roadmap you
+may see many different graph models.
+And we're going to show
+you a couple of those.
+The first one is the traditional one,
+okay, where the nodes represented
+road intersections, and
+the edges represented these road segments
+connecting edges and road intersection.
+Okay, this is a very popular one.
+And if you need to learn
+only one graph model for
+road maps this is the one
+I will recommend, okay?
+But we did see another choice.
+You know,
+if you were to model turns, okay,
+if you really were really interested in
+modeling turns, you were working for UPS.
+And that's what, you know, your
+application was to minimize left turns
+then what we could do is to use
+edges to model turn relationships.
+But then your nodes may switch from
+road intersections to road segments,
+because turns are relationships between
+road segments, which are adjacent, okay.
+Of course, you know,
+you can have a third one, and
+this model will remind you of the model
+we used for the river network.
+You know, we could use,
+actually, other types of nodes.
+So, for example, like, streets and
+avenues may be thought of as roads.
+And the relationship may
+be that intersects, okay?
+Now this kind of a model
+is sometimes used for
+cartographic generalizations of road maps,
+okay?
+So if you have a very large city,
+you know,
+with many, many roads and
+then you have to zoom out, and you
+have to only show a subset of the roads
+otherwise your picture may be cluttered.
+So in order to identify the major roads,
+which should be shown, this third
+representation may be of interest.
+Because you often prefer
+the roads which have,
+which cover many other smaller streets,
+you know, which they intersect with, okay?
+So again, to summarize what we
+looked at were conceptual and
+information models for roadmaps.
+And we saw that at a detailed information
+level called entity-relationship diagram
+where we can represent many,
+many concepts in roads,
+such as streets, road intersections,
+you know, road segments, turns, et cetera.
+Then we looked at graph models which
+are nice clean mathematical model and
+also have been used in computer science
+to design many scalable algorithm.
+And we looked at the pros and
+cons of graph models.
+So even though it has very
+nice mathematical and
+computational properties,
+it has limitations.
+It can only model one relationship.
+And you have to choose which one.
+Okay?
+And based on your application, if you
+are doing cartographic generalization you
+may choose nodes and edges in one way.
+If you are doing some shortest path,
+you may choose them in a different way.
+So, with this,
+we'll wrap up the discussion of
+conceptual models of street networks.
+When we come back, in the next segment,
+we will look at logical models and
+look at query languages for,
+spatial networks.
+And then we'll follow it up with
+another video on the physical model,
+the data structures and
+algorithms of spatial network.
+So look forward to seeing
+you in the next few videos.
+Thank you.
+

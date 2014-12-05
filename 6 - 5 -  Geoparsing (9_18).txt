@@ -1,0 +1,294 @@
+Hey folks.
+Welcome back to the positioning module.
+In this,
+video we're going to focus on geoparsing.
+Which is a topic that's central to many
+approaches in content based positioning.
+In addition, covering geoparsing has
+the added benefit of introducing you
+to geographic information retrieval.
+Geographic information retrieval or GIR as
+it is often known, is an exciting domain
+of research and practice, that examines
+topics at the intersection of search and
+spatial computing, like for instance what
+is known these days as local search.
+We wanted to make sure to give you
+a taste of GIR in this MOOC, and
+we were exciting that Geoparsing
+provided the opportunity to do so.
+Now, I also want to point out that
+while geoparsing can be very useful for
+identifying the locations of users through
+the analysis of their social media posts,
+geoparsing is also, also useful in
+other positioning contexts as well.
+Most importantly, geoparsing is
+frequency leveraged to identify and
+resolve the place names,
+mentioned in short and
+long documents like news articles and
+tweets.
+So that these documents can
+be spatially indexed, and
+surfaced in all sorts of
+location aware applications.
+Okay.
+Preamble aside here,
+let's dig into the meat of geoparsing.
+So, let's say we want to understand what
+places are mentioned in this Tweet here,
+so that we can for instance, locate
+where the Twitter user might be, or so
+that we can spatially index this Tweet for
+a later retrieval in
+an application lets say,
+pulls up all Tweets about a specific area.
+Well, one approach to doing this, might be
+to use something called a Gazetteer, for
+instance the very well
+known GeoNames gazetteer.
+Gazetteers are basically
+dictionaries of place names,
+where each dictionary entry has
+an associated spatial footprint, or
+in the terms of Goodchild's Geoatom,
+each place name has an associated x.
+Now in practice, this x usually
+is just a simple latitude and
+longitude coordinate as you can see here.
+Now in a perfect world, with our
+gazetteer, we could just utilize simple
+term matching to see which words in this
+tweet, match place names in the gazetteer.
+We could then use
+the corresponding latitude and
+longitude coordinates in the gazetteer,
+to spatially index this tweet, or
+to help understand where the person
+who wrote this tweet is located.
+Now unfortunately, as, as you folks know,
+the world isn't perfect, and
+in this case things
+are actually much harder.
+And the reason things are much harder, is
+that this simple gazetteer based approach,
+excuse me, this simple gazetteer only
+approach, runs smack into one of
+the fundamental problems of
+geographic information retrieval.
+And that is ambiguity.
+specifically, this gazetteer
+only approach fails to
+address two key types of ambiguity.
+The first of these types
+is Geo/Geo ambiguity.
+Which refers to cases in which one
+place name or toponym, as place names
+are formally called in literature,
+can refer to more than one real place.
+So in other words, we have one place name,
+and more than one place with that name.
+So for example, let's consider this
+term Washington from the Tweet.
+Now using the gazetteer-only approach, we
+don't know if it refers to Washington D.C.
+the capital of the United States the state
+of Washington, which is all the way across
+the country, the town of Washington,
+Wisconsin, the other town of Washington,
+Wisconsin, yet another town of Washington,
+Wisconsin, and so on and so forth.
+Now, because lots of different
+places have the same name,
+geo/geo ambiguity is actually very common.
+So, for instance the term Paris,
+could refer to the capital of France or it
+could refer to the city of Paris, Texas.
+Similarly, the term Albany,
+could refer to the Albany that
+is the capital of New York, or
+the Albany that is in California,
+which is where I happened to grow up.
+The term London, could refer to
+the famous London, England or
+it could refer to our London, Ontario,
+which is also a pretty big city.
+It has a population of around 350,000.
+Now the second major type of ambiguity
+that occurs with simple gazetteer,
+with a simple gazetteer-only
+approach is a geo/non-geo ambiguity.
+Now this refers to cases when
+a term can refer to a place, or
+it can refer to a non-geographic entity.
+So for example,
+let's refer back to our Tweet here, and
+take a closer look at the term Chicago.
+Now this term could refer to the city
+of Chicago, in the United States,
+the musical Chicago, which was made into
+a movie a while ago, or the 70s band
+Chicago, which I personally know from
+the very cheesy song, If You Leave Me Now.
+You can look that up on Spotify.
+The term Washington in the tweet,
+actually also provides a good example of
+Geo non-Geo ambiguity, in addition to it
+being a good example of Geo/Geo ambiguity.
+So on top of all of these places,
+Washington D.C., Washington state,
+of all the Washingtons in Wisconsin,
+the term Washington, right, can
+also refer to George Washington, who was
+the first president of the United States.
+The University of Washington
+the American football team that plays in
+Washington D.C the Government of
+the United States, and so on and so forth.
+Okay, so
+to summarize a bit before we move on here,
+we have two types of ambiguity, right?
+We have our geo, non-geo ambiguity, which
+refers to the uncertainty that occurs
+when we don't know whether a term refers
+to a geographic entity, a place, or
+whether it refers to
+a non-geographic entity.
+And we also have our geo-geo ambiguity
+which refers to the ambiguity that
+exists when we know a term
+refers to a place, but
+we don't, we don't know which place that,
+that term refers to.
+So this is where geoparsing
+comes to the rescue.
+Geoparsing uses advanced natural
+language processing techniques,
+to determine whether a term
+refers to a place or not.
+Geo/Non-Geo ambiguity.
+And if it does refer to
+a place which place?
+And that's Geo/Geo ambiguity.
+More specifically,
+in the context of our example,
+geoparsing involves finding the terms,
+Washington and Chicago.
+For instance,
+using a gazetteer as we did before, and
+then figuring out in intelligent ways,
+that this Washington refers to the state
+of Washington, rather than the person,
+or the capital of the United States.
+And that this Chicago
+refers to the band Chicago,
+rather than the movie or the city.
+Now, while the details of how state of
+the art geoparsers work, are outside of
+the scope of this MOOC, I do want to go
+over one common and important component of
+geoparsers, that I think you'll
+find particularly interesting.
+The component I'm going to be talking
+about is, semantic relatedness estimation.
+Semantic relatedness is defined as a
+single numeric estimate of the number and
+strength of relationships between
+any two concepts A and B.
+So for example, if we set concept A to
+Professor Shekhar, and set concept B to
+spatial computing, we would expect that a
+good semantic relatedness algorithm would
+output a high value for the semantic
+relatedness between these two concepts.
+If on the other hand, we set concept
+B to American country music star
+Garth Brooks we would expect the opposite,
+right?
+We would expect that a good
+semantic relatedness measure or
+algorithm would output a low value for
+concepts A and B here.
+So how does semantic relatedness help
+geoparsers handle geo non-geo ambiguity,
+and geo geo ambiguity?
+Well to understand this, let's return
+to our example tweet here, and focus on
+the term Washington and its neighbor's
+apple picking, and the hashtag itsraining.
+Now if there are two things
+Washington State is well known for,
+those two things are apples and
+unfortunately rain.
+And put another way,
+this means that the semantic relatedness
+values between Washington State, and
+apple picking and Washington State,
+and its raining are very high.
+Certainly, these values are greater
+than the equivalent values for
+say, Washington D.C. or George Washington.
+We can use this semantic relatedness
+information to help us choose the correct
+meaning, or the correct sense of the term
+Washington in our example tweet.
+Specifically, because Washington State is
+the sense of the term Washington, that
+is most semantically related to nearby
+terms like apple picking and it's raining.
+We can make the educated,
+and in this case,
+correct guess that Washington State is
+what the author of this Tweet meant,
+when writing the term
+Washington rather than, for
+instance, meaning George Washington or
+Washington, D.C, and so on and so forth.
+Now we can use the same strategy
+of calculating the semantic
+relatedness between our ambiguous term,
+and
+nearby terms to disambiguate the meaning
+of this ref, this reference to Chicago.
+The band Chicago,
+is more related to jamming and
+70s, music than the city of Chicago and
+the musical Chicago.
+So we can say that this Chicago,
+refers to the band Chicago,
+rather than the other two senses.
+So hopefully, that gives you a high-level
+overview of how geoparsing works, and
+how you might use it to find place-names
+in natural language text, to for
+instance, position a document.
+Now before wrapping up, I want to
+point out that there are a number of
+tools those of you with
+programming skills can use, to do,
+to do geoparsing, you don't have
+to implement a geoparser yourself.
+First, there are tools that do
+something called wikification, which,
+roughly speaking,
+includes geoparsing, when applied to
+text that has geographic references.
+One well known wikification
+tool is DBpedia Spotlight.
+WikiBrain, which those of you in the
+technical track used in your assignment in
+the last module.
+WikiBrain will also soon have advanced
+wikification functionality, and
+it's going to support
+geoparsing more directly.
+Finally, there are also web based and
+client side APIs specifically targeted at
+geoparsing, for instance,
+Yahoo's web based PlaceSpotter API, and
+Berico Technologies' open
+source Java geoparser CLAVIN.
+So that's it for this video,
+I'll see you in the next one.
+

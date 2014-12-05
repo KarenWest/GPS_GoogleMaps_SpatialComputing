@@ -1,0 +1,539 @@
+Welcome back to the positioning module.
+In the last video, we discussed
+global navigation satellite systems,
+like the global positioning system or GPS.
+Now, while these systems have made
+the accurate estimation of one's position
+much, much, much easier than it was
+before, they also have some drawbacks.
+Most notably,
+they don't work well indoors.
+The accuracy of these navigation
+satellite systems can be limited for
+certain applications.
+The time to first position fix, or
+the time to getting that first location,
+can also be quite limited or it,
+it basically it takes too long.
+Global navigation satellite systems
+don't work well in dense urban areas.
+Remember, we talked about
+this urban canyon effect.
+I showed you that picture from Toronto and
+showed you where GPS won't work well.
+And then lastly, GPS and similar
+systems can be a drain on power for
+your smartphone, for instance.
+Now, some of these limitations
+are pretty serious.
+For instance, many people
+around the world, including me,
+spend most of our time indoors, and for
+these people, GPS and other GNSSs, or
+other Global Navigation Satellite Systems,
+won't work most of the time, right?
+That's a big deal.
+They don't work most of the time.
+Now, this is particularly a problem given
+that many people in both academia and
+industry believe one of
+the next frontiers of
+spatial computing will
+be the indoors domain.
+Now, you've already seen movement in this
+indoor direction with the introduction of
+Google's Indoor Maps and
+navigation instructions.
+For instance,
+here's Google mapping, excuse me,
+routing me from one end of
+the Mall of America to the other.
+The Mall of America is located
+just south of Minneapolis, and
+it's the largest mall
+in the United States.
+So, it's about what, ten miles from here.
+And it's so big that, believe me,
+navigation instructions can be incredibly
+useful when you're trying to shop at
+multiple locations at the Mall of America,
+but without good indoor positioning, for
+instance, if we just relied on GPS we
+wouldn't be able to do these types of
+navigation applications, at least not
+from your current location, right?
+So, this is where WiFi
+positioning comes to the rescue.
+WiFi positioning works
+quite well indoors and
+in places that GPS signals
+have trouble reaching.
+Like, for instance, the urban
+canyons I was just talking about.
+Now, because of these advantages, the vast
+majority of smartphones supplement GPS
+positioning with WiFi positioning.
+Now, the intuition behind WiFi positioning
+is pretty straightforward, and
+to understand this intuition let's pretend
+you somehow got on the wrong airplane and
+needed to figure out
+where you were landing.
+Now, as the plane approached the runway,
+you saw the following, let's pretend
+you saw the following landmarks.
+So Coit Tower, Candlestick Park, and
+then here's the real giveaway,
+the Golden Gate Bridge.
+Now, from these three landmarks,
+it's pretty easy to tell that
+you're in San Francisco.
+WiFi positioning works the same way,
+except instead of considering well
+known human understandable landmarks,
+WiFi positioning considers WiFi access
+points one of which may be sitting in
+your living room right now, and each of
+which has a unique MAC or mac address.
+Because it uses these access points,
+WiFi positioning is able to deliver much
+more accurate positions than just a city.
+And in fact, WiFi access points,
+excuse me, WiFi positioning,
+can deliver a relatively accurate
+latitude and longitude coordinate.
+At a more detailed level,
+most WiFi positioning systems work through
+an approach known as fingerprinting.
+Now, fingerprinting consists
+of two separate phases.
+The first phase is known as
+the calibration or the offline phase.
+And the second phase is the positioning or
+the online phase.
+Now in the calibration phase the goal
+is what are known as WiFi fingerprints.
+Generally speaking these,
+these fingerprints consists of a, a MAC or
+a M.A.C. address.
+All WiFi access points have these.
+And they're unique to
+each WiFi access point.
+The fingerprint also consists of a signal
+strength as well as the location at
+which the fingerprint was collected,
+right?
+So we have the MAC address, excuse me,
+MAC addresses of the available networks,
+their signal strengths, and the location
+of the fingerprint collector at
+the time these signal strengths and
+the MAC addresses were observed.
+Now, one thing you don't see here is
+the password to the WiFi networks,
+the name of the WiFi networks,
+WiFi network owners, et cetera, et cetera.
+And this is actually
+a really critical point.
+The use of WiFi access points in
+WiFi positioning actually does
+not require access to the access
+point's actual network, right?
+It doesn't actually require
+you to join the WiFi network.
+It just requires geographic knowledge
+of the access point's existence.
+Although this simplifies things a bit,
+you can think of a WiFi fingerprint as
+simply the name of the WiFi networks and
+the signal strengths of these networks
+measured at a specific location.
+So, in other words, the list of available
+WiFi networks on your computer,
+your tablet, your smartphone, etc,
+is two thirds of a fingerprint,
+with the actual position of your
+device being the final one third.
+Just as you don't need the passwords to
+these networks to know that they're there,
+WiFi positioning systems don't need access
+to WiFi networks to use them as landmarks.
+So, now that we know what a fingerprint
+is, how are they collected?
+Well, this process can happen
+in one of several ways.
+It used to be that the predominant means
+fingerprints were collected was through
+a really awesomely named
+process called war driving.
+Now, war driving basically involves
+a company hiring people to
+drive around cities
+gathering WiFi fingerprints.
+Or in other words, hiring people
+to drive around measuring which
+WiFi access points are visible and what
+their signal strengths are, and doing so
+at hundreds of thousands of
+different locations around a city.
+Now, you may have seen one
+of these cars at some point.
+This is the Google Street View,
+the famous Google Street View car, or
+an example of a Google Street View car.
+Google famously, and actually,
+infamously, used the same cars it used to
+capture street view images to
+collect WiFi fingerprints.
+And of course,
+doing this makes a ton of sense, right?
+If you're already going to drive down
+every single road in every single city to
+collect pictures of these roads, you might
+as well also collect WiFi fingerprints to
+help with WiFi positioning in these areas.
+Now, if you have a WiFi
+access point in your home,
+chances are this access point was
+observed by a Street View car,
+added to Google's database,
+and is now being used for
+WiFi positioning on Android devices when
+they're in the vicinity of your home.
+Perhaps even the Android
+devices that you own.
+Now, Google got into a bit of trouble
+during this process because in
+addition to collecting basic
+fingerprint information,
+Street view cars also collected data
+that was being transmitted over
+unencrypted wireless networks as
+these Street View cars drove by.
+You may have read this story in the news,
+it's actually still an unfolding story, so
+hopefully you have a bit more context
+to understand this current event
+a bit better.
+Now, these days, war driving for
+Wi-Fi fingerprints is becoming old news.
+War driving is expensive, and
+companies like Apple, Google, and
+Microsoft realized that they had access to
+a huge group of people who are willing to
+scour the earth looking for
+Wi-Fi fingerprints totally for free.
+And, that huge group of
+people includes me and
+almost anyone else who owns
+a smartphone probably including you.
+Now, as we go about our business,
+our smartphones are periodically sending
+information about nearby WiFi access
+points, their signal strengths, and
+the smartphone's GPS position,
+so basically,
+entire WiFi fingerprints, our smartphones
+are sending these fingerprints back to
+the owners of the their operating systems
+and doing so in an anonymized fashion.
+So, for instance, as I walk around
+the University of Minnesota's campus,
+if I walk around downtown my iPhone is
+constantly looking at my GPS position or
+my true position and looking at what Wi-Fi
+networks are around me and sending, and
+their signals strengths, and
+sending this information back up
+to home base or back up to Apple.
+For instance, in a FAQ about how
+Apple does Wi-Fi positioning,
+Apple discloses that positioning
+calculations are performed on the iPhone
+using a crowdsourced database of Wi-Fi
+hotspot and cell tower data that is
+generated by tens of millions of iPhones,
+sending the geo-tagged locations of near,
+nearby Wi-Fi hotspots and cell towers in
+an anonymous and encrypted form to Apple.
+So, this is actually the source of
+the consolidated.db scandal which many of
+you might remember from 2011.
+You'll recall this map.
+It's a very prem prominent part
+of the consolidated.db scandal.
+And effectively what was going on
+here is Apple was caching entries in
+this Wi-Fi fingerprint database,
+this crowdsourced database on an iPhone.
+And when you synced your
+iPhone with a computer and
+you didn't tell your synced copy of
+the information to be encrypted,
+it would actually just store
+these cached Wi-Fi fingerprints.
+And from these fingerprints, right,
+these cached fingerprints were coming from
+places nearby where you had traveled.
+So when these fingerprints could be
+discovered from an unencrypted file
+it raised a number of
+important privacy concerns.
+And since then, Apple has taken a number
+of steps, to reduce this problem, and
+reduce its effect.
+Okay, so we've covered how Wi-fi
+fingerprints are collected in
+the calibration, or the offline phase.
+The second phase in which,
+the second phase in fingerprint-based
+Wi-fi positioning is of
+course using the collected fingerprints
+to actually predict a location.
+This is known as the positioning phase.
+Now, this prediction is generally done
+using machine learning methods, and
+while the details of these
+methods can get somewhat complex,
+the intuition behind them is
+really quite straightforward.
+Basically, your smartphone or
+other device scans for available Wi-Fi
+networks and their signal strengths.
+And then the Wi-Fi positioning system
+tries to predict the location of your
+smartphone by matching these available
+networks and their strengths to the Wi-Fi,
+to Wi-Fi fingerprints in the Wi-Fi
+positioning systems database.
+So for example, if your smartphone sees
+these networks, excuse me, sees that
+these networks are available in your area
+the Wi-Fi positioning system will look for
+similar entries in the Wi-Fi
+fingerprints database.
+And, for instance, return the most
+similar fingerprint's longitude and
+latitude coordinate as
+the smartphone's current position.
+So this process can actually result
+in a relatively accurate position.
+So in general, you can think of
+Wi-Fi positioning's accuracy as
+being somewhere between GPS when there
+are sufficient number of satellites, and
+cellular positioning,
+which we'll talk about in a little bit.
+So it has worse accuracy than GPS,
+better accuracy than cellular.
+I mean, a really wonderful paper, it's
+one of my favorite papers in this area.
+Paul Zandbergen, it's a paper in
+a journal called Transactions in GIS.
+Paul Zandbergen discusses
+the relative accuracy of
+several different positioning methods.
+In the paper, he points out that Sky Hub
+wireless which was a real pioneer in
+Wi-fi positioning claimed, 20 meter,
+20 meter accuracy on its system,
+at least as of 2008.
+In his tests in the Albuquerque area,
+he found that Wi-Fi positioning
+was actually somewhat worse.
+It had a 74 meters median accuracy.
+Another thing that's important to discuss
+when it comes to Wi-Fi positioning
+accuracy is that Wi-Fi fingerprints and,
+and GPS satellites can
+actually be combined in what is known
+as a hybrid positioning system.
+In difficult positioning
+contexts like urban canyons,
+these hybrid systems generally
+have better accuracy and
+faster position delivery times
+than either approach alone.
+So, for instance,
+here's Skyhook Wireless again.
+Skyhook offers a hybrid
+positioning system, and
+here's what they have to say about it.
+Skyhook Location's hybrid
+positioning improves upon
+Wi-fi positioning accuracy up to
+35% in difficult environments by
+leveraging signals from as
+few as two GPS satellites.
+In deep urban settings,
+Skyhook Location uses weak GPS signals and
+WiFi to acquire a location
+100% of the time.
+Whereas A-GPS, which is a,
+you can think of it as an enhanced version
+of GPS, works only 70% of the time.
+From a complete cold start,
+Skyhook Location delivers a full hybrid
+location in four seconds compared to 30 to
+60 seconds for this enhanced GPS system.
+In general, the accuracy of any
+WisFi positioning system is going to
+be dependent on three factors.
+The first of these factors is the number
+of access points available in
+the location that a device
+needs a position.
+So the more Wi-fi access points that are
+around when you need a current position,
+the better the position.
+Now, the second factor is related.
+It's the quality of
+the fingerprint's database.
+And this is going to degrade over time and
+is going to be worse in certain
+environmental conditions.
+With the, with respect to degrading
+over time, you can imagine.
+I know I've moved a lot
+in the last couple years.
+I bring my Wi-Fi access point with me.
+They're going to have to update
+the location of that access point, or
+else you'll get spurious conditions,
+right?
+So I moved from Northwestern which
+is near Chicago, to Minnesota.
+If they didn't update the a,
+the location of my Wi-Fi access point,
+they might think that someone
+around here is actually in Chicago.
+Okay, and the final,
+predictor of performance in
+a Wi-Fi positioning system
+is pretty straightforward.
+It's the quality of the machine learning
+algorithm used in the positioning phase.
+Now, the first item on this list is,
+in my view, particularly critical.
+Wi-Fi positioning works
+well in dense urban areas,
+which is great because this is
+one area where GPS tends to fail.
+However, Wi-Fi positioning
+does not work well in rural
+areas where Wi-Fi access points
+are quite sparsely distributed.
+So for
+instance my dad is a hydrologist, and
+when I was young, he use to bring me and
+my brothers up to McCarthy, Alaska.
+Where did a lot of, a lot of field work.
+McCarthy is in, in,
+in an extremely rural area.
+And most places you go in this area
+have zero Wi-Fi access points in range.
+So, in other words,
+if I take out my smartphone and
+try to see what Wi-Fi networks are around
+most places I go anywhere near
+McCarthy the answer is going to be that
+there is zero Wi-Fi networks in range.
+In McCarthy and and at places like at even
+much less rural places Wi-Fi positioning
+is effectively useless, actually.
+A final point I want to make about Wi-Fi
+positioning is that it has an important
+advantage that is not often considered
+when people compare positioning methods.
+Namely, Wi-Fi positioning works
+on many more devices than GPS.
+While most smartphones have GPS and
+GLONASS as I was talking about earlier,
+at least modern smartphones.
+This is not true of most tablets and
+nearly all computers.
+Tablets and
+computers do not have access to these
+global navigation satellite systems.
+Tablets and computers do, however,
+almost always have Wi-fi capabilities, and
+as such, they can use Wi-fi positioning.
+Okay, so, for example, let's go ahead and
+open up my,
+Maps application on my MacBook here.
+Once again my MacBook does
+not have access to the global
+navigation satellite systems,
+like my smartphone would.
+And you can see here,
+my Mac knows where I am.
+And that is because it has access to
+Apple's Wi-Fi positioning system,
+most likely the same one
+that is used on iPhones.
+We're in the same, same place we've
+been recording most of these MOOC,
+MOOC videos and it,
+it correctly knows that.
+Now, watch what happens when I
+turn off my Wi-Fi, Wi-Fi chip,
+turn off the ability of my
+computer to access Wi-Fi networks.
+Positioning goes away.
+It no longer knows where I am, and
+that's because it no longer has access to
+the available Wi-Fi networks and
+their signal strengths.
+And if I hit the Position button here,
+it'll tell me, I can't show your position,
+you're going to have to turn on
+Wi-fi in order for this to work.
+So I'm turning it on, and,
+boom, the position is back.
+Okay, so we've now covered two
+of the three ways that your
+smartphone knows where you are.
+Two of the three ways that your
+smartphone can gather a position.
+I'm just briefly going to talk
+about cellular positioning.
+These days, it's the least important.
+It's definitely the least accurate.
+So let's just go over it quickly here.
+Cellular positioning is
+an older method of positioning.
+There are a number of
+algorithms available, for
+instance, one straightforward algorithm
+is just using the location of
+the nearest cell tower or the cell tower
+with the greatest signal strength.
+There's also time difference on arrival
+algorithms, angle of arrival algorithms,
+and of course, fingerprinting.
+The accuracy of cellular positioning is
+highly dependent on the number of towers.
+So, again, we have better accuracy
+in urban areas than in rural areas.
+And cellular positioning is once again
+the least accurate of the three.
+So if you have access to GPS and
+Wi-Fi and you can
+get positions from those you can probably
+ignore cellular positioning unless it
+provides you with something that's
+useful in a hybrid positioning context.
+So to give you an example of the
+accuracies of, of cellular positioning.
+You'll recall that Zandbergen
+found that in Albuquerque,
+Wi-Fi had a median accuracy of 74 meters,
+while the equivalent for
+cellular positioning was 599 meters.
+Okay, that's it for Wi-Fi and
+cellular positioning.
+In the next video,
+we're going to go ahead and
+move on to content-based positioning,
+which is one of my favorite subjects.
+

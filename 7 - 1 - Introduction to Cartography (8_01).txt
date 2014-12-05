@@ -1,0 +1,273 @@
+Hey folks,
+welcome back to the spatial computing move
+from the University of Minnesota.
+In this video we're going to
+kick off the cartography module.
+And cartography is an enormous
+subject that is certainly deserving of
+its own entire course, rather than just
+its own module as we've done here.
+However certain topics within cartography
+are particularly important for
+those of us interested
+in spatial computing.
+So we're going to be focusing
+specifically on these topics.
+And in particular in this module,
+we're going to have the following
+five learning objectives.
+first, we're going to discuss
+the professional context of
+cartography research and
+practice in the Google Maps era.
+And this is a context that really
+represents substantial changes from
+the era before it.
+It's an interesting topic.
+Next by the end of this module you should
+be able to, to distinguish between and
+understand the purpose of the two major
+types of maps that exist in the world.
+Reference maps and thematic maps.
+Third, we're going to go over the
+limitations of popular online and mobile
+reference maps, so that you can take
+advantage the, of them more effectively
+both as a, a map user, and for those of
+you in the technical track map creators.
+Fourth by the end of the module,
+you should be aware of many of
+the most common types of thematic maps,
+and you should be
+able to make an educated choice between
+them for a given geocommunication need.
+What do I mean by geocommunication?
+Well, there're lots of different ways
+authors have defined the purpose of
+making a map and
+the purpose of cartography in general.
+But for this audience, for
+this spatial computing audience,
+I really like the definition by
+University of Minnesota graduate, Dr.
+Ian Muehlenhaus, in his textbook,
+Web Cartography Map Design for
+Interactive and Mobile Devices.
+In his text book Dr Muehlenhaus
+writes that all maps are a form of
+geo communication.
+They are designed to communicate something
+about our spacial environment to a map
+reader or map user.
+Once again, maps are explicitly designed,
+their sole purpose is to
+communicate something about our spacial
+environment to a map reader or a map user.
+This is what he defines as geo
+communication and it's at the core of
+defining what a map is, because it
+exemplifies what a map actually does.
+And Dr. Muehlenhaus goes on in his
+very typically colorful writing style.
+He writes that excellent maps are designed
+with a communicative purpose in mind.
+A map that merely represents data is
+no more useful than an encyclopedia.
+And that's something to keep in
+mind throughout this entire module.
+So that's geo-communication, which is
+a concept that will underlie again,
+a lot of the videos in this module,
+but that's actually not it for
+the learning objectives.
+We do indeed have our fifth
+learning objective here, and
+that is to become familiar with some of
+the computing oriented innovation going on
+in cartography right now.
+We of course can't go over everything.
+There's a lot of exciting innovation going
+on and most of it is computing oriented.
+So I've actually selected a particularly
+interesting topic, and one that we're
+actually beginning to see spillover into
+the mainstream, which is very exciting.
+And that topic is called
+Spatialization and it's going to be a,
+a fun way to end this module.
+Okay, so let's get rolling here
+with our first learning objective,
+which is understanding the change,
+professional contacts of cartography in
+this Google Maps era in which we live.
+We can begin this discussion with
+a little bit of history here.
+As you can see, maps have been around for
+a really long time, but it wasn't
+really until after World War II that
+professional and academic cartography,
+at least as we know them now, got,
+got rolling, got their start.
+From about after World War II,
+to around the year 2000, it was these
+professional and academic cartographers
+that really ruled the roost when it,
+it came to the production of maps,
+and the research around creating maps.
+They were also some folks in geography and
+associated fields, as well in the mix, but
+it was just a small group of people, that
+were involved in the creation of maps.
+But all of this began to change with
+the popularization of the internet, and
+especially as you might guess with the
+release of Google Maps, which as some of
+us remember happened in a very eventful
+period for cartography in 2005.
+Google Maps really exponentially increased
+the speed of a major shift that had
+really, to a certain extent been,
+already been under way in cartography.
+And that is that the most important
+maps in people's lives were no
+longer being produced by cartographers.
+They are being, they were being produced
+by folks with a computer science
+background, and actually no
+training at all in cartography.
+In fact when I was on a panel with some
+colleagues who work on Google Maps at
+the 2011 annual meeting of the North
+American Cartographic Information Society,
+my colleagues at Google mentioned
+that the number of cartographers on
+the Google Maps team,
+was somewhere around zero.
+I actually know that there's at least
+one there now, a, a fellow who used to
+work at National Geographic, but
+the overall conclusion is the same, right?
+People with formal cartography backgrounds
+have had little direct imput into what is
+probably the most widely
+used map in human history.
+And that's something worth repeating,
+right?
+Cartographers have had little direct
+input in the most widely used,
+in at least what is probably the most
+widely used map in human history.
+The folks who do have direct input, the
+folks who are controlling this map are,
+are folks with various types of
+computer science backgrounds.
+Software engineering,
+user experience and so on and so forth.
+These are the folks leading the charge.
+In fact, in the words of Dr. Ian
+Newenhouse whose textbook we were looking
+at earlier, Dr. Muehlenhaus writes that
+today, a majority of online and mobile
+maps are created by computer scientists,
+Web designers, or self-taught coders.
+In essence, it seems the craft
+of online map making has
+developed without too much input from
+the discipline of cartography itself.
+Dr Meuelenhaus also notes that
+the dominance of computer science in
+cartography will persist
+unless academic programs can
+synthesize the massive amount of new
+knowledge dealing with online and
+interactive maps, and contribute back
+to those actually designing these maps.
+And this is something that Dr.
+Meuelenhaus's textbook is
+specifically targeted to do.
+So what is the end effect of
+computer science's leading role on
+cartography on the actual
+consumers of maps?
+Well, as someone with degrees
+in both computer science and
+geography hopefully I'm
+relatively unbiased and
+I actually think computer science
+has done a really good job.
+Maps are being used for
+more tasks, by more people,
+many more times per day than they were
+before computer scientists got involved.
+For instance, and this is one of my
+favorite spacial computing factoids.
+Recent data suggests that both Google Maps
+and Apple Maps are actually in
+the top ten, in terms of apps used
+by American smartphone owners, and
+I would suspect that these statistics
+are repeated in many places in the world.
+So all of this said some
+controversial decisions have
+been made in popular online and
+mobile maps as a result of
+their creators not having any
+formal cartography training.
+And a lack of cartography training shows
+even more when you're talking about
+folks who use these maps in
+various web applications in what
+are called map mash-ups.
+Dr Meuelenhaus crystallizes
+this situation pretty well in
+his textbook when he writes that
+the forthcoming pages demonstrate just how
+different web cartography
+is from paper mapping.
+But, and
+this part is really important, they will
+also impress on you the fact that for
+all of the differences, many of the core
+tenets of cartography remain intact.
+Now all of this means that there are two
+groups of people in spacial computing who
+are essential to the present and
+future of online and mobile maps.
+The first group is computing
+oriented folks who lack a formal
+cartography background, and
+the second group is cartography or
+geography oriented folks,
+who lack the technical skills or
+the computing background of
+the computing-oriented folks.
+Of course there're few people at
+the intersection of these circles, but
+we need many, many more.
+A key goal of this module
+is to start a process for
+some of you that leads you from moving
+from a non-intersecting part of
+one of these circles to the intersection.
+And more specifically, for those of you
+on the left circle, in this module,
+hopefully you'll gain a bit of
+formal cartography background in
+a fashion that's amenable to
+your computing-oriented nature.
+And for those of you in the right circle,
+hopefully you'll be able to update
+your formal cartographic background to
+include some of the new computing
+oriented approaches to cartography.
+And there of course are going to be some
+topics we're going to talk about that
+are going to be interesting to all parts
+of this diagram here including the few of
+you who may be in
+the intersection of this cir-,
+these two circles.
+Okay, so that's actually it for
+the first video in this module.
+I'll see you in the next one.
+

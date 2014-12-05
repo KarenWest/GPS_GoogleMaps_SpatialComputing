@@ -1,0 +1,253 @@
+Welcome back to the discussion of spatial
+network query processing and algorithms.
+In the last video, we saw the big
+picture of query processing.
+Databases often like to
+have a few building blocks,
+which are frequently used.
+And for each building block,
+they like to have multiple algorithms, so
+that they can pick and choose.
+In the last module, we also saw
+algorithms for connectivity query.
+And in this module, we will try to look at
+two algorithms for shortest path queries.
+So at the end of this module, we should
+be able to name those two algorithms and
+also compare their, you know, behavior.
+So in terms of shortest path, you know,
+the basic common algorithm
+is an iterative algorithm.
+It goes into a loop, and in,
+in each iteration of the loop,
+it essentially looks for
+most promising direction.
+And so it keeps a set of descent
+which we have visited so
+far, and it picks the most promising one.
+But the ranking differs
+between the algorithms.
+So if we started with the older algorithm,
+Dijkstra's Algorithm then it picks
+up the closest descendent to self.
+It may not look intuitive, but
+its a general algorithm it works in many,
+many graphs.
+Okay?
+Now A star which came from artificial
+intelligence, you know, may look a little
+smarter and it tries to pick a descendent
+which is closest to the destination.
+Right?
+And you might wonder why Dijkstra do that?
+And the answer is, you know, in some sense
+its not that easy to figure out which
+descendent is closest to the destination
+because the future is not known.
+We don't know if, you know,
+there are the shortest path or
+the most direct paths may be broken.
+Right?
+You may have to go around an obstacle.
+So in case of A star, you need some
+heuristic to kind of do this focusing and
+that becomes very domain dependent.
+Fortunately for us,
+such heuristics are easy for
+road maps, because they are embedded
+in Euclidean space and straight line
+distance estimations has the right
+set of property to make A star shine.
+But in general, if you are in some
+other networks, like electricity
+distribution and so on you know, it might
+be worthwhile to look at both algorithms.
+Okay.
+So essentially, you know, we looked at
+that the most promising descendent and
+then once we visited that descendent,
+we can update the path to that descendent.
+And in addition, you know,
+we may find an additional descendent
+which our Dijkstra will reach from there.
+Okay.
+So we keep looping,
+till the destination node is expanded.
+Till that becomes the most promising node,
+and
+at that time, we have found shortest path.
+So, let's first look at the behavior, and
+we can later on look at the exemption or
+why this is correct and so on.
+So, so we are going to show
+you a small animation.
+Let's supposed we have this very
+simple graphic, a greedy graph.
+Again, not really unrealistic.
+If you live in Manhattan or some other
+downtowns there are grids like this.
+Maybe a few more is
+likely we're not showing.
+And in this, suppose we
+are starting from this red node,
+which is B and trying to go to this
+upper right node, the green one.
+Okay.
+So
+we are going to show you the behavior
+of Dijkstra's and A star side by side.
+So in the first iteration,
+they behave very similarly.
+They both start from the red node and
+they list their neighbors.
+There are three neighbors here.
+And at A star only only two
+are shown as yellow, but
+it also will look at this lower left one.
+So all immediate neighbors are considered,
+okay?
+The behavior changes
+in the next iteration.
+Now if you think about, you know,
+what Dijkstra's will do,
+it's going to pick one of these neighbors
+which is closest to the start node.
+And in this case,
+they're all pretty much tight.
+You can pick any one of them
+in the case of Dijkstra's.
+But in case of a star, these two neighbors
+are closer to destination the green one,
+than this particular lower left one.
+Right?
+So,
+A star is going to pick one of these two,
+it will never pick that.
+Okay?
+So, once they have made their choices,
+they will visit Dartnord and
+Ardmore neighbors.
+So in case of A star, the only thing
+that will be added is this node
+because that's what, you know,
+it's connected to here.
+And, you know based on that,
+this isn't added because also
+closest to the destination.
+So these notes are also
+connected to other nodes, but
+if you look at the total distance,
+this one will win out.
+Okay?
+Where as Dijkstra can only
+see the distance to self,
+it doesn't know which of these
+nodes is closest to destination.
+So it can pick any one of them, so
+we have shown all of them in yellow.
+Okay.
+The next iteration, it continues.
+A star again, you see, is focused.
+It's picking nodes which
+are closer to the destination,
+whereas Dijkstra is kind of going
+in a breadth-first search manner.
+So you go further, you know,
+another iteration, and
+now A star has actually
+reached the destination.
+Having expanded a small set
+of nodes which all seem to be
+somewhere near the straight line path.
+Okay?
+Whereas Dijkstra's still is ongoing and
+it will have few [INAUDIBLE] till it
+reaches, and you kind of see that it
+has a more breadth-first search
+behavior it looks at lot more nodes.
+Okay?
+Okay.
+So once we have this sense, you know,
+we can also try to quickly look at
+the formal properties which
+makes these algorithms work.
+Okay.
+So both of these algorithm, actually
+follow a very general algorithm design
+paradigm in computer computer
+science called Dynamic Program.
+You know, some of you probably
+took algorithms course and
+you probably know that paradigm.
+Okay.
+A special example of that
+paradigm is Sub-path optimality.
+So essentially, you know, road maps and
+other transportation network,
+they have some very nice properties.
+They basically have the simple property
+where edge costs are positive.
+Okay.
+You never have a negative distance.
+They're additive, and they are also fixed.
+Okay.
+So we are ignoring time variation all
+together here.
+So under these properties,
+essentially, if I look at a optimal
+path from node A to B, and let's say,
+it goes through C, then the sub-path
+going from A to C will also be optimal.
+And that's essentially underlies,
+you know,
+the basic behavior of this algorithm,
+it guarantees optimality.
+Okay.
+In addition to this, for
+A star you need one other property.
+Remember, we have to guess, you know,
+which, the, you know,
+descendent is closest to destination, so
+this guess usually comes in the form
+of a heuristic mathematical function.
+For example,
+in Euclidean space like road maps,
+you can estimate straight line
+distance to be your guess.
+Okay.
+And that straight line distance has this
+nice property of being under estimate.
+Because you can never beat
+straight line on a planar surface.
+Right.
+And you need that kind of a property for
+A star to give you the correct solution.
+And designing heuristic functions takes
+effort, and they depend on the domain.
+But fortunately, for spacial network the
+straight line distance does pretty well.
+Okay.
+Great.
+So this hopefully gives you a sense of
+two shortest path algorithms, A star and
+Dijkstra, they're both very popular.
+But in addition,
+people have gone further and
+tried to cue in these algorithms
+to become even faster.
+People have added shortcuts and they
+have looked at hierarchical algorithms.
+And perhaps, through reading list or
+another video,
+we will give you a sense of some of those.
+Okay.
+Just to wrap up.
+Again, this module we looked at shortest
+part algorithm, and together with
+the previous two modules, we gave you a
+sense of physical data model which covers
+data structures and algorithms underlying
+the shortest path in connectivity theory.
+Thank you and you know, hopefully
+we'll see you in the next module.
+

@@ -1,0 +1,229 @@
+Welcome back to the discussion
+of spatial computing.
+This week we are wrapping
+up the discussions.
+And I wanted to leave you know,
+with just two small notes.
+So the first this MOOC is just the,
+a beginning of a journey
+into spatial computing.
+We touched upon about half a dozen topics
+which are of very, very broad interest.
+And, and they're quite significant
+in terms of having societal impact.
+But spatial computing has lot more topics.
+If you are inclined mathematically,
+there are very nice mathematical theories.
+If you're inclined in
+application oriented manner,
+there are many applications as well.
+So I did want to mention that
+in the Coursera MOOC world,
+there are other courses
+on spatial computing.
+Some from Penn State University,
+ESRI has been planning one.
+And as time goes by, I would believe, you
+know, that it will be more proliferation.
+In addition,
+there are some very nice books,
+so let me at least show
+you a couple of those.
+We at least use the first two, the top two
+encyclopedia of GIS and spatial computing.
+You saw a couple of articles in chapters
+used, and those resources have a lot more.
+The encyclopedia has over 200 articles,
+and actually a second edition is
+being developed,
+which will have another 100 new articles.
+The spatial database book, as you know,
+has additional chapters on
+spatial indexing on query processing, as
+well as the mathematical foundations, and
+this is written for a very broad audience,
+it's used in many courses.
+In addition you see other courses,
+so here is a book by
+Professor Michael Goodchild who
+you met in one of the interviews.
+And this is probably a very,
+very popular book on GIS in general,
+and gives you a broader perspective.
+here, another book in the top sorry,
+the bottom left,
+you see a book by Michael Worboys, who
+gives you a computing perspective on GIS.
+So, he gets into algorithms.
+You know, and other topics.
+And, you know,
+I see another book on spactal databases.
+In fact, a new book on working with
+you know, GPS trajectories and so on.
+a, additional books, if you are really
+into data structures I would refer you to
+the book by professor You know,
+it's a big book, but
+really an encyclopedia on data structures.
+You see a computational geometry book.
+If you're algorithmically inclined,
+you know,
+there are whole semester-long courses and
+this is a representative book.
+You can continue on to statistics, and
+there are books on spatial statistics.
+In some universities, these are taught
+within the Department of Statistics.
+In other universities you may
+have to go to Medical School,
+Public Health,
+other places to take these courses.
+And so on, here you see epidemiology,
+GIS in Health.
+Continuing on,
+you may be surprised even in business.
+In fact, the top book here is co-author,
+one of the co-author is Paul Krugman, and
+some of you may recognize this name
+from New York Times, a Nobel Laureate.
+And his work in economics had to do with
+spatial, essentially location of trade and
+international trade, you know,
+the transportation cost and so on.
+And going across to you know,
+further in social sciences, in psychology
+people study spatial cognition.
+How?
+You know, most of us think about maps,
+how we represent maps in our mind.
+And coincidentally this year's
+Nobel Prize actually went and it gave,
+it explored GPS and brains, they showed
+how rats can memorize maps and so on.
+Okay?
+So lots of different
+intellectual discipline.
+And the reason I am bringing
+this out is the following,
+you know a lot of this development is new.
+You know, it's mostly since 1980s that a
+lot of these major results have come, and
+the interest has grown.
+Because in order to study these topics
+people needed lot more data and
+computation or, you know,
+other sensor systems like GPS.
+And many of those were not available,
+you know, till 1980s or 1990s, okay?
+So it's a growing field and
+I hope you will continue your journey and
+you'll explore some of these topics.
+And on the same front,
+I also want to mention that you know,
+since it's such a new field
+that many people even
+though they are using GPS
+on their cell phone, okay.
+They are using Google Maps, but it's still
+you know, many people feel there isn't
+much intellectual depth in this field
+[LAUGH] because these topics are new, and
+they haven't been taught around.
+So, so it's important for all of us to
+get involved in spreading the word.
+You know, fair amount of
+intellectual work has happened.
+Courses are coming around,
+books are coming around, and
+it's up to all of us to spread the word.
+So within you know, our support,
+the stereotypes won't change.
+So I was hoping, you know,
+one of the key purpose of this goal is to
+change people's attitude about
+spatial thinking in general.
+And you saw that many universities
+have started creating GIS centers.
+And again, you know if it is not happening
+in your university, you should, you know,
+take the lead and, and
+try to to make a case.
+Same way, evidence is emerging
+that spatial thinking actually
+predicts success in science, technology,
+engineering, and mathematics.
+And in some universities,
+all incoming engineering freshmen have to
+actually take a survey of
+about their spatial skills.
+And they would again be surveyed at the
+end of four years to see that, you know,
+whether their spatial thinking skills
+made a big difference in their success.
+So again,
+a lot of these things are happening, and
+it's important if you're a part of
+university or education to at least,
+you know, think about those and
+make a case to the leadership.
+If you are in government again, you know,
+government has been a key sponsor
+of this kind of research.
+It GPS came out of
+the Department of Defense.
+A lot of GIS work is sponsored by them.
+National Science Foundation, NASA,
+you know nowadays climate, environment,
+they have all s, sponsored it.
+However, often the support is fragmented.
+You know, it's across many, many
+disciplines, it's not a single place, and
+it's important for the support to be
+continued and probably consolidated.
+So review panels maybe should
+be formed around spatial.
+So that all the proposals
+are reviewed by people who
+have some expertise in the field.
+Okay?
+And similarly in industry, you know,
+once you go outside a few companies
+like ESRI, or Oracle Spatial, or
+maybe Google Maps, in many other
+companies, spatial still is a niche thing.
+You might find one person here,
+one person there.
+And when that happens they are fragmented.
+They don't have a strong voice in
+the company and the leadership.
+In some companies, you will actually
+see they took some initiative and
+they have stepped back.
+Right?
+So, again,
+it's important if you're working in,
+in the industry is to institutionalize.
+You know,
+try to consolidate spatial skills and
+expertise in a place and, and
+articulate its value to the company.
+Because as you know smart phones
+are proliferating, you know,
+any business that's affected by
+a smartphone would probably,
+would also be seeing spatial opportunities
+whether it's connected cars in Detroit, or
+you know it, it's something else.
+But it’s important again to advocate,
+it should not be thought of as just yet
+another application of
+non-spatial thinking.
+That doesn't take you far and I hope
+that was a key message in the course.
+So, we enjoyed, you know,
+your presence in this course, on the
+discussion and on various activities, and
+we hope you will continue this
+journey well beyond this course.
+Thank you.
+

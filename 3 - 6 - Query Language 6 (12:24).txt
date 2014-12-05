@@ -1,0 +1,374 @@
+Welcome back to our discussion
+of spatial query languages.
+In last few videos we note, we discuss
+the notion of queries, the notion
+of query languages, and then we went
+into the details of SQL query language.
+We saw single table queries multi-table
+queries and even nested queries.
+All this was preparation for us to
+appreciate the spatial aspects of SQL.
+So we are going to do one last step to
+motivate why spatial data types and
+operators were added to SQL.
+So in this particular module,
+we are essentially going
+to look at that motivation.
+And in particular, we'll visit
+a notion called the Semantic Gap.
+So the old SQL, it was not convenient
+to express spatial data types and
+spatial queries.
+People use two different terms,
+Semantic Gap meaning that, you know,
+it's a lot of work to express
+spatial queries in old SQL.
+Some people also use
+the word Impedance Mismatch.
+So if you are the audiophile,
+you probably remember that if
+your speakers are not well matched
+with amplifiers, bad things happen.
+And, and
+that was another analogy people used.
+So let's continue on.
+Okay, and, and
+think about what we saw in SQL so far.
+So we saw some basic data types there
+such as numbers, strings, date and
+currency, but
+we did not see any spatial data types.
+So if you wanted to express spatial
+data using these simple types,
+it was inconvenient.
+So the, consider this simple spatial data,
+where you have a rectangle with four
+corners, which are named P1 through P4.
+Suppose you want to express this data
+using the old SQL using numbers.
+It will require a fair amount of work to
+represent the geometry data types such
+as rectangle.
+So let's see some details now.
+And and we may then have queries
+on this workload where we
+may want to list all rectangles which
+contain a given point as a corner point or
+the given point as an inside point.
+So this is a very,
+very simple spatial workload.
+The real workload tend to be more complex.
+So instead of rectangles,
+we may have polygons.
+And instead of inside, you may do
+many of the geometric operations.
+But these simple examples probably are
+sufficient to illustrate the inconvenience
+imposed by old SQL.
+So let's first think about how
+we model this data in old SQL.
+So if you wanted to model points,
+rectangles, and
+so on, then we'll need many, many tables.
+And one reason for that is a table
+design philosophy called Normal Forms.
+Since traditional SQL, there was an
+insistence on reducing the redundant data.
+And, and the idea was to reduce risks
+of inconsistent data after update.
+Multiple copies of data have the risk that
+one copy may get updated while the other
+copy is not, and
+your data quality goes down.
+So because of that, in traditional SQL,
+they put some design restrictions.
+One of, you know, in the third normal
+form, there are three restrictions.
+So one of the restriction,
+which is actually first normal form,
+says that every column in a table
+should have a simple atomic values.
+You should not have
+multi-valued attributes.
+Now if you think about this rectangle,
+this rectangle has four corners.
+P1 through P4.
+And this novel form design discourages
+keeping all that in one table.
+So your only option is to
+break it into multiple tables.
+And one way to do that,
+is to have a separate point table where
+you could store the four corners.
+Okay?
+And then, in order to connect
+these points to rectangles,
+we may even need this edge table.
+So edge may be these straight line
+segment, P1, P2 is a side or an edge.
+P1, P4 is another side and
+edge, and so on.
+Again, since the first normal form
+doesn't allow four edges to be
+associated with a rectangle in a single
+table, we need to break it out and
+put it in a separate table where four
+different rows may be placed, okay?
+And then finally to connect
+these points to edges and
+edges to rectangle,
+we need other tables, so
+to connect points to edges,
+we may add a table called starts or ends.
+Where you may say, well,
+if I'm looking at an edge P1, P2,
+it starts at point P1 and
+ends at point P2.
+Okay?
+And then finally to connect
+edges to rectangle,
+you need a boundary table, okay.
+So this simple geometric object rectangle,
+which all of us, you know,
+may think of as single unit conceptually,
+in relational database,
+it may get broken into five tables.
+In addition,
+each table may have multiple rows.
+So the four corners go in the point table.
+And there are four rows
+in the point table.
+Okay.
+There is one row in rectangle table,
+for this entire unit.
+Okay.
+Then for four edges,
+we get four rows in the edge table.
+And then to connect edges to rectangle and
+edges to points,
+you have additional table.
+So here is the boundary table which says
+the rectangle R1 had four different edges.
+But it's shown as four rows rather than
+a single row with four different values.
+And then to connect edges and point,
+you again go out several entries and
+starts or ends, okay?
+So, so try to imagine just
+a simple thing like a rectangle.
+To represent that in old databases,
+you have five tables and
+almost a dozen different rows, okay?
+If you want to take an analogy
+with your real life, and in,
+this was something that was discussed
+a lot in 80s and 90s, they said,
+imagine if your house
+had a relational garage.
+Okay?
+Then at the end of the day when you
+bring your car back, it will ask
+you to take the four tires out and
+put it on one shelf, one at a time.
+And the four seats out and
+put it on another shelf.
+And in the morning when you're
+ready to drive the car back,
+you'd assemble it back,
+and that was the life.
+Okay?
+So it certainly leads to
+performance issues, but
+also it leads to inconvenience
+if you want to query.
+So, so
+let's see what these queries look like.
+So remember,
+the first query which was very simple.
+So let's say I had a set of rectangles and
+then given a particular point,
+I want to know which rectangles
+contain the point, okay?
+So to express this in SQL,
+you know you may actually consider writing
+it yourself before you see the solution in
+the slide, and this will help you exercise
+and build on your skills in SQL, okay?
+But the basic strategy would be that
+you join all these five tables, okay.
+Because in order to collect your
+rectangle information back together,
+you need information from all five tables.
+And the join back is a natural joint back,
+you know, because there
+are matching attributes across tables,
+so you can use those to join.
+And once you have done that, then we can
+test that at least one of the points,
+you know, associated with the rectangular
+tent, you know, has x coordinate zero,
+y coordinate zero because we are looking
+at origin, which is x0 and y0 point, okay?
+So again, you know, quite likely we
+have done an FSQL that you should be
+able to write this query on your own.
+And the basic relational will allow you
+to express it in a reasonable manner.
+But even if you could do
+that we should note that
+joining five tables is expensive.
+It will take a while,
+your queries will run slow.
+And in addition, for
+average programmers, joining five
+tables is not an actual thing.
+You know, getting them to join two
+tables is a big step forward, you know,
+getting them to join five tables means
+that a lot of programmers won't want to
+do this, okay?
+All right, so they suggest [INAUDIBLE]
+now let's look at the second query,
+where we are looking at rectangles
+which contain a given point.
+So maybe you have a city center, and
+you want to know all the rectangles
+which contain the city center, okay?
+Now, in this case, you know, the predicate
+to test inside is even more difficult,
+because in order to test inside, you know,
+you may consider the posit point.
+So, so in this case,
+the left bottom corner and
+right upper corner,
+we may need those two points.
+And then if a, another gradient point
+is inside, you could compare and
+say that gradient point x-coordinate is
+between the x-coordinate of lower left and
+upper right corners.
+And same thing about y, okay?
+So here, you know,
+this will be harder and again, just as
+an exercise, you may want to try it.
+Particularly if you have some
+experience with SQL, then you
+certainly ought to try it to realize
+the pain everybody went through, okay?
+So, so again, you know, I'm not going to
+worry about whether you can write it or
+not, but let's at least look at one way to
+do that, okay, and see how tedious it is.
+So your basic strategy is to essentially
+assemble the information back about
+each rectangle.
+Once you have done that, then you can
+essentially determine the smallest x and
+the largest x across the points
+of a rectangle and so on, okay?
+So together,
+the strategy's very similar as before.
+We basically go through all five tables,
+and we do the natural join, okay?
+And then in order to compute
+the lower left corner and
+the upper right corner,
+we can use the aggregation query.
+So suppose that this join reserve
+is grouped by the rectangle id.
+In other words, all the points of
+a rectangle get into one group, okay?
+So all the x coordinates and y coordinates
+associated with four coordinates of
+a rectangle, they are part of one group.
+And in that group, you could
+compute the minimum x, minimum y,
+maximum x, maximum y.
+So using this aggregate
+query over five table join,
+you would have determined lower left
+corner and upper right corner, okay?
+And once you have done that,
+then we can essentially put a,
+additional qualifying
+criteria to test the inside.
+Okay, where we are saying the grading
+point must be in this range, minimum x,
+maximum x, minimum y by maximum y.
+And that may look like this, okay?
+So again, you got a very simple query,
+if we were to write in Java and so on,
+you won't have to think as hard.
+But in the old SQL,
+the code was tedious and you know,
+required fair amount of skill to do that,
+and
+that's why people use the terms like
+semantic gap or impedance mismatch.
+A very simple task was very hard
+to accomplish using Old SQL.
+And again, remember that the work load
+we gave you is not very hard from
+spacial perspective because in
+spacial data, we often use polygons.
+So try to now imagine if I had a convex
+polygon in a computing inside.
+Requires lot more thinking than this,
+okay?
+So, so I hope you will agree that,
+you know,
+it was very painful to write spatial
+queries in old SQL, and because of that,
+you can realize that many,
+many programmers came and complained, and
+they motivated the SQL vendors to move up
+and support user defined data types, okay?
+So once you have your defined data type,
+this complex query will not look as hard,
+and in fact,
+you may write it like this in the new SQL.
+So in this case, you notice in
+a very simple, in a one table, and
+all the information is
+contained in this table.
+And you can essentially use
+predicates like within.
+So inside, outside can be directly
+modeled and provided as a library.
+So you can at the polygon
+shape of the rectangle.
+You can look at a point and
+simply ask for this predicate,
+which will be something you probably
+would have expected, having done
+some programming in object-oriented line,
+which is like Java or Python and so on.
+Okay?
+Of course, in order to support this
+gradient, the table design will change.
+And your new table design may have
+a single rectangle table with id name and
+the shape-polygon.
+Okay?
+And you may have a separate point table.
+So again, you notice the table design and
+queries get much simplified if we
+use object-oriented programming.
+Okay?
+So, so this hopefully, you know,
+motivates the need for
+new spacial types and operations.
+In the next video segment, we are going
+to go and see a common library
+called Library, which came in mid 90's and
+since then has been widely adopted.
+So most commercial or
+public domain software dealing with
+spacial data types and data bases
+use this particular library, okay?
+So we'll see you soon with
+the next video where we'll go and
+look at the actually spacial data types
+and operations which are available today.
+[SOUND]
+

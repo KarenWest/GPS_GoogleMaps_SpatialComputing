@@ -1,0 +1,1034 @@
+Welcome back to the Volunteered
+Geographic Information module.
+Now in the last video we
+covered the definition and
+historical context of volunteered
+geographic information.
+This means we can move onto
+a particularly fun part of
+the Volunteered Geographic Information
+module, which involves actually getting
+our hands dirty and
+actually contributing VGI ourselves.
+The goal here is to help you
+become more familiar with VGI.
+And also to help you gain a better
+understanding of what VGI is all about.
+And more effectively use VGI in any
+spatial computing projects you may
+be involved in.
+In the previous video, we talked about
+a number of different sources of
+volunteer geographic information.
+For instance,
+we talked about OpenStreetMap and
+we talked about geotagged flickr photos.
+VGI is still a relatively new area so,
+there is no widely accepted
+categorization of VGI data sources.
+That said, it's clear that three types of
+VGI have been particularly influential.
+The first type of VGI that
+we're going to consider and
+that has been very influential
+is social media VGI.
+So here we're talking
+about geotagged tweets.
+Yelp reviews which are,
+of course, associated with
+a specific store in the real world.
+And of course, geotagged photos.
+The second type is VGI that arises out
+of peer-production communities like
+Wikipedia and OpenStreetMap.
+Now, these again are peer-production
+communities because there's no
+expert leading the charge.
+It's all a bunch of peers
+working together, and
+we'll see a lot more about
+that in a little bit.
+Now, finally, the third major type of VGI
+that we're going to talk about today, but
+not really focused on for the rest of
+the module is Citizen Science VGI.
+Finally, the third major type
+of VGI is Citizen Science VGI.
+We're going to be focusing
+on social media VGI and
+peer-production VGI for
+most of this module.
+But in this video we're going to get
+a quick sample of Citizen Science VGI so
+you'll get an understanding
+of what it's about.
+You'll sample the flavor
+of Citizen Science and
+if you're excited about it we
+can point you to more resources.
+As we discussed in the last
+video social media VGI is
+effectively social media with a geotag.
+And now if you'll remember a geotag is a
+geographic reference typically a latitude
+and longitude coordinate.
+Attached to a piece of content,
+in this case a social media post.
+So the first type of social
+media VGI we're really going to
+dig into is Twitter VGI or
+geotagged tweets, but before we get into
+how you create a geo-tag tweet and how
+you access a geotag tweet I want to talk a
+bit more about how geotag tweets are used.
+They're an incredibly important resource
+in a lot of areas of research and
+practice in computer science and
+geography these days,
+in spatial computing, more generally.
+They've truly changed the game in
+a number of application areas and
+they have created some
+new application areas.
+And let me show you
+what I'm talking about.
+So this here, is a map of
+tweets, geotagged tweets
+during the USA-Portugal game.
+Which occurred during the World Cup for
+me about a month ago, for
+you guys, a few more,
+months than a, just one month ago.
+The red here indicates,
+tweets that Twitter has judged using some
+texts analysis to be in favor of Portugal.
+And the blue tweets are of course, tweets
+that are in favor of the United States.
+And then you can watch how many of
+these tweets exist throughout the game.
+So I'm going to play this video here.
+You can see, up in Europe there, that
+there are a number of Portuguese fans,
+which makes sense.
+[LAUGH] Same in, in Brazil.
+We can watch and, and as we hit a goal
+you'll see a big explosion in tweets,
+so I think there's a goal coming up
+here by the United States as I recall.
+Was a good moment for me if there are any
+Portuguese fans, oh there it is [LAUGH]
+was not so much not,not,
+not such a good moment for you folks.
+Another goal by the USA I
+believe was Clint Dempsey and
+then here's the heartbreak
+Portugal scored at the very end.
+So you can see this type
+of application would have
+never been possible
+without social media VGIs.
+Just something that's fundamentally new.
+Same type of deal here.
+This is a screengrab from a really
+interesting research paper.
+I recall reading it when it came out,
+it's a 2010 paper.
+I recall reading it when it come and
+I was just blown away.
+Effectively what these researchers,
+have done it at, at what they,
+they didn't report in this paper and
+it, it's, it's
+a really been influential in the field
+a lot of, a lot of papers site this paper.
+Is they effectively developed
+a earthquake monitoring system
+just looking at tweets so
+they can figure out.
+Where an earthquake is and to a certain
+extent they can also figure out
+where it's, where the waves
+are traveling and how fast and
+these types of things just by watching
+when people tweet about earthquakes.
+It's some pretty impressive stuff.
+A third application here is
+also from the research domain,
+this is pretty interesting,
+it's from public health.
+And public health has
+been quite active in,
+in incorporating geotag social media
+into its research and its practice.
+And, and what you're looking at here is
+a series of maps of the United States.
+And the colors here, they the,
+these researchers aren't using,
+sort of best practices cartography,
+which is typical within computer science.
+One reason why we're offering
+the spatial computing course.
+You'll notice there's a whole module
+on cartography and on geovisualization.
+So the important thing to know here though
+is that sort of these darker colors
+indicate places where there are a lot
+of tweets about allergies, right?
+So they did, they wrote an algorithm
+that could detect those tweets.
+Lighter places are places where there
+are fewer tweets about allergies.
+And this makes sense, right?
+In February in the United States,
+the, these are warmer areas.
+So there's not a lot of snow in
+these areas, outside of mountains.
+So they get allergies first.
+Here we are in Minnesota.
+In February,
+we are covered in snow, usually, so
+not a lot of opportunities for allergies.
+But you can see by April,
+that has all changed.
+And they were able to detect
+this just by looking at
+the types of things people tweet, so
+pollen bloom et cetera, et cetera.
+These applications are super,
+super advanced.
+Right?
+But they all start with
+something very simple.
+And that is a person using
+a Twitter application.
+Now this application can be on
+a smartphone, it can be on a computer.
+It can be on an iPad or whatever.
+For the most part,
+though, these geotagged tweets
+are going to be coming from smartphones.
+And we can, we'll be talking
+a lot more about why that is in
+the positioning lecture.
+But these amazing algorithms all
+start with something very simple,
+which is a geotagged tweets.
+And let's walk through how you
+send a geotagged tweet out to
+your Twitter followers.
+Okay, here we are.
+We are going to, write a geotag tweet.
+This is the Android app
+Android Twitter app.
+I'm an iPhone user primarily
+I'm trying to learn Android for
+you all because I suspect most
+of you are Android users.
+So do forgive me if I make
+any stupid mistakes here.
+You can see here we're in
+the Android Twitter app.
+We're under the account,
+the spatial computing MOOC account.
+You should follow this account
+if you're a Twitter user.
+We will be tweeting very
+interesting tweets hopefully.
+You can see there's a little lock here.
+That will removed by
+the time you guys see this.
+okay, let's write our tweet.
+I have pre-prepared a, a witty tweet
+here as our first geotag tweet.
+It's very exciting.
+So here we go.
+Is this the first live
+tweet from a MOOC video?
+And then here's my, here's my joke.
+For those of you who are Oscars fans.
+Okay, here is my Android mistakes.
+There we go.
+There's a question mark.
+Okay, It's like, let's try that again.
+It's like Ellen at the Oscars.
+I'll try that too.
+I bet I could have just let
+auto correct handle that.
+Let's try this.
+Very good.
+Okay, it's like Ellen at the Oscars!
+For those of you who watched
+the Oscars this year.
+I'm missing an apostrophe there,
+but hey, it's Twitter.
+All right, let's add a hashtag.
+Can't have a tweet without a hashtag.
+None of those vgirocks,
+how's that, hashtag.
+Okay, now here comes a critical part.
+see, if you see this push pin here,
+that is the push pin to geotag my tweet.
+You can see Twitter is asking
+me if it can use my location.
+I'm going to say yes in this case.
+And voila, there I am in the lovely
+University of Minnesota MOOC Studios, and
+I'm going to send this geotag
+tweet off to the Twitter verse.
+Okay, so
+we sent our tweet to the Twitter verse.
+What happens now?
+Well if you follow me over here
+to the screen, I'll show you.
+We can open up a Twitter client.
+Only some of them will do this, and
+we'll talk about that in a second.
+But this is, this is Echofon.
+It's a Twitter you can get for
+free in the Mac app store.
+I don't know what
+the deal is with Windows.
+It might also be available for Windows.
+And you can see here is my tweet.
+Is this the, is this the first
+live tweet from a MOOC video?
+It's like Ellen at the Oscars.
+Very good.
+And you can
+see there's a little
+green a push pin here.
+That indicates that it's geotagged.
+And what do you know?
+If I double click there, or
+maybe single click, it will tell
+me where this tweet came from.
+So I send this tweet out
+to all my followers,
+all my followers can see where I was and
+I have opted in to that process.
+You'll notice though that if you look at
+some of these geotag tweets on the Twitter
+website for instance, you actually won't
+see the precise location Twitter's been
+changing this a lot lately so by the time
+you watch this video it might even be
+different but I do want to point this out,
+you'll see it does say that it was
+tweeted from Minneapolis, Minnesota which
+is where the University of Minnesota is.
+But if I click on this it
+doesn't show me a map,
+it shows me all the other
+tweets from Minneapolis.
+And you can see there's lots of
+fun things to do in Minneapolis.
+But it does not show me the specific, oh.
+That's a nice one!
+[LAUGH] It does not show me the specific
+location from where I tweeted.
+So we saw that your Twitter followers and
+actually if you have public
+Tweets which most people do.
+Anyone who can access the Twitter
+website or use a Twitter client can.
+Anyone can see not only your.
+The content of your geotag tweet but
+also the geotag as well.
+But it's not only people that can do that.
+Any programmer worth her or
+his salt can write a quick program
+to download a huge number of geotech
+tweets that people publish from all over
+the world or from a from a specific area.
+So for instance,
+in just a couple of minutes,
+I was able to write a quick program that
+downloads all the tweets that Twitter will
+provide me that mention the term
+Justin Bieber with Justin Bieber being,
+of course,
+a very important topic on Twitter.
+Now, when I said, all the tweets
+that Twitter will provide me,
+well, Twitter charges a lot of money for
+folks who want all tweets.
+What programmers can do, is they can
+get a, subsample of, or, excuse me,
+a sample of tweets.
+A very small sample,
+but, since there are so
+many tweets, you'll see there, there
+are quite a few that you can download.
+So lets move on over to my program here.
+And, I hit the go button, and
+what this program is doing is just saying,
+hey twitter anything that has
+Justin Bieber in it lately?
+Okay, so what we're looking at now is a
+sample of tweets that are published right
+now, right this second that
+have the word Bieber in it.
+You can see that we've stopped here in our
+program I've said on my programs that it
+stops when it finds a geotag tweet, so for
+instance here is a geotag tweet, from
+this latitude and longitude coordinate.
+We'll hit enter and
+you can see how fast these,
+this actually very small sample of overall
+tweet comes in just because there are so
+many people tweeting about
+Justin Bieber at any given time.
+Here's a geotag tweet, this one here
+from this latitude-longitude coordinate.
+And we can keep going, and
+keep going, and keep going.
+And one thing you'll notice is that a
+small percentage of tweets are geotagged.
+I mentioned this in the last video.
+The numbers vary depending on the research
+study, but in general it's around 1 to 3%.
+We can keep going and going and
+going lots of tweets about Justin Bieber.
+Probably not so
+many tweets about spacial computing.
+Okay, so that's that for Twitter.
+Let's move on over to Instagram.
+I'm going to open
+the Instagram app on Android.
+You can see this is the spacial
+computing Instagram feed.
+Lots of fun stuff including my one
+of my favorite players from my
+San Francisco forty-niners.
+And what I'm going to do is I'm
+going to take an Instagram photo.
+We're going to geotag it and
+we're going to upload it.
+So let's open up the photos here and
+let's look at the wonderful guys
+who have been responsible for
+so many of your MOOC experiences
+here at the University of Minnesota.
+Hey, guys, guys!
+You're on camera.
+[LAUGH] Say cheese.
+[NOISE] very cool.
+All right,
+now we gotta pick a good filter.
+That's a pretty good shot.
+Let's do X-Pro 2.
+These guys are pretty cool guys,
+so X-Pro 2 sounds cool.
+Let's go over here, it's processing.
+And now here comes the geotagging.
+Let's see, ca,
+let's put up the message here, right?
+So, cool MOOC MOOC dudes I think that's
+what we'll do right, that makes sense.
+Okay, and we will now geotag it which is
+just this thing they call add to Photo Map
+now again it's telling me that in this
+case I, that it's association location.
+It's also telling me on Instagram.
+You can do this on Twitter as well.
+You can remove locations,
+locations from all your tweets, or
+in this case, all your, Instagram photos.
+Boom, there we are.
+I'm going to hit the, the,
+check mark there, and
+we have a geotagged Instagram photo.
+And we should be able to see that.
+In my overall photo map, which is here.
+There it is.
+It should be approximately
+the same location.
+More specifically,
+exactly the same location,
+minus any positional, positioning error.
+There is our MOOC Studio, fantastic.
+And, there are to the two cool Mook dudes.
+So, just as was the case with Twitter,
+not only can my Insta, Instagram followers
+see my photo and the geotag on that
+photo programmers can do this as well.
+Again, quite easily using
+pre-existing libraries.
+Again I wrote some very quick
+code just to download all of the,
+all of the most recent geotagged photos
+in the University of Minnesota area,
+geotag Instagram photos.
+And we'll run that right now and
+you'll see that there are lots.
+And you'll see that there are probably
+a lot of people don't know that they're,
+they're, Instagram photos
+are being geotagged.
+So here we're going to run this program.
+It's downloading all of the most recent,
+decided to jump over here, all of
+the most recent Instagram photos from my
+area, from the University of Minnesota.
+I can see there are a bunch of them,
+there it goes.
+And it's downloading them
+straight to my hard drive.
+So let's take a look at these
+photos as they come in.
+Come and go into this folder.
+For those of you who aren't programmers,
+I'd imagine this,
+I would just think to myself this
+might be surprising that this is so
+easy to get all these photos but
+let's take a look.
+Look at all these Instagram photos of
+random people in the University of
+Minnesota area.
+At least you can see people around here
+tend to have a good amount of fun.
+This is our beautiful art museum.
+I highly recommend you come visit.
+And you'll notice that if we look
+closely there are our cool MOOC dudes so
+we were able to pick this
+one up with the the code.
+Okay, so that should give you a good
+idea of how you create social media VGI,
+how that VGI is accessed by your friends,
+followers, contacts, the general public.
+And also how it's accessed by
+a spacial computing technologies.
+Obviously most spacial computing
+technologies that take advantage of social
+media VGI are much more advanced than the
+very quick programs I wrote for you guys.
+But that should give you the basic idea.
+I do want to pop up a bit
+to a a higher level and
+just go over three high level points
+in terms of how social media VGI works.
+There's basically a three-step process.
+You create content,
+you geotag it, and you upload it.
+Your friends and your contacts,
+or the general public, right,
+if you don't have things protected,
+can see your geotagged content, right.
+We saw that for instance over here,
+right with the Echofon app.
+And in many cases,
+programmers can download your geotagged
+content, assuming it's public.
+Okay so let's move on to the second
+type of VGI we're going to
+consider in this lecture, and
+that is a pure production VGI and for
+that we are going to first look and
+do a deep into Wikipedia base VGI.
+Here we are on
+the English Wikipedia's main page,
+I'm sure many of you are familiar
+with the main page here,
+I'm pretty sure most of you are also
+familiar with the fact that Wikipedia can
+be edited by literally anyone the one
+challenge though especially if
+you're not a Wikipedia editor,
+is knowing what to edit right?
+How can you help out?
+Well one way to figure that out is
+to go to the community portal here.
+It's on the left-hand
+side of all the pages.
+And here's a list of pages that need
+help and what you can do to help them.
+Spelling and grammar for
+instance is very, very easy to get into.
+You don't need to be a Wikipedia expert
+to correct spelling and grammar.
+So we're going to go, do some of that and
+I found a perfect article for
+this this video.
+It is on the second page here and
+it is the West Campus High School article.
+Apparently West Campus High School is
+a high school in Sacramento, California.
+This is an area where my brother and
+sister-in-law live.
+It's a very nice area,
+unfortunately, the page for
+West Campus High School is not so nice.
+You can see it has a ton
+of listed issues by
+Wikipedians have gone through it and
+listed this.
+So, there's some neutrality issues.
+They require some grammar editing.
+And so on and so forth,
+so we're going to take,
+we're going to do some very lightweight
+editing, this page, show you how it works.
+The very, very important thing to notice
+is that this article is geotagged,
+which means we're dealing
+with pure production VGI.
+Right, If it weren't geotagged,
+or more specifically if it
+were about an entity that doesn't
+have a specific spatial footprint.
+Then we wouldn't be dealing with a VGI,
+we'd be dealing with just
+pure produced content.
+But this is content about a place in
+the real world, so we're interested in,
+in it, in this spatial computing course.
+Now, to edit this article,
+we are going to just go ahead and
+hit the edit here, and wow,
+it's just right there.
+I will note that this page actually has
+a spe, is a little bit a special case.
+Almost every page you can edit
+without actually even logging in.
+This page they've
+partially locked it down.
+Probably because high school students
+are some of the biggest vandalizers
+of Wikipedia.
+But we will continue on and
+I'll show you that you can edit some
+very important pages without logging in.
+This is just a something
+of a special case.
+Okay, so
+we're going to read what it says here.
+West Campus High School
+is a public high school.
+So it is a public college preparatory
+high school in Sacramento California.
+This school serves about 800 students.
+Blabidy blabidy blah.
+So then it says here West Campus
+used to be a satellite school of
+nearby Hiram Johnson but
+it became its own school for
+the 2002-2003 school year and
+this isn't very, encyclopedic.
+It doesn't sound very professional.
+And it's missing an important link.
+And links are really important for
+a number of reasons.
+It's of course fun to click
+around on in Wikipedia, but
+for the many applications that use
+Wikipedia as a source of world knowledge,
+in the spatial computing domain.
+Links between two places
+tell those algorithms, or
+tell those computing systems
+to tell those algorithms, hey,
+these two places are maybe more related
+than two places that don't have a link.
+So adding this link will be important.
+Now to do what,
+we are going to have to figure out
+what on earth they're talking about.
+I suspect this is another high
+school in the Sacramento area.
+So let's try to figure that out.
+Hiram Johnson High School, perhaps?
+We'll Google it, and
+that is indeed what it is.
+We'll go to their Wikipedia page,
+and there is the title.
+It's a much smaller article.
+We could also add some
+content to this one.
+Fortunately I'm not an expert
+on Hiram W.Johnson High School.
+If any of you are I encourage
+you to edit this article.
+Okay, so we know this is called this.
+And in Wikipedia to add a link you
+just do these two little brackets.
+Don't worry about this too much if you're
+interested in it you can worry about it.
+You'll see that you don't have to
+know brackets to help out as well.
+So okay, so,
+West Campus used to be a satellite school.
+Now satellite school, okay.
+Let's say satellite high school, right?
+Of nearby Hiram W.Johnson High School, but
+became its,
+became perhaps an independent school.
+That sounds more professional, right?
+More encyclopedia,
+more encyclopedic, excuse me.
+[SOUND] In school beginning in
+the 2002-2003 school year.
+Okay, we're just going to stop there and
+we will hit save.
+There's obviously a lot more to do here.
+If you read down the article there's
+some things that are clearly written by
+someone who was a fan of the school and
+perhaps doesn't know how to
+write encyclopedic articles,
+as well as he or she should.
+And we hit save page.
+And we wait.
+And we find that we have a link.
+And we have our text here, right?
+I just changed how the world views West
+Campus High School by producing in, a,
+excuse me,
+by participating in peer produced VGI.
+If you're anything like me you find this
+very, you'll find this very empowering.
+Now let's take a step back and see,
+look at some other peer produced VGI.
+geo, in other words
+geotagged Wikipedia pages so
+let's look at the University
+of Minnesota page.
+Just to show you how powerful you can
+be even as not a logged in editor.
+Now anyone can create an account of course
+but just as someone who has no history of
+editing at all let's go back to
+the University of Minnesota here.
+And I can just go ahead and
+edit this very important article.
+I mean, University of Minnesota has tens
+of 1000s of students a huge university
+very prominent university but
+I can edit anything I want.
+If I were a bad person, I could vandalize.
+For instance, I could say, let's see,
+it is, it is a wonderful school to study,
+study in for terrible grammar.
+We're not going to publish this anyway.
+Especially for students who get to know
+us through the spatial computing MOOC.
+Now, if I were a bad person,
+I can good ahead and hit save.
+I'm not a bad person.
+So I'm going to click out of here and
+leave page.
+But you get the idea.
+If I did click save,
+I would be contribute peer-produced VGI.
+Although doing so
+in a somewhat malicious way.
+So as I mentioned before Wikipedia's
+a very prominent source of
+peer produced VGI.
+But OpenStreetMap is perhaps not as
+well-known in the general public.
+But among folks in spatial computing
+OpenStreetMap definitely is
+equally prominent.
+With respect to, Wikipedia.
+So here we have OpenStreetMap I
+have logged in as an editor.
+In OpenStreetMap you have
+to log in as an editor.
+And you can see the map.
+Once again, you'll recall the last video,
+this map is, the data in this map
+is used in all sorts of systems.
+You can download it yourself and
+use it in whatever you want.
+And it's a great way to Bootstrap a,
+a new spatial computing project, for
+those of you who are in
+technological track.
+but, this OpenStreetMap's
+used by MapQuest now,
+it's used in Apple products, it's used
+in who knows how many other products.
+so, but, but, here's the,
+here's the actual real map.
+You can also go to the map just
+by going to openstreetmap.org.
+Here's the, here we can zoom, zoom around.
+This is the University of Minnesota.
+You've seen this map a couple times today.
+And if I click Edit you'll see that
+the entire map becomes editable by me,
+which is totally crazy.
+I, I'm, I'm let's actually
+just reset that for now.
+I am still kind of blown away
+by the extent to which you can
+change how this very important
+data set views the world.
+So again we're going to do something and
+not, we're not going to save it but so
+here's the st, here's the street right?
+Let's just take this street here and
+lets eh,
+let's, let's change where the street goes.
+Now it goes over here,
+look there's an intersection too right?
+If I did this and we ran routing on,
+on OpenStreetMap data which is
+done by a number of systems.
+We might have a a route
+that doesn't exist right?
+I'm going to go back because I'm not
+a malicious person and let's add
+something that's useful and OpenStreetMap
+is in many ways pretty complete
+with respect to basic stuff there's
+some more advanced things for instance
+tags that are definitely not complete and
+some more detailed types of layers.
+But for the basic stuff it can
+be sometimes hard to find a,
+a new thing in certain types
+of areas particularly cities.
+But let's add something that I did
+notice is not here which is one of
+my favorite lunch spots around here.
+And that is Bruegger's Bagels.
+Now it's just a chin bagel place.
+If I eat a big lunch I sometimes get very,
+very sleepy, so
+I like just simple lunches.
+We'll select the feature type here.
+It's a cafe.
+The name is Bruegger's Bagels.
+And I'm just going to double check my
+notes here to make sure I spelled that
+correctly, cause that is a rough spelling,
+at least for English speakers.
+Those of you who are German may
+think I had a very easy task there.
+In choosing cuisine I'm I
+actually was looking earlier and
+it was like,
+maybe coffee shop's the best or
+sandwich but I couldn't decide, so
+let's just put that aside for now.
+You don't have to do everything.
+And there's an address.
+So let's put an address, I looked this up,
+it's 720 University Avenue Southeast.
+So, 720, University Avenue Southeast,
+and of course, Minneapolis,
+and, postal code is 55414.
+And we could look up the hours and
+these types of things.
+There's a whole bunch of other options.
+Does it have wheelchair access,
+I don't know.
+This is a great feature that they have,
+and so on and so forth.
+But I think this is good enough for now.
+And let's actually hit save.
+And there we go.
+The changes that you upload as,
+as spacial comp class.
+That's, that's, what we are.
+We, visible on all maps that
+use OpenStreetMap data.
+Look at that,
+we just contributed to OpenStreetMap.
+So, that's peer production VGI.
+Hopefully you know more about,
+peer produced,
+geo, reference information than you
+did before you, you started the video.
+Let's move on quickly to the last
+of these three social media
+types Citizen science VGI.
+A citizen science VGI is important but
+maybe more specialized than the other two.
+So our focus in the rest of this module
+is going tot be on the other two.
+But I wanted to give you an,
+an understanding of what citizen
+science VGI is all about.
+To do that of course we need to grab
+a definition of citizen science and
+I thought since we just looked at peer
+produced content it might be fun to
+see what Wikipedia came up with when it
+comes to citizen science's definition.
+And they came out with this,
+which I actually think is quite good.
+Citizen science is scientific research
+conducted, in whole or in part,
+by amateur or nonprofessional scientists
+often by crowdsourcing and crowdfunding.
+That's a pretty good definition.
+It gives you an understanding of
+what's going on some keywords here
+are amateur and nonprofessional scientists
+and real scientific research though but
+this is legitimate scientific research.
+And so much of citi, so
+much of citizen science involves.
+Research projects that have some
+sort of geographic reference,
+some spacial reference.
+So you can imagine, counting birds this is
+a citizens science project that's actually
+goes back well before the online era
+online era and so on and so forth.
+The one I can show you right now without,
+you know, going out into a,a wetland, for
+instance, in that counting birds or
+measuring water levels, is this one.
+This is sea floor explorer.
+It is a part of the um,zhuniverse
+family of citizen science projects,
+I really recommend you check it out.
+Really low impact and we're actually
+going to do a quick demo in a second.
+But first I want to go over the science.
+Effectively what they're trying to do
+is gather from regular old folks, like,
+like you and me in this case training data
+to train machines to understand what types
+of species are on the sea floor, where
+they are and, and so on and so forth.
+And for instance, they want to allow
+scientists to ask questions like what is
+the current distribution and
+abundance of sea scallop and
+yellowtail flounder on Georgia's bank?
+These types of things.
+These are questions, obviously,
+that are very important for
+a fishery's management, understanding the.
+The success and, and
+decline of species and so on and
+so forth and we as regular old folks can
+help them solve this scientific problem.
+So let's walk through
+demo real quick here.
+Okay so here we are on sea floor
+explorer very, it's very simple.
+There is some quick training you can
+take before you launch into this.
+It takes about two minutes and I did that.
+And what they want me to do here is,
+is say the type of ground that's in
+this area which I learned is sand.
+Versus shell gravel
+cobble boulder et cetera.
+Done identifying ground cover.
+And then they want me to basically
+highlight a whole bunch of
+these seastars right or another species.
+So, here's one, and
+here's one, and here's one.
+Oops, that's a little bit off.
+And you guys get the picture,
+and if I were to do all of these,
+I'd just hit, I'd just hit Done, and
+the scientist would be able to use this.
+In there training or in their building
+of machines that or algorithms
+that can identify a seastar as separated
+from the sand and do this automatically.
+Now one thing it's very
+important here too is this data.
+It's just in and out of itself is,
+is quite valuable.
+This image here is georeferenced, and
+now I know there are a whole bunch
+of seastars in this, in this area.
+Right, so it's, this is, this becomes what
+I'm doing, citizen science VGI, right.
+I'm contributing vo,
+voluntarily information that
+is geographically referenced.
+And that is that for citizen science VGI.
+Okay, so that's it for
+volunteer geographic information.
+I do want to do one last
+thing in this video and
+that's give you an example of
+traditional geographic information.
+You know, I was talking about this
+traditional geographic information.
+How different it is from VGI but I think
+its helpful, it would be helpful to,
+to show you this one example of what
+this traditional information look like.
+In other words, this would be the type
+of information that you would have been
+dealing with if you somehow took this
+class using some proto YouTube or
+something in 1999 versus the VGI era.
+Okay so here we, I will show this example.
+A very canonical example.
+This is the U.S. census bureau's
+website and they offer traditional and
+geographic information in
+the form of shapefiles.
+Shapefiles are just a data format for
+points, lines and polygons.
+Which you guys know all about now.
+And you can download shapefiles for
+county borders.
+You can download shapefiles for
+state borders, zip codes, and so on and
+so forth.
+Census tracks are one that I
+find myself frequently using.
+But one thing you notice here,
+is there's no edit button, right?
+If I want to edit some of these files,
+it's not going to happen.
+That's a key difference right?
+We talked about that in the first video.
+Traditional geographic information
+does not allow that type of thing.
+I do want to point out though that
+traditional geographic information
+it's not like it's replaced by VGI.
+I mean, I mentioned this in the first
+video but I want to re-emphasize.
+VGI adds to our abilities in spacial
+computing and it to a certain
+extent competes with some aspects of
+traditional geographic information.
+But traditional geographic information is
+still quite useful in, in many cases for
+instance, I just mentioned, I like to
+use census track data quite a bit in,
+in, in my research that doesn't have a,
+a correla in in, in VGI.
+I just want to give you a quick
+example of what this, what this does.
+So let's just do state, it'll be a very
+quick download let's do this one here.
+And there we go.
+I downloaded the shape file.
+I'm going to open it in some software
+called QGIS, just of way of,
+of visualizing shape files, and
+doing some other geographing
+information system operations.
+QGIS is a relatively new program but
+it's free, open-source and
+pretty good and there you go.
+There are the state outlines right?
+That is a pretty typical
+traditional geographic information
+scenario, excuse me.
+Okay, so that's it for today's video.
+I'll see you, see you in the next
+video to talk about the third and
+the fourth learning
+objectives in the VGI module.
+[NOISE]
+

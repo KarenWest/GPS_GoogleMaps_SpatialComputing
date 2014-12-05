@@ -1,0 +1,334 @@
+Hey, folks!
+Welcome back to our series of interviews,
+with experts in the spatial
+computing field.
+Today I'm here with my colleague,
+Loren Terveen.
+He is a professor [SOUND] in,
+my department,
+the Computer Science Department here
+at the University of Minnesota.
+And he's been doing some great
+spatial computing work now for
+about ten years or so.
+Is that, is that right.
+Okay.
+So Loren, I my first question for
+you is just if you could tell us
+all about your research interests.
+>> Well, good to talk to you, Brent.
+I guess I've been, as you said,
+working for about a decade in the field.
+I started out about ten years ago.
+Exploring the,
+the first wave of technology that let's
+you do location based work on cell phones.
+So these were not widespread then,
+but we actually, bought a bunch of,
+think they were Nextel phones,
+that were GPS enabled.
+And we gave them to people and
+ran some experiments with them,
+where we tracked people's location and
+we tried to make inferences about.
+What were the places they went too,
+what were the patterns and movements?
+And we also developed a location
+based messaging system,
+a personal messaging system,
+where people could associate messages
+with places that were important to them.
+Or were useful to them,
+like location based messages to
+do errands like buy groceries, or
+picking something up for somebody.
+So I did that about ten years ago.
+And then starting about seven or
+eight years ago I actually did work on a,
+on a geographic wiki for bicyclists.
+It's called Cyclopath.
+And this is a system we've
+continued to work on.
+And the really interesting thing about
+Cyclopath is, it does routing for
+bicyclists just as you have systems
+like Google Maps that do routing,
+now today, for
+bicyclists as well as motorists.
+But it also is a geographic wiki,
+and it came out, as I said,
+about six or seven years ago,
+so we did a lot of exploration.
+Into this the nature of,
+geographic editing for, this domain.
+And more recently, we've actually
+been developing a system for
+location and
+based in mobile crowd sourcing.
+We call this folk source and it's a system
+that will let anyone who has a need to
+collect data out in the field
+to create a campaign.
+For example, you know?
+People who want to monitor
+the health of trees in the city.
+Which is sort of important around here,
+where we have some tree diseases.
+Can, can create a campaign that says,
+basically, we'd like people to,
+take pictures of certain types of trees.
+Send those in, maybe fill out a brief
+survey for each picture they take.
+And it's a great way to do distributed
+data collection campaigns.
+For all of these.
+For all of these things, we explore both
+the technology that you need to make
+things work, like what changes you need to
+make to Wikis to support geographic based,
+instead of text based editing.
+As well as a lot of social dynamic issues.
+How do people work with
+these technologies?
+How do they cooperate?
+What sorts of problems are there?
+What sort of motivation or
+incentive structures do you need
+to get people to participate?
+So, we do both technology and
+behavioral work.
+>> You know, one of the things I really
+like about your work, Loren, is that you
+manage to integrate really interesting
+research questions, and research projects
+with systems that actually affect people,
+and help people here in the Twin Cities.
+And, Cyclopath was launched in
+the Twin Cities metro area.
+Thousands of users, right?
+In these types of things.
+>> Yeah, yeah.
+>> And then folk sources
+aiming to do the same thing.
+So I, I just think that's wonderful.
+So next question can you tell me a bit
+about how you got started in
+the spacial computing domain?
+I know you mentioned your,
+your first projects, but
+what, what inspired you interest?
+[SOUND] I'm trying to think what
+actually really inspired my interest.
+I think just a belief that the technology
+was going to be transformative,
+that if you, if you knew more about
+the context that people were in,
+particular their location.
+You could do things that you just
+couldn't do otherwise, and so
+I was just really intrigued by that.
+I mean as you know Brent, in the research
+peep, field people have been
+looking into the value if location for
+15 or 20 years or more.
+But, up until a little over a decade ago.
+If you wanted to do any
+technical explorations,
+you had to actually build your own
+hardware, and that's not my kind of thing.
+>> Right, right.
+>> I don't have the skills and also, if
+you do that, you can't really, you can't
+really do anything practical, you can't
+see how people will really use it.
+So, as the technology started
+to mature a little bit.
+So, that you could buy commercially
+systems that would be location based.
+My interest in what you could
+do with these things or
+what people would do with things really
+came to a peak and I said, let's try it.
+So, I think that the sort of ripening
+of technology led me to want to do it,
+and I really wanted to see things like.
+How will people use this socially?
+You know.
+If you know people's locations can you
+do interesting things like, you know,
+find out where your friends are, and
+this is something people have been
+thinking about for 15 plus years and
+are, you know, now it's getting
+out into the commercial world.
+It's still not clear to me if
+it's going to be successful.
+But one of the things we
+were interested in early on.
+Was can we build systems,
+that are aware of location and
+then can help people sort of collaborate
+and work together around that.
+We talked about an idea of letting people,
+request favors or
+little errands they want run.
+You know like anybody who's in my area,
+you know, I, I have a hard
+time getting out, could you get some
+groceries for me if you're at the store?
+And if it's a neighbor or somebody you
+know, you might be happy to do it,
+or even something as mundane as, you know,
+if you're working late at the office, and
+somebody, one of your friends or
+contacts, is going by the coffee shop,
+maybe they can see, hey, you know.
+I could use some coffee and
+they'll, they'll get it for you.
+So yeah, we had some ideas that we thought
+would be really cool, the technology
+started to get just mature enough that
+we thought we could explore them.
+So that's why I got into it.
+>> You know, one of the things you,
+you One of the things that came to mind
+while you were talking there is how
+important early research on these
+new devices that aren't quite practical
+yet can really inform the future I mean.
+What you just talked about is, is so
+much of what we call crowd sourcing and
+the peer economy today, right?
+>> Absolutely.
+>> And
+your early work definitely speaks to that.
+Okay, next question.
+What do you think has been the most
+important new spacial computing
+technology or
+research project over the past few years?
+>> You know, that's an interesting one,
+and I'm going to give I think
+I'm going to answer a different question
+or refuse to answer that question.
+>> That's fair enough.
+That's, it's the academic tradition.
+>> Yeah.
+[LAUGH] And here's why.
+I actually think the most important thing,
+at least in my mind that's happened
+over the last few years has been
+the really widespread penetration
+of devices that are location aware.
+Even a few years ago not
+everyone had a smart phone.
+I myself got one maybe three years ago,
+and I was not an early adapter but
+I wasn't among the latest adapters.
+But now everybody has smart
+phones that are location aware.
+And so I think what excites me
+about that is a lot of these ideas
+that have been around in
+the research community for 15 or
+20 years that first required you
+to build custom hardware, and
+then required you to use hardware that
+was commercial but not widely used.
+Now can be explored on
+ubiquitous hardware.
+And so some of these ideas you know,
+proximity based matching, hey,
+get together with your friends or
+get together with people who share your
+interests who happen to be close to you.
+May not be good ideas, but
+they've been kicking around for
+a while, and now I think we can really
+explore them and see what's going to work.
+A slightly more
+a slightly more responsive answer to
+your question would be, I think some of
+the augmented reality stuff is
+going to be really interesting too.
+Some of the goggles, or
+even just the cell phone based systems.
+That will show you, you know,
+overlays of what's going on or
+what's relevant to the world around you.
+I think that's really interesting
+again an idea that's been around for
+a while, but that technology is only,
+you know is coming out even later
+than the pure location based stuff.
+So I think that, just the wide spread
+ubiquity of location based and now may
+be some of the VR in reality technologies
+is what am most excited about.
+>> Well,
+you claim not to answer my question, but
+I think you did a pretty good job.
+>> [LAUGH]
+>> Here's another related and,
+and, I think a fun one.
+What is the project you're
+working on right now or
+recently finished about
+which you're most excited?
+>> Well, I mentioned Folksource before
+which is the mobile crowdsourcing system,
+and I tell you,I'm really excited
+about that for, for the reason that.
+I think it let's us explore
+really interesting technical and
+socio technical questions.
+But I also think it let's
+us have the potential to
+do something that matters socially.
+>> I mean our original vision for
+this is that organizations that do,
+largely that do good things in
+the community whether non-profits or
+local government groups that are trying
+to make our local communities better.
+Whether by improving
+the physical infrastructure,
+you know making sure that there
+aren't pot-holes, litter and so on.
+Or making sure public transit
+works better, that we have.
+You know, the stations where we need them,
+making sure that our parks
+serve the needs of people.
+All of these things required data,
+they required data,
+about things in the physical world,
+you know.
+Where do people park their bikes?
+Where do people litter?
+Where are there too long waits for
+the buses?
+And.
+A, an infrastructure, technological
+infrastructure, that can let people,
+ordinary citizens who care about this,
+very easily give little bits of data
+that can help the decision makers,
+the organizations, understand what
+needs to be done and do it better.
+I think that's great.
+Another aspect of that, it can help
+engage everyday people, citizens, more
+with their communities and feel like their
+input is being heard, and it matters.
+And so I'm really excited about that.
+>> That is one that excites me as well.
+I'm looking forward to
+seeing what happens.
+Well, thank you Loren for your time,
+I'm sure all of our students very much
+appreciated your insight and thoughts.
+>> Thank you.
+It's been fun talking with you, Brent.
+[SOUND]
+

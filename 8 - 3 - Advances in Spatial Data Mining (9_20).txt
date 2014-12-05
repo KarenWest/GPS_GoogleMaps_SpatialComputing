@@ -1,0 +1,312 @@
+Welcome back to the discussion
+of spatial computing.
+In this video, I would like to describe a
+current research project in our own group.
+If you saw the other video on research
+project, you already know, you know,
+our spatial computing research group.
+And, you know, and we have helped
+contribute books, encyclopedias,
+we help manage journals and, and
+conferences and, and so on in the area.
+And you also saw a recent
+community visioning report in
+which is recommended reading for
+module eight.
+And that you can see many more exciting
+vision of current research ideas in
+the community, okay?
+Now our group specializes in two
+sub-areas of spatial computing.
+spatial databases,
+which was the focus of another video.
+And spatial data mining, which is
+the focus of this particular video.
+So starting roughly 99 we have started
+working in this area, and, you know,
+it all started with an NSF workshop which
+brought in researchers from GIS and
+data mining together.
+Back in 99.
+And, you know,
+we after end of three days, you know,
+I left with a kind of interesting feeling.
+I felt that people could
+do lot more in this space.
+Most people were using the plain old
+data mining for geography for data.
+But there was potential to do more.
+And lot of that you saw in module four
+when we talked about spacial data mining.
+You know,
+we have spatial art of correlation.
+We have continuity and so on and
+you can do different things.
+So in that particular module,
+you saw the location prediction problem.
+This was one of our first projects, and
+we saw that if you make IAD assumption,
+things don't go very well.
+So to predict that bird nest it's
+important to model art of correlation.
+Another project shortly afterwards
+was spatial outlier detection, and
+you probably remember this diagram,
+the freeway map of twin cities.
+And the data from i35w
+which is shown here.
+And you remember sensor number nine
+was behaving very different than
+its neighboring sensors.
+And this, this discontinuity was
+formulied as spatial outlier.
+You also remember the co-location
+discussion in module four, and
+this was a generalization
+of association rules.
+But, you know, overcoming
+the challenges of lack of transactions.
+Okay?
+Beyond that,
+we have now also recently completed
+a very nice work on summarization.
+You know, you probably remember and
+Sat scan from module four.
+So, currently if you think
+about those techniques,
+if you give them data
+sets like road accident,
+they would find ellipses as I've
+shown in these two pictures.
+Okay.
+However, you may realize that, you know,
+if the data set is really constrained by
+the road network a better summarization is
+by routes, by network concepts.
+So in our group just got completed on KMR.
+Which instead of finding
+ellipses it finds routes.
+Which have very high
+concentration of activities.
+Okay.
+Now, going beyond that, you know,
+let me give you two other ex,
+you know, or three other examples of
+things that are going on in our group.
+So, first, let's start with core location.
+Remember in core location,
+you were given a set of, you know,
+features, and several, several instances
+of those features and a map of those, and
+we were looking for pairs of features, or
+triple of features which were co-located.
+Okay?
+Now this work has been
+extended to space and time.
+Okay?
+So now try to imagine we have
+a set of crime reports, and
+for each crime report we
+know the location and time.
+So maybe, you know,
+if you're looking at a particular event,
+such as bar closing around midnight
+in many urban areas, you know,
+we might find our time t equal
+to 1 a couple of bars close.
+Okay.
+Now, shortly afterwards,
+you see some minor crimes happening
+around in the neighborhood.'
+'Kay?
+And shortly afterwards, you see drunk
+driving rates a little bit further down.
+So when you see data sets like that,
+we can essentially define a pattern called
+cascade, and
+summarize it using this simple diagram.
+And what this is essentially
+indicating is that in some areas,
+in downtowns with very,
+very large you now, dense population.
+Bar closing events are often by assaults,
+you know, little time,
+you know shortly afterwards in that,
+immediate neighborhood.
+Or drunk driving a race little bit further
+down, you know, shortly afterwards.
+And this is called a cascade pattern.
+And this maybe a better summarization
+than simply looking at the map.
+Okay.
+So our group, there was a thesis completed
+with a DOD research funding, and you can,
+if you are interested, you can see more
+details in this IEEE Transactions paper.
+Okay?
+We also extended colocations
+to moving objects.
+And to illustrate that,
+let me show you this example.
+And here we have trajectories
+of many moving objects.
+The object type is being
+shown by the color.
+Okay, so, you know,
+there are some people moving around here.
+And there are some heavy
+vehicles moving around here.
+And the question is to,
+you know, is following.
+Do you see pairs of colors,
+or subsets of three colors
+which are often together in space and
+time even though they are moving.
+And as you can imagine.
+So I'll, you know, you may want
+to pause the video here and, and
+look for those patterns, okay?
+And so I assumed you did that, so
+when you come back you will probably find
+the pair blue and red moving together.
+And that's the highest interaction.
+You might even see yellow involved
+in that a little bit, okay?
+Now again for small data sets,
+you can do that manually.
+But as the number of trajectory and
+vehicle types increases you
+need smart algorithms to sort
+through those and rank them.
+And these results are reported in another
+IEEE transaction paper here that you
+can take a look at.
+Okay, so
+let's talk about a current project.
+What are we doing right now?
+And one of the interesting project
+has to do with looking for
+hard spots of activities.
+In patterns of evasion.
+Okay?
+So this is motivated from analysis of se,
+serial crime.
+So if you go to environmental
+criminology literature they often talk
+about an interesting phenomena called,
+doughnut hole patterns.
+And where do they come from?
+'Kay?
+And here, here is the theory.
+So if you imagine there is activity
+generator, like a serial criminal.
+Then, you know, it has been observed
+that they don't commit crime in their
+immediate neighborhood because
+their neighbors know them and
+they can kind of report them back.'
+Kay?
+But then they don't go too far either,
+because there is transportation cost.
+Okay?
+So
+if you really see what the current
+crime pattern footprint will look like.
+It will look like a doughnut hole.
+Sort of like this, you see these
+red dots are the activities and
+it will kind of be scattered
+in a ring-like manner, okay?
+Now this has been observed for
+a long time in police work and
+people have actually mapping and manual
+techniques called geography profiling.
+So once they have connected
+these crimes by their M.O.
+And they want to know where
+the serial criminal may be living.
+They essentially go inside this hole and
+they try to do screening in there.
+Okay.
+But the big question is,
+could we design algorithms,
+fast algorithms to find these patterns?
+And with one current grant we are exactly
+exploiting that problem okay.
+So first.
+We simplified the problem a little bit
+to make it computationally practical.
+.
+So, we assumed that these, you know,
+doughnut holes are concentric rings,
+okay just to reduce computational cost.
+So, in terms of the problem in input and
+output, you're given a set of
+activities and their location.
+You know, for example, here.
+So these red dots in this map is
+essentially showing you arson.
+Again, there are people, you know,
+who start fire by their,
+you know, weaknesses, and
+many of them become serial.
+So this is an example
+from Southern California.
+Okay?
+So a lot of arsons started by same person,
+same MO.
+Okay in addition, you know,
+these things we want to be very,
+very sure that we 're not really you know,
+trying to harass people who are innocent.
+So that's where you want
+statistical significance,
+very much like sat scan okay?
+And then the output is ring shaped
+hotspots which are statistically
+significant okay?
+So in this particular case you see some
+red dots down below, some over here.
+And the output are these rings
+that are shown in green.
+And with each green, we have
+statistical parameters, the P value and
+the confidence measure.
+Okay, so the idea is to give statistically
+rings, you know, a very very quickly.
+So this work just started,
+you know, we have a paper in
+in December, so really fresh,
+you know, hot off the press.
+and, and this thesis it will be ongoing.
+So again just to acknowledge you know,
+this particular work was actually
+sponsored by department of defense.
+And here are some of our
+other current grants.
+Which is, sponsoring other activities.
+In fact through other videos, you would
+come across what else is happening.
+So for example, this expedition
+understanding climate, a driven approach.
+I am a copyi.
+And we will have a video interview of
+professor Vipin Kumar, who is the PI and
+you can see some data mining work there.
+You'll also meet you'll
+also will meet Len Kenay,
+who is heading this initiative
+called used spatial.
+Which provides spatial services
+to the entire campus okay?
+So again, it's a wide range
+of projects down here, and
+we are very, very grateful to the sponsors
+who sponsored this, this kind of project.
+So, thank you for your attention.
+You got a sense of another research
+project in my group, and hopefully,
+through other videos,
+you can see what other people are doing in
+the campus, as well as around the country.
+

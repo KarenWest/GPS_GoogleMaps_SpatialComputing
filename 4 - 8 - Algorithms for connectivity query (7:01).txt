@@ -1,0 +1,217 @@
+Welcome back to the discussion
+of spatial networks.
+In last video, we were looking
+at physical data model level.
+This video, we'll continue that discussion
+and go from data structures to algorithms.
+Broadly, in database terms,
+the query processing.
+So at the end of this video,
+we will learn a little bit about query
+processing mindset for managing graphs.
+In particular, look for
+the building blocks.
+The query processing cannot optimize for
+everything, but they try to
+find common building blocks which are
+frequently used, and optimize for that.
+And then we'll go into further depth for
+one building block
+called connectivity query, all right,
+and show you two algorithms.
+So again, you know, big picture,
+we are looking at Spatial Networks.
+We saw a Conceptual Model,
+Logical Model, and
+now we are into Physical Model, and in
+particular, we are looking at algorithms.
+So let's first, you know,
+put the query processing hat and
+try to see how databases think.
+So one of the interesting part of
+databases is that they look at
+the workload, and then,
+you know, across many,
+many queries, they try to look for
+commonality, right?
+If they can find a common building block,
+they optimize it
+very well with multiple algorithms,
+data structures, and so on, right?
+So the same thinking with networks,
+you know,
+if we did that, then we do look for
+building blocks.
+For each building block, we'll put some
+algorithms, sometimes called strategies,
+and then when a new query comes we'll
+decompose into building blocks and
+then rank these algorithms and
+pick the most suitable one, okay.
+This is sort of like, you know, if you
+drive automatic transmission car you just
+put it in drive and the car picks
+whether it's first gear, second gear or
+third gear based on the need and the same
+way databases are like automatic car.
+Very different from a Java programming,
+where you have to pick algorithm, right?
+Okay, so
+if we were to do this with graphs,
+then people think of at least two
+common queries, one is connectivity.
+So essentially, given a road map, or
+a train network, we simply want to know
+whether we can reach point A from point B.
+This may look very trivial to
+you because you might say,
+well the network should be
+designed that way and many are.
+But, you know,
+if you are in an island nation this,
+you may have to think about it.
+But, more importantly, there are other
+Spatial Networks like electric circuits.
+So, if you think of the power grid and,
+you know, there is an outage after
+a storm and this is an important query.
+The other one you probably expected,
+shortest path; so
+shortest path turns out
+to be a work horse.
+Not only it's useful in itself, but
+it helps up with many other queries,
+such as allocating customers to nearest
+service center and so on, okay?
+So many times we think about essentially
+having multiple algorithm for
+these building blocks.
+So that, you know,
+depending on the situation,
+we can have good performance, Okay?
+So there are many algorithms, you know,
+so many of you might have
+seen main memory algorithms.
+For example, given that matrix or decency
+list representation, we can use algorithms
+like depth first search or breadth first
+search to check the connectivity right.
+And same thing for shortest paths some of
+you probably took a data structures and
+algorithms course and you may have
+come across Dijkstra's shortest path
+algorithm it's also thought in
+operations research geography and so on.
+Those of you who might, you know, have
+taken artificial intelligence course might
+have seen another algorithm called A-star,
+and
+we will at least look at these
+two in our discussion, okay.
+Now it turns out that, you know,
+if your data is primarily on disk, some of
+these algorithms have to be adjusted for
+the higher cost, and in addition,
+there are specialized algorithms,
+like Hierarchical routing, which tries to
+look at only a part of the graph to
+reduce IU and still give the optimality.
+And we'll try to see if
+we have time to go and
+visit that, but the first,
+the main memory one are worth reviewing.
+So also good news is, that SQL3, you know
+with the cursive statement has been in
+place, and they have adopted some of
+these algorithms for use within SQL3.
+So let's look at two algorithms for
+one building block that's
+connectivity queried.
+So in case of connectivity query,
+given a particular graph and a particular
+start node, we want to list all of
+the nodes which are reachable from there.
+And the used cases may be in a smart
+grid electricity network to see
+whether power from a particular generating
+station can reach all the customers, or
+in a road map after hurricane of flooding,
+we might want to see from a,
+let's say relief supply
+distribution center, you know,
+which particular people needing
+help can we serviced, okay.
+So let's first look at Breadth
+first search, you know,
+and suppose the starting node is one.
+So in case of Breadth first search,
+we visit other nodes level by level.
+So we first reach the nodes
+which are directly connected.
+So from 1, nodes 2 and
+4 can be reached first because
+there is a direct edge, right.
+Once we have reached nodes 2 and 4,
+then we try to visit the next set of nodes
+which are reachable within two edges.
+So from node 2 we can reach node 3,
+and from 4 we can reach node 5.
+So essentially, your traversals goes
+by level by level, starting with 1.
+We first go to 2, 4, and then 3, 5, okay.
+The order within level
+is not really dictated.
+You can visit them in any order.
+The second algorithm is Depth
+first search, and in this case,
+we essentially follow one path till we
+hit a dead end and then trace back.
+Something, you know,
+you might have experienced in
+solving a maze kind of puzzle, okay.
+So, let's say we start with node 1, and
+let's suppose we go down node 2,
+the first edge.
+Then once we added node 2,
+we might visit something whichever by 2,
+which might be node 3 or node 4.
+Let's suppose you have end down node 3,
+right, and node 3 is a dead end.
+We can't go anywhere further,
+so we go back to node 2, and
+we say is there anywhere
+else we can reach?
+And we see node 4 right,
+and then we continue on and
+from 4 we can reach 5 and
+then we backtrack, okay.
+So the order is different.
+So again give you the visual contrast,
+let's compare these two
+algorithms iteration by
+iteration in the order of visit.
+So suppose we started with node 1.
+In the first iteration both algorithms
+may go to a common node, right,
+which is node 2,
+because those are reachable by one edge.
+But in the next iteration you
+start to see the difference.
+The, the Breadth first search goes to node
+4 which is one edge away, it prefers that,
+whereas Depth first search is now going
+to node 3, which may be two edges away.
+And then subsequent iteration again
+you will see the behavior change, and
+you essentially see some
+differences between the two.
+So with this we'll wrap up
+the discussion of basic introduction to
+query processing and
+also algorithms for connectivity query.
+When we come back in the next video,
+we'll look at two algorithms for
+shortest pathway.
+Thank you, looking forward
+to seeing you soon [SOUND].
+

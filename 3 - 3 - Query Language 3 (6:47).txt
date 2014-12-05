@@ -1,0 +1,192 @@
+Welcome back to the module
+of Spacial Query Languages.
+So far you have seen two videos.
+The first talked about the notion of
+queries and the notion of query languages.
+The second one introduced you to a very
+simple database with three tables,
+countries rivers and cities.
+And it also talked about the big picture
+of SQL showing you three modules.
+Data definition language, and
+data manipulation language, and
+data control language.
+In this video we are going
+to go inside those modules.
+So we'll help you look inside data
+definition language particularly create
+table statement.
+So, at the end of this
+module you should be able to
+know how a table is defined, okay?
+We'll also delve inside data manipulation
+language and look at the insert statement.
+Using which we populate a,
+a table which is already in place, okay?
+So, without further ado
+let's look inside that.
+In order to define the table
+we use Create Table Statement.
+At the bottom of this slide
+you see an example, okay?
+So when you see this create table,
+you first see the name River.
+So this is creating a table
+with the name River.
+And then it is listing all
+the columns of this table.
+In this case you see the columns NAME,
+Origin, Length, and Shape.
+So this table has four columns.
+With each column,
+we also specify the data type.
+So Name, for example,
+the data type is String.
+And in SQL, it is a variable length,
+character string, short-form varchar.
+And 30 tells you the maximum length.
+So the name can have up to 30 characters.
+Origins is similar.
+The Length is just a number, so
+there is a unit implicit,
+maybe in miles or kilometers.
+And then Shape is our
+geographic data type.
+So as we discussed before,
+this may be essentially a line string,
+which is a sequence of straight lines.
+And it may designate the center
+line of forever, okay.
+So that explanation is
+provided in this text.
+Again, the keywords are Create Table.
+They're both keywords.
+They have to be used as it is.
+And then it is followed by the table name,
+then in between parenthesis.
+We list the column names and
+their data types.
+So, once this statement is executed,
+then we have an empty table with
+specified number of columns.
+Now, in case we decided that this
+table should have an extra column, or
+maybe one less column.
+Then in order to change the table schema,
+we can use the alter statement.
+So we are not going to show
+you the details of the syntax.
+But it is very similar, you can go and
+rename a particular column, or
+change the data type in the schema,
+and so on, okay?
+Another data definition language
+statement, is Drop Table.
+So, for some reason, if a table is
+obsolete and we don't need it anymore,
+then we can remove it from the database
+scheme by using Drop Table.
+Usually the database will
+expect the table to be empty.
+So if this table has any data it
+will expect you to clean that out
+before we drop the table, okay.
+So most organizations have a special
+role called Database Administrator.
+And usually the schema modification,
+either by adding table,
+or dropping table, or changing
+table definitions are restricted to
+people with enough data privilege and
+that often is the Database Administrator.
+But let's continue on.
+Let's assume that we do have a table and
+when create table ends.
+There is a table, but it's empty.
+There is no data in it.
+All we have is a definition of it's
+schema, how many columns and data types.
+If we want to populate the table, then we
+have to go to Data Manipulation Language.
+And one common statement with which we
+add a single row at a time, is insert.
+So, this slide,
+we are showing you the insert statement.
+Again, there are two keywords,
+Insert Into.
+Then we name the table.
+In this case, that table is River table.
+Now, when when we insert a row,
+we have two choices.
+Okay, we can specify data for
+every column in this table.
+So let's say, if this table has three
+columns, you could specify data for
+each one of them.
+So here we are saying for the name column,
+this row should have Mississippi.
+For the origin column the value should be
+USA, and the length is 6,000 Kilometers.
+But if we don't have data for the columns,
+we can leave a few columns unspecified,
+and this statement will essentially put
+the undefined value in there, okay?
+So again, it is explaining
+the meaning of this insert statement.
+There are two keywords, Insert Into, then
+you specify table names such as River.
+Then you specify the set of columns for
+which the data is going to be provided.
+And then another keyword, values, and
+then another sort of parenthesis
+to specify values, okay?
+Now adding data one row at a time,
+you know, gets us started.
+But there are situations
+where we need to insert many,
+many rows at the same time, okay?
+And then we have two choices.
+Either we can write one insert statement,
+you know the kind we saw before for
+each row.
+So if you have five or ten rows, it's
+still a reasonable task, one can do that.
+But if you know in databases
+often we insert thousands or
+even millions of rows at a time.
+And in those cases this writing so
+many insert statement is tedious, and
+it also becomes performance overhead.
+So databases provide other
+facilities to insert bulk rows.
+One of which is, you can use
+a SELECT statement with the INTO
+clause to load a set of rows
+from one table to the other.
+Our databases also provide bulk load
+utilities which are often outside SQL.
+They run as a command on your
+operating system script and, and
+then another related statement is delete.
+So once we have populated the table, but
+we decide that certain rows are obsolete,
+we don't need them.
+Then delete statement
+allows you to remove them.
+You also have an update
+statement which can go and
+change just a few columns within a row,
+okay?
+So this gives us a, a quick,
+overview of ways to create a table and
+populate a table in SQL.
+When we come back, we are going
+to delve more into querying part.
+So we assume a table is created.
+It has been populated with relevant data,
+and then we are going to work with
+Select statement, to extract
+interesting subsets of these rows.
+And those are what are called queries.
+[SOUND]
+

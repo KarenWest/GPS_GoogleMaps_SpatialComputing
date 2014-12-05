@@ -1,0 +1,703 @@
+So looking ahead next,
+five to seven years.
+>> What do you think will be the biggest
+development in spatial computing?
+>> What do you see as the future
+of GIS and spatial computing?
+>> Where do you think this field is going?
+What do you think will be the biggest
+development in spatial computing?
+>> What do you think is
+the future of spatial computing?
+I think the most interesting thing
+in special committees is there's no
+one thing that's future directional.
+You know, if it's just one thing,
+it would be very [INAUDIBLE] but
+now it becomes kind of an ecosystem.
+So what I always see here.
+This is real stuff if you
+want to do applications.
+You know, there's lots of people
+in geography and GIS domain.
+There are a lot of applications.
+So geographic data and
+analysis, that's a huge thing.
+However, you can go lower in the stick.
+Lower in the stick if you,
+very low in the stick like,
+what will inform a producer environment,
+supporting big special data.
+In between this tool, which is,
+you know using as their visualization
+even just kind of the managing vehicle
+to vehicle there are many things here,
+so it's kind of an equal system thing.
+Not to define one thing.
+>> Wonderful.
+>> And then I think the difference
+between special computing now and
+special computing ten or 15 years ago.
+>> Huh.
+>> Ten or
+15 years ago there were very few people
+actually addressing different issues other
+than applications.
+Now it's more of an ecosystem thing.
+>> I think when, when I think about it.
+In a very very generic way.
+I think, like, you know to, to go more on.
+To, to kind of, like, expand more
+on this changing graph paradigm.
+People are collecting data everywhere.
+And, you know, like, you know?
+If you use you know,
+an online navigation system.
+Like, and everybody's, like, saying that,
+okay, fine, don't take this road,
+because it's congested.
+And, you know, like,
+this is the travel time.
+And, you know?
+So, and, and big companies like na,
+Nokia is, like, putting data out there,
+so that is a lot of data coming in.
+>> Okay.
+>> And so we need to somehow
+incorporate this into our computations
+to make computations more meaningful.
+>> Okay.
+>> And so
+I think we need to have a mechanism to
+somehow use this data meaningfully, but
+at the same time, it's the volume is
+like growing, like, so drastically.
+So we need to somehow make
+the computations efficient, so
+I think big data is here.
+You know, so that.
+I think that, that is going to sort of,
+like, creep in everywhere.
+So we need to explore that.
+And how we can actually incorporate.
+The big data analytics internet work
+computation which is not that easy.
+>> Okay.
+>> Because networks are not
+that easily partitioned.
+>> Okay.
+>> Insensibly.
+So we need to figure out how to
+partition networks so you know?
+Sensible so that we don't have too much
+communication going on between the nodes.
+>> Okay.
+>> And
+also that we don't sacrifice too much of.
+Accuracy.
+>> Yeah, okay.
+>> Mining is a different issue.
+Because I think mining, you know,
+as long you find out the trends it's okay.
+But with networks I know it's,
+it's still a tough problem.
+How to-
+>> Harder.
+>> That.
+So, and then also like we need
+to adapt our algorithms also to
+suit this big data paradigm.
+We need to figure out how to do that.
+And even if we don't move into that, you
+know, as the volume of the data increases.
+It is basically, and
+also even, just bringing in time
+kind of complicated everything.
+>> Explored the,
+the data volume, right, for
+each instance you may have
+a replication of the network, right?
+>> Yeah, yeah.
+And so, it is basically, I also like we
+cannot apply the old algorithm techniques.
+>> Okay, Okay.
+>> And most of the assumptions that
+we made with respect to the old
+algorithm design, cannot be applied
+when time comes in because most of
+the properties that we relied on to
+apply these techniques are breaking.
+>> Right.
+>> And, for example, I cannot use
+a dynamic program to find the best
+shortest path [INAUDIBLE] to answer
+the question, than to start.
+>> Oh, wow.
+So we did,
+you know,
+we did talk about Dijkstra and A-stars.
+>> Yes.
+>> So what happens to
+those when you add time?
+>> Because Dijkstra basically depends
+on a property called greedy property,
+which actually depends on
+a sub-optimal structure, you know,
+of the final solution, which breaks when.
+When we actually extend the shortest
+path question to when is
+the best time to start, so
+that I spend the least time on the road?
+You know so we are actually talking about
+optimizing it across on the graph and
+across time too so
+when that comes in the property doesn't,
+is not satisfied anymore so
+I cannot extend Dijkstra easily.
+>> You know that's,
+that's a really tough question.
+I guess there's a few things that I
+think will be really important and
+I think they,
+again I'm going to focus more on
+the widespread adoption
+of certain technologies.
+So again, for a long time people have been
+talking about the Internet of things.
+Things that are computationally,
+objects in the real world that
+are computationally they're hooked
+into the computational world.
+They have maybe active transmitters or
+passive sensors, so
+that we know their location.
+I mean, the obvious example, people lose
+their keys, they forget where objects are.
+Up to inventory management where you
+want to know what objects exist or
+what objects you have in stock,
+what objects you don't.
+And even in your refrigerator,
+you want to know what you're out of,
+what you need to get.
+again, ideas that have been around.
+The technology there exists in some
+prototype forms and in some places
+being deployed, but it's not widespread,
+I think that's going to be a huge thing.
+I think another humble
+thing is battery power,
+you know, if we all have our phones.
+But the location sensing
+technology drains batteries.
+>> I guess
+>> And charging batteries is a huge
+problem, and
+there's talk about batteries that
+are going to last days instead of hours.
+I think this is going to make
+a big difference as we want to
+hook all the world into
+the computational world.
+The physical world into the computational
+world including knowing locations
+of things.
+And I think that's going to be really
+important, we need better battery
+technology and
+processors that draw less power.
+And then I think the thing that I don't
+quite know how we're going to do this.
+But as we do that.
+The privacy challenges are going
+to become massively greater.
+Even than they are today.
+When the whole world is aware,
+the whole physical world is part of
+the computational infrastructure.
+The world knows where you are, and
+what you've been in proximity to and
+who you've been in proximity to.
+There's going to be a chance for
+great services, but
+how are we going to avoid ubiquitous
+nagging, ubiquitous advertisements,
+and ubiquitous surveillance, and
+yet still get benefits from it.
+So I think as we move
+forward the opportunity from
+just wide spread you know?
+Computational awareness of objects
+is going to be great, and yet
+the challenges that poses are going to
+have to be addressed through a combination
+of, you know, technical and social and
+policy innovations as we move forward.
+>> I think it I, my specialty is the GIS,
+and especially the algorithms and
+the joins and then but my group is
+the learning to data mining algorithms.
+>> Okay.
+>> So
+the first three years we do some modeling
+and algorithms about the special joins.
+Then next three years, we spend most of
+the time on data mining tools and limit.
+>> They are wonderful.
+Wonderful.
+You mentioned exposome.
+What is that, and what is its future.
+>> Exposome is the study of the effect of
+environmental factors on human health.
+So it could be very short time period for
+example, asthma, you
+patient exposed, in essence, like a smoker
+cigarette smoker and they got attacked.
+>> Yeah.
+>> Or exposure could be like,
+a very you know,
+long life period which is the cancer.
+>> Hmm.
+>> So, different time intervals will you
+know, patients monitoring are required
+and just started in 2006.
+This quite new field.
+And there is a lot of
+problems over measurement and
+in the modeling and algorithms.
+>> Yes wonderful.
+And when, you know last question.
+Most of us are used to having GPS on
+smart phones and the cars and so on.
+But your group and
+your neighbor in asthma policy.
+They were putting GPS on
+inhalers used by asthma patients.
+>> Right, right.
+>> So, do you see more use of GPS with
+sensors to monitor personal health and
+environmental health in coming years?
+>> Right.
+So, asthma patients
+recommended to carry inhalers.
+And also they use the peak
+flow labor gauge everyday.
+Those two are the main achromatic
+photos that patients need to carry.
+>> Okay.
+>> And so we developed in a sensors.
+>> Okay.
+>> That is very like a tiny,
+tiny microprocessor that
+is built in an inhaler.
+This is a kind of inhaler.
+The U.S. and U.A. patients use.
+>> Right.
+>> So we developed a small cap that
+actually come with this inhaler.
+Whenever the patients pushes the inhaler
+button we measure the time and location,
+and also the how long it actually pressed,
+so that doctors know
+in the patients is
+properly used in as well.
+So it can be used to the analysis of the,
+you know,
+location and time, export your time.
+At the same time, it can be used to,
+for the patient's training.
+>> Yeah, okay.
+Wonderful.
+>> And this data is going to
+be transported, you know,
+user's, the patient's mobile phone
+>> Okay.
+>> and then we store this one in
+the secure server so there for
+the, you know, data analysis later.
+>> Yeah, wonderful.
+So personal health may be a big area for
+spatial computing.
+Right, [CROSSTALK] it's,.
+>> Unequal farmers.
+>> Yeah.
+In a weak world, this is an individual
+account you know, [CROSSTALK] health care.
+>> Health care.
+Okay.
+>> So
+most of the doctors that are currently
+in surgeon and medical fields do that.
+They use the average
+of this sign on there,
+some of the symptoms average out with
+their idea, temperature and so on.
+Okay.
+>> And
+more likely people do it, the reaction.
+There are symptoms could vary
+based on the individual symptoms.
+So, this is the, what we want to do,
+provide the individual the care of
+[INAUDIBLE] has these symptoms.
+>> So, let me, let me just mention, too,
+because I think there are a lot of them.
+But I think two would be a good start
+first this idea of engaging the citizen
+with geographic information.
+I mentioned that it's having
+profound effects, and
+I think those effects have
+still to play themselves out.
+And when we talk about VGI, we usually
+think of a project like open street map.
+Where people are helping to create
+a map of the world by using
+their own GPS, or their own cell phone,
+or what have you.
+But that's using people
+to produce something that
+has been traditionally part of our lives.
+And what, what is really different is when
+you say, what are people really good at?
+What kinds of geographic information
+do they really harbor in their heads?
+And it's not information
+about latitude and
+longitude, it's information about places.
+And so I'm trying to explore the whole
+possibility of developing technology
+not around coordinates, and
+around space but around named places.
+Features on the earth's surface.
+People have huge repositories
+of information about places.
+I, you know that Seattle
+is known as a rainy place.
+>> Right.
+[LAUGH].
+>> That piece of knowledge
+doesn't fit within any GIS, and
+yet that sort of knowledge
+is enormously valuable.
+And we have huge resources of
+that knowledge in the human mind.
+So I'm interested in exploring in how we
+can release that knowledge and share it.
+So that's one.
+The second one is that we sometimes
+refer to GIS technology as the 83%.
+I see.
+[LAUGH]
+>> The 17.
+Let me put it the other way.
+The 17% technology.
+Because the average human spends seven,
+only 17% of their lives outdoors and
+83% of their lives indoors.
+And so I'm very interested in the
+possibility of an indoor version of GIS.
+>> Great.
+>> As GIS helps you navigate outdoors,
+I think it'll,
+should also help us navigate indoors.
+Believe it or not,
+there are actually people in this
+world who get lost in their own homes.
+[LAUGH] All of us get lost in large
+shopping centers, in complex airports,
+and yet
+our GIS technology doesn't work there.
+And doesn't give us very effective help.
+>> Wonderful.
+>> So I think one very definite
+growth direction is indoor GIS.
+Geared towards the 83% of our time that
+we spend indoors rather than
+the 17% that we spend outdoors.
+>> Well it's always hard to predict and
+two to five years is not very long.
+So I would not expect like, dramatic
+changes in the next two to five years.
+Maybe in ten to 15 years but
+not in two the, two to five years.
+I would assume though that we will end up
+with, from a mobile computing perspective,
+with much more useful apps.
+In terms of if you look at some of the
+problems that we're facing now with you
+know you name them Climate Change, energy,
+resources, I think there's a potential
+to use a lot of apps and sensors in order
+to steer people towards better behavior.
+So I'm thinking of, for example,
+an app that tracks your behavior in terms,
+in terms of energy efficiency and
+provides recommendations.
+How you can do better or
+how your energy behavior compares to
+other people like going a little
+bit into the geo gaming area that's
+where many things I think can
+be improved and will improve.
+So this is what I would expect for
+the years to come for
+the next couple years to come.
+>> So then you,
+you actually anticipated my next question.
+What do you think about the next
+ten to 15 years you know
+when you're an old man I'm middle aged?
+[LAUGH].
+>> I, I'll still consider
+myself middle aged then.
+[LAUGH].
+>> So we'll be, both be middle aged men.
+[LAUGH].
+>> Ten to 15 years.
+Well I'm, I'm giving you some ideas from,
+from my research perspective of course.
+But having been working with all
+this mobile eye tracking and,
+and new interaction devices,
+and Google Glass and
+stuff like that, I think,
+in the next ten to 15 years,
+I'm pretty sure that we can expect
+some brand new interaction modes.
+So, I mean, if I had to forecast, I would
+say that more, more people will be using,
+maybe not Google Glass, but,
+you know, similar devices.
+And I personally think at that
+time every mobile phone will
+have an iTracker integrated.
+So, you can actually use
+your eyes to you know,
+do simple things like click on boxes and
+stuff like that, but also that the,
+the system actually will,
+will record your face patterns.
+And based on the patterns, extract or get
+some information about what you want to do
+with the device, and maybe be supportive
+in supporting you during the spatial,
+temporal tasks that you're doing.
+So I think more interaction,
+more activity recognition from the system.
+Based on you know new technology such
+as eye trackers which nowadays are not
+really, I mean not even the Google Glass
+you have an eye tracker integrated, but
+I think that's a very
+useful interaction mold and
+of course other molds will improve too
+like audio communication to many people.
+Already working on hands
+free navigation systems and
+I'm pretty sure we'll have most of
+that stuff ready in ten to 15 years.
+>> One that I kind of see popping
+up is these analytics that
+are tailored towards very specific domain.
+And an example would be taking traditional
+analytic techniques such as hotspots and
+tailoring them to road networks or
+to arbitrary shapes,
+rings, polygons, different types of
+things that suit particular domains.
+So this is sort of another angle that
+actually is is, is coming in the future.
+>> It, it's very hard to predict.
+But you know if,
+if we take Google Earth right?
+And now we have tons of,
+tons of basic geo-information available.
+Of course, you know,
+this information needs to be up to date.
+I think, you know, this is a challenge
+because, you know, the data we need to
+handle and the datasets are getting
+more and more complex over time.
+And with that challenge, we add more and
+more extra, or
+so-called meta information, to that data.
+And, of course, same there,
+you know, with meta information.
+We, we need to you know, we need to
+keep that data sets up to date, right.
+We, we don't really, we just we need, we
+want to know okay, here's the supermarket.
+But of course we also want to know, okay,
+here you know this is the opening
+hours at the URL and this needs to
+be really updated all all the time so
+all the [INAUDIBLE] information.
+Needs to be updated constantly, and
+it also need to be coherent
+with other information.
+So the relationships between the data
+cells, between the meta-information
+the semantics, they also need
+to be worked, worked out well.
+I think this is a very,
+very challenging project that will keep us
+busy in the next two to five years.
+With that, I think you know,
+this is like behind the screen.
+But with that, because we had more and
+more information, it's also, you know,
+challenging how to adapt the interfaces
+to allow people to explore
+all this additional meta information that
+is beyond the pure spatial information.
+So we have just seen the method for like
+it was a major redesign of Google maps,
+and with pros and cons, I guess it
+will also be discussed in the coursed.
+But you know, it's, it's not just that we
+need to keep that information updated,
+we also need to adapt the UI,
+the user interface and
+allow people to explore you know,
+the benefits of the extra information.
+I think that's you know,
+maybe the challenges not YouTube.
+Five years, then, you know, ten to 15
+years, very very hard to, to predict,
+but, you know, this is what I learned
+in my first lesson at the university.
+I, I heard the phrase that 80%
+of all decisions in politics.
+And economy have a spatial component.
+And I think, you know, it,
+it's, it may well increase.
+So the importance of
+spatial information for
+a variety of disciplines and a variety
+of decisions will, will increase.
+And I guess we will, we will notice that,
+like, in ten, 15 years.
+So that, a lot of things.
+Are based on, on, on spatial data.
+But, you know, it's,
+it's hard to really predict what,
+what will go on what will,
+what will go on in ten, 15 years.
+>> For Minnesota again it's,
+it's expanding to I think
+all disciplines on campus.
+we're, we're certainly growing in
+some of the big data needs and
+those types of products.
+Projects but it's mostly other
+disciplines picking it up, and
+working collaboratively
+between multiple departments.
+>> Won, wonderful.
+So, you know,
+I have interesting analogy you know,
+and I was in undergraduate school earlier
+many campuses had a computer center which
+was a shared resource.
+>> Mm-hm.
+>> People who wanted to
+use big computing would come there for
+help.
+And then it slowly grew into a graduate
+program, and then departments, and
+now it's a very, very vibrant
+discipline [LAUGH] with large industry.
+>> Yeah.
+>> Do you see similar analogy with
+GIS Service Center that them do
+you see this pre cursor to becoming
+you know bigger things on campus?
+>> I, I do I think it, I think it will,
+I think that there's the idea of
+this spatial university where you
+integrate GIS remote sensing.
+Throughout much of the university and
+it will continue to grow and in a way we
+make use of a lot of other resources,
+such as the supercomputing center and
+other resources to do that.
+>> If you look at all the major
+problems facing society,
+food security, water security, energy.
+They all involve solutions that would
+require big role being played the spatial
+computing, because most of these problems
+involve data that are spatial in nature.
+You know, that goes with agriculture,
+with food, with water, with energy.
+And being able to understand these
+data sets and how they interplay,
+what is the interplay between food,
+water, and energy you really need to
+involved spatial computing technologies
+to be able to answer this.
+So I expect special computing to play
+a major role in advancing the major
+interests of the society as we go forward
+>> Okay, wonderful.
+But is it just an application of well
+known computer science technique,
+could you just take your classical
+data mining technique and
+run those on spacial later,
+will that do the job?
+Or do you need new computer science here?
+>> New computer science here,
+that's a very good question, and
+I often tell when I, I show what
+we're working on to, to the audience.
+To the student, and I often remind
+them that, here is a problem.
+If you, if you use textbook techniques,
+how far you can,
+can take these problems, and
+what you need, in addition, to go beyond.
+And I'll give you an example of
+something we just talked about earlier,
+of which was the detection of fire.
+And, and, and
+you saw that the we are able to sort of
+identify locations of fires on the globe.
+We are able to identify locations
+of insect damage on the globe using
+that analysis.
+Now if you tried to work on these
+problems using traditional techniques,
+you face a number of challenges.
+And yes these data search happen to be
+the, the events that you're looking for
+happen to be extremely rare to the extent
+that most locations thankfully,
+do not burn all the time.
+They, they, they burn very rarely.
+The other problem is that you
+do not have ground troops for
+most of these of in California
+they track fires very carefully.
+But if you're looking at Siberian forest
+there's hardly ground showed there.
+So if you want to do global coverage
+about what these events are,
+you have to build models that
+are work in absence of ground showed,
+that can work with highly
+skewed data search.
+They can take advantage of
+the special nature of the data and
+the tire, temporal nature of the of
+the phenomena, and most of the classical
+techniques that we discuss in our
+books and data mining courses.
+They're not incorporated for
+these special needs.
+So there's a tremendous need for, for
+novel techniques to be developed
+in the area of spatial computing.
+[SOUND]
+

@@ -1,0 +1,661 @@
+Welcome back to the discussion of spatial
+data mining.
+In the last two videos, we looked at the
+motivation of the example pattern family,
+the basic definition of
+spatial data mining, and then we also
+looked at
+the input: what the spatial data and
+relationship look like.
+With this we're going to get into the
+statistical foundations
+many of you may have taken a basic course
+in statistics
+or used some basic techniques like linear
+regression and maybe wondering
+why can't we just use the same statistic
+for spatial data.
+And many people still do do that.
+Okay?
+But we'll argue that, you know, if you're
+aware of this, you know, the unique
+properties of spatial data, you can use
+models which are more customized for this
+data.
+And can often be more effective, okay?
+So after this module, first, you know, we
+should
+be able to describe these simple concepts
+in spatial statistics.
+Concepts like spatial auto-correlation and
+you will very soon see why this concept is
+of, you know, a very central importance
+when we mine or analyze spatial data.
+We may introduce some other concepts like
+heterogeneity and edge effect as well.
+Now the spatial article relation has been
+discussed in many different ways, okay?
+In spatial statistics it's discussed in a
+more quantitive matter using numbers.
+But in the qualitative or descriptive
+geography it has
+been giving the status of first law of
+geography.
+So, again at the end of this module, you
+should know
+what the first law fo geography is and
+briefly describe it.
+And, essentially you know, the main point
+of all this in
+this video is to discuss the limitations
+of classical statistics and argue
+that if you're going to analyze spatial
+data, you should look at
+more customized methods from spatial
+statistics
+and then consequently data spatial mining.
+Okay so lets start with the, the you know,
+the overall picture.
+Why is traditional statistics not
+effective for spatial data?
+So formally you know, one can go back to
+one of the key assumptions in traditional
+statistic method.
+And talk about you know, whether it's
+reasonable for geography data or not.
+Okay?
+So this option is often called i.i.d.
+Okay, so, first i stands for independent,
+the second i stands for identical.
+Okay, so, whenever we are given a set of
+data, for example a, a
+list of disease location [INAUDIBLE] or
+crime reports.
+The classical statistics often will assume
+that
+these data samples are independent of each
+other.
+Okay.
+They don't interact and they came from
+identical population.
+Okay?
+Why did they do that?
+Okay?
+A main reason for this was the following,
+okay?
+Statistics started almost 400 years ago
+and back then, there were no computers.
+So, all the calculations had to be done by
+hand.
+And as you know, hand calculations can,
+you know, we let BDS
+and laborious with big data, so they had
+to keep it simple.
+And essentially the i.i.d assumption makes
+life very
+very easy, and you can do hand
+computation.
+In fact back in 1600's some of
+you probably know, when Pierson
+correlation coefficient
+was invented in Europe [INAUDIBLE] they
+hired
+a whole bunch of clerks in Madras, India.
+And that was their big calculation engine.
+So they had lots of people who could do
+this calculation for them.
+But, you know, as you know, human
+calculations
+are simple so they had to simplify the
+models.
+So in real world, i.i.d is not often
+observed.
+And, certainly, that is the case with
+spatial data.
+And I'm going to show you visual examples
+and other, you know, observations to
+confirm that, okay?
+So first thing to notice is that spatial
+data, when we were looking
+at the death locations in London, they
+were not independent of each other.
+If, let's say, you know, if I threw darts
+at the, you know,
+map of London, they were not going to
+represent the location of death, right?
+I mean, these deaths were related, they
+were all around the water pump, okay?
+So this is often in a
+quantified using this notion called
+spatial autocorrelation.
+So if you are not sure that your data has
+independence or not, you can go and
+compute some of these metrics and these
+metrics will
+quantitatively tell you whether that's the
+case or not.
+So we will talk about one such function
+called K-Function.
+And given a set of points it can tell you
+whether these points are
+independent of each other, they are
+spatially
+random, or they actually interact with
+each other.
+And there other such measures if you had a
+roster data or
+you know a neighborhood divided data you
+might use this other metric, okay?
+These kinds of things can also be used for
+computing Cross-Correlation.
+So suppose you are looking at two
+different types of
+points, locations of McDonald and
+locations of, let's say, Burger King,
+and you want to ask whether these
+locations are independent
+of each other or not, you can use cross
+K-Function, okay?
+Now even the second I the identical
+distribution is also you know, challenged
+in geography.
+And it's basically used you know, in terms
+of spatial heterogeneity.
+So you may have heard you know, sayings
+like
+the following, no to places on Earth are
+exactly alike.
+And that's essentially saying that you
+know
+the earth place to place things vary,
+okay?
+And this kind of a thinking is very, very
+common in areas like in agriculture or
+ecology, okay?
+If you think about, you know you want to
+bring some new plants to a new region
+of the world, let's say flower dies trying
+to grow you know, a newer idea of plant.
+They are not going to simply pick up the
+plan from Minnesota and
+say to them well, you know behave well in
+Florida.They are going to
+do a lot of local testing and to begin
+with them to try
+to pick a place, you know, plant from
+place which has similar climate, okay?
+So there is lot of heterogeneity.
+So let's take this argument further and I
+must first
+tell you that there has been a lot of
+intellectual development.
+So last 30, 40 years you know since
+computers became powerful this area of
+specialist statistics
+has blossomed and they have come up with
+many theories and I'm showing you three
+names here.
+We are going to use some ideas from point
+process theory which
+is develop for data sets which look like a
+set of point.
+So if you are thinking about locations of
+trees or locations of crimes
+or locations of deaths in cholera, you can
+use this kind of a theory.
+It has notions like complete spatial
+randomness,
+and you can essentially ask whether these
+points
+are independent of each other, or, they,
+you
+know, attract each other or repel each
+other.
+And they have metrics like a function.
+There are other theories, which you know,
+we are not going to indulge into, but just
+to mention, you know if you were looking
+at continuous phenomena, like rainfall,
+snow depth, or mining,
+there are theories from Geostatistics and
+they have
+methods like Radiogram, or Kriging, which
+is used for
+interpolation, and also trying to see the
+distance,
+you know, to which the spatial
+interactions happen, okay?
+And then finally if you're working with
+senseless kind of
+data or data that has been aggregated with
+a polygon
+due to privacy reason or other reasons,
+you might find
+yet another set of theory from lattice
+based statistics, okay?
+All right so with this let's go back to
+Spatial Autocorrelation.
+That's one of the core concepts we want
+you to learn in this video.
+Okay, so what is spatial autocorrelation?
+So let me first give you a visual example
+of that.
+So here is a map, you know, of that
+red line, which has been created using
+this i.i.d assumption.
+So what we did here, so this is an astral
+map, so imagine a set of pixels.
+For each pixel, we have given a color, so
+blue is low and red is high.
+But in this map, these colors are
+generated for a
+pixel, independently of the colors of all
+of the pixels, okay?
+And when you look at this map you can kind
+of see
+that it's a very grainy kind of map, you
+know it's almost like
+white noise, you know if you take your TV
+and pull out the
+cable, there is no signal in your TV, it
+may look like this.
+And try to ask yourself, how often do we
+see maps like this?
+And you know, chances are you will agree
+that not, not very often.
+Okay?
+Real maps, they look like this.
+So, I am showing you the real vegetation
+durability map for the same wet
+line near Lake [UNKNOWN] and you notice
+that you have lot of large smooth areas.
+Okay now there were some nearby things are
+similar.
+And one can quantify that as
+autocorrelation, okay?
+So autocorrelation essentially you know,
+whenever you
+see these long smooth areas, maps like
+on the right, then it is you
+know, intuitively it has spatial
+smoothness or autocorrelation.
+And it's violating the i.i.d assumption
+because the nearby pixels are similar.
+They are not independent, okay?
+We can quantify it and I'm going to show
+you K-Function very
+soon, which is one way to quantify this
+for the point data.
+And also, you know, many other people have
+observed it.
+You know, so [INAUDIBLE] made the
+statement back
+in late 60s, and this is what he said.
+And all things are related, but nearby
+things are more related than distant
+things.
+Okay?
+All things are related comes from ecology.
+Okay?
+And but this is the geography.
+It's saying nearby things are more similar
+than far away things.
+Okay?
+So, this has been given the statute of
+first law of geography.
+In other words, many people who have
+studied
+geography data, believe that this is the
+case, okay?
+All right so lets quantify it and see that
+you know, how you can compute it yourself.
+And we will take just one example called
+Ripley's K-Function which works for a
+point data set.
+So try to imagine you have a collection of
+locations of tree's or
+locations of cholera deaths or you know,
+or locations of crime and so on.
+So given this point, we want to
+ask whether these points are completely
+random.
+They're independent of each other or do
+they interact, okay?
+So here is the basic function called
+Ripley's K-Function.
+It has two parameters.
+You give it a data set and then you
+give it edge, which is radius or distance,
+okay?
+And it is essentially defined as follows.
+So, first you see this statistical called
+expectation, okay?
+And then you see a normalization function
+based
+on lambda which is the intensity of the
+event.
+Okay?
+So this expectation, you know, this is the
+way to understand it.
+So, what we basically do is, we take an
+arbitrary point.
+Okay?
+This is an arbitrary point.
+And you draw a circle of radius h around
+this point
+and then you count how many other points
+fall in that circle.
+Okay?
+So if you were looking at cholera
+deaths imagine drawing a circle around
+each cholera
+deaths location and use the radius hand
+count how many other points were within
+that.
+Okay?
+Once you have computed that for each point
+then you
+take an average and that sort of
+statistical expectation is.
+Now in this particular average, if these
+points were independent
+of each other, then they will be
+proportional to the
+area of the circle and then there, you
+know, you
+can essentially find their density or
+intensity to normalize it, okay?
+So here is a quick plot.
+So if the points were independent of each
+other, if it is complete spatial
+randomness, then
+the value of K-Function will be
+proportional to
+area of the circle or [UNKNOWN] h squared.
+x axis is edge radius of the circle.
+x axis is K-Function and it will grow as
+area of the circle.
+Okay?
+You can also do [UNKNOWN] simulation to
+put a standard deviation.
+So there will be a band around the area of
+the circle for complete spatial
+randomness, complete spatial randomness
+point, okay?
+Now, for your own data set, if you
+want to interpret its value, there are
+three cases.
+Okay, so we compare the K-Function for our
+data set with
+K-Function for complete spatial randomness
+and you can have three cases.
+One case the K-Function for our data site
+is
+very similar to data site for complete
+spatial randomness.
+So it may line up exactly on this, you
+know,
+red line or within the standard deviation
+band of that.
+And if that happens then you can say, well
+maybe points they are very similar to
+complete spatial randomness.
+But for real data sites, you know, other
+things happen.
+So here is sort of complete spatial
+randomness, the left map and
+in this case, your K-Function will track
+the area of the circle.
+But if your points like each other, they
+are clustered like this.
+Then, you are going to actually see that
+this K-Function will be above this.
+So, your K-Function will lie in this
+region.
+Until we're well above what is there for
+complete spatial randomness.
+And lo and behold, there is another set of
+pattern.
+You know, something like this.
+So if you see, for example, this pattern
+in a
+forest you can probably tell it's not an
+actual forest.
+Right?
+It's man, you know, planted.
+And in these cases these points actually
+are repelling each other.
+They're as far away from each other as
+possible
+and, in which case, your K-Function will
+be below.
+The file usually will be sitting in this
+region, okay?
+So this is one way to test whether you
+have spatial autocorrelation or not.
+If you get same value as complete
+spatial randomness, it means the points
+are independent.
+If you get higher value, it means the
+points like each other and they are
+clustered.
+You get lower value it means the points
+are repelling each other.
+You can use similar function to study
+the interaction between two different set
+of points.
+So again, remember the locations of Burger
+King and McDonald.
+And if I want to ask whether these two
+sets of points
+like each other or not I can change the
+function little bit.
+So here what we'll do is you know, you
+put a circle around McDonald and you count
+Burger Kings.
+Okay?
+And vice versa.
+You can put, you know, circle around
+Burger King, count McDonald.
+And again, if these two sets of points
+don't interact with
+each other, it will track, you know, this
+area of the circle.
+But if they interact with each other, you
+will have essentially higher or
+lower value, and that will give you a
+sense of the interaction between two.
+And using this you can actually find,
+you know, which pairs of things are
+interacting.
+So do you remember this pattern family of
+co-location?
+And in this, you know, we ask you which
+pairs of features are co-located.
+And we came up with these two features.
+So you can verify that using a Ripley's
+Cross K-Function.
+And if you plotted that for many pairs,
+this is what you will see.
+So here is the random pair.
+If the two point sets were not
+interacting, you see area of the circle.
+And you see some pairs are like that.
+Like dry tree and blue bird, their
+K-Functions are tracking that.
+But the two pairs that are retracted, like
+dry tree and fire and house and
+blue bird, notice their Cross K-Functions
+are
+well above the complete spatial random
+pairs, okay?
+Okay so, you know, the spatial article
+relation is the core concept in this
+module.
+If you remember that at the end of this
+module
+and course, then the course would have
+done its job.
+But there are other properties.
+The second main property is heterogeneity.
+As people say that, you know, what does
+well in agriculture in Minnesota may not
+do well in Texas or in Florida and
+people have to develop their own
+agricultural practices.
+And that's a way to think about the
+modeling.
+If you want to predict agricultural
+successes probably one
+should build slightly different models in
+Minnesota, Texas, and Florida.
+So then you use different features and so
+on, okay?
+So, so here is a way to illustrate why
+that is the case.
+And if you build only one model for an
+entire twin
+city or an entire United States that may
+not do very well.
+So here is one data set, it's also called
+Simpson's Paradox and so on.
+So, imagine doing a very simple linear
+regression kind of model.
+And you have some variable x on x-axis and
+y on y-axis.
+If you fit a single line, then this line
+will look like this.
+And it may tell you that as x increases y
+also increases.
+But notice that if I separate this data
+into two groups, the red group
+and blue group and you fit separate lines,
+then the slopes are actually negative.
+So within red group, as x increases, y
+decreases and within blue group, same
+things happen.
+So, this again basically telling you is
+that if your data doesn't come from
+a single population then fitting one model
+give you incorrect conclusion, certainly
+weaker conclusion.
+But if you can divide your data into
+homogeneous like a red and blue
+and fit you know, separate model, one to
+each group you will do better.
+So again in this case, you can imagine red
+being Florida, blue being, you know,
+Minnesota and so on.
+Kay?
+There is another issue in spatial datas in
+terms of statistics called edge effect.
+So let me illu, again illustrate it using
+a simple map.
+So here is a map, you know, this is from
+North Korea.
+And this was given to us by, you know,
+some of the
+people who wanted to see the, the power of
+spatial data mining.
+So in this map, you know, we were finding
+anomalous things.
+So the green and red polygons, they are
+agricultural fields, and
+the blue and black lines are
+transportation, river and road, okay?
+The green agricultural fields are those
+which are easily accessible by
+transportation.
+The red ones are not.
+So one way we define anomaly here are
+agricultural fields which are not easily
+accessible by transportation.
+So you see a red one here, you some some
+red in the center, some here, okay?
+But you know we had more confidence in
+declaring
+this the red polygons in the center to be
+anomalies.
+We had much less confidence in declaring
+the ones on the edge to be anomaly.
+And again, pause your video for a few
+seconds
+here and ask yourself why is that the
+case?
+If you have again stared at maps quite a
+bit, you will come to realize
+that, in fact, know there is data on the
+other side which is missing, okay?
+This data was given to us for only a
+reason, but these edges are artificial.
+There is data on the other side.
+It's just that we don't have it.
+So it is possible that this red polygon is
+accessible
+by Arona River, which is just outside the
+study area.
+So in other words, in case of geographic
+data, the center and edge have special
+config meaning.
+And your conclusions are more robust in
+the center, they're less
+robust around the edge because you're
+missing the context around the edge.
+Kay?
+So hopefully this gives you a feel for
+some of
+the statistical issues like spatial
+auto correlation, heterogeneity, and edge
+effect.
+So we'll try to wrap up the discussion by
+quickly telling you that
+you know, spatial statistics has come into
+its own in last couple of decades.
+You know, they needed lot of compute
+power.
+Spatial statistical models are hard to
+compute by hand and
+that's why they had to wait till computers
+became powerful enough.
+But beginning 1980, you see a lot of
+growth in that.
+And now computers are powerful enough for
+you to enjoy that.
+There are many theories.
+For point data, you can use point process
+theory, and so on.
+And this is a live field, it is still
+growing.
+Particularly areas like spatial-temporal,
+you know, the theories are still growing.
+There's some new books that are coming
+out.
+And if your data is again embedded in a
+street network, like
+crime reports which has street addresses,
+the type of statistics is still growing.
+So it's a live field.
+More theories are coming in but you can
+certainly
+take advantage of the current theories
+that are around.
+And informally at least three concepts we
+should carry.
+Spatial auto correlation for sure, and
+it's easy for you to see even
+visually when you see things cluster in
+space or you see smoothness in space.
+You will see auto correlattion.
+And if you can go beyond that,
+then heterogeneity energy effect may also
+be interested.
+So with this we'll wrap up the discussion
+of spatial statistics.
+And, when we come back we'll start looking
+at individual pattern families and, try
+to introduce models which take advantage
+of
+spatial and statistical ideas like auto
+correlation.
+[BLANK_AUDIO]
+

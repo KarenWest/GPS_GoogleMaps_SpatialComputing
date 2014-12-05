@@ -1,0 +1,545 @@
+Hey folks.
+Welcome back to
+the spatial computing MOOC.
+My job in this video is to go
+over the course structure.
+And the first thing in this video, you'll
+notice, is a Learning Objectives slide.
+You'll see this slide
+in most of our videos.
+It'll give you an understanding of what
+you're going to learn in the video and
+what you're going to learn
+in the module overall.
+So in this video we have number
+of different learning objectives.
+First we want you're going to,
+by the end of this video know what
+to expect each week in the course, so
+both in terms of content and structure.
+Next, this video will help you choose
+your track, if you read the syllabus and
+the read me first, which I highly
+recommend doing you'll see that
+there are three tracks in this course.
+We'll go over what each track consists of,
+and help you choose the,
+the right track for your needs.
+And by the end of this video you
+will understand the course rules.
+There are several, for instance we're not
+going to allow any late problem sets.
+And finally by the end of this video
+you should know what's going to roughly
+happen each week.
+So you'll be able to plan your schedule
+accordingly and work towards a suc,
+the successful completion of this course.
+Okay, speaking of course
+schedule some basics.
+As you probably know we started
+on Tuesday, September 22nd.
+We'll end Monday November 17th.
+So this an eight week course, it's not
+a full semester, it's half a semester.
+In that, in those eight weeks,
+we'll have eight modules.
+One per week each module is going
+to be quite self-contained.
+And if you do want to know
+more about Spatial Computing,
+do come study with us at
+the University of Minnesota.
+We have a number of different courses
+that will be of interest to you if you
+like this MOOC.
+Okay, what's happening in each module?
+Well each module is going to consist
+of a number of different things.
+First and if you've taken them
+before this will be quite obvious.
+There will be a number of lecture videos,
+this will range from maybe just two to
+three videos to many more than that.
+You shouldn't see more than two hours or
+so of course video per module.
+Each module will also have mandatory,
+excuse me, mandatory course readings.
+We will rely on you to independently
+go to the readings websites which I'll
+show you in a bit,
+download the readings, read them.
+They will be included in your problem set,
+so
+you'll definitely want to
+make sure you do that.
+Speaking of problems sets,
+you'll have one to two each week
+depending on the track you choose and for
+those of you in the technical track there
+will also be four assignments in total.
+Okay.
+Each module's going to have
+a very consistent schedule, so
+you will know what to expect.
+The modules begin at Midnight our
+time here in Minnesota on Tuesdays.
+The modules, the modules end all, as you
+might guess, at 11:59 p.m on Mondays.
+And once more, I want to reiterate,
+all times refer to.
+By the time here in Minnesota.
+During the course of this MOOC.
+Unfortunately we have a little bit
+of a time a point of confusion.
+In the United States here we celebrate
+something called Daylight Savings Time.
+That means that Minnesota time actually
+shifts while the MOOC is running.
+Before November 2nd, we'll be UTC minus 5.
+After November 2nd, we'll be UTC minus 6.
+So the last couple of
+modules in this course.
+Unfortunately for many of you,
+effectively in a different time zone.
+Now the good news is that if you use
+Cousera software to set your time zone,
+you shouldn't have to
+worry about any of this.
+So, it should tell you when things
+are due according to your local time.
+So that's the good news.
+Okay.
+Moving onto module topics.
+Again, we'll have eight modules, the first
+one which is the one we're in right now,
+is the introduction module, I'm, Dr.
+Shekhar and I both teaching this one.
+In week two, you'll get a,
+a wonderful lecture and
+a wonderful set of materials on
+spatial query languages from Dr.
+Shekhar, so this is learning
+about how to access spatial data.
+It is, you know, laying the foundation for
+many of the other things that
+we'll learn in the course.
+Week 3 is spatial networks so
+think routing and location based services.
+So, for instance,
+how can I design a system to find
+the nearest pizza parlors to where I am?
+Or understand the systems that I
+use that do that functionality.
+Week four, spatial data mining,
+so you heard Dr.
+Shekhar mention the famous
+example in public health.
+The Doctor John Snow in England doing,
+doing effectively rudimentary 1800
+style hot, hot spot detection.
+Dr. Shekhar will show you how to do
+that in a much more advanced way and
+in a much more automated way, as well
+as cover other topics in week four.
+Starting in week five you'll
+see me show up again.
+I'm going to give you a lecture about
+volunteered geographic information.
+This is a fundamental
+change in the type of data,
+that we typically consider in spacial
+computing so this is a fun lecture.
+On week 6, we'll do a module on
+positioning, so understanding, for
+instance, how your smartphone
+knows where you are.
+On week seven, we'll do cartography and
+geographic human-computer interaction, so
+this is everything from making traditional
+maps to making more interactive maps.
+And then lastly this
+is going to a fun one,
+we'll talk, we'll cover future
+directions in spatial computing.
+So we'll talk about where we think things
+are going, in the next five to ten years.
+And then the course will be over.
+Okay, group and individual work.
+For the most part, we are going to want
+you to work individually in this course.
+Feel free to of course to study in groups.
+Coursera does have a number of them.
+Facilities to help you out with that,
+I'll talk about that in a second.
+All your problem sets, we expect that
+you will do these individually in
+accordance with Coursera's
+honor honor code.
+The technical track only for
+those using the technical track
+all assignments are going to be done
+individually, just like the problem sets.
+And do see the syllabus for
+more information about a degroup and
+individual work policy.
+Okay.
+Just to give you a,
+a little bit of perspective here.
+I know these things vary across the world.
+But here in the United States,
+we generally do take plagiarism and
+copying, and these types of things,
+quite seriously.
+In fact, as we were recording this,
+this module, a senator decided to
+quit his Senate race because he copied
+some stuff from his graduate thesis.
+And that was discovered, and
+this was such a big shame that he had
+to quit, his big race for the senate.
+So we do take these things kind of pretty
+seriously here in the United States.
+Okay.
+The course has three tracks.
+And we're going to go through these
+tracks and, you're goal by the end
+of the discussion here is to figure
+out which track you want to take.
+So the first track is the curiosity track.
+Now this one's pretty simple.
+It's targeted at people who
+want to learn about one or
+more spatial computing topics but
+not the whole thing, right,
+you don't want to commit to
+the whole eight week course.
+And for this track, of course,
+no certificate can be given.
+But you'll, of course,
+get all the knowledge that you gain from
+participating in the modules and watching
+the videos and so on and so forth.
+We have no prereqs for this, right.
+?
+We'll, prerequisites, excuse me,
+we'll let you figure out what you can
+do and, and I encourage you to do it.
+Now the next track is what
+we call the concepts track.
+And in this track we're expecting folks.
+Who want to be able to make informed
+spatial computing decisions, maybe
+understand what other folks who are more
+technical in their company are doing or
+just curious about how all these cool
+new spatial computing technologies work.
+And these are the folks we expect to be in
+this track that will give a statement of
+accomplishment if you
+successfully complete the track,
+I'll talk about grading a bit in a little.
+And we do have a few prerequisites here.
+Primarily that you have some
+familiarity with online maps.
+Or some familiarity with
+spacial computing in general.
+Nothing serious at all,
+just that you, you know,
+know what, know what's going
+on when you do online routing.
+These types of things.
+Or excuse me.
+You've participated in that,
+you don't need to know what's going on.
+We'll teach you what's going on.
+And the time per week for
+this one is, is pretty limited,
+it's just two to four hours per week.
+That's what we expect folks who
+participate in the concept track to have
+to commit this course to
+successfully complete it.
+Okay, the final track
+is the technical track.
+This is targeted at people with
+a programming and a math background.
+Not a very, you don't have to be a,
+you know, a PhD computer scientist, but
+we do expect a little bit of
+programming and math experience.
+You'll have programming assignments
+on top of your problem sets.
+We'll give you a distinguished
+statement of accomplishment.
+And we do have some prerequisites here and
+that is we want you to have some
+experience with Java most of
+the assignments will be in Java and
+a little web design experience as well.
+And you'll need to have some roughly
+pre calculus level math as well as
+some basic statistics.
+There's going to be a little
+more work in technical track,
+an additional two to three hours, not too
+much but definitely a little more and
+I do want to alert you to
+the fact this this is an average.
+So, some weeks you might have
+maybe four to six more four to
+six more hours of work.
+Other weeks you'll have no additional work
+at all relative to the concepts track.
+Okay.
+Let's talk about course deliverables,
+so for the concepts track
+students you'll have a very
+clear deliverable each week and
+that is a single problem set.
+So you'll know that if you want to
+complete the concepts track,
+you can plan for
+a single problem set each week.
+Nothing more, and nothing less.
+For the technical track students it
+gets a little bit more complicated.
+Some weeks you're going to have
+an additional problem set on top of
+the concepts track problem set.
+So you'll be required to do
+both of these problem sets.
+And again in some weeks you'll also
+have a hands on assignment as well.
+So, which track should you choose?
+Well, and this is of course up to you
+entirely but I'm guessing it's going to
+be your decision it's going to be some
+function of the following factors.
+One is the amount of
+time you have available.
+If you don't have the additional hours
+to spend on the technical track.
+Assignments and problem sets don't worry
+about it, just do the concepts track.
+Also your existing knowledge base and
+skill set's going to figure in here,
+right?
+If you don't have any
+experience programming,
+we really recommend that you
+don't try the technical track.
+You don't need a ton of programming
+experience but you do need some.
+You'll have to decide how
+much you want a certificate.
+If you don't want a certificate,
+just and you're interested in only
+four of the modules,
+just participate in four of the modules.
+No harm done at all and
+we'll be glad to to have you and
+have you participate in the discussion and
+so on and so forth.
+The computer you have
+available will matter,
+I'll talk more about that in a second,
+and then, you'll have of
+course some other individual factors
+that may figure into your decision.
+Okay, speaking of computers,
+we do have some system requirements for
+this, this course, and
+for the full details,
+I'm actually going to refer you to the
+syllabus and the readme first document.
+But we'll just go over a couple
+of high level points here.
+For the con, the curiosity and concept
+track, there are no system requirements,
+this is just for the technical track.
+So, if you are on the curiosity and
+concepts track, you are doing,
+you are doing fine.
+Don't worry about it you just need
+to run the coursera software.
+For the technical track we
+do have some requirements.
+So, for instance, you have to have some,
+an IDE,
+an Integrated Development Environment or
+some other way of running Java
+software and so on and so forth.
+We have attempted to make
+assignments as accessible as
+possible to a wide range of platforms.
+We are not going to require
+anything ridiculous, right?
+We are not going to require for
+instance that you have your own
+Android smartphone or iOS smartphone.
+That's not on the table we
+do however expect that you
+have some reasonable computing device and
+you can read more details on the website.
+I do want to point out that it,
+it's your responsibility to install
+the appropriate software and
+make it, make sure it's working,
+we'll help you through the process.
+But it is your responsibility
+we unfortunately can't
+provide individual technical,
+technical support.
+There's some, you know, big problem
+some platform change, you know,
+these types of things we'll,
+of course help you all out with that.
+But if its an individual problem,
+unfortunately we can't help you.
+And we,
+we actually can't give extra time or
+make-up points or these types
+of things for technical issues.
+Okay.
+Let's talk grading there are two parallel
+points systems, and as you might guess.
+There are, there's a point system for
+the concept track and there's a point
+system for the technical track.
+Concept track points can only come
+from concept track problem sets,
+as you might guess.
+And the technical track points only come
+from technical track problem sets and
+technical track assignments.
+Now, if you're in the concept track,
+super easy to understand,
+right just do well on your problem sets.
+If you're on the technical track, we do
+expect you to pass the concepts track.
+So I'll talk about what
+passing means in a second,
+as well as pass the technical track
+in terms of the number of points.
+Okay.
+Speaking of which, for
+the concepts track certificate,
+we'll expect that you get
+50% of concept track points.
+Our goal here isn't to make this
+very very difficult on you, right.
+Our goal is to.
+Help you learn.
+And so we don't want to make you get,
+you know, 99% of points.
+Just 50% of points is all
+we're going to require.
+And for
+the Technical Track Distinguished"Cert,
+Certificate you'll also have to
+get 50% of Technical Track points.
+And this is a critical point.
+If for some reason, you know,
+you can't figure out an assignment.
+Or you struggle with a number of
+the Technical Track problem sets.
+But you do well on
+the the Concept Track problem sets,
+we'll still give you a,
+a regular certificate.
+If you fail the technical track so,
+not all will be lost.
+A couple of final points about
+grading unfortunately we
+cannot accept any late problem sets or
+assignments, so
+you'll really have to pay
+attention to those time zones.
+Make sure you turn in your problem sets
+and assignments before they're due.
+Now Sasha and
+I were students so long ago so
+we do recall that,
+that sometimes life intervenes, right?
+Sometimes you have a family issue
+sometimes you have to do, you know,
+work for another class which has,
+you know, assigned you tons and
+tons of work, these types of things.
+So we actually will forgive
+the lowest the grade you
+have on a problem set in each track.
+so, if you do need to skip one
+of the problem sets you can
+do that without a penalty one time.
+Okay, the last point is that all insi,
+all assignments are required, so
+this forgiveness policy does
+not apply to assignments.
+All right, some recipes for
+success in this course.
+We really recommend that you watch
+the videos early in the week, so
+the module will open on Tuesday
+watch the videos on Tuesday or
+Wednesday, you know, get,
+get your mind around the material,.
+Allow yourself some time to ask
+questions in the discussion forum,
+these types of things.
+Don't leave the problem sets until the
+very last minute, I think most of you who
+have been students before know that's,
+that, that's always a recipe for failure.
+So please do try to do those earlier
+again we cannot accept late problem sets.
+And then lastly, please do make use of the
+discussion forum on the Coursera website
+on the left hand side of the website
+you'll see a link to the discussion forum.
+In many MOOCs this is a wonderful
+community with all sorts of
+folks asking questions,
+you'll get answers from your classmates,
+you'll get answers from
+a TA we have who will be.
+Quite active in the forum, and Dr.
+Shekhar and I will both
+participate in the forum as well.
+Okay.
+Last things, a couple of last things
+here do look at the read me first and
+the syllabus on the course website.
+You can see the links here do
+read those there's a lot of
+important information in there.
+I've covered a subset of it in this video,
+but make sure you read those as well.
+There is a separate reading website,
+here is the URL.
+Of course, there will be,
+there will be a link on the,
+the coursera web page as well.
+This is where you're going to get you
+know, get the links to the weekly
+readings which are going to required and
+will be covered on the problem sets.
+We'll also point out cool resources
+Perhaps some cool software for those in
+the, those of you in the technical track,
+current events, these types of things.
+The discussion forum which we mentioned,
+there is the link.
+And social media we will have
+a limited social media presence.
+In particular through our Twitter account.
+I'm @spatialcompmooc.
+For those of who or in a couple week,
+you'll take a look at the volunteer
+geographic information lecture.
+This Twitter account plays a key role in
+that lecture which should get you excited.
+It's a fun one.
+And that's about it.
+

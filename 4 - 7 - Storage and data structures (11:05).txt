@@ -1,0 +1,345 @@
+Welcome back to the discussion
+of spatial networks.
+In previous few videos, we looked at the
+motivation for spatial network in terms of
+location based queries in urban areas
+where transportation networks and
+roadmap constraint our day to day movement
+then we went you know, under the hood.
+We looked at conceptual data models
+including intraday relationship diagrams.
+As well as graphs.
+We also looked at logical data models,
+particularly query languages.
+How we added new statements,
+like connect with and
+with recursive to query graphs for
+connectivity of shortest path.
+Now we are going to go even
+closer to the computer platform.
+In, in the terms of
+physical data model and
+look at data structures and algorithms.
+So this particular video will
+focus on data structures, and
+after this particular video, we should
+be able to list at least a couple of
+common data structures representing
+graphs in main memory.
+We should also be familiar with
+a couple of file structures which
+represent graphs on disks.
+And possibly compare them, okay?
+So again, here is the big picture.
+Remember, we talked about conceptual
+data models such as graphs and
+entity relationship diagrams.
+Logical data model, query languages.
+And now we are really going
+into physical data model,
+very close to implementation
+in performance.
+And the goal is to look
+at storage structure.
+Next video we'll come back and
+look at algorithms, okay?
+So without further ado,
+let's look at a simple graph which is
+shown on the bottom left and
+if you remember, there are six nodes.
+1, 2, I'm sorry, 5 nodes.
+1, 2, 3, 4, and 5.
+And there are six edges.
+So for example, node 1, from there we can
+go to 2, from 2 we can go to 3, and so
+on, okay?
+So if we were to represent this in main
+memory using simple data structures,
+there are two common representations.
+The first is based on matrices.
+And you may have come across
+matrices also in mathematics.
+And in this case we won't need
+to define rows and columns.
+So for this particular graph a simple
+representation uses nodes for
+both rows and for columns.
+So here is a matrix which has five rows,
+one, sorry five columns one per node and
+five rows.
+1 per node.
+Okay?
+To represent edges,
+we can use matrix entries.
+So if you think about this entry 1, this
+may represent an edge from node 1 to 2.
+So this edge 1 to 2 is repre,
+represented as matrix entry in first row,
+second column.
+Okay?
+More abstractly.
+If we look at an entry in row A and
+column B,
+this will be one only if we have
+an edge from node A to node B.
+Okay.
+If it is 0 means there is no edge, okay?
+So using this we can represent
+the information and you can yet you know,
+also query.
+If I want to know all the edges
+that are going out of a node.
+Then we could look for a particular row.
+So for example first row shows me all
+the edges going out of node 1, okay?
+If I want to know about all
+the edges which are incident,
+which are incoming to a particular node,
+we'll look at columns.
+So for example first column, shows you all
+the edges which are coming into node 1.
+So in other words there is only one edge.
+From 5 to 1.
+That is incident on one, okay?
+And once you have this representation
+you can use matrix algorithms.
+So if you remember some of
+your matrix operations,
+such as matrix multiplication we
+can form that repeatedly again and
+again and again to get
+connectivity kind of information.
+Now in, computer science, there is another
+very common representation which is
+based on our adjacency list.
+So if you have programmed references or
+pointers in languages like JAVA,
+C++ or C, people often
+use that kind of representation to
+make an adjacency list data structure.
+And which may look like this, so here you
+notice the list is a list of nodes, so
+all five nodes are in a list, maybe node 1
+is first, node 2 is second and so on, and
+then with each of this nodes we attached,
+ere, a list of.
+Successive nodes, okay?
+In other words if you,
+let's say you are standing at node 1 there
+are two outgoing edges to node 4 and 2.
+So four and two are successors and
+they are listed, you know,
+just after one to represent the two edges.
+The edge from node 1 to 2 and
+the edge from 1 to 4 okay?
+This kind of data structure is often,
+agin useful to,
+to find out all the successors or
+predecessors of a particular node okay.
+In this case successors are easier.
+Predecessor is a little bit harder but
+you can do that okay good.
+So this is the life in main memory and
+many of you may have take other
+computer science courses or
+done programming er, you know.
+Code in Java and so
+on where you use this data structure.
+When you go to disk,
+the story changes a little bit.
+On disk we often think in terms of tables.
+And in terms of disk blocks.
+So let's first look at a table
+representation of this graph.
+In the traditional relational databases,
+people often use normalized tables.
+Where each sell is an atomic value.
+And if we were to adhere to that kind of
+a representation, we will need two tables.
+We may have a table for nodes,
+and another table for edges.
+The node table may have node ID as well
+as more node properties at this location.
+The edge table, again,
+may have the start node end node for
+the edge, and then edge length or
+other properties, okay?
+Now oftentimes, the shortest fat
+algorithms are run in a specialized
+environment outside databases, and
+they prefer a denormalized representation.
+And in this case,
+we actually merged the two tables into one
+because we know that often times when we
+are at a node in a graph we often
+want a list of all successive nodes.
+Okay.
+So this other representation looks
+very similar to the [INAUDIBLE]
+list we just saw in main memory.
+So he had noticed that in this
+particular table there are five rows.
+One per node.
+And for each node we have
+listed the successor nodes.
+As well as predecessors.
+And this table is often preferred,
+over the normalized version for
+shortest path [INAUDIBLE].
+Okay.
+There is another challenge on the,
+you know, disk environment.
+And that's why, you know,
+instead of using the word.
+Data structures.
+People sometimes use the word
+file structures when we refer to
+storage on the disk.
+And this challenge is to essentially
+partition your file across disk blocks.
+You know if, many of you know that the
+unit of access on disk is not in terms of
+words, but it is in terms of disk
+blocks which may be kilobytes.
+So, in other words, even if you
+need the successor of one node,.
+You know, that may represent only,
+let's say, 100 bytes, but
+the disk will send you a kilobyte anyway.
+Okay?
+So you will do lot more work.
+So you might as well group the records,
+which are likely to be accessed
+together in the common disk pages.
+Okay?
+So this is a central problem when you
+store data on disk.
+Okay?
+So in case of graph.
+We can show you two ways to divide
+up a graph into disk pages.
+And try to see, you know,
+how we can rank them.
+So let's suppose we have a different
+graph here with 16 nodes.
+And then, you know,
+some of these edges, okay.
+So, and these are, these nodes
+are embedded in a geometric space.
+So you can think of latitude and
+longitude or x y coordinates, okay.
+So how should we divide
+it up into disk pages.
+And let's for simplicity assume that each
+disk page can hold four nodes, okay?
+You can divide it geometrically you know,
+which is shown in the second figure.
+So here all the red four nodes go to one
+page, green 4 go to other, blue 4 go to
+other and so on, and it's called
+geometric partitioning because you have
+taken a vertical line and a horizontal
+line to cut up the graph into four pages.
+And incidentally this is the dominant way
+to deal with data and spacial databases.
+If you think of our tree, quad tree,
+grade file, they all think like that.
+Okay?
+Now, one of the insights
+in this space is to
+say that really another
+partitioning may be multi table.
+Which doesn't follow geometry.
+But instead it looks
+at the graph edges and
+try to cut as few edges as
+possible as shown here.
+So now this area, notice here that
+the green nodes are together.
+Red nodes are together.
+Brown are together.
+And you don't have a very, you know,
+strict kind of geometric partitioning.
+But what is being done is you
+notice these yellow edges.
+And they are the ones which
+go across the disk pages, and
+we are trying to reduce them.
+So in this case, you see the,
+the cut edges are 1, 2, 3, 4 and 5.
+Whereas, the geometric had many more.
+It had seven, okay?
+So, one of the insights is
+that graph computations,
+they often access information
+by connectivity, that is, edges.
+And if all edges are equally
+likely to accessed,
+then they would prefer
+geometric partition.
+If there is a non-uniform distribution,
+then you may prefer partitioning, which
+minimize the sum of weights on [INAUDIBLE]
+To give you a more bigger picture.
+You know here is, are, is the road map,
+major roads in Minneapolis, and
+we are showing you two ways to
+partition it across disk blocks.
+And in this case, the white edges
+are showing you the cut edges, okay?
+So you may want to pause the video
+here for a second or two and stare at
+these pictures and check which picture,
+we don't, between the left and right.
+Which one has less white, okay?
+And that's the one which
+has fewer cut edges.
+And that's the one which will reduce
+disk I/O for graph queries, alright?
+And in this case, you know,
+hopefully we will agree that on
+the right side you have fewer white and
+that will be preferable.
+'Kay.
+So, The last activity in this
+module is a small exercise.
+So, let's look at this simple network
+which we have seen before in terms of
+languages and so on.
+And this has six nodes and few more edges.
+And we'd like you to consider different
+ways to partition this network
+across disk pages.
+And rank these partitionings
+by the cut-edges.
+Okay?
+So suppose.
+You know you could partition it like this.
+So nodes 1, 2, and 3, these are together,
+and you may cut these edges.
+Right?
+Or you might have 2, 3, 4 together,
+so which are these 2, 3,
+4 and you might cut these edges,
+and so on.
+So you may consider these partitionings.
+Count the number of edges cut,
+and suggest which is most
+preferred to reduce your cost.
+Okay?
+To wrap up this video, you know,
+we looked at main memory data structures.
+And disc based file structures,
+for storing road maps and
+other spatial networks.
+And one of the insight was that we
+should minimize the edges cut by
+disc partitioning.
+To reduce your cost.
+Okay?
+In the next video we'll come back and
+look at graph algorithms and which may use
+this data structures to answer
+connectivity of shortest path query.
+So look forward to seeing you then.
+

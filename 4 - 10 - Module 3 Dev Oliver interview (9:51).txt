@@ -1,0 +1,297 @@
+Welcome back to the discussion
+of spacial computing.
+Today, we are going to meet Dr.
+Dev Oliver who has a computer science PhD.
+And he works with ESRI,
+Environmental Systems Research Institute,
+a company you have seen
+before in our lectures.
+This company puts out a very popular
+family of products called Arc GIS and
+affiliated products.
+Which are used by millions
+of people in the world.
+And in some sense it
+was starting mid 1960s,
+this company has been really spreading
+the word in popularizing the technology.
+So, le, let's come and meet Dev.
+Hello Dev.
+[LAUGH]
+>> Hey how you doin?
+>> Oh great.
+It's very nice to see you again.
+>> It's good to see you again
+thank you for having me.
+>> Great.
+Great and thanks for
+taking the time to talk to all the
+students in this spatial computing MOOC.
+I think they can, you know, share your
+enthusiasm about spatial computing.
+And learn about some of the, the real
+things that you are doing at ESRI.
+So first I wanted to ask you that,
+you know, you have a broad
+computer science background.
+how, how did you,
+get into spatial computing and
+how did you get started there?
+>> Well, from spatial computing,
+from general computer sciences,
+spatial computing.
+The thing that draw, drew me was
+the applications that were available.
+So I remember using writing applications,
+applications for
+crayon mapping, applications for
+outlaw detection and so on and.
+Thinking this is wonderful, I want to
+understand how these things work and
+what are the underlying technologies.
+So that's, that was sort of my pull
+>> Wo, wonderful, and recently you moved
+to a new area, in a Redlands, California.
+With you know, as you joined ESRI.
+Did you get to use any GIS
+applications during your move?
+>> Absolutely.
+I was using Google maps and
+other online services just to try
+to figure out where things are.
+Looking for houses.
+I'm using Zillow.
+I'm using a lot of different spatial
+technologies that are out there.
+So it's just, spatial computing
+is a part of my every day life.
+I can't do anything without,
+without really.
+Every day I use it.
+>> Wonderful.
+So, so now as a spatial
+computing professional with
+an inside ESRI what kind of projects
+are you working on now days?
+So within ESRI,
+I'm working on two primary projects.
+The first has to do with spatial networks.
+I'm working on a project for
+a facility network.
+And basically, it is providing
+analytic capabilities, indexing.
+Database capabilities to utility
+companies such as electric, water,
+gas, things of that nature, so that is
+one, one aspect that I'm working on.
+I've always been interested in
+spatial networks, such as road and
+transportation networks.
+Now I get to work on spatial
+networks in a different context.
+And this builds utility.
+And the other job I'm working on is
+a big data project here at ESRI.
+So how can we sort of scale these
+things up to larger data sets?
+sort of the the focus of that project.
+>> Okay, wonderful.
+So spatial networks is something we
+are discussing in this spatial MOOC.
+You know, very basic around road networks.
+How they are modelled at least
+from academic perspective.
+And I believe you are familiar with the,
+the textbook Chapter 6 on
+spatial network in my book.
+So could you maybe say a little bit
+more on, you know, the way spa,
+the database book, spatial database
+book describes spatial network.
+And the way ESRI's own software
+think about spatial network.
+What are the commonalities and
+what are some differences?
+>> So commonalities would include
+the way spatial networks are modeled,
+for instance.
+I would say, you would model it using
+like, a basic underline graph, and so on.
+But the difference is even in, even in
+the commonalities they are difference is.
+At ESRI, they tend to be, the model and
+a little bit more richer.
+They try to capture different aspects that
+are important to the utility companies and
+so on, so.
+An example be for instance if you have
+features that are coincident,
+>> Mm-hm.
+>> Usually you know, in our,
+in a traditional setting, doors would
+be the features that are connected.
+You go from edge a to b,
+point a to point b on an edge, to point c.
+>> Mm-hm.
+>> But
+maybe we can bring in other ideas such as
+logically connecting entities rather than
+just based on their physical coincidence.
+So, they are, you know, the,
+the basics are the same.
+But there are some other things that,
+from other directions the company
+is trying to go into as well.
+That's an example.
+>> Wonderful.
+So, maybe another, you know,
+related questions, would be, what,
+what are the software products ESRI
+puts out to manage spatial networks.
+So right now there is a net,
+there is a geometric network
+package that's available.
+And I'm currently working on software
+that is that is not out there yet.
+But that was previewed at a user
+conference this year in San Diego.
+So, working with geometric network is a,
+is an example of a software that.
+Where that's currently out there
+on the market, but it's not very.
+I'm working on the one that
+is going to succeed that one,
+kind of eventually, over time.
+We'll see.
+By the way, I can't really claim anything,
+I bought the,
+the products and store
+>> No, we, we understand.
+[LAUGH].
+Yeah, I understand you may have some
+restrictions on what you can share.
+But, you did mention the user conference,
+right?
+Each summer ESRI brings,
+their users together.
+And I assumed you attend this, this year.
+So, how many people were
+there at that conference, and
+why should somebody come and
+attend that, you know?
+Okay.
+>> So there's that this conf, this conf,
+if you're into spatial computing,
+you want to be at this conference.
+This year, we had 16,000 people.
+>> Wow.
+16,000.
+>> 16,000, yes.
+Very vast, diverse backgrounds in,
+in spatial computing.
+So, yeah, we want to come
+just to connect with people.
+You want to see what
+they're technologies are.
+I want to understand what the problems
+that real users are having, in,
+in general, and not just related to ESRI.
+But just in general whatever the real
+world, problems they're trying to solve.
+And, this is a great environment for that.
+>> Yeah, well, won, wonderful.
+Now going back to the big data
+project you are working on,.
+So we just saw that, you know,
+White House had an announcement
+on big data for climate.
+And in fact,
+Jack Dangermond from ESRI was there.
+And he pledged a lot of help from ESRI.
+So, can you tell us a little bit more
+on the spatial big data projects
+you're working on.
+>> So [LAUGH].
+The, the current, so
+basically I am very limited in what I can
+say about the spatial big data project.
+Only to say that there is an open
+source ESRI on Hadoop that is
+available through GitHub right now, and
+it offers, spatial indexing capabilities.
+>> Okay.
+>> Spatial data types for
+big data on Hadoop.
+>> Wonderful.
+>> So that is currently one
+thing that the team is going in.
+>> And this.
+So this is GIS on Hadoop right?
+This is GIS on Hadoop, correct.
+And this an active project
+that's been contributed to.
+>> Wonderful.
+>> That would be a good starting place.
+>> So, so do you think is that a big
+prominent future directions for
+spatial computing?
+>> In general, I would say yes that
+is a prominent spatial direction.
+How do you, future direction for
+spatial computing.
+How do you draw large quantities
+of spatial temporal data?
+>> Okay.
+>> How do you visualize it?
+How do you analyze it?
+These are some of the,
+the big challenges that are
+>> Okay.
+>> Out there in this community right now,
+as I see it.
+>> Yeah, great.
+So what are some other future
+directions for spatial computing?
+>> So, there are many.
+But the one that I,
+I kind of see popping up is,
+sort of these analytic setups tailored
+toward very specific domains.
+An example would be, taking traditional
+analytics techniques such as hotspots.
+And tailoring them to, say,
+road networks or to arbitrary shapes.
+Rings, polygons, different types of things
+like that, that suit a particular domains.
+So, this is sort of another
+angle that I see is is,
+is coming in the future or
+is probably even here already.
+>> Already.
+[LAUGH].
+Wonderful, thank you so much, Dev.
+You know and it's a coincidence that this
+MOOC also has about 16,000 students.
+Which is roughly similar to the number
+of people coming to the conference.
+>> [LAUGH]
+>> So
+I really appreciate you taking your time.
+And sharing this gorgeous
+weather in Redlands, California.
+>> It was my pleasure.
+>> We can see outdoors picture [LAUGH].
+>> Please come, please come to
+Redlands one day if you can.
+[LAUGH].
+>> Wonderful,
+you know and hopefully, if time permits.
+You know, we'll probably get
+some of your engagement or
+advice on the discussion
+group in this MOOC.
+>> Absolutely.
+>> Thank you, Dev.
+>> You're welcome.
+[SOUND]
+

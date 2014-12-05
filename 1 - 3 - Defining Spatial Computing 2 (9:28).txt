@@ -1,0 +1,326 @@
+Welcome back.
+In the last video we talked about a few
+central questions in spatial computing and
+we gave you a bunch of examples.
+In this particular video, we'll talk
+about the user groups, or the customers.
+So in recent history and
+currently who are the people who
+are using spatial computing.
+So first, you know, we'll,
+we'll point out to the business.
+Okay.
+So there are a lot of consumer to
+consumer applications and, you know,
+business to consumer applications,
+which benefit form spacial computing.
+And one way to give a sense of
+the magnitude of business is to
+share with you a recent
+report form McKinsey,
+which is a very respected consulting
+institution in the business world.
+Right?
+And they wrote a report on big data.
+And in this report 2011s report,
+they dedicated a whole chapter
+to location based services.
+And I want to point out, you know,
+a small quotation about this report,
+this is from a New York Times
+article which summarized the report.
+And in this, I wanted to point
+out two different things.
+Okay.
+First, the magnitude.
+So you notice that McKinsey estimated that
+will have 600 billion dollar per year,
+you know, of a value, just derived out of
+all the location trace data sites that
+are coming out from applications
+like four square and loop.
+And many of these you can think of them
+as volunteer geography information that
+Brent mentioned.
+And later in the course,
+you will see this in a lot more detail.
+Okay?
+So business,
+businesses do use spatial computing.
+In fact, you know,
+if you will notice the new logo of IBM,
+one of the largest computer company.
+It actually looks like a globe and
+they have a label called smarter planning.
+So even big computer
+companies that in this space.
+Certainly, Google is in this space and
+so on, and a little later I will
+show you examples of those.
+Okay.
+But in terms of category, let me also
+mention that it's also used by government.
+The many different branches of government
+need geographic information because they
+often manage very large geographic areas.
+Okay?
+So here is a,
+a picture from congressional report.
+So U.S. Congress was briefed on this
+technology recently, and in this report,
+they listed all the U.S.
+departments in, of government which use
+spatial computing and they're member
+of this geographic data committee.
+So let me mention a couple
+of them very quickly.
+We talked about this
+cholera epidemic in London.
+So, you can imagine that public health,
+which is under department of Health and
+Human Services is very interested,
+and that is indeed true.
+In fact, as this video is being recorded,
+many people are very concerned about
+spread of Ebola virus in Africa.
+And some of the people who are traveling
+from there to United States and
+other places, and you probably
+know Center for Disease Control.
+It's actually tracking the locations of
+these disease, which is what they do for
+all infectious disease, and
+they try to contain the geographic spread.
+Okay.
+Another classical sponsor has been
+the Department of Defense.
+In fact, there is a saying and, you know,
+a lot of that you have probably seen the
+recent warfare, which is very asymmetric.
+Right?
+So the adversaries are often very,
+very unconventional.
+You don't know where their facilities are,
+and if you don't know their locations,
+what good are your weapons?
+Right?
+So people often say that maps are as
+important as soldiers, as weapons.
+Right?
+So clearly, in many,
+many different countries,
+Department of Defense is a big user
+of maps and big producer of maps.
+In fact, some of the most accurate
+maps of the world exists where we
+have had warfare.
+Okay?
+And, and so on.
+You know, Department of Transportation.
+We all use navigation application.
+And as you can imagine,
+lot of this was driven by projects from
+Department of Transportation and so on.
+Emergency Management is another one.
+We talked about hurricane Katrina.
+They often have mapping done right after
+disaster to help people, and so on.
+Okay?
+So, let's go and
+get a little bit more specific.
+So I'll, what I'm going to do now is
+to show you actual companies and so on.
+You know, who have used this technology
+to convey a sense that, you know,
+our lives have been impacted
+a lot by spatial computing.
+You probably are already using it,
+but it's probably hard for
+you to imagine that 20, 30 years ago,
+it was a much more niche technology and
+the set of consumers were fewer.
+Okay.
+So, so if I go back, 20 years ago,
+then the types of products that you would
+have seen are shown on the left-hand side.
+Okay?
+You would have seen ESRI,
+Environmental Systems Research Institute.
+And their popular family
+of product called Arc, and
+there is a number of
+products underneath that.
+This is used quite a bit in almost all
+geography departments, and more and
+more facility management and
+asset management, they use this.
+This is the richest set of software,
+you can make very sophisticated map and
+do nice cartography and
+projections out of it.
+But they were niche products, as well.
+You know,
+SaTScan came out of public health.
+This came out of National Cancer Institute
+in order to find hot spots, so
+geographic areas of high
+concentration of a disease.
+And now, the similar techniques have moved
+to police departments for crime hot spots.
+You see Oracle Spatial.
+So in SQL word, people added a library,
+to allow storage of data and
+querying in this world.
+And even IBM got on this,
+you know, in a few years later and
+they do a lot of consulting in this world.
+Okay?
+But this has been changing.
+In fact, many of you probably
+haven't seen those products.
+That's the story of 1990s.
+What many of you have been seeing and,
+you know, as Greg was mentioning
+are product of this kind.
+So you have probably seen your
+smartphone and navigation application.
+Some of you may still
+have these GPS devices,
+which were really a craze,
+you know, about five years ago.
+[LAUGH] But the smartphone is sort of,
+you know, dampening them down.
+So unless, you are really in outdoor
+navigation in mountains or lakes.
+Probably all you are doing is smartphone,
+but if you are going outdoors where you
+don't have as much GPS signal,
+you know, mountain valleys and
+so on, you will see this other
+dedicated device or even paper maps.
+And then, you see these volunteer
+geographic information.
+Waze was just purchased by Google and
+this collects, you know,
+it help you know, it encourages
+volunteers to report traffic information.
+And using Waze you can,
+actually know, where police cars are if
+you care, not only where [INAUDIBLE].
+[LAUGH] But there are more serious things
+like Usnakihidi, which came out of Kenya.
+And this allowed people to
+report on elections and
+other disturbances where
+the traditional journalist cannot go.
+But if you watch something
+through a smartphone app,
+you can tell the location and describe it.
+OpenStreetMap revolutionized
+the mapping itself.
+Even Google switched to this technology,
+where you allow volunteers to
+take a satellite imagery and
+mark approach and name them and so on.
+Okay?
+So it has changed.
+And there's another thing
+we want to convey to you.
+The traditional view which
+many of us still have.
+You know, [INAUDIBLE] that GIS
+was a niche technology and
+it was used only by people
+who were already trained.
+They needed a degree in
+geography to use it.
+Not anymore.
+All of us now use it because we have
+these nice services on the web and
+apps on the phone.
+Okay?
+But what you miss, what may surprise
+you even more is the following.
+Back in 90s,
+Macs were made by trained people and
+they maintained very high quality.
+And today, lots of us are making Mac.
+Probably, you are making Mac too,
+and you may say, well, maybe not.
+But if you are using a smartphone,
+which runs either Android or, you know,
+the Apple's operating system,
+iPhone and you leave your GPS on.
+You are making maps because your
+locations are being collected and
+shared and
+they are being used to improve maps.
+Okay?
+And this is affecting the software.
+So back in 90s, there was specialized
+software like Arc or this Oracle Spatial.
+But today, many other layers of your
+software are incorporating spatial things.
+So even your smartphone,
+you would have essentially a location in
+open location service
+to get your location.
+If you have HTML5, which is a language
+on the web, it supports location.
+Even the internet protocol,
+the next generation, you know,
+is supporting location.
+So all layers of software
+are becoming location aware.
+Okay?
+And the expectations are rising.
+You know, more and
+more people know about the locations.
+They want to do more things with it,
+right?
+At the same time risks are also rising.
+Probably, some of you may find it creepy
+that your cellphone locations are being
+collected, or your car locations are being
+collected if you have a GPS device and
+you're in there.
+The laws and the policies and
+our expectations haven't kept pace.
+In some countries like European Union are
+taking the lead in making laws but, but
+lot more has to happen if it, for
+these, you know, you, if you you know,
+some people call it geoslavery, you know,
+some people are worried about you know,
+being followed by undesirable elements and
+so on.
+You know, those things have to grow.
+Okay.
+So again, the sense I wanted
+to convey is the following.
+Spatial computing is no
+longer a niche area.
+It's being used by all of us.
+There are a lot of great products and
+many other new things can
+happen in the coming years.
+certainly, it will affect society
+in areas beyond technology.
+Our laws and policies have to evolve.
+Okay.
+So people have been also
+thinking about it, you know,
+there was a recent workshop at national
+academy to flesh out these research issues
+and in the coming year, you know, the
+research community will be shaping this,
+policy community will be shaping this.
+And I sincerely hope some of you taking
+this course will kind of get excited and
+be an active participant and shape it,
+you know, and for years to come.
+Thank you for your attention and
+in the next few videos we'll come and
+def, you know, delve into some of these
+topics in a little bit more detail.
+

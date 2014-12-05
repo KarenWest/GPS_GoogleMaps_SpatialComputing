@@ -1,0 +1,308 @@
+Welcome back to the discussion
+of spatial networks.
+In particular the query languages for
+spacial networks.
+In past few videos,
+we have looked at the motivation for
+spatial networks, such as the navigation
+apps that all, we all use on smartphone.
+We also looked at conceptual models such
+as entity/relationship diagram, as well
+a graphs, you know, graphs have nice
+mathematical and computational properties.
+And we also discussed why,
+the query languages that we've learned so
+far, particularly from the previous
+chapter, are not adequate, so
+we need to learn new statements.
+We did learn one new statement CONNECT By,
+which is, which was in last video.
+In this video, we're going to learn
+another one called, WITH RECURSIVE,
+which is part of SQL3 standard, and,
+widely available through products.
+Okay.
+So, at the end of this video, we should
+all be able to describe this RECURSIVE or
+WITH RECURSIVE statement in SQL3, and
+also use it to query graphs, Okay.
+So, here is a quick background.
+Again, formerly, you remember that
+the special query languages that we
+studied earlier were simple.
+They were based on relational algebra and
+some user defined data types.
+And they at least
+the relational algebra based on
+SQL could not compute transitive
+closure in the shortest path.
+. Okay? So, we need it to extend this SQL
+and people could do in different ways.
+One could add new abstract data types.
+Now, all these data types such as points,
+polygons do not include graphs and parts.
+Okay?
+They do not include operators
+like shortest path.
+But if we were to design
+new abstract data type and
+add it to SQL3,
+that could support graph kind of queries.
+The other option is to
+use custom statements.
+We learned one of those in the last video,
+in the CONNECT, and
+we are going to learn the,
+WITH RECURSIVE in this video.
+Okay?
+So, without further edu,
+let's look at the inputs and
+outputs of WITH RECURSIVE statements.
+In times of inputs,
+the first input is similar to the one for
+CONNECT, which is the graph.
+Okay?
+So, we need to have a table,
+which represents the edges of the graph.
+Okay?
+So, for example,
+this set of edges may represent a graph of
+this kind, where it lets node one to two,
+there is an edge,
+which is the first row, and so on.
+Okay.
+Now, given that the output
+is a transitive closure, so
+we can compute predecessor,
+successors and so on okay?
+But in terms of input WITH RECURSIVE
+actually takes two additional sub queries,
+so in other words it's a nested query.
+The first sub query des,
+describes ways to initialize the result.
+So, we can take this table odd
+as input and say that the result
+may be initialized was this table itself
+or a subset arose from the table.
+The second query explains
+how to grow the result.
+So, starting from some basic values, which
+is specified by the initialization query,
+how do we add more rows to the result,
+okay?
+So, using these facilities you know,
+can ex-compute predecessors, successors,
+and you can actually do little bit more.
+You can also go ahead and compute shortest
+path and things of that kind, okay?
+So, to give you a quick example, you know,
+here are the three parts of WITH RECURSIVE
+statement and we will illustrate each.
+So, the first part, usually,
+is the name of the result table and
+the columns in the result table, and
+that follows the key word WITH RECURSIVE.
+So, in this case,
+the result will be a table named X, and
+this table has two columns, source and
+the other column is destination.
+So, the table structure is pretty
+much similar to the input that we
+saw before in this case.
+But if you wanted we could have
+other structure, for example,
+you could choose only one of these columns
+as we saw with the CONNECT statement.
+The second part is a sub query,
+which tells us how to initialize
+the result, you know, named X.
+So, in this case, this query is
+something you have seen before.
+So, if you only concentrate on
+the SQL query inside the blue box,
+then you can probably tell that
+the result is initialized by
+simply copying this input to edge table R,
+okay?
+The third part is the recursive query.
+So, given some initial result,
+how do we grow it?
+And it is shown here, and notice that
+this is a recursive query, okay?
+So, some of you have done recursive
+programming in computer science before or
+in mathematics.
+And, essentially recursion means
+that you are defining something
+using the same thing.
+So, for example here,
+result X is being defined.
+But notice that the part of
+the definition uses X, right?
+So, this result X is defined in terms
+of itself, and that's called recursion.
+So let's at least look at this example
+to understand how it works, okay?
+But you know, in all recursions,
+you have to have a base case and
+that's this blue part, in order for
+this recursion to end.
+Okay?
+All right, so, so
+we at least now saw that syntax.
+And in this syntax, really if you
+build on your old SQL knowledge,
+then there is only you know,
+a very little new part.
+The new keywords are WITH RECURSIVE,
+you follow the result
+table name in its columns.
+Then there is another keyword S,
+then you followed with a SQL
+query to initialize the results.
+Then, this union operator is also
+something we know from before.
+It just takes two tables and merges them.
+And then there is a last part,
+which is another subquery, which is
+a select statement to grow the result.
+Okay.
+So, so, let's look an example input and
+output, and
+then we can see an execution trace to,
+to to appreciate it even more.
+So, example input could be a simple graph,
+which is shown here with five notes and
+five edges.
+But it's presented in a tabular form
+that's shown on the right as table R.
+Okay, the output, you know,
+so this is, this is sort of here in for,
+the output X is another table,
+which has two columns, so in this case,
+your output table is shown here.
+It just happens to have source and
+destination columns specified here.
+So, it's very similar
+to input in this case.
+And graph theory perspective,
+it is actually a richer sect of ages.
+So, if I can reach you know,
+node 4 from node 1,
+via multiple other edges, then there
+is a direct edge from 1 to 4 here okay,
+as we discussed in transitive closure.
+All right, so let's take a look at
+the meaning of this statement, and
+one way to specify meaning is via
+providing a hand executing procedure.
+Okay?
+So, in order to computer result X,
+we start with the initialization query.
+And if you remember the que,
+the initialization query, it
+was simply copying source and data columns
+from import table R to the result table X.
+So, if we did that,
+then these five rows from the input table
+will get copied to the output table X.
+Okay.
+Once we have done that, we are going to
+grow the result using the recursive step.
+So, again recall what
+the recursive step was.
+And in recursive step, we try to match
+the destination column of input table,
+that's this column,
+to the source column of result table.
+So, if as long as there is a match between
+destination here and source in the result,
+we can add new rows okay.
+To rephrase it, we can say it as follows.
+We can say that in case you had a row
+a,b in R, okay, such as let's say 1,2.
+And you had another row b, c in X,
+such as this, let's say, two, three.
+If that happens, then you can essentially
+say, look, you know, in the original
+result, we can go from one to two, and in
+result table, we can go from two to three.
+So, we can add a row from one
+to three in the result table.
+Okay?
+To give you more specific example,
+here it is okay?
+So R has 1 2 X has 2 3, right,
+R has 1 2 and X has 2 3.
+And in this case,
+R's destination matches X's source, so
+we could add a new edge,
+1 3 to result, okay?
+And that's shown as here,
+so we added 1 more, okay.
+We can find similar, you know, other pairs
+from R and X, to add more information.
+So, for example, you notice that
+in import table you had 2 3.
+And its destination matched
+the source of 3 to 4.
+And when that happens,
+now we can add 2 to 4 in the result.
+Okay?
+So, continuing on,
+you can find other such pairs.
+R has (5, 3), X has (3, 4).
+So you can add (5, 4).
+And then finally, R has (1, 5),
+X has (5, 4), so you can add (1,
+4) in that result table.
+Okay?
+And if after this,
+if you try this procedure further, in
+this example we are not going to get any.
+So, this recursion continues
+till the result stabilizes.
+If we cannot add any more,
+then the recursion ends and
+at that time you have the full result.
+So, this is your result table in SQL.
+If you want to visualize it as a graph,
+then it will look like this transitive
+closure graph that we saw before.
+And all the new rows we added
+are these new edges that show up in
+the transitive closure, okay?
+So, to summarize, in SQL3,
+a new statement with recursive
+was added to support graph queries,
+such as predecessor successors that we
+saw before with connect by, but
+also newer queries like shortest path.
+And in this particular video we
+saw the syntax of WITH RECURSIVE.
+It essentially names the result
+table in its columns.
+It gives you a initialization sub query,
+and
+finally a recursive sub
+query to grow the result.
+Okay?
+And this gives you a basic means to
+write queries on the graph in SQL3.
+Okay?
+With this, we'll more or less wrap up the
+discussion of query languages on graphs,
+and in subsequent video we'll come back
+and go to the physical data model.
+Try to see the data structures which
+are used to represent these graphs, and
+also the actual algorithms
+that a database may
+keep to quickly execute graph
+queries on large graphs.
+Okay?
+So, I look forward to seeing you in
+the next videos on physical data model.
+Thank you.
+[SOUND]
+

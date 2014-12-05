@@ -1,0 +1,201 @@
+Hello.
+Welcome to the University of Minnesota's
+massive open online course titled,
+From GPS and
+Google Maps to Spatial Computing.
+I am Dr Shashi Shekhar,
+a Professor of Computer Science and
+Engineering here at
+the University of Minnesota.
+And I'm one of the two
+Professors of this course.
+>> Hi, I'm Dr. Brent Hecht,
+the other Professor of the course.
+I'm also a Professor of Computer Science
+and Engineering here at the U.
+Now spatial computing is definitely a hot
+topic, both in industry and academia.
+It has had, and will continue to have,
+an enormous impact in a wide variety of
+domains, ranging from computer
+science to environmental science.
+To geography, to civil engineering, to,
+well, the list goes on and on and on.
+>> On a personal, level spatial
+computing also touches the lives of
+billions of people and around the world.
+And almost certainly, including you.
+For example.
+You probably have used an online
+mapping service, like Google Maps or
+Bing Maps,
+to get from one place to the other.
+That is spatial computing.
+You also probably have done
+this on your smartphone, or
+GPS device which shows a,
+a little dot and a map.
+Representing your position,
+and that is spacial computing.
+>> Many of you have also likely used Yelp,
+or Four Square, or Trip Advisor, or
+a number of other location based
+services to find a great place to
+grab a bite to eat.
+That's spacial computing.
+Many of you have also likely used
+Google Earth to look at present day, or
+historical satellite imagery,
+either as part of a class or on your own.
+That's also spatial computing.
+>> If you bought a house recently you
+likely visited a site like Zillow or
+Trulia, to check out information about
+various potential neighborhoods.
+That is spacial computing.
+If you live in a large city,
+you may have tried one of the new car
+sharing services like [INAUDIBLE] or Lift.
+That is spatial computing.
+>> Spatial computing is also
+changing people's lives,
+in a large number of indirect ways.
+For instance through something
+called Precision Agriculture,
+spatial computing is revolutionizing
+how farmers grow our food.
+Similarly scientists are using
+spatial computing technologies,
+to better track and
+protect the world's biodiversity.
+Large organizations are using spacial
+computing to minimize pollution and
+increase profits at the same time,
+and public safety officials are using
+spacial computing to reduce crime, and
+save lives during natural disasters.
+The goal of this course, to help you
+begin your journey toward understanding,
+how these world changing
+technologies work.
+For those of you who decide
+to join the technical track,
+you'll also learn a bit about
+how to build these technologies.
+But, we'll get to information about
+the three tracks of this course,
+a bit later in the week.
+In the next video, you'll learn about
+the definition of spatial computing, and
+get an overview of typical problems and
+applications in spatial computing.
+But, before we end this video,
+we wanted to give you a bit more
+information about ourselves.
+>> So a little bit about myself.
+You know, I was born and
+raised in India in a small city named
+Jempshaper, also called Tata Nagar.
+And I completed undergraduate education
+at India Institute of Technology Kanpur.
+And then came to Berkeley at
+University of California for
+graduate education,
+including Masters and Ph.D.
+in disciplines of Business Administration
+and Computer Science.
+In terms of my research interests,
+they are in two or three broad areas.
+One broad idea is Spatial Databases.
+So, within databases, I worked on Storage
+Methods for road maps in early 90s.
+In context of in vehicle
+navigation devices.
+We also worked on routing algorithm.
+So, many of the you know,
+the applications we see today,
+in terms of in car navigation, and so on.
+Rare research project.
+It's hard to believe that this came
+to fruition, during your own career.
+More recently we have looked
+at evacuation route planning.
+And now there are some
+projects on eco-routing,
+where you choose routes to minimize fuel
+conjunction, or greenhouse gas emissions.
+Another broad area of research
+is Spatial Data Mining.
+Where we have essentially
+looked at two kinds of issues.
+Okay, one we wanted to balance
+computational scalability, and
+spatial statistical
+mathematical interpretation.
+And we have been able to present new
+presentations interest measures in
+pattern families.
+Such as core locations, and
+cascade, which can do that.
+And the last theme in
+my research is High-Performance
+Geographic Information Systems.
+So starting mid 90s we looked
+at parallel computing, and
+how to use those for
+geographic information systems.
+So we worked on paralyzing
+range queries neural networks,
+some of the other
+Spatial Data Mining Algorithms.
+So this kind of gives you a broad sense of
+where I come from, again in a spatialized
+general theme and within that I work
+more on the data and analytics side.
+Thank you.
+>> Hey this is Dr. Hecht again.
+I was born and
+raised in the San Francisco Bay area,
+actually very close to Berkeley
+where Shashi did his Ph.D work.
+I received a bachelor's
+degree in Geography and
+Computer Science from
+McAllister College which is.
+Really close to The University
+of Minnesota, but in St. Paul,
+the other of the two twin cities, The
+University of Minnesota is in Minneapolis.
+I received a Masters degree in
+geography from Univ, The University of
+California Santa Barbara beautiful
+place and a wonderful geography school.
+And then I received my Ph.D in
+Computer Science in 2013 from
+North Western University.
+In terms of my research interests
+I focus on spatial computing,
+obviously, as well as an,
+an area called social computing.
+And, in my modules, you'll see that
+I incorporate some social computing
+into this course, as well, where relevant.
+A lot of my research looks at
+volunteered geographic information.
+And, you'll understand that term a bit
+more, when you finish this course.
+And it's application.
+So I've done a lot of work looking at,
+for instance, Flickr data, Wikipedia data,
+and, and algorithms that you can
+build using these data sources that you
+really couldn't build before they existed.
+And I also do a lot of work in
+information visualization, and
+geographic human-computer interaction.
+So, innovating in areas like.
+Applying some of the, the tools and
+techniques you'll learn in this course,
+in non-geographic reference systems,
+and these types of things.
+

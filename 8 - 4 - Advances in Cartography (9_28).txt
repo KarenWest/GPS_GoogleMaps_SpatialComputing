@@ -1,0 +1,311 @@
+Hey folks, in this video, we're going to
+be talking about an exciting research
+project entitle,
+Explanatory Semantic Relatedness and
+Explicit Spacialization for
+Exploratory Search.
+This project is really great for
+this course, because it's a wonderful
+example of how the spatial domain and
+the computive domain can work together for
+their mutual advancement.
+Now in particular, this project has a,
+a made contributions to
+the literature on spatialization
+as we discussed in Module seven.
+In fact, we introduced the idea of
+explicit spatialization in this paper.
+But then we also leveraged
+this contribution to
+early innovated information retrieval,
+which is an area of computer science.
+So, you can see the feedback loop here
+going with computer science helping
+cartography and
+cartography helping computer science.
+So as you might guess, this project is a,
+a quite close,
+interdisciplinary collaboration.
+A bunch of us are trained
+in computer science, but
+three of us also have backgrounds in
+geographic information science which is
+obviously a field quite
+close to spatial computing.
+Okay, so let's step back here and,
+and provide a little motivation.
+I think we all know that using any one
+of these fine search engines here it's
+a relatively easy task to, for instance
+find out who the mayor of Minneapolis is.
+In fact using Google and Bing these days,
+you'll get a direct answer.
+I'm sure many of you are familiar
+with this particular feature.
+You can also find a web
+page of basically anything.
+So, for instance I, with just, with
+just one query I found the web page for
+this, a spatial computing MOOC
+here you may be familiar with it.
+But what happens if you are a student
+who's been given the task of writing
+a detailed report on nuclear weapons,
+or perhaps more consequentially you're
+a consultant or an intelligence analyst
+who's been asked to do the same thing.
+Well, in this case Google basically
+is just going to point you
+to the nuclear weapons
+page on Wikipedia and
+you're going to have to do
+the rest of the work yourself.
+So as it turns out this is actually
+a very well known situation in
+the information retrieval literature.
+So Google and
+Bing are known to be outstanding at what
+are called closed information requests,
+like for instance finding out
+who the Mayor of Minneapolis is.
+And they're also known to be
+outstanding at navigational queries,
+like take me to the web page on the spa,
+for the spatial computing MOOC, but
+they're much worse at what is
+known as exploratory search.
+And now exploratory search
+has been defined by White and
+Roth as defining an information seeking
+problem context that is open ended,
+persistent and multifaceted.
+Exploratory search systems support
+this through symbiotic human
+machine relationships that
+provide guidance in exploring
+unfamiliar information landscapes.
+Now you can imagine that
+this last line here,
+exploring unfamiliar
+information landscapes.
+This made those of us with a background
+in geographic information science,
+it made us quite excited.
+Now the reason it made us quite
+excited is that we recognize that
+thematic cartography has been shown over,
+over a very long time to be effective at
+helping people understand complex and
+unfamiliar information landscapes.
+We saw a little bit about this in,
+module seven, right?
+So the big question for
+us is how can we convert an abstract non
+geographically referenced query concept,
+like for instance, nuclear weapon,
+into a form that like obesity rates by
+state or poverty rates by state like we
+saw earlier into a form that can be
+visualized using thematic cartography?
+Well, the first things a lot of people
+suggest when when we pose this question is
+to just use Google Maps.
+But Google Maps like its parent search
+engine, is largely designed for
+navigational queries and
+closed information requests, so for
+instance here is the result of querying
+Google Maps for nuclear weapons, or
+at least this is the result
+as of a little while ago.
+As you can see this is basically
+just a map of museums and advocacy
+organizations that are related to nuclear
+weapons, and that have a web presence.
+Obviously for exploratory search here.
+There's a little bit missing for
+instance, there's nothing about current
+events related to nuclear weapons, and
+there's a little bit missing about
+the history of nuclear weapons as well.
+So this is where a system we
+built called ATLASIFY comes in.
+And I'm going to show you
+what ATLASIFY can do and
+then we'll talk about the really
+cool ways it, it does it.
+And you'll see that a lot of what
+we've learned in Module seven and
+Module six as well comes in here and,
+and turns out to be pretty handy.
+So without further ado, here is
+the results of here's, here's ATLASIFY,
+showing the results of a query for
+nuclear weapon.
+Now on this map like most choropleth maps,
+right, or
+like all choropleth maps done well here,
+the dark green or
+the dark color indicates areas that
+are very related to nuclear weapons.
+And the lighter green areas indicate
+areas that are less related, right.
+So in this case we have a quantitative
+spatial attribute, relatedness and
+we're visualizing it using the appropriate
+quantitative choropleth map strategies.
+Now you can see that in contrast to
+the Google Maps result we saw earlier.
+Current events are strongly incorporated,
+as is the geographic
+history of nuclear weapons.
+You can, zoom in and zoom out like
+any modern, geographic technology.
+And we can see that,
+as we might expect, Nevada and
+New Mexico are both indicated to be
+highly related to nuclear weapons.
+so, it's great that you can see the
+information landscape of places related to
+your query concept, in this case nuclear
+weapons, but, if you're anything like me,
+a very quickly after you use this system,
+you want to know how are these
+places related, right?
+So, for example if we move on
+over here to Sub-Saharan Africa.
+Let's say I'm curious about why South
+Africa is so related to nuclear weapons.
+Now in ATLASIFY you can click
+on any geographic entity and
+ATLASIFY is going to display a list of
+relationships between the clicked entity.
+And the query concept in understandable
+natural language and this involved some
+natural language processing which we'll
+briefly touch on at the end of this video.
+So here it's saying that South Africa
+began a nuclear weapons program in
+the late 70's, and moving down the list
+here we find out that at later
+destroyed it's arsenal, and joined the
+Nuclear Non Per, Non-Proliferation Treaty.
+So, hopefully what I've shown you so far,
+gives you an idea of the power of this
+particular, exploratory search approach.
+But like, like when we were
+discussing things in the,
+fifth video of module seven, right?
+When we were talking about specialization.
+Well we've, what I've described to you so
+far is, limited in very one,
+in one very important way, and
+that is that it only works in geography,
+just like we were talking
+about with spatialization.
+So the problem here is that
+exploratory search, of course,
+goes well beyond geography, right,
+people do exploratory searches about
+chemistry about politics,
+and so on and so forth.
+And of course a cross domain
+exploratory searches as well.
+So in, in our Atlas flight
+project in this research,
+in this research paper ,we
+developed techniques that
+allowed us to use the exact same approach
+as we used to create this u, related map,
+relatedness map excuse me, and
+used those approaches to create this map.
+Now as you can see here,
+this is the same query concept done,
+nuclear weapon, but here it's visualized
+on the periodic table reference
+system rather than the world
+map reference system right?
+We learned a little bit
+about this in module seven,
+this is an explicitly
+spatialized reference system.
+In this case using the periodic table.
+You can zoom in and zoom out,
+note that uranium and
+plutonium are indicated
+to be highly related.
+And just like with geography,
+you can click on a special entity, and
+get natural language explanations of
+the relationships between the clicked
+entity and the query concept.
+So, in this case, the user clicked on,
+it looks like Cobalt, and
+the system is showing relationships
+between nuclear weapon and Cobalt.
+So we've gone, all out here with
+the explicit spatialization and,
+let's support a number of
+different of reference systems, so
+for example here is the US Senate
+seating chart reference system.
+We have the same, we have the same
+clear concept nuclear weapon, but
+it is visualized instead of on the world
+map and instead of on the periodic table.
+It is the US Senate seating chart.
+It's a little bit of an old seating chart.
+There are some Senators who have moved
+on and some Senators who are new.
+I bet you get the basic idea.
+Here is the same query concept nuclear
+weapon on the time-line reference system
+and so on and so forth.
+These are just four of the 13 reference
+systems Atlas5 is currently supporting in,
+in various states of completion.
+A note that, we're hoping to launch
+Atlas5 to the public, early in 2015,
+so keep yours eyes peeled
+to Atlas5.com for that.
+I'm going to shift away from
+the system now, and talk about the how.
+So we've seen, right, that we can convert
+a query concept, like nuclear weapon,
+into something that can be visualized
+using thematic cartography, and
+we've seen that we can do this and
+reference systems from arbitrary domains.
+How are we able to do this?
+Well, you've already learned a little bit
+about how we did this in module six, and
+that is that we use semantic
+relatedness estimates, and
+in this case, we built a state of
+the art semantic relatedness measure.
+And the output of this measure is our
+quantitative spacial attribute that
+we're visualizing using
+thematic cartography.
+So for example, these states here had
+a much higher relatedness value to
+nuclear weapons than for
+instance Alabama over here.
+Okay, so hopefully this description of
+our Atlas flight project really gives you
+an idea of some exciting new stuff
+going on in special computing.
+And also just to reinforce this point
+really demonstrates how the spatial and
+the computing work
+together to benefit both.
+So we have a symmetrical line measures
+from natural language processing,
+powering new techniques in spatialization.
+Which then power new techniques
+in exploratory search.
+Which again a computing area.
+So a very rich uh,feedback loop there.
+And with that,
+I will see you in the next video.
+

@@ -1,0 +1,348 @@
+Welcome back to the discussion
+of spatial computing.
+Today we are going to meet Mr. Len Kne.
+And he's spearheading a very interesting
+project at the University of
+Minnesota campus called U-Spatial,
+which is a shared resource for
+many, many departments and colleges.
+And I'd say, part of a trend,
+at least nationwide in US, and
+maybe even in other countries,
+to create such resources.
+So without further ado,
+lets welcome Mr. Len Klie.
+Hi, Len.
+>> HI, thanks for having me.
+>> Wonderful.
+So first question I wanted to ask you
+was I understand your undergraduate.
+Focus was in recreational studies.
+>> Mm-hm.
+>> From there how did you come
+to spatial computing or GIS?
+>> Yeah.
+Kind of a long road.
+I actually most of my career has
+been in information technologies and
+When I got finished my undergrad
+degree I started working for
+a major park district doing research.
+Studying how people use the parks, doing
+needs assessments and that type of thing.
+And this was back in the mid 80s.
+I had the first personal computer for
+the park district, and so in order to
+do my job I started learning more and
+more about information technology
+which got me into that.
+But one of things we used to do is
+map how people used recreation areas.
+We did this with paper and pencil and
+if we wanted to analyze it.
+We had to page through all the papers
+to get the information out of it.
+And that stuck with me for
+20 years and in 2005 I returned and
+got a masters in geo, geographic
+information science, partially so
+I could start working with some
+of the paper, non digital work.
+So I thank CGIS from the,
+the technology side of it.
+>> Wonderful.
+So what kind of things
+are you working on nowadays?
+>> Okay, you had mentioned u-spatial.
+That, that's my main, main focus.
+Our tag line is support for
+spatial research which provides services
+throughout the University of Minnesota.
+Uh,for researchers, for grad students and
+for students who are working on projects.
+This involves things like a help desk if
+they have any questions we do a lot of
+trainings and then we do almost
+a consulting type business that help
+researchers out when they
+need help with spatial.
+>> Wonderful.
+So, so do they need help with for example
+different data sets such as census or
+different map layers?
+>> Yes.
+Yeah, a lot of, the,
+the hardest thing I think with getting
+into GIS and we see it with people who
+are not working with it regularly
+is finding the data to begin with.
+And then once they find the data they've
+gotta get it into a format that they can
+get into the software.
+Get into the program to work with it and
+that's hard when you first.
+>> Wonderful, yeah,
+certainly there hundreds and
+hundreds of map layers,
+mapping everything.
+Mm-hm.
+And
+I just learned looks like parks
+are being mapped as well.
+>> Yes.
+>> And then these data sources
+I guess it's not as trivial as
+just taking two data sets and
+putting them together.
+I mean,
+what else users have to know about?
+Are the coordinate systems
+different across data sets,
+or what are the challenges in pulling
+different data sites together?
+>> Certainly.
+Yeah, projections you know, are huge.
+How do you you know,
+flatten out the world, right?
+It's round, so
+we're going to have different projections.
+As wonderful as the web
+mercaters projection is for
+the web map, it's not always so
+great for doing spacial analysis.
+Other things they need to look for
+is the metadata, you need to look at
+how is the original data collected?
+And what was its purpose?
+You know, did they ha,
+what's the accuracy of it?
+Will it work for your needs, versus
+what the original collection was done?
+>> Neat, neat.
+And what kind of
+software do they come to seek help on?
+I mean, isn't Google map enough?
+[LAUGH] For a lot of things it is.
+We, we do a lot of work with Google Maps.
+At the University of Minnesota, we have
+a site license with the Azuri products.
+And that makes it very attractive for
+our researchers to use.
+It's very inexpensive.
+So we've got people using
+the desktop version.
+And more and more are using ArcGIS Online.
+The web version, so
+they don't have to learn.
+>> right.
+>> This fairly large software
+package to do the work.
+>> Yeah, wonderful.
+And and in terms of training,
+what kind of things,
+I mean is it mostly for
+learning Esri Arc software or
+do they also learn other things
+like census datasets and so on?
+>> Yeah, our, our focus is
+primarily on the technologies.
+>> Okay.
+>> There are groups on campus that'll work
+with more of the data sets, so the
+Minnesota population center will focus on
+census information, so yeah we're trying
+to learn a little, teach a little bit
+about spatial, and a little bit about
+the software, so they can get going.
+>> Great, great.
+And then, where do your users come from?
+Are they primarily from
+geography department?
+Or do they come from
+elsewhere in the city?
+>> Yeah,
+very few are from geography these days.
+>> Oh, okay.
+>> And, and that's one of
+the neat things we're seeing with,
+with spatial information.
+It's from public health, it's from that
+medicine, it's from the business school.
+>> Wow.
+We're seeing more and more from the
+Humanities, as far as religious studies,
+and even music are starting
+to use spatial information.
+>> What would religious
+studies do with maps?
+>> [LAUGH] Yeah, so I've got one
+project that, somebody was looking at,
+how congregations interacted
+in the 1850's to 1900's.
+In Minneapolis St Paul and the churches,
+the locations stay the same, but
+the congregations and
+the people change regularly.
+So they're, they're looking at
+spatially how do they interact?
+>> Interesting.
+Wow.
+So if you know, spatial computing and
+data set services are so
+so much needed by so
+many disciplines in
+University of Minnesota.
+Is that the case in other universities,
+and are they providing similar services?
+>> It, it certainly is.
+>> Right.
+>> It, it's growing across.
+>> Okay.
+>> A lot of the large
+universities are starting to provide
+GIS remote sensing special services
+across the campus because it, it's,
+it's very transdisciplinary by nature.
+>> Right.
+>> Some have maybe more defined centers
+in this spatial or more of an umbrella.
+>> Okay, okay.
+>> Places like Harvard or Santa Barbra.
+>> Okay, okay.
+>> Have well established centers.
+But most universities are doing that and
+we're also seeing if
+the small universities-
+>> Okay.
+>> Are often providing services through
+the library.
+>> Oh, very neat.
+So hearing Harvard
+that's very interesting.
+because it's coming full circle,
+because in roughly in mid 1960s.
+It was the hardware
+graphics lab when Jack-
+>> Mm-hm.
+>> Benjamin and
+any founders of ESRI used to work.
+>> Mm-hm.
+>> And Howard felt it was
+not again big enough for
+us to get to leave [LAUGH]
+>> [LAUGH]
+>> And that
+became a billion dollar company.
+>> Yeah.
+>> And now they are back.
+They brought GIS Services on campus now.
+>> They do, yeah.
+>> Very, very interesting.
+A great.
+So what do you see the future
+of these services?
+I mean, do you see this growing
+on many other campuses?
+Do you see these you know, where is
+the patient services on campus going?
+>> Yeah, a for, for Minnesota.
+Again it's, it's expanding to,
+I think all disciplines on campus.
+we're, we're certainly growing in
+some of the big data needs and
+those types of products, projects.
+But it's mostly,
+other disciplines picking it up and
+working collaboratively with,
+between multiple departments.
+>> Okay.
+Won, wonderful.
+So, you know,
+I have interesting analogy, you know,
+and I was in undergraduate school or
+earlier.
+Many campuses had a computer center,
+which was a shared resource.
+>> Mm-hm.
+>> People who wanted to use big computing
+would come there for help, and then it
+slowly grew into a graduate program and
+then departments and now it's a very very
+vibrant, disciplined, and large industry.
+>> Yeah.
+>> Do you see similar analogy with GIS.
+Said with centers that do you see
+this precursor to becoming, you know,
+bigger things, on campus?
+>> I, I do, I think it, I think it will,
+I think that there's the idea of this
+spatial university where you integrate GIS
+remote sensing throughout much of the
+University and it will continue to grow.
+And in a way we make use of
+a lot of other resources such as
+the super computing center and
+other resources to do that.
+>> Wonderful, great.
+So so thinking about the audience you
+know, in this class we have almost
+20,000 you know, participants and many are
+from, you know, many different countries.
+And in some countries
+the universities may not have
+started a spatial
+computing services group.
+>> Mm-hm.
+>> So let's say if they were interested
+in thinking about creating simpler,
+similar services in their universities or
+collection of universities,
+what advice would you give them and
+how can they start?
+>> Yeah.
+The, the key is in the people.
+You've gotta get people talking and
+working together.
+It took.
+>> Okay.
+>> Probably a decade to get the idea of
+U-Spatial going on the university here.
+it's, it's working together,
+thinking about making connections
+with disciplines that you
+wouldn't normally work with.
+So geography is easy but
+religious studies, history.
+You don't think about those connections so
+much.
+and, and look for the,
+the tools that are out there.
+There's a wide range of open source
+tools that work very, very well.
+>> Wonderful.
+So that's a wonderful place
+to close because Harvard,
+the [INAUDIBLE] historian, right?
+>> Mm-hm.
+>> And some people say there is
+no history without geography and
+there is no geography without history,
+right?
+>> Yeah.
+Wonderful.
+So, we thank Mr. Len Kenny,
+who heads the spatial computing services
+on the University of Minnesota campus,
+which is a valuable resource.
+And he shared how this is happening
+at many other university campuses
+because the GIS data sets tools and
+services are becoming very,
+very useful in many disciplines.
+So in the next interview, we'll meet
+a few other community members and
+get a sense of what's happening
+in the community in general.
+Thank you for your attention.
+We look forward to seeing you soon
+

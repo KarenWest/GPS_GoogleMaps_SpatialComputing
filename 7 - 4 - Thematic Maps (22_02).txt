@@ -1,0 +1,728 @@
+Howdy, folks.
+Welcome back to the Cartography Module.
+The focus of this video is
+going to be on thematic maps.
+Recall that unlike reference maps, where
+the goal is to geocommunicate the location
+of specific entities,
+the goal of thematic maps is to
+geocommunicate the spatial
+distribution of geographic attributes.
+So for example,
+in the election maps we saw earlier,
+the goal is to communicate
+the distribution of election results.
+The goal of this news map is to
+communicate the accessibility of
+public transit.
+And the goal of Menard's map
+was to communicate the size of
+Napoleon's army during his very
+failed Russian campaign in 1812.
+The structure of this video is
+going to be pretty straightforward.
+We're going to go through a number of
+types of thematic maps, talk a bit
+about how they're made, and discuss
+their advantages and disadvantages.
+Let's jump right in here and start
+with what is almost certainly the most
+commonly used thematic map these days,
+which is the choropleth map.
+What you're looking at right now is
+a choropleth map with the percent of
+the population in each U.S.
+county that is below the poverty line.
+In a choropleth map each spacial unit,
+or a numeration unit,
+in this case counties, is given
+a single color in a range of colors.
+The geographic variation of colors helps
+the map user understand the spatial
+distribution of the geographic attribute
+in question, in this case poverty.
+So for instance here it's pretty
+easy to see that there's a,
+a poverty pocket here in
+the Mississippi Delta.
+This has existed for many years.
+It's a big problem we want to
+fix in the United States.
+There's a couple other poverty pockets
+around here, and here, and here.
+And, there's also a relatively
+wealthy strip here, and,
+in the northeast, where folks
+have a decent amount more money.
+Okay.
+A major design challenge when
+making a choropleth map,
+arises out of representing data as colors.
+Now in general this challenge
+can be split up into two parts.
+first, you have to decide on
+the set of colors you will use.
+And second, you have to decide how to
+assign specific data values to each
+color in the set you've chosen.
+This is also known as data classification.
+So let's start out here
+with challenge number one.
+Now in general, when deciding
+the set of colors you will use for
+choropleth mapping, the primary question
+you have to ask yourself is whether your
+spatial attributes are quantitative or
+qualitative.
+Okay.
+So if your attributes are quantitative,
+you're going to want your color scheme to
+move smoothly from one color to another.
+So in general, you want to go from
+a color that seems lighter or
+blander, to one that is darker or richer
+as spatial attribute values get higher.
+Now for those of you who know a little bit
+about color, this amounts to low value and
+low saturation for low spatial
+attribute values and high value,
+high color value, and high saturation for
+high spatial attribute values.
+You can see that we've used this type of
+color scheme with a poverty map, because
+percent of people below the poverty line
+is of course a quantitative attribute.
+Now other quantitative attributes that you
+might find mapped include, for instance,
+a population density and a people per
+square mile as you see here on this map,
+and percent of the population that is 85
+years old or older which is shown here.
+Now when you're dealing
+with quantitative data,
+it's almost always a bad idea
+to use hue or more colloquially,
+use different colors to represent
+different values of spatial attributes.
+Now this is something that naive
+map makers very frequently do and
+it almost always results
+in terrible thematic maps.
+So for example,
+we're turning to our poverty map here.
+If I had used hue or again,
+a lot of people refer to this as
+different colors to represent each data
+value, you can see it's much harder to
+understand the distribution and the
+variation of poverty in the United States.
+So for example, I don't know is brown
+you know, more or less than red?
+Is green more or less than orange?
+Is gray more or less than brown?
+These types of things.
+It's very difficult to
+understand the distribution of
+poverty around the United States and
+this is very intuitive to understand.
+In fact, I call it drop dead obvious
+in the map in which our color scheme is
+appropriate for a quantitative attribute.
+There is one important exception
+to the don't use hue for
+quantitative data in choropleth maps rule.
+And that exception is
+divergent color schemes.
+Now proper uses of divergent color
+schemes generally involve the mapping of
+data that has logical poles.
+Now these poles can arise either because
+you want to emphasize the extremes of
+the distribution of the attributes that
+you're mapping, or because more of
+one something inherently means less
+of something else in your attributes.
+A note here that the,
+the arrows here go in both directions,
+so this way is higher values and
+this way is, is higher values deviating
+from some sort of center point here.
+Now the most famous example of
+the use of divergent color schemes in
+the United States are the election
+maps we see during pretty much every
+election these days.
+Now more blue, of course,
+means more Democratic and less Republican.
+And more red means more Republican,
+and less Democratic.
+Okay, so that's what you do to
+decide your color scheme for
+quantitative spacial attributes.
+What about qualitative attributes,
+like, for instance, land cover type,
+urban versus forest versus water,
+the primary religion in an area,
+the primary language spoken in an area,
+the region of an area,
+like the East Coast ,West Coast,
+Midwest, and so on, and so forth?
+Now, unlike was the case with
+quantitative data, for these and
+other qualitative attributes,
+varying hue is actually the way to go.
+So you do want to vary hue.
+So for instance, let's return to this map
+of what football game is playing on TV
+on one particular week earlier this year.
+This is a qualitative spatial attribute,
+and, and
+it is properly visualized
+using variations and hue.
+You can see, for instance,
+that places where the New Orleans versus
+Atlanta game is plain, it's in red.
+Buffalo versus Chicago in blue.
+Minnesota versus Saint Louis in yellow,
+go Vikings, and so on and so forth.
+Because this is qualitative data,
+you don't want to emphasize spatial
+attribute variation using value in
+saturation, like you would want
+to do with a quantitative data.
+If the map maker here had done this,
+for instance, as I've mocked up here,
+it would be more difficult to
+see which game is playing where.
+And more importantly,
+it implies quantitative variation for
+instance this implies like maybe
+some games are playing, you know,
+more intensely than others, some games are
+louder, or something along these lines.
+It's pretty obvious that a varying
+hue is the way to go here.
+Okay, we've addressed the first challenge
+associated with choropleth maps by
+discussing what kind of color scheme,
+what kind of color scale we need for
+quantitative spacial attributes and
+for qualitative spacial attributes.
+So let's move on to the second challenge,
+which is about optimally mapping colors
+to specific attribute value ranges.
+So we already have our color scheme.
+Now we have to figure out which
+attribute values go with which colors.
+So for example here,
+why did I choose right,
+to map this color here as this range,
+0 to 11.3% below the poverty line and
+this color here to this range,
+and so on and so forth?
+Now performing this color mapping
+is known as data classification.
+And there are a number of
+approaches to doing so.
+The highest level distinction
+between approaches is that between
+classed maps and unclassed maps.
+Classed maps use color bends like
+I've done with our poverty map, and
+are the traditional, and are still I'd
+say by far the most common approach.
+Unclassed maps use a color
+spectrum rather than color bends.
+Unclassed maps are growing in popularity.
+And thanks to interactive mapping
+technologies, they're becoming more and
+more legitimate in the eyes
+of many practitioners and
+researchers of cartography.
+Now here's an example of an unclassed map,
+courtesy of indiemapper.com.
+You can see that rather
+than showing color bends,
+the legend shows a spectrum
+from high to low.
+Now the advantage of unclassed maps is
+that they don't generalize data at all.
+The disadvantage though, and
+this is a serious one is that humans have
+a hard time of distinguishing between
+more than five different color values.
+We know this from an extensive
+amount of research.
+Now, because classed maps are still
+the most common approach we're going to
+focus on classed maps for the remainder
+of our discussion of choropleth maps.
+The advantage of unclassed maps,
+is they don't generalize the data at all.
+This disadvantage is that, humans have a
+hard time distinguishing between more than
+five different color values.
+We know this from an extensive
+amount of research.
+Now there's a big debate between
+classed maps and unclassed maps.
+But because classed maps are still
+the most common approach, I decided to
+focus in more depth on classed maps
+rather than unclassed maps for
+the remainder of our discussion
+of choropleth mapping.
+Now if you are looking at a classed map,
+or if you decide to make one,
+you have a number of different
+options to choose from.
+For instance, there are natural breaks
+class maps, there are quantile class maps,
+there are equal interval class maps,
+there are standard deviation class maps.
+And there are many, many,
+many, many more types of class maps, and
+we're going to go over a few of these.
+In my view,
+these are what you see most often.
+So we'll focus on these.
+So natural breaks of those three is
+probably the most commonly used approach,
+and it's the one that is actually employed
+by default in a popular geographing
+information system software like Arc GIS,
+if any of you are familiar with
+that it's piece of software.
+Now, roughly speaking, natural breaks
+takes the histogram of attribute values in
+a given special data layer,
+finds natural co natural clusters, and
+makes the color bin boundaries
+enforce those clusters.
+Now, the primary advantage to natural
+breaks is that it is a lightweight
+data-driven way to surface these natural
+clusters in your spatial distribution.
+Now this is particularly powerful
+when there are outliers in the data.
+So for instance, here is the histogram for
+the population density map we saw earlier.
+It's hard to tell, but
+there are a few values here that
+are huge outliers, and this is
+captured by the natural breaks algorithm
+in that these values have their own class.
+interestingly, all of these
+outliers are in New York City,
+with Manhattan, which is also known as New
+York County, having the highest density.
+The first non New York City
+county is San Francisco County,
+which has a much smaller population
+density, and it's in the second class.
+In this way, Natural Breaks really
+captured well the qualitatively different
+levels of density that occur in New
+York City relative to everywhere else in
+the country.
+And because of this so
+does our Natural Breaks based map.
+Quantile in another quite common data
+classification approach for class maps.
+Quantile's pretty straightforward.
+Let's imagine we have a spatial dataset
+that has a single attribute value for each
+US state, which I visualized here on this
+slide using some made-up attribute values.
+The quantile classification approach
+involves first sorting the attribute
+values, as I've done here.
+And it then goes through the list, putting
+the same number of enumeration units in
+each class, so
+the same number of states in each class.
+So if we want to have five classes,
+as we have before as we
+have throughout this lecture that means
+we're going to have ten enumeration units,
+ten states in the first class.
+And these are the top
+ten by attribute value.
+The second class has
+the second to top ten the ten
+through twenty highest attribute
+values and so on and so forth.
+Quantile is a great technique to use
+when you're interested in the order of
+attribute values, rather than
+the specific values themselves.
+So, for instance, let's say we want to
+see which parts of the country have
+higher population densities, and which
+parts of the country have lower densities.
+But we're not actually that interested in
+the specific density values themselves.
+Now, in this case,
+we wouldn't want to use natural breaks
+like in this map, but rather we'd want to
+use the quantile classification
+like we have here in this map.
+Now rather than highlighting how much of
+an outlier New York City and a few other
+major cities are relative to the rest of
+the country, this map reveals different
+patterns and patterns that are equally
+interesting and, and equally important.
+So for instance, in this map we can see
+how incredibly sparsely populated much of
+the Northern Great Plains is,
+relative to the rest of the country.
+This map also highlights the unbroken
+streak of relatively high population
+density in the Northeast, a region that
+geographers sometimes call Megalopolis.
+Now while there are a number of other
+less commonly used data classification
+approaches, the last approach we're
+going to cover in this video, and
+one that is quite commonly used,
+is the equal interval approach.
+Now this approach is very simple.
+You take the highest attribute value,
+subtract from it the lowest
+attribute value, and divide by that,
+divide that by the number of classes,
+which has been five for us, and
+this gives you your class width.
+So for example,
+here is the histogram for poverty rates
+with equal interval class breaks.
+You can see here that these class breaks
+are exactly the same distance apart,
+which is what we've expect
+with equal interval.
+So, data classification in
+cartography is a wonderful tool.
+But like many tools,
+it can also be used for evil.
+And specifically, a data classification
+is a great way to lie with maps.
+And let me show you what I mean by
+using the map of the percent of
+the population that is above the age
+of 85 we saw earlier in the video.
+Now, let's suppose I'm a real estate
+agent of dubious character and
+I'm trying to sell houses in
+the Northern Great plains here.
+Now, to do this I decided I needed
+to make this area look younger and
+hipper because there are so many people
+around here that are above the age of 85.
+It's going to be hard to get people who
+are in the housing market to buy houses.
+Now what we're visualizing
+this map with is,
+is the natural breaks
+classification approach.
+Natural breaks is going to reveal
+the natural clusters in the data,
+including that there is a large cluster
+of high proportion 85 plus counties in
+the northern Great Plains.
+Now although this cluster exists in real
+life, as a real estate agent this is
+not going to help me sell houses in
+this region, so I go into my mapping
+software real estate is a common place
+where you see spatial computing employed.
+So I go into my mapping software, and
+I decide play around a bit to see if
+there's a classification
+approach that meets my goals.
+And remember these
+are very dishonest goals.
+I try several different
+classification approaches and
+I settle on equal interval because
+it makes the region I am looking to
+sell houses in look quite a bit younger.
+Now in this case equal
+interval is affected by
+some enormous outliers here which
+you can see in these two arrows.
+And this makes the class width,
+if you recall our equal interval equation,
+much wider.
+As such, values that are at much
+higher classes in the first map,
+are in lower classes in this map, which
+why everything looks much lighter green.
+Now, what I should have done,
+as a real estate agent,
+is choose the data classification approach
+that best represents the data for
+the map reader, or the map user's needs.
+Now in this case that's helping them
+see that the Great Plains is an aging
+region with a high
+proportion of people 85 and
+older relative to the rest
+of the United States.
+There are purposes for which equal
+interval is appropriate, of course.
+But in this case it obfuscates
+the important patterns in the data for
+this map purpose.
+The purpose of teaching you about lying
+with maps using data classification
+is twofold.
+First and foremost, hopefully now you
+can be a more educated a map reader and
+make sure to examine the map
+legend over here to see if
+there's any funny business going on.
+Now this is actually the only
+way to suss out folks who try to
+lie with maps using data classification.
+Second, for any of you that make maps, and
+for those of you in the technical track
+who will make a map for this for
+the assignment for this module.
+Hopefully this was reminder, this was a
+reminder to use your map making skills for
+good, and not evil.
+Okay, the last thing I want to
+say about mapping data values to
+colors in choropleth maps, is to briefly
+address this for qualitative attributes.
+Now fortunately for these attributes, it's
+a lot easier than quantitative attributes.
+The most important thing
+that you have to do,
+is to make sure that the colors you
+choose won't be misinterpreted as
+being quantitative in nature in
+the manner we discussed earlier.
+Now another concern is to make sure you
+chose colors that are color blind safe,
+and to do so
+I'd recommend using ColorBrewer, which is
+a tool that has become incredibly popular,
+both inside of cartography and
+these days outside of it as well.
+In fact its creator, ColorBrewer's
+creator academic cartographer Dr.
+Cynthia Brewer, at she's a professor
+at Penn State University.
+She was recently featured in Wired
+magazine, which is pretty exciting to see.
+ColorBrewer will give you qualitative
+color schemes for a given number of
+classes that are color-blind safe, and
+safe for a number of other uses as well.
+You'll see that you can
+also use ColorBrewer for
+regular quantitative color schemes, and
+for diverging color schemes as well.
+And in fact all the maps I made for
+this lecture,
+I used color schemes from ColorBrewer.
+Okay, so, that was a pretty long
+exposition on choropleth maps.
+Fortunately a lot of what we've learned
+about choropleth maps also applied to
+these other two types of maps, and
+it was worth spending additional time on
+choropleth maps because they're probably
+the most common type of map you'll see out
+there on the internet today, for instance.
+So next up, we have graduated and
+proportional symbol maps.
+These maps are also based around
+enumeration units like counties, but
+they use symbols rather than color
+to communicate the distribution of
+spatial attributes.
+So for example here is a graduated symbol
+map of the population of each county in
+the United States.
+You can see that in the in the legend, the
+larger the symbol placed in the center of
+each county, the more populous the county.
+You'll note that I used squares here and
+this was intentional.
+Graduate symbol maps are about
+using size rather than color to
+represent the distribution
+of spatial attributes, and
+humans are much better at perceiving the
+relative areas of squares than circles.
+Like was the case with color and
+choropleth maps,
+deciding how to map between size and
+attribute values is a key challenge in
+graduated and proportional symbol maps.
+So here there are also two
+high level approaches.
+Proportional symbol maps
+use the unclassed approach.
+And graduated symbol maps
+use the classed approach.
+The same data classification
+methods apply for
+graduated symbol maps as they as they
+did for class choropleth maps, but
+here we're talking about
+symbol size instead of color.
+Graduated and
+proportional symbol maps have certain
+advantages over choropleth maps.
+In particular they use size instead of
+color to visualize the variation in
+spacial attributes.
+And recent research has shown that size
+may be preferable to color in, for
+a number of purposes.
+Now that said graduated and proportional
+symbol maps also have some disadvantages,
+namely the symbols can
+overlap extensively for,
+preventing people from seeing
+numeration units of interested.
+For example, definitely here it
+is difficult to see any sort of
+individual numeration unit,
+any individual county in this cluster
+of northeastern counties there.
+Varying size rather than color can also
+be confusing for proportional attributes,
+like population density, percent of
+the population that is over 85, and so on.
+Graduated and proportional symbol
+maps are better for raw values,
+which of course is a bit confusing because
+of this term proportional being used for
+proportion symbol maps.
+But proportional values are best
+shown on choropleth maps.
+Okay, the next and
+the last type of thematic graph that I
+want to discuss is the cartogram,
+and this is a fun one.
+To understand cartograms let's take a look
+at this map of the 2012 United States
+presidential election, states Barack Obama
+won are of course in blue, and
+states Mitt Romney won are in red.
+Now even though Barack Obama
+won the election,
+this map in some ways suggests
+that Mitt Romney did.
+Namely more of the United States here is
+covered in red than is covered in blue.
+The reason this is the case is that
+many of these big red states have
+very little population, and
+because the United States is a democracy,
+these states count less than
+smaller states like Massachusetts.
+Which actually has 11.5 times
+the population of Wyoming over here,
+even though it's a much smaller state.
+Now, cartergrams are designed
+to address this issue.
+They alter the geometry of enumeration
+units, like counties and states and so on.
+And they do so
+according to an attribute of interest.
+These new shapes can then be
+used to show a choropleth map.
+For instance, here's the same map but
+in cartogram form.
+Each state has been changed in
+area to roughly correspond to
+the state's population or at least
+to their number of electoral votes.
+You can see here that Wyoming
+has gotten a lot smaller and
+Massachusetts has gotten a lot bigger.
+Other large population states
+like California New York,
+Florida, these states have
+also gotten a lot larger.
+You can see here with a quick glance at
+the map that it's easier to tell that
+Barack Obama won the election, because
+there's more area in blue than in red.
+And this is of course different than
+if we used a regular, a geographic map.
+You've already seen an example
+of a cartogram in this course.
+When we were looking at how central
+each country of the world is to all of
+encyclopedic world knowledge as
+defined by the Japanese Wikipedia,
+we saw this choropleth map.
+I then showed you what this would look
+like if each country was sized by
+how central it is.
+Now in this case, I've used the cartogram
+to support through redundancy
+the information encoded in the choropleth
+map, rather than to show a different
+attribute, like we did with the electoral
+votes in the previous example.
+This is also another proper
+way to use a cartogram.
+In general, cartograms can enhance
+a choropleth map quite a bit in
+certain cases.
+But they have obvious disadvantages,
+namely they distort, space extensively.
+Japan of course is not actually this big,
+and that's going to confuse some people.
+Now in practice cartograms
+are rarely presented alone,
+instead they appear with non distorted
+core plus maps with an option for
+users to click over to
+the cartogram version.
+So for instance, in the lead up to
+the 2012 election The New York Times had
+this interactive
+visualization on its website.
+You can see another type of cart,
+of cartogram here.
+But you also can click over to
+the regular geographic view here.
+Okay.
+So we've been through the three
+types of thematic maps I wanted to
+talk about today.
+Which is unfortunately all we can do in
+this short video on thematic cartography.
+There are of course, other types of
+thematic maps and there are many of them.
+For instance we have dot maps here.
+We have heat maps.
+My quick hint with heat maps is that
+they're really hard to pull off well and
+I'd actually avoid using them if possible.
+If you do, at least don't use
+hue in the typical fashion.
+As this is of course inappropriate for
+quantitative variables which is actually
+which are actually being visualized here.
+There are also flow maps which allow
+you to visualize what are called
+geographic dipoles or attributes that
+are connected to two places not just one.
+There are many other types of maps as
+well but those will have to wait for
+a full course on cartography.
+For now, that's it for
+thematic cartography and
+I'll actually see you in the next video.
+[NOISE]
+

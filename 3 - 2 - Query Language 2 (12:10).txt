@@ -1,0 +1,362 @@
+Welcome back, we are continuing the
+discussion of spatial query languages, and
+this is the second video in the sequence.
+You have already seen what a query is and
+you understand what a query languages.
+So now we'll continue
+our journey towards SQL,
+and in this video segment we
+are going to do two things.
+First we'll introduce a simple
+database with three tables.
+So at the end of this segment you should
+be able to understand what those three
+tables are.
+What are the columns in there and
+what do those mean.
+The second objective is to
+introduce SQL overview or
+in a big picture so we'll essentially
+talk about three main parts of SQL.
+So that we, we kind of know
+the location of the, the future videos.
+So let's get started with the database.
+So we are going to introduce
+a simple database with
+three tables which represent some
+basic geographic facts about the work.
+So in this database there
+will be three tables.
+Or at conception level, three entities.
+We'll talk about countries of the world,
+cities of the world,
+and rivers of the world.
+These three entities will be
+connected via two relationships.
+The first is capital of so
+cities and countries would
+have a relationship where certain cities
+may be capital of specific countries.
+And the second relationship
+is originates in.
+The rivers and
+countries will have this relationship.
+So for example you may see Mississippi
+originates in USA and so on.
+So this database can be
+viewed at a conceptual level,
+using an entity relationship diagram,
+which is shown in this slide.
+In this diagram,
+we are using Peter Chen's notations.
+So where entities
+are represented as boxes.
+So the three entities we just introduced.
+They show up as three
+boxes in this picture.
+So you can see on the left
+a box named City,
+in the middle a box named Country,
+and on the right, a box named River.
+So these three are the three
+main entities of the,
+the tables in your relational database.
+The two relationships we described,
+Capital and
+Originates, they show up as diamonds.
+So you can see a diamond
+connecting city and
+country and another diamond
+connecting country and river, okay?
+In addition you also see a set
+of ellipses in this diagram and
+they specify the attributes of entities.
+So, for example,
+the city has two attributes and so on.
+We'll very soon show you the details of
+these attributes at their tabular level.
+So, the same database now we are going
+to view it as a set of tables, or
+logical data model in a data, base.
+So, these three entities
+become three tables, so
+country entities are presented
+as country table.
+Which has a set of columns such as name,
+continent and so on.
+We are going to show you
+the table in the next light so
+I am not going to go over all
+the attributes right now.
+The other two tables are city and
+river and
+again if you notice those attributes
+show up as columns in the table.
+And the following slides
+will show you the detail.
+Now in relational data
+basis we also specify keys.
+So some columns are designated
+as primary keys.
+And they essentially mean that,
+if I look at a table, these columns would
+have unique values across the rows.
+And very soon,
+we will be seeing this table, okay?
+In addition, databases also
+talk about foreign keys, and
+they're often used to
+represent the relationships.
+So the capital of and originates in, those
+are modeled via these foreign keys and
+we'll show that soon, okay?
+So let's look at these
+tables in more detail.
+Here is the country table.
+In this country table, you can see
+six columns and several rows, right?
+So first column talks about Canada, and it
+is in North America continent and so on.
+The columns of the table
+are described next.
+And you notice that
+the columns are continent,
+gross domestic product, population, etc.
+For the spacial database,
+the last column is of particular interest.
+And in here it is simply shown
+as a column named shape.
+But in each row you
+notice some polygon id.
+Polygon id ne two and three.
+We are not actually
+showing the geometry here.
+But in a high level you can understand.
+That they are representing
+the boundaries of respective countries.
+The next table is city table.
+Here again you see different
+columns specifying the attributes.
+Which are described here.
+You have population and so on.
+Again the last column is of spatial
+interest in the geography database.
+And it is describing
+the geography locations.
+But if you imagine the city
+center as a point perhaps that is
+describing the longitude and
+latitude of that point.
+Once we have such spatial columns,
+we can use those to
+post geography queries based on distance
+or inside outside kinds of relationships.
+The third tabel, is the river tabel,
+and again you see multiple columns.
+In the last column is a shape
+in case of river you know we
+are looking at the center lines.
+So rivers are being
+modeled as a line string.
+The other columns are described here,
+where you have name.
+The country of origin and so on.
+>> Okay.
+>> So these tables will be used in all
+the follow up examples of SQL queries.
+But before we get there we are, we're
+going to provide you a big picture of SQL.
+So let's talk about the SQL language.
+>> Okay.
+>> What is SQL.
+So, SQL is an acronym.
+In 1980s people did have more
+specific complete name you know?
+Some called it Structured Query Language
+others called it Standard Query Language.
+But since then most of us actually have
+forgotten what the actual name was.
+What is SQL?
+It is a standard query language for
+relational databases It's typically
+called SQL or colloquially called sequel.
+But it is, it is very popular if you
+are in a relational database world.
+Almost all relational
+databases understand SQL.
+There may be slight variations in
+terms of from vender to vendor, but
+it's intergalactic data speak, okay?
+You know, one way SQL is different
+from other programming languages,
+is that it's a logical level language.
+Or some people call it
+declarative language.
+So in other words, in SQL, we describe
+what subset of data needs to be retrieved,
+but we do not give a detailed algorithm.
+We do not give a step by step algorithm.
+We do not say that we have to sort
+the data or, you know, index the data.
+Those are all hidden.
+Unlike other programming languages,
+such as Java.
+So if you were in Java,
+or Visual Basic, or C++.
+In order to extract a subset of data,
+you'll have to specify the algorithms and
+data structures,
+in addition to the subset.
+Whereas in SQL, we do not do that,
+and databases are responsible for
+figuring out the algorithms and
+data structures.
+So SQL is a rich language.
+You can specify a very,
+very rich set of queries in this.
+And as we proceed with the detail,
+you will see those examples, okay?
+All right.
+It is supported by, you know,
+all databases of interest and
+you are seeing some names here, from IBM,
+Oracle, Microsoft, Sybase, and so on.
+And there are a few different versions.
+The first stand in a version starts up
+with 1986 often called SQL 86 or SQL one.
+A media revision came in 1992.
+Sometimes referred to as SQL two.
+And the version most often of interest
+in our discussion is SQL three.
+Which started in ninety-nine,
+but was formalized in 2003.
+Since then, another version was,
+media version was released in 2008.
+But, essentially starting SQL three.
+There is provision for
+user defined data type.
+And using that provision we
+can add geography data types.
+Such as points, polygons, lines,
+strings that we saw in our tables.
+So most of our,
+our discussion will be post SQL three, so
+either SQL three, SQL 2008, okay?
+So, how,
+how do we use SQL to manage spacial data?
+In essentially early
+2000s this trend started.
+Most geographic information systems
+did have a database in the backend.
+Til early 90s those used
+to be custom databases.
+Around mid 90s it opened up to
+early through early BC bridge,
+where any other relational
+databases could be plugged in.
+And starting 2003 we also had
+other geography data types.
+So ESRI, which is the major player
+in geographic information system.
+They, you know, have their own database.
+But they can also use databases
+from Oracle and so on.
+So, so the main point here is that even
+though in geographic information system.
+Or mapping software like Google Earth,
+you might not see a SQL upfront.
+You may only see a graphical
+your interface, but
+in the back end they all
+have these databases, okay?
+All right, and in those situations
+the SQL queries that we
+will study are often generated
+by the front end software.
+They are not always written by a person.
+But even though that is the case.
+But in this course we will try to
+understand what those queries look like,
+and how we can write those by hand.
+Learning that skill is still valuable for
+two reasons.
+Okay, number one, as,
+you know, if you are into technology,
+then you would have access to SQL system.
+And you will be able to write
+those queries yourself.
+Second, even if it is being
+generated by application software,
+once in a while the query generator
+application software runs very slowly.
+You know, it takes forever and
+at that time a human expert has to go in,
+read the query, and try to understand.
+Are their ways to speed it up.
+So again, the skill to read SQL
+queries is an important skill.
+So the ability to be able to change it,
+to speed up performance, or
+the semantics of the question is
+an important skill in today's job market.
+In fact, a recent survey, 2014.
+When they listed the most
+popular language in industry for
+the jobs,
+SQL was among the top ten languages.
+So it still continues to
+be very valuable skill.
+Okay, so with this, let's,
+go under the hood, and
+at least take the first look inside SQL.
+The SQL is a vast language.
+It has many, many statements but at a high
+level you can group them into three parts.
+The first major part is
+the data definition language.
+And this provides us with a set of
+statements to create tables, and
+also to change
+the definition of the table.
+This is equivalent to defining classes or
+instruct in Java.
+Essentially the idea is to define
+the table names, their columns and so on.
+Once these tables are defined,
+then we use a second module of SQL
+called Data manipulation language.
+And in here lies the statements to,
+for example, add data to the tables
+which have already been defined.
+And once you have added the data,
+there are statements to
+extract subset of the data or
+change the data or delete the data, okay?
+In, in our course I think we'll touch
+a little bit on the data definition how to
+create or define a table.
+Then how to insert data with a data
+manipulation and how to query.
+There is a third part which we are not
+really going to look at in great detail.
+It's called data control language.
+And these are used to, for
+example, set security permissions.
+You know, which user can see which tables.
+Or they're also used to
+specify transactions.
+So if you wanted to group a set of
+updates as atomic unit and so on,
+those are in this part.
+And in our course will
+not really talk about it.
+So our focus primarily will be a few
+statements from data definition, and
+a few from data manipulation.
+So with this we complete our,
+you know, basic introduction to SQL.
+In the following video
+we will come back and
+delve into the detail of data definition
+language, and data manipulation language.
+

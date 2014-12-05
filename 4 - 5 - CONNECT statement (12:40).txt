@@ -1,0 +1,384 @@
+Welcome back to the discussion
+of spacial networks.
+In last four videos we looked
+at the societal motivation.
+For example many of us use
+navigation apps on our smartphones.
+Also via web services such as google maps.
+Underlining these applications we have
+many spacial networks such as road maps,
+public transportation,
+networks, and so on.
+We also looked at conceptual data
+models called spatial networks.
+For example,
+we looked at entity relationship diagram,
+which can represent
+a rich set of concepts.
+For example, in road map one may
+represent streets street intersections,
+turns, points of interest, and so on.
+Mathematically we use a simpler
+model called graphs which
+essentially consists a set of vertices or
+nodes and another set of edges.
+In case of road maps, the vertices
+made project road into sections.
+And the edges made a project
+road segment connecting those.
+Okay?
+Now next we started looking at
+logical data models, primarily for
+creating road maps.
+And we discussed why, you know,
+the SQL we have learned so
+far, the spatial equating we have
+learned so far, is not adequate.
+Okay, formally, relational algebra cannot
+represent so you need some new things.
+So in this video module we are going
+to learn one extension to SQL
+to equate graphs.
+So at the end of this video
+we should all be able to
+describe the connect clause in SQL Select.
+It's a render specific feature.
+Oracle was the one who
+started this feature,
+then maybe other brand names
+which may also have it.
+And using CONNECT we'll also learn how
+the query a directed acyclic graph.
+Okay.
+So here is your, you know,
+quick background.
+You remember for querying we learned that
+our tradition SQL, which is based on
+relational algebra, is not capable
+of computing transitive closure.
+In other words if I gave you
+road segments connecting
+existing intersections we cannot
+express shortest path query in old SQL.
+So we need to extend SQL to support
+graph queries such as shortest path and
+there are two broad ways to do that.
+One could use abstract data type in
+SQL 3 very much like the data type,
+points, polygons et cetera,
+we use for spatial equating.
+One could define graphs and
+paths, vertices, edges, and so.
+Okay.
+The other approach is to add
+custom statements in SQL and
+we will start from there first.
+Okay.
+So there at least two different
+ways people have done it.
+We'll look at the original, you know,
+CONNECT by you know, CONNECT clause in
+SELECT statement that was popularized by
+Oracle and then, in the subsequent video,
+we will come back and look at recursion,
+which is standardized with SQL 3.
+Okay?
+So, without further ado,
+let's look at the CONNECT BY facility, and
+in this slide we are going to
+look at the input and output.
+And as you recall, you know,
+the goal is to compute transitive closure.
+So import is a graph more specifically
+a directed acyclic graph.
+So for example, here we are showing you
+the river network represented as a graph,
+where the nodes are rivers,
+such as here you see Missouri,
+Mississippi, and the edges, or
+directed edges, represent falls into.
+So Missouri falls into Mississippi and
+that's this edge.
+Okay.
+Given such a graph,
+the connect by statement can,
+you know compute transitive closure.
+In addition, it can actually give
+you a sub-set of transitive closure.
+So for example,
+you can specify a start node.
+Let's say we started with Missouri.
+Then we can do two kinds of queries.
+Either predecessors of Missouri or
+successors of Missouri.
+Okay.
+So in order to separate those you need
+to also specify travel direction.
+Okay.
+So essentially if you wanted to compute
+predecessor, then, you know, you will
+get all these rivers which directly or
+indirectly contribute water to Missouri.
+And in this case,
+you're travel direction is in some
+sense is opposite of these arrows.
+Okay?
+The other option is to find
+Successors of Missouri,
+in which case we are following the arrows
+as their projected in their diagram and
+in this case you might find
+Mississippi as a successor.
+Missouri contributes water to that river.
+Let's next look at
+the tabular representation.
+Because in SQL all the data has
+to be represented as tables.
+So one way to represent graphs in terms of
+tables is to simply list the edges, okay.
+Okay?
+So
+here is an edge table for
+this river falls into another river graph.
+And in this case we may
+just need two columns.
+Because each edge has its, you know,
+it starts from its source and
+it ends up at the destination.
+So for example, if you're looking at
+the edge, Missouri falls into Mississippi.
+We may specify as a row, where Source is
+Missouri, and Destination is Mississippi.
+Now, if I look at the other way around,
+you know Platte and
+Yellowstone, they fall into Missouri.
+In this course Missouri may
+be their destination, and
+those rivers may be their source.
+Okay?
+So if I actually created one row for
+each of these edges, then you are going to
+get two more rows, like this Ohio etc.,
+falling into Mississippi.
+They are here, and remaining, you know,
+contributories to Missouri are here.
+So once you have this tabular
+representation we can work with SQL or
+and we can look at the,
+the syntax of this statement.
+Okay?
+So
+here is a very simple
+example of CONNECT BY.
+'Kay?
+So in this particular SELECT statement,
+you would recall some familiar things.
+So for example, you know,
+there is a SELECT clause and a FROM cause.
+These two we saw before when we
+were studying spatial equating.
+And you will remember that the FROM
+clause specifies the table, okay.
+So in our case let's say we are working
+with this table Falls_Into to
+representing our graph.
+That table may named in the FROM clause.
+Very much like the other SQL statements
+we saw where we were listing tables.
+'Kay?
+Then we have two new clauses,
+this CONNECT BY and
+START WITH, and
+let's try to understand what they do.
+START WITH is a much simpler clause.
+And in this case,
+you notice it specifies a column in
+our table, so destination column.
+And it also provides a condition.
+So it's saying that, you know,
+you should start with the rows in this
+table, where the destination is Missouri.
+So these two rows are the starting point.
+And starting with these rows,
+we could either try to find predecessors
+of Missouri or successors of Missouri.
+Okay?
+So now a natural question is,
+what does connect by prior clause do?
+And you can probably guess,
+it is specifying the direction of travel.
+Starting with Missouri, do you want
+the successors, or predecessor?
+Okay?
+So in other words, you know,
+if you think about this red arrow, if you
+want to go from destination to source.
+In other words, getting predecessor.
+You know, which reverse
+contribute water to Missouri.
+Then you could specify this and
+as it is shown in this statement.
+So in fact,
+this prior is placed before source, so
+it basically says you are going
+from destination to source, okay?
+We could move this keyword prior to
+other side after the equal sign and that
+will give you the other direction where
+you're going from source to destination.
+And then sometimes this ad was
+going the other way, okay.
+So so let's look at both side by side.
+If you are going from destination
+to source, or, you know,
+this should be source to destination,
+slight typo.
+The so, contributing reverts to Missouri,
+in this case,
+so now that you might see as
+the query we just saw, okay.
+So this query is going to
+start with Missouri and
+get to the rivers which directly
+contribute to Missouri, and
+it will continue on and say any river that
+contributes to these rivers, Platte or
+Yellowstone, are also contributing
+to Missouri main directory.
+Okay.
+The second choice is to
+ask the successors of
+Missouri which rivers
+get water from Missouri.
+So if there were, let's say,
+a spill of some toxic material
+in Mississippi in Missouri.
+And you want to ask which of
+the rivers should be observed or
+monitored for that material,
+then you will go the other direction.
+And notice here the prior keyword
+has been moved past the equal sign.
+Okay?
+So here the direction is
+from source to destination,
+this is a typo, but this is the other
+direction as shown in the figure.
+Okay?
+So next let's look at the semantics.
+Okay.
+As you know SQL is a declarative language.
+It doesn't specify any algorithms
+to compute the result.
+But we can at least create a mock up
+algorithm which is for hand simulation so
+that you can understand the meaning of
+a given statement with connect by clause.
+Okay?
+So let's suppose we go back to this
+statement which we have seen before.
+Where, you know, you are looking
+back at this table FallsInto and
+then you want to travel it
+in a certain direction.
+And then get either places,
+several successors.
+Okay?
+So in order to execute it.
+The first step, usually,
+is to work with this initialization.
+This START WITH clause is executed first.
+So in this case, you know,
+if you look at the query,
+you know, the condition destination equal
+to Missouri, that will qualify two rows,
+which are surrounded by blue box here,
+okay.
+So we'll initialize the result
+with just these two rows.
+Okay, so this is your result or
+you can call it the prior result
+because it's going to grow.
+Okay?
+So if the first steps we get
+two rows where destination is
+Missouri as specified by
+this start with clause.
+Okay.
+Once we have done that then
+we can grow the result.
+And at that point,
+this connect by clause comes in handy.
+So, in the next step, we basically
+look at this connect by clause, and
+this condition, and
+we try to grow the desert.
+So, more formally, what you can do
+is to think of this prior, you know,
+dot source equal to the original
+table FallsInto.destination as
+a joint condition.
+'Kay.
+So in other words, you know, you can
+take a look at the prior source, okay.
+In our results so far there are two
+sources, Platte and Yellowstone.
+And now we go back to our
+original table FallsInto and
+say what do they match on
+their destination side.
+Okay.
+As specified here.
+So in this case as you can see it will
+match four rows in original table.
+And then all of these four rows will come
+and become part of your result, okay.
+So all of this will get added and now
+your result has the original two rows and
+four new rows, six rows, okay.
+Now step two can be repeated again.
+All right.
+So now we can again try to say,
+well if I took, you know,
+all these sources, P1, P2, et cetera, and
+try to match it with destination,
+will I get more things in the result.
+And in this case, as you realize we
+are not going to add any more because we
+don't have any predecessors
+of these new reverse, P1,
+P2, et cetera which has been added, okay?
+So we will terminate.
+And at this point we have
+all the rows of interest.
+And then finally the select
+clause is going to be executed,
+which will only take the first column,
+the source column, to form the result.
+And that's where you get the result.
+Okay?
+So to summarize you know,
+we looked at connect clause which has been
+added to select statement by some vendors
+like Oracle to support graph queries.
+This particular statement allows you
+to work with a directed acyclic graph.
+So, if you have something hierarchical or
+tree-like, then you can travel it,
+either travel it up the tree or
+down the tree to compute predecessors
+of successors of the node.
+We also showed you an example
+with river network to
+explain the syntax and semantics.
+In the next video we'll come back and
+look at another statement
+called with recursive.
+Which is more standardized in SQL3 and
+may be available across many,
+many brand names and, and vendors.
+And that will give you a more general
+statement to work with graphs.
+So look, look forward to
+seeing you in the next video.
+

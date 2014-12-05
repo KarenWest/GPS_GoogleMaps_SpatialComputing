@@ -1,0 +1,150 @@
+Hi, folks.
+Welcome back to the [SOUND] University
+of Minnesota's spacial computing MOOC.
+This week, we're going to be focusing
+on the subject of [SOUND] positioning.
+Now, our learning objectives for
+this module are pretty straightforward.
+First by the end of this module,
+you should have a general idea of how on
+earth your smartphone knows where you are.
+And to foreshadow a bit here,
+your smartphone does something far
+more complicated than just using GPS.
+Because of this,
+by the end of this module,
+you should also no longer be participating
+in one of my biggest spatial computing pet
+peeves, which is the dramatic misuse
+of the term GPS in the popular lexicon.
+So, for instance, you'll say latitude and
+longitude coordinate rather than GPS
+point unless you really mean GPS point.
+And to be honest,
+GPS point isn't the best term overall.
+Now, by the end of this module,
+you'll also be familiar with
+an important frontier in positioning,
+a family of methods that I've
+called content-based positioning.
+Now, understanding content-based
+positioning techniques has
+important implications not only for
+your understanding of how spatial
+computing technologies work and how to
+build spatial computing technologies, but
+also for the concept of privacy
+in our new big data world.
+Okay, so let's go ahead and
+dig into this module.
+Now, at a high level, positioning is
+about a very simple question, and
+that very simple question is, where?
+So, for instance,
+where is my property line?
+Where should a missile go?
+Where is a certain member of an,
+of an endangered species?
+And one of the most important where
+questions in spatial computing these
+days is, where is this smartphone user?
+Now the concept of the geo-atom,
+which was introduced by Dr.
+Michael Goodchild in 2007 and
+perhaps 1999 as well.
+It depends on how you define introduced.
+But regardless, the geo-atom provides
+us with a good framework for
+understanding the importance and role
+of positioning, and the importance and
+role of the where questions.
+Now, most types of geographing information
+you'll encounter can be reduced to
+the geo-atom, which explains its name.
+Now, roughly speaking, we can think of
+a geo-atom as describing a point and
+attribute tuple or
+a point and attribute pair.
+Now, the Z in the geo-atom
+refers to an attribute.
+So, for instance, in the case of
+John Snow's cholera investigation,
+we might think of Z as the presence or
+absence of a person sick with cholera.
+Most things you see mapped
+can be considered Zs.
+So, for instance, temperature, population,
+air quality, the content of a tweet,
+the article text of a Wikipedia article,
+and so on and so forth.
+Now, z of x refers to the value
+of the attribute at a location x.
+So, for example, for the temperature case,
+a z of x can be ten degree Celsius, or
+here in Minnesota in the wintertime, for
+instance, negative ten degrees Celsius,
+right?
+We can also think of a tweet, an Instagram
+photo coming from a specific location.
+These are all z of x's, same deal with
+Wikipedia articles about x and so on,
+and so forth.
+And lastly, x is, once again, the location
+at which the attribute was measured.
+Positioning is all about the x.
+In most of the previous modules,
+we focused on all parts of
+the geo-atom when talking
+about geographing information.
+In this module, we're going to dig much
+deeper into the x and focus solely on it.
+Now, more specifically,
+we're going to dig into determining the x
+of a user of a special computing system.
+This is going to be the focus.
+The importance of accurately and
+consistently being able to determine an u,
+a user's position or a user's x really
+can't be understated in special computing.
+Doing so underlies pretty much
+all location-based services,
+a large number of big data geography
+analysis, and so on and so forth.
+Okay, before we move
+away from the geo-atom,
+I do want to clarify one
+common point of confusion.
+The x here does not refer to
+just the horizontal dimension or
+just the latitude in a latitude and
+longitude pair.
+Note here that the x is bold and
+this means that it refers
+to a vector of values.
+So, one possible vector consists
+of both a latitude and longitude.
+Another might also include a z coordinate,
+and another might add in a time coordinate
+for, for instance, a spaciotemporal
+representation, and so on, and so forth.
+Okay, moving on here, in this module,
+we're going to consider two broad
+families of positioning methods.
+The first family, we're going,
+we're going to call, for
+a lack of a better term,
+signal-based positioning methods.
+Now, this family consists
+of techniques like GPS, or
+the Global Positioning System,
+but also others as well.
+The second family consists of
+content-based positioning methods,
+as I was discussing earlier.
+Okay, that's it for
+the introduction about positioning.
+I'll see you in the next video, where,
+where we'll, where we'll begin to discuss
+signal-based positioning methods.
+[SOUND]
+

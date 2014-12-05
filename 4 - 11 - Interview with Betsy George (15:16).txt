@@ -1,0 +1,504 @@
+Welcome back to the discussion
+of spatial computing.
+Today we are going to meet Dr.
+Betsy George, at Oracle Spatial and
+share and learn from her, you know the
+excitement of spatial computing at Oracle,
+a popular product which we have
+mentioned several times in this course.
+Okay?
+So please say hello,
+to Doctor Betsy George.
+>> Hi.
+>> So Betsy, you know the first question
+we wanted to ask you is, you know,
+coming from a broad mathematics and
+computer science background, how did
+you get started with spatial computing?
+>> I came into spatial computing
+through my interest in graph theory.
+So graphs.
+I have always been impressed with them.
+Expressiveness and
+the simplicity of the model called graph.
+And so I got introduced to graphs
+at the very early stage and
+then, I was looking at, when I was
+starting my research I was looking for
+some real world applications of graphs.
+>> Mm-hm.
+>> So then I got introduced
+to transportation networks,
+which are basically spatial networks and
+and my first familiarization
+with transportation at work was through
+a study of evacuation planning algorithms.
+And so when I studied the problem,
+a little bit,
+I realized the challenges that the real
+world application domains brought,
+to this world of graph theory,
+and I was really excited and
+impressed by the way, we needed to
+re-evaluate the algorithms with.
+In terms of the assumptions that we made,
+when we designed graph algorithms.
+>> Okay.
+>> We needed to reformulate them
+to suit the applications better.
+To be more specific in terms of the
+evacuation planning algorithm the aim was
+to evacuate the people as
+fast as possible, so for a,
+from the graph theory perspective,
+that would immediately you know,
+let me choose the shortest path, or the
+fastest path, algorithm, and apply that.
+But, then I realized that
+that's not going to work,
+because the roads have capacities and
+you cannot push everybody to move,
+along the same shortest path possible
+from the source to the destination.
+So, we needed to take care of the capacity
+constraints, which is not really.
+Taken into account in any of the,
+shortest path algorithms that I knew of.
+So that was one example, where graph
+theory really met the real world
+application and
+that opened up a lot of possibilities for
+interrogation of the assumptions that
+we're behind the graph theory algorithms.
+So.
+To put it shortly, I was, I was,
+I became interested in special
+computing through special networks.
+>> Okay.
+>> And so then I started seeing the lot
+of challenges that are raised by,
+you know, the,
+when you bring location into computations.
+>> Okay.
+>> And how to effectively use that, and
+so, it's been,
+it's been a really exacting journey.
+We've started off, with spartial networks
+which, which are like the real networks.
+>> Oh.
+Won, wonderful.
+So in this course, you know,
+we did discuss shortest path.
+>> Okay.
+>> And
+I'm guessing lot of people in this course,
+have used services like Google Maps.
+>> Yes.
+>> Or the GPS devices to find.
+>> Sure.
+>> Shortest path.
+>> Sure.
+>> So, it,
+it may be nice to kind of briefly,
+you know, re you know,
+revisit the evacuation scenario.
+So let's say everybody living
+in Boston had to leave.
+>> Sure.
+>> Because of a major hurricane.
+>> Sure.
+>> And
+if they all just went to Google, and
+found shortest path to their destination,
+maybe, in New York City or in Albany.
+>> Yeah. [LAUGH] >> What would go wrong?
+I mean, why not do that?
+>> Oh, you you will see, like,
+cars backed up all the way to
+the place where you started.
+[LAUGH] Because, you know?
+Everybody's going to drive out, and-
+>> Okay.
+You know, if you ask them to
+move the fastest route possible, then you
+know, everybody's going to be there and
+you know like the roads will get congested
+and the traffic will get backed up.
+So you have to take care of you know,
+the capacity as
+the roads get used more and more.The
+congestion increases the traffic time,
+the travel time gets increased so that
+fastest pack itself changes based on that.
+So, that had to be taken into account.
+>> Okay
+>> So somehow, so
+that added a new dimension to
+the [INAUDIBLE] algorithm, so.
+>> So, so, I guess graphs have been
+extended to model age capacity, as well,
+so is there like a general
+family of graph models which.
+>> Yes
+>> Capacity into account?
+>> Yes you know, for example my
+research was actually to look at the,
+the changes that the,
+the graph can change,
+the whole assumption that the graph can
+change as the network is getting used.
+And so the temperature changes of
+the graph needed to be taken into account,
+in the algorithms themselves.
+Like so when you do the computation,
+you have to keep track of the changes.
+>> Right.
+>> That take place to the graph.
+>> Okay.
+>> So that brings in,
+in the, the, the temporal graph concept.
+And so the algorithms needed to
+be re-examined, in that light.
+>> Very wonderful.
+And I think your encyclopedia
+article on road networks,
+is going to be one of
+the supplementary readings,.
+>> Okay. [LAUGH] >> For this course.
+So hopefully,
+some of that is going to relate back and
+they can see the temporal part also.
+That is wonderful.
+So the next question, you know?
+What kinds of things are you working
+now a days at Oracle Spartial and
+could you also tell us a little bit more
+about Oracle Spartial from you know?
+As perspective of somebody
+working in the group?
+>> So our special basically you know,
+provides support for article,
+for spatial data types.
+You know, we do have like you know,
+special data types.
+Like we support coordinate systems and
+and most, commonly used
+spatial operations like you can find
+nearest neighbors, you can you know the,
+the fastest route from point A to
+point B and stuff like that.
+And also, we do have as
+a part of the oracle spatial,
+we do have a specialization
+tool called Map Viewer.
+Which is being extensively used to
+visualise, maps and any spatial data for
+that matter and I specifically work
+in the network data model team, so
+I was kind of fortunate enough to find
+a job, which actually makes use of my
+research and, you know, cool to actually,
+like, carry my research into the industry.
+So I.
+work in the network data model team and
+the network data model basically,
+provides the facilities to represent
+networks or graphs in the database.
+And so there is a database
+representation for networks.
+And on top of that there
+are analysis capabilities provided.
+So most of the.
+Most commonly used graph
+operations are being
+offered like weekend computer's pack.
+>> Okay.
+>> We do traveling salesman problem.
+>> Okay.
+>> And then we do have the network
+[INAUDIBLE] of the most
+spatial operations.
+Like you can find near this neighbors.
+>> Okay But then cost analysis, drive time
+polygons, all based on network costs.
+>> Okay, so-
+>> That is the basic thing
+that our group does.
+So what my specific work has been,
+again, they're adding a temporal
+dimension to the near data model.
+>> How wonderful.
+>> which it didn't have
+a time aspect to it before.
+>> Okay.
+>> So, making the graphs time aware and
+the com,
+the network computations time aware.
+Actually opens up a lot of possibilities.
+For example, the simplest case would
+be a traveling salesman problem.
+And when you use them as a computing
+trucking route to visit like four cities,
+if you, if the application is time then we
+can actually insist that the trucker get.
+Visit a certain city,
+in a certain period of time.
+And sometimes, that becomes a necessity.
+>> Like Russia and so on.
+>> Yes, Russia was, and also,
+there are some, you know, there are some
+restrictions like, you need to visit this
+particular place but on a certain day.
+So you can actually can incorporate
+that constraint, if Time of it.
+Then, as we mentioned earlier,
+the other application would be
+incorporating time in such a way that
+the graph itself is modified and
+handled in such a way that it can change.
+So the graph changes with time,
+for example the condition.
+So-
+traffic data is out there, now, so.
+We do have the facility to incorporate
+the changes in the traffic volume as,
+during, like at different times of day.
+>> Oh, okay.
+>> And,
+based on that the travel time changes, so
+we can actually compute the fastest
+time if you start at 8 a.m.
+in the morning
+>> Oh, wonderful [INAUDIBLE].
+[LAUGH]
+>> Versus, like, in the midnight.
+>> Okay.
+>> And you might even get two
+different roads when you compute these two
+different roads at two different times.
+>> [INAUDIBLE].
+So, so
+I am basically focusing more on the the
+temporal aspect of the network data model.
+We also have a little
+bit of a support form of
+routes which again brings in time
+because everything is schedule based.
+So you already kind of gave answer to
+the next question I was going to ask.
+[LAUGH] Which was, so, you remember
+chapter six in the Spatial Database book,
+which had a very basic model of,
+transportation networks and
+tons of graphs.
+So the basic question was,
+when you see the.
+Graph model or the spatial electric
+model in our electric space vehicle,
+versus what you see in
+the [INAUDIBLE] textbooks,
+what are the things which are common and
+what are the things which are different?
+>> The basics of the common,
+the basics are very common,
+we do have nodes that are just nodes and
+legs, so we do have entities which are.
+Represented by nodes, like which could
+be like intersections of roads or
+like cities.
+But and also like we do have
+connections between nodes.
+They can be any relationship.
+So in the case of a road network if.
+One node is reachable from another node,
+we connect them through using an edge or
+a link.
+So in the basic debt work
+data model in article on,
+so like, we do have node table, which is
+a database at a percentage of nodes and
+the link table which actually provides
+the connectivity between nodes and but.
+Right now.
+The things is, like you know?
+The, the text book model actually
+treats the graph as static.
+>> Okay.
+>> Nothing changes.
+>> Okay.
+>> So,
+you do have one edge between node one and
+node two.
+And you actually.
+Have one parameter called
+cost on that link.
+So the underlying assumption is
+that the cost doesn't change.
+>> Okay.
+>> But
+we do have a mechanism right now
+to actually represent the cost in
+such a way that it actually shows
+a variation with respect to time.
+>> That's wonderful.
+>> So that is, that is one of the most
+striking differences I would say.
+It has.
+>> Indeed, indeed, wonderful.
+And I think your encyclopedia article
+gives a little glimpse of that.
+>> Sure.
+Wonderful.
+Now looking ahead, you know,
+next five to seven years, what
+are the major directions in Oracle Spatial
+and you know, in your own networks module.
+>> I think, when I think about it in
+a very generic way I think like you know,
+to go more on.
+To kind of like,.
+Expand more on this
+changing graph paradigm.
+People are collecting data every day.
+And you know, like in a, if you use a, you
+know, an online navigation system like,
+and everybody's like, saying that okay.
+If I don't take this road because
+it's congested and, you know,
+this is the travel time and, you know, so.
+And, and big companies like no,
+Nokia's like putting data out there.
+So, there is a lot of data coming in.
+>> Okay.
+>> And so.
+We need to some how
+incorporate this into our
+computations to make
+computations more meaningful.
+>> Okay.
+So I think we need to have a mechanism
+to somehow use this data meaningfully,
+but at the same time it's the volume
+is growing so drastically.
+So we need to do somehow make
+the computation section.
+So I think big data is here, you know so
+that I think that,
+that is going to sort of like.
+Creeping every where.
+>> Yeah. Okay. >> So,
+we need to explore that.
+>> Okay.
+>> And how we
+can actually incorporate the big data
+analytics into network competition.
+Which is not that easy.
+>> Okay.
+>> Because networks are not that easily.
+Partitioned, you know, sensibly.
+So we need to figure out how to
+partition networks sensibly, so
+that we don't have too much communication
+going on between the nodes.
+>> Okay.
+>> And,
+also that we don't sacrifice
+too much of accuracy.
+Mining is a different issue,
+because I think mining, you know,
+as long as you find out the trends, it's
+okay, but with networks, you know it's.
+Still a tough problem how to let.
+And then also like we need to
+adopt our algorithms also to
+sort this big data paradigm.
+We need to figure how to do that and
+even if we don't move into that.
+You know,
+as the value of the data increases.
+It is basically, and
+also even just bringing in time
+kind of complicated everything.
+>> You explode the data volume, right.
+For each instance you may have
+a replication of that network.
+>> Yeah.
+Yeah, and so it is basically, and
+also like we cannot apply
+the old algorithm techniques.
+>> Okay.
+Okay.
+>> You know, most of the assumptions
+that we made with respect to the old.
+>> Design can not be applied when
+time comes then because most fo
+the properties that we relied on to
+apple these techniques are breaking.
+>> Right.
+>> And for example,
+like in program to find the best.
+>> [INAUDIBLE] to answer
+the question where to start.
+So I [CROSSTALK].
+>> Oh wow.
+So, we did,
+we did talk about [INAUDIBLE] and A stars,
+so what happens to those
+when you add time?
+>> Because [INAUDIBLE] basically depends
+on a property called greedy property, and
+which actually depends on a sub-optimal
+structure, in, of the final solution,
+which breaks when.
+When we actually extend
+the shortest path question to,
+when is the best time to start so
+that I spend the least time on the road?
+You know, so we are actually talking about
+optimising it across, on the graph and
+across time too.
+So when that comes in, the greedy property
+doesn't, is not satisfied anymore.
+So I cannot extend.
+Extra easily.
+>> Yeah, wonderful.
+>> yes.
+>> Sounds like lot
+of interesting opportunities in.
+>> Yes.
+>> In the area for, or the room for
+this area to grow.
+>> Yes, for a researcher, yes.
+[LAUGH]
+>> [LAUGH] Wonderful.
+So thank you so much Vetsi/b for you know
+taking the time to talk to our audience.
+And you are in really a sweet spot
+where you can look at the research and
+also you can bring it to
+an influential product.
+Which is now being used by really,
+really large number of people so.
+>> Thank you, thank you for
+giving me this opportunity.
+This is such an honor and you know, a
+great honor to be a part of this project.
+Thank you.
+>> Thanks.
+>> Thank you.
+>> Wonderful so so
+this was Doctor Betsy George.
+A principle in a member technical
+staff at Oracle Special.
+And in a lot of thing she talked about we
+covered in the module on spatial network.
+This is a field which all ready
+has many applications and
+as you heard looks like there will
+be many more in coming years.
+And hopefully some of the people in
+this course will be participating and
+shaping this field in the near future.
+Thank you and next interview we'll meet
+a few of the researchers in this area.
+

@@ -1,0 +1,196 @@
+Welcome back to the discussion
+of spatial computing.
+In next couple of videos,
+we are going to do two things.
+First, we'll try to define spatial
+computing via a set of common questions.
+And then in another short video, we'll
+talk about who uses spatial computing,
+who are the customers and so on.
+Okay.
+So that would be the second one,
+all right.
+So in terms of thinking about the core
+questions in spatial computing
+a central question, you know, which has
+centuries of history, is where am I?
+People who navigate in open spaces
+often have to answer this question.
+In fact about 400 years ago,
+the ships crossing Atlantic Ocean from
+Europe on way to, you know, commerce.
+Often had to ask this question, and
+it was another challenging question.
+They could look at the position of sun or
+stars to determine roughly their latitude.
+However, the longitude was very hard to
+determine and there was a grand prize,
+you know, there was a really,
+really large financial reward for
+people to invent equipment to
+find the longitude of ships.
+And several different inventors over
+decades invented these things and
+we still benefit from some of those.
+In fact, the clocks which could work
+in the ocean with all this you know,
+motion came out of this in,
+in a particular quest.
+More recently we are really lucky
+to have global positioning system.
+Many of use that through smartphone or
+other devices to locate ourselves.
+Okay.
+Another interesting question
+is what's around us?
+The context.
+In geography, people have mapped out many,
+many features and properties of the Earth,
+including many consumer relevant features,
+such as clinics or
+gas stations, or
+automatic teller machines, and so on.
+So again, via smartphone many of
+us have probably tried this out.
+And if you,
+once you know your location, you can ask,
+where is the nearest Pizza Hut?
+Or gas station and so on.
+Okay.
+And once, you know,
+these are now offered through something
+called location-based services.
+And in this course, we'll come and
+look under the hood to see what are the
+computational concepts underlying those.
+Okay.
+A third question is situation assessment.
+Okay.
+This is something which is really used
+often by companies and by government.
+So whenever there is,
+is a fluid situation, so
+try to imagine the aftermath of
+hurricane Katrina, or hurricane Rita.
+Right?
+Or a tornado.
+The insurance companies and the
+government, they want to find, you know,
+where people are who need the help,
+you know, and so on.
+And often times,
+that information is represented to a map.
+And and there a different kinds
+of questions we ask, you know,
+one, we basically want to
+know where things are and
+how they're distributed,
+which area has a concentrate,
+a concentration of people, which can
+need a help, and that's just mapping.
+They may fly an airplane or
+a UAV take satellite imagery, have
+geographers digitized and interpret it,
+and just create a map, you know,
+every day to see how things are changing.
+Okay.
+Sometimes we also summarize those maps and
+we instead of looking at all areas of map,
+we may have to prioritize.
+So we may look for hot spots of people and
+try to, you know, send larger help there.
+Okay.
+Again we'll dedicate a week in this course
+to understand the spatial patterns and
+statistical foundations underlying those.
+So continuing on people are also
+interested in temporal evaluation.
+Sometimes situation changes a lot,
+from day to day or hour to hour.
+For example, here we are showing you
+an animation of crime reports in
+Amsterdam by the hour of the day and
+as you can see,
+the crime pattern changes from night
+to rush hour to day and so on, and
+this is of help to police and other
+people working with crime to manage that.
+Okay.
+So again, we pull you know, people do
+either through the days or over centuries.
+You know, another example of this is
+climate change, which is at much larger
+scale, but people are feeling that over
+centuries or over tens of thousands of
+years that climate changes dramatically
+and that it effects human civilization.
+So again, through different topics we
+will see these questions addressed in
+this course.
+And finally geography and
+spatial data is used for
+a lot of exploration, you know,
+which may be basis of science.
+Okay.
+For example, you know, we might want to
+know whether our schools are safe or not.
+And people often collect a lot of
+data about environmental quality.
+The air quality, water quality,
+they want to know where the hot spots are,
+and are they effecting critical
+things like schools and so on.
+Okay.
+People often generate hypothesis and
+we'll talk about a, a very interesting
+hypothesis that was generated out of maps,
+related to spread of You know,
+back in 1800s people thought
+cholera was spread through air.
+You know,
+they use to have this bad air theory.
+And the doctors used to wear beaks,
+you know,
+on their nose full of spices to
+protect themselves from air.
+And in about 1854, John Snow made a map
+of London after a cholera epidemic.
+And he showed that the locations
+of debts of people,
+they were all around the water pump, and
+this change the hypothesis saying that
+maybe there is something in the water that
+cause, you know, that carrier cholera.
+20 years later germ theory came and
+it's a major evolution in science.
+So again, you know, these are the other
+question and you can, you know,
+this kind of hypothesis generation can
+be supported either through databases.
+What we are calling SDBMS,
+Spatial Database Management System,
+where people can go into what is query,
+or they could be supported through
+explorative data analysis of statistical
+of nature where you do find hot spots.
+Okay.
+Great.
+So with this, you know,
+we hope we gave you a sense
+of some example questions in
+the field of spatial computing.
+And, you know, in the following weeks,
+you will probably see these questions in
+much more detail along with the techniques
+that have been developed so far.
+And hopefully as time goes by,
+you will add to this list of question and
+as well as to the techniques
+that can be used to answer them.
+So we'll wrap up this video over here.
+Next video we'll come back and
+talk about the customers,
+who are the users who ask these kind of
+questions in, in today or in recent years.
+Thank you.
+
